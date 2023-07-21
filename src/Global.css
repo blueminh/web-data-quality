@@ -1,0 +1,94 @@
+:root {
+    --font-family-arial-regular: "Arial-Regular", Helvetica;
+    --font-family-inter: "Inter", Helvetica;
+    --font-family-poppins: "Poppins", Helvetica;
+    --font-family-roboto: "Roboto", Helvetica;
+    --font-family-space_mono: "Space Mono", Helvetica;
+    --primary-color: rgb(255, 255, 255);
+    --secondary-color:  #003087;
+    --hover-color: rgb(255, 173, 0);
+    --tertiary-color: #00006d;
+    --4-color: rgb(220, 150, 3);
+    --5-color: rgb(250, 199, 92);
+    --6-color: rgb(197, 197, 216);
+    --7-color: rgb(197, 197, 216);
+    --primary-text: #00006d;
+    --secondary-text: rgb(255, 255, 255);
+}
+
+.poppins {
+    font-family: var(--font-family-space_mono);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.card {
+    transition: all .2s ease-in-out ;
+}
+
+.Back {
+    color: var(--primary-color);
+    background: var(--primary-color);
+    padding: 0 20%;
+}
+
+.header-footer {
+    background: var(--secondary-color);
+    color: var(--secondary-text);
+}
+
+.card, .faq {
+    background: var(--secondary-color);
+}
+
+.card:hover{
+    transform: scale(1.02); 
+    background-color: var(--hover-color);
+}
+
+.primary-button {
+    /*display: flex;*/
+    alignItems: 'center';
+    justifyContent: 'center';
+    color: var(--secondary-text);
+    background: linear-gradient(0deg, var(--4-color) 0%, var(--5-color) 100%);
+}
+
+.secondary-button {
+    color: var(--primary-text);
+    background: linear-gradient(0deg, var(--secondary-color) 0%, var(--secondary-color) 100%);
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: var(--primary-color);
+}
+
+/*This is used for the nav bar pills*/
+/* .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    background: linear-gradient(0deg, var(--4-color) 0%, var(--5-color) 100%);
+}
+
+.primary-nav-pill {
+    color: var(--primary-text);
+}
+
+/*So color doesn't change*/
+/* .primary-nav-pill:hover {
+    color: var(--primary-text);
+}  */
+
+.Separator {
+    color: var(--tertiary-color);
+}
+
+/*input[type="email"], textarea {*/
+/*    background-color : var( --6-color);*/
+/*}*/
+
+/*input[type="text"], textarea {*/
+/*    background-color : var(--6-color);*/
+/*}*/
+
+/*input[type="password"], textarea {*/
+/*    background-color : var(--6-color);*/
+/*}*/
