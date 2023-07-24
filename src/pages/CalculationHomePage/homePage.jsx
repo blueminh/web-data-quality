@@ -1,11 +1,11 @@
-import { Table, Row, Col} from 'react-bootstrap';
+import { Table, Row, Col, Tabs, Tab} from 'react-bootstrap';
 import { useEffect, useState } from "react";
 import './homePage.css'
 import '../../Global.css'
 import FetchDataService from '../../services/fetchDataService'
 
 
-export default function Homepage() {
+export default function CalculationHomePage() {
     const [lcrData, setLcrData] = useState({
         title: "Liquidity Coverage Ratio - Quick Dashboard",
         numberOfRows: 4,
@@ -140,72 +140,74 @@ export default function Homepage() {
 
     return (
         <div>
-            <div id="dashboard-general-info">
-                {/* <Row>
-                    <Col><p>Select language / Chọn ngôn ngữ</p></Col>
-                    <Col>
-                    <DropdownButton
-                        as={ButtonGroup}
-                        key={variant}
-                        id={`dropdown-variants-${variant}`}
-                        variant={variant.toLowerCase()}
-                        title={variant}
-                    >
-                        <Dropdown.Item eventKey="1">Action</Dropdown.Item>
-                        <Dropdown.Item eventKey="2">Another action</Dropdown.Item>
-                    </Col>
-                </Row> */}
-                <Row style={{fontWeight:'bold', fontSize:'larger'}}>
-                    <Col>CAO</Col>
-                    <Col>{formattedDate}</Col>
-                </Row>
-            </div>
-            <div className='tables-grid'>
-                <Row>
-                    <Col>
-                        <Table striped bordered>
-                            <tbody>
-                                <tr>
-                                    <td className='table-title' colSpan={2}>{lcrData.title}</td>
-                                </tr>
-                                {lcrData.rows.map(row => 
-                                    <tr>
-                                        <td>
-                                            <span className='row-title'>{row.rowTitle.title}</span>
-                                            <br></br>
-                                            <span><em>{row.rowTitle.subTitle}</em></span>
-                                        </td>
-                                        {row.data.map(rowData =>
-                                            <td style={{textAlign: "center"}}>{rowData}</td>
+            <Tabs
+                defaultActiveKey="home"
+                className="mb-3"
+                >
+                <Tab eventKey="home" title="Home">
+                    <div id="dashboard-general-info">
+                        <Row style={{fontWeight:'bold', fontSize:'larger'}}>
+                            <Col>CAO</Col>
+                            <Col>{formattedDate}</Col>
+                        </Row>
+                    </div>
+                    <div className='tables-grid'>
+                        <Row>
+                            <Col>
+                                <Table striped bordered>
+                                    <tbody>
+                                        <tr>
+                                            <td className='table-title' colSpan={2}>{lcrData.title}</td>
+                                        </tr>
+                                        {lcrData.rows.map(row => 
+                                            <tr>
+                                                <td>
+                                                    <span className='row-title'>{row.rowTitle.title}</span>
+                                                    <br></br>
+                                                    <span><em>{row.rowTitle.subTitle}</em></span>
+                                                </td>
+                                                {row.data.map(rowData =>
+                                                    <td style={{textAlign: "center"}}>{rowData}</td>
+                                                )}
+                                            </tr>
                                         )}
-                                    </tr>
-                                )}
-                            </tbody>
-                        </Table>
-                    </Col>
-                    <Col>
-                    <Table striped bordered>
-                            <tbody>
-                                <tr>
-                                    <td className='table-title' colSpan={2}>{nsfrData.title}</td>
-                                </tr>
-                                {nsfrData.rows.map(row => 
-                                    <tr>
-                                        <td>
-                                            <span className='row-title'>{row.rowTitle.title}</span>
-                                            <br></br>
-                                            <span><em>{row.rowTitle.subTitle}</em></span>
-                                        </td>
-                                        {row.data.map(rowData =>
-                                            <td style={{textAlign: "center"}}>{rowData}</td>
+                                    </tbody>
+                                </Table>
+                            </Col>
+                            <Col>
+                            <Table striped bordered>
+                                    <tbody>
+                                        <tr>
+                                            <td className='table-title' colSpan={2}>{nsfrData.title}</td>
+                                        </tr>
+                                        {nsfrData.rows.map(row => 
+                                            <tr>
+                                                <td>
+                                                    <span className='row-title'>{row.rowTitle.title}</span>
+                                                    <br></br>
+                                                    <span><em>{row.rowTitle.subTitle}</em></span>
+                                                </td>
+                                                {row.data.map(rowData =>
+                                                    <td style={{textAlign: "center"}}>{rowData}</td>
+                                                )}
+                                            </tr>
                                         )}
-                                    </tr>
-                                )}
-                            </tbody>
-                        </Table>
-                    </Col>
-                </Row>
-            </div>    
+                                    </tbody>
+                                </Table>
+                            </Col>
+                        </Row>
+                    </div>    
+                </Tab>
+                <Tab eventKey="lcr" title="LCR">
+                    Tab content for LCR
+                </Tab>
+                <Tab eventKey="nsfr" title="NSFR">
+                    Tab content for NSFR
+                </Tab>
+                <Tab eventKey="input" title="Input Data">
+                    Tab content for inputting data
+                </Tab>
+            </Tabs>
         </div>
     )
 }

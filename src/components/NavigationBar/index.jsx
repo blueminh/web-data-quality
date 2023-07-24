@@ -16,10 +16,8 @@ export default function NavigationBar() {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link href="/home">CalculationTool</Nav.Link>
-                        <Nav.Link href="/lcr">LCR</Nav.Link>
-                        <Nav.Link href="/nsfr">NSFR</Nav.Link>
-                        <Nav.Link href="/input">Input Data</Nav.Link>
+                        <Nav.Link href="/calculation">Calculation Tool</Nav.Link>
+                        <Nav.Link href="/validation">Validation Tool</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

@@ -1,7 +1,7 @@
 import React from "react";
 import {Routes, Route} from "react-router-dom";
-import Homepage  from './pages/HomePage/homePage';
 import Nagivationbar from './components/NavigationBar'
+import CalculationHomePage from "./pages/CalculationHomePage/homePage";
 import './App.css'
 import './Global.css'
 import './styleguide.css'
@@ -13,8 +13,8 @@ const App = () => {
         <div>
             <Nagivationbar />
             <Routes>
-            <Route path='/' element={<Homepage />}></Route>
-            <Route path='/home' element={<Homepage />}></Route>
+                <Route path='/' element={<CalculationHomePage />}></Route>
+                <Route path='/calculation' element={<CalculationHomePage />}></Route>
             </Routes>
         </div>
     )
