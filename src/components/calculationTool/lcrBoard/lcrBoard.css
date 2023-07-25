@@ -1,0 +1,21 @@
+#pageTitle {
+    text-align: center;
+    max-width: 1400px; /* Set the maximum width */
+    color: var(--secondary-color);
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+#generalInfo {
+    text-align: center;
+    margin: 30px, auto;
+}
+
+#dataTable {
+    margin: 40px;
+}
+
+.sectionNameTd {
+    font-weight: bold;
+    background-color: var(--third-color) !important;
+}

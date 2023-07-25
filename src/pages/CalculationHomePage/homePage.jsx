@@ -2,6 +2,7 @@ import { Tabs, Tab} from 'react-bootstrap';
 import './homePage.css'
 import '../../Global.css'
 import CalulationQuickDashboard from '../../components/calculationTool/dashboard/dashboard';
+import LCRDashBoard from '../../components/calculationTool/lcrBoard/lcrBoard';
 
 export default function CalculationHomePage() {
     return (
@@ -14,7 +15,7 @@ export default function CalculationHomePage() {
                     <CalulationQuickDashboard></CalulationQuickDashboard>
                 </Tab>
                 <Tab eventKey="lcr" title="LCR">
-                    Tab content for LCR
+                    <LCRDashBoard></LCRDashBoard>
                 </Tab>
                 <Tab eventKey="nsfr" title="NSFR">
                     Tab content for NSFR
