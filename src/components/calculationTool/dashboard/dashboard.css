@@ -1,0 +1,21 @@
+.tables-grid {
+    margin: 75px;
+}
+
+.table-title {
+    background-color: var(--secondary-color) !important;
+    color: white !important;
+    text-align: center;
+    font-weight: bold;
+    padding: 1rem !important;
+}
+
+.row-title {
+    font-weight: bold;
+}
+
+#dashboard-general-info {
+    text-align: center;
+    margin: 75px auto; /* Center the div horizontally */
+    max-width: 600px; /* Set the maximum width */
+}
