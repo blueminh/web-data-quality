@@ -1,0 +1,21 @@
+
+
+.table-title {
+    background-color: var(--secondary-color) !important;
+    color: white !important;
+    text-align: center;
+    font-weight: bold;
+    padding: 1rem !important;
+}
+  
+.form-input {
+display: flex;
+align-items: center;
+margin-bottom: 10px;
+}
+
+.form-input label {
+margin-right: 10px;
+flex-basis: 30%
+
+}
