@@ -8,6 +8,7 @@ import './App.css'
 import './Global.css'
 import './styleguide.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ValidationPage from "./pages/ValidationBoardPage";
 
 export const LoginContext = createContext({
     state: {
@@ -27,6 +28,7 @@ const App = () => {
                     <Route path='/' element={<CalculationHomePage />}></Route>
                     <Route path='/calculation' element={<CalculationHomePage />}></Route>
                     <Route path='/login' element={<LoginPage />}></Route>
+                    <Route path='/validation' element={<ValidationPage/>}></Route>
                 </Routes>
             </div>
         </LoginContext.Provider>
