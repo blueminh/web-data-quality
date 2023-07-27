@@ -3,6 +3,7 @@ import './homePage.css'
 import '../../Global.css'
 import CalulationQuickDashboard from '../../components/calculationTool/dashboard/dashboard';
 import LCRDashBoard from '../../components/calculationTool/lcrBoard/lcrBoard';
+import InputDashboard from '../../components/calculationTool/inputBoard/inputboard';
 
 export default function CalculationHomePage() {
     return (
@@ -21,7 +22,7 @@ export default function CalculationHomePage() {
                     Tab content for NSFR
                 </Tab>
                 <Tab eventKey="input" title="Input Data">
-                    Tab content for inputting data
+                    <InputDashboard></InputDashboard>
                 </Tab>
             </Tabs>
         </div>
