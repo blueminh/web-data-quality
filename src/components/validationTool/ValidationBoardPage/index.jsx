@@ -1,5 +1,5 @@
 import {React, useState} from "react";
-import {Form, Row, Col, Table} from 'react-bootstrap';
+import {Row, Col, Table} from 'react-bootstrap';
 import './ValidationPage.css';
 import {Pie, Bar} from 'react-chartjs-2';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend, CategoryScale,
@@ -17,7 +17,7 @@ ChartJS.register(
     Legend)
 console.log("test")
 
-export default function ValidationPage() {
+export default function ValidationDashBoard() {
 
     const [fileNames, setFileNames] = useState([]);
     const [basicInformation, setBasicInformation] = useState({

@@ -3,13 +3,12 @@ import {useState, createContext } from "react";
 import {Routes, Route} from "react-router-dom";
 import Nagivationbar from './components/NavigationBar'
 import CalculationHomePage from "./pages/CalculationHomePage/homePage";
+import ValidationHomePage from "./pages/ValidationHomePage/homePage";
 import LoginPage from "./pages/LogInpage/logInPage"
 import './App.css'
 import './Global.css'
 import './styleguide.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ValidationPage from "./pages/ValidationBoardPage";
-
 export const LoginContext = createContext({
     state: {
         loggedIn: true
@@ -28,7 +27,7 @@ const App = () => {
                     <Route path='/' element={<CalculationHomePage />}></Route>
                     <Route path='/calculation' element={<CalculationHomePage />}></Route>
                     <Route path='/login' element={<LoginPage />}></Route>
-                    <Route path='/validation' element={<ValidationPage/>}></Route>
+                    <Route path='/validation' element={<ValidationHomePage />}></Route>
                 </Routes>
             </div>
         </LoginContext.Provider>
