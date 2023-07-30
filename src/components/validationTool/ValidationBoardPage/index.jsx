@@ -1,5 +1,6 @@
 import {React, useState} from "react";
-import {Row, Col, Table} from 'react-bootstrap';
+import {Row, Col, Table, Form} from 'react-bootstrap';
+
 import './ValidationPage.css';
 import {Pie, Bar} from 'react-chartjs-2';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend, CategoryScale,
@@ -81,6 +82,16 @@ export default function ValidationDashBoard() {
         setFileNames(Array.from(files).map(extractFileName => extractFileName.name))
     }
 
+    const updateStartDate = (event) => { setBasicInformation((prev) => ({
+        ...prev,
+        dateStart: String(event.target.value)
+    }));}
+
+    const updateEndDate = (event) => { setBasicInformation((prev) => ({
+        ...prev,
+        dateEnd: String(event.target.value)
+    }));}
+
     const refreshPage = (event) => {
         setTimeout(()=>{
             window.location.reload(false);
@@ -89,40 +100,49 @@ export default function ValidationDashBoard() {
     }
 
 
-
     return (
         <>
-<div class="container text-center" style={{marginTop:"20px"}}>
-  <div class="row">
-    <div class="col text-end">
-    <h3>Cơ sở Dữ liệu</h3>
-    </div>
-    <div class="col text-start">
-    <h3>{basicInformation.nameOfDatabase}</h3>
-    </div>
-  </div>
-      <Row style={{marginTop:"20px"}}>
-        <Col className="text-end"><h5>Ngày Dữ liệu</h5></Col>
-        <Col className="text-start"><strong>Bắt đầu:</strong> {basicInformation.dateStart} -> <strong>Kết thúc:</strong> {basicInformation.dateEnd}</Col>
-      </Row>
-    <div class="row">
-    <div class="col text-end">
-      <h5>Tên bảng cần kiểm tra</h5> 
-    </div>
-    <div class="col text-start">
-      {basicInformation.tableCheck.map(x => x).join(', ')}
-    </div>
-  </div>
-  <div class="row">
-  <div class="col text-end">
-      <h5>Tên bảng loại trừ:</h5> 
-    </div>
-    <div class="col text-start">
-        {basicInformation.tableEliminate.map(x => x).join(', ')}
-    </div>
-    </div>
-</div>
-<div>
+        <div class="container text-center" style={{marginTop:"20px"}}>
+            <div class="row">
+                <div class="col text-end">
+                <h3>Cơ sở Dữ liệu</h3>
+                </div>
+                <div class="col text-start">
+                <h3>{basicInformation.nameOfDatabase}</h3>
+                </div>
+            </div>
+            <Row style={{marginTop:"20px"}}>
+                <Col className="text-end"><h5>Ngày Dữ liệu</h5></Col>
+                <Col className="text-start">
+                <div className="form-input">
+                    <Form.Label>Bắt đầu</Form.Label>
+                    <Form.Control required type="date" onChange={updateStartDate}/>
+                </div>
+                <div className="form-input">
+                    <Form.Label>Kết thúc</Form.Label>
+                    <Form.Control required type="date" onChange={updateEndDate}/>
+                </div>
+
+                </Col>
+            </Row>
+            <div class="row">
+                <div class="col text-end">
+                <h5>Tên bảng cần kiểm tra</h5> 
+                </div>
+            <div class="col text-start">
+            {basicInformation.tableCheck.map(x => x).join(', ')}
+            </div>
+        </div>
+            <div class="row">
+                <div class="col text-end">
+                    <h5>Tên bảng loại trừ:</h5> 
+                </div>
+                <div class="col text-start">
+                    {basicInformation.tableEliminate.map(x => x).join(', ')}
+                </div>
+            </div>
+        </div>
+    <div>
 <div class="container text-center" style={{marginTop: "20px"}}>
 <input class="form-control" type="file" id="formFileMultiple" onChange={handleFileChange} multiple></input>
 </div>
@@ -134,9 +154,9 @@ export default function ValidationDashBoard() {
                                 <tr>
                                     <td className='table-title' colSpan={2}>Tên File Để Thực hiện</td>
                                 </tr>
-                                           {
-    fileNames.map(x => <tr><td><span><em>{x}</em></span></td></tr>)
-}
+                                    {
+                                        fileNames.map(x => <tr><td><span><em>{x}</em></span></td></tr>)
+                                    }
                             </tbody>
                         </Table>
                     </Col>

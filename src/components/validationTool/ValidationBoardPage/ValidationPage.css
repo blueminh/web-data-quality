@@ -1,0 +1,11 @@
+.form-input {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    }
+    
+    .form-input label {
+    margin-right: 10px;
+    flex-basis: 30%
+    
+    }
