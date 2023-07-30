@@ -47,7 +47,7 @@ export default function ValidationDashBoard() {
         }]
       });
 
-    const [setOfDataInBar, setSetOfDataInBar] = useState([{
+    const [setOfDataForFieldStatsBar, setSetOfDataInBar] = useState([{
         fileName: 'Transaction.xls',
         text: 5,
         numeric: 7,
@@ -65,11 +65,11 @@ export default function ValidationDashBoard() {
 
     const dataForBarChart = (dataInBar) => {
         return {
-            labels: ["Text field", "Numeric"],
+            labels: ["Text field", "Numeric", "Datetime"],
             datasets: [
                 {
                     label: dataInBar.fileName,
-                    data: [dataInBar.text, dataInBar.numeric],
+                    data: [dataInBar.text, dataInBar.numeric, dataInBar.datetime],
                     backgroundColor: 'rgba(255, 99, 132, 0.5)',
                 },
                 
@@ -277,7 +277,7 @@ export default function ValidationDashBoard() {
     </div>
     <div className='tables-grid'>
         <Row>
-            <Col>
+            <Col xs={4}>
                 <Table striped bordered>
                     <tbody>
                         <tr>
@@ -286,45 +286,31 @@ export default function ValidationDashBoard() {
                         <tr>
                             <td><Pie data={dataForPie}/></td>
                         </tr>
-                        
                     </tbody>
                 </Table>
             </Col>
             <Col>
-            <Table striped bordered>
+                <div style={{ display: 'flex' }}>
                 {
-                    setOfDataInBar.map(dataInBar => 
-                    <tbody>
-                        <tr>
-                            <td className='table-title' colSpan={2}>Biểu đồ Cột: {dataInBar.fileName}</td>
-                        </tr>
-                        {/* Component rieng voi props la set of Data! */}
-                        <tr>
-                            <td colSpan={2}><Bar data={dataForBarChart(dataInBar)} /></td>
-                        </tr>
-                        
-                        <tr>
-                            <td>Text</td>
-                            <td>{dataInBar.text}</td>
-                        </tr>
-
-                        <tr>
-                            <td>Numeric</td>
-                            <td>{dataInBar.numeric}</td>
-                        </tr>
-
-                        <tr>
-                            <td>DateTime</td>
-                            <td>{dataInBar.datetime}</td>
-                        </tr>
-
-                        <tr>
-                            <td>Number of Lines</td>
-                            <td>{dataInBar.numberOfLines}</td>
-                        </tr>
-                    </tbody>)
+                    setOfDataForFieldStatsBar.map(dataInBar => 
+                        <Table striped bordered>
+                            <tbody>
+                                <tr>
+                                    <td className='table-title' colSpan={2}>Thống kê trường dữ liệu {dataInBar.fileName}</td>
+                                </tr>
+                                {/* Component rieng voi props la set of Data! */}
+                                <tr>
+                                    <td colSpan={2}><Bar data={dataForBarChart(dataInBar)} /></td>
+                                </tr>
+                                <tr>
+                                    <td>Number of Lines</td>
+                                    <td>{dataInBar.numberOfLines}</td>
+                                </tr>
+                            </tbody>
+                        </Table>
+                    )
                 }
-                </Table>
+                </div>
             </Col>
         </Row>
     </div>    
@@ -369,7 +355,7 @@ export default function ValidationDashBoard() {
                             <th>Chất lượng Dữ liệu</th>
                         </tr>
 
-                        {setOfDataInBar.map((dataInBar, i) => 
+                        {setOfDataForFieldStatsBar.map((dataInBar, i) => 
                             <tr>
                             <td>{++i}</td>
                             <td>{dataInBar.fileName}</td>
@@ -395,7 +381,7 @@ export default function ValidationDashBoard() {
                         </tr>
 
                         {
-                            setOfDataInBar.map((dataInBar,i) =>
+                            setOfDataForFieldStatsBar.map((dataInBar,i) =>
                                 <tr>
                                 <td>{++i}</td>
                                 <td>{dataInBar.fileName}</td>
@@ -413,6 +399,6 @@ export default function ValidationDashBoard() {
             </Row>
     </div>   
 
-      </>
+    </>
     );
 }
