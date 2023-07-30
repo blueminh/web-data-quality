@@ -267,57 +267,57 @@ export default function ValidationDashBoard() {
                     </Stack>
                 </Col>
             </Row>  
-        <div class="container">
-            <div className="row">
-                <div className="col text-end"><button type="button" class="btn btn-warning" onClick={refreshPage}>Nhập Lại</button></div>
-                {/* Tại bước này tạo một onclick => Khi bấm vào sẽ add tên các file vào một list mới để bắt đầu phân tích  */}
-                <div className="col"><button type="button" class="btn btn-primary">Thực Hiện</button></div>
+            <div class="container">
+                <div className="row">
+                    <div className="col text-end"><button type="button" class="btn btn-warning" onClick={refreshPage}>Nhập Lại</button></div>
+                    {/* Tại bước này tạo một onclick => Khi bấm vào sẽ add tên các file vào một list mới để bắt đầu phân tích  */}
+                    <div className="col"><button type="button" class="btn btn-primary">Thực Hiện</button></div>
+                </div>
             </div>
         </div>
-    </div>
-    <div className='tables-grid'>
-        <Row>
-            <Col xs={4}>
-                <Table striped bordered>
-                    <tbody>
-                        <tr>
-                            <td className='table-title' colSpan={2}>Thống kê bảng tốt / cần kiểm tra</td>
-                        </tr>
-                        <tr>
-                            <td><Pie data={dataForPie}/></td>
-                        </tr>
-                    </tbody>
-                </Table>
-            </Col>
-            <Col>
-                <div style={{ display: 'flex' }}>
-                {
-                    setOfDataForFieldStatsBar.map(dataInBar => 
-                        <Table striped bordered>
-                            <tbody>
-                                <tr>
-                                    <td className='table-title' colSpan={2}>Thống kê trường dữ liệu {dataInBar.fileName}</td>
-                                </tr>
-                                {/* Component rieng voi props la set of Data! */}
-                                <tr>
-                                    <td colSpan={2}><Bar data={dataForBarChart(dataInBar)} /></td>
-                                </tr>
-                                <tr>
-                                    <td>Number of Lines</td>
-                                    <td>{dataInBar.numberOfLines}</td>
-                                </tr>
-                            </tbody>
-                        </Table>
-                    )
-                }
-                </div>
-            </Col>
-        </Row>
-    </div>    
+        <div className='tables-grid'>
+            <Row>
+                <Col xs={4}>
+                    <Table striped bordered>
+                        <tbody>
+                            <tr>
+                                <td className='table-title' colSpan={2}>Thống kê bảng tốt / cần kiểm tra</td>
+                            </tr>
+                            <tr>
+                                <td><Pie data={dataForPie}/></td>
+                            </tr>
+                        </tbody>
+                    </Table>
+                </Col>
+                <Col>
+                    <div style={{ display: 'flex' }}>
+                    {
+                        setOfDataForFieldStatsBar.map(dataInBar => 
+                            <Table striped bordered>
+                                <tbody>
+                                    <tr>
+                                        <td className='table-title' colSpan={2}>Thống kê trường dữ liệu {dataInBar.fileName}</td>
+                                    </tr>
+                                    {/* Component rieng voi props la set of Data! */}
+                                    <tr>
+                                        <td colSpan={2}><Bar data={dataForBarChart(dataInBar)} /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Number of Lines</td>
+                                        <td>{dataInBar.numberOfLines}</td>
+                                    </tr>
+                                </tbody>
+                            </Table>
+                        )
+                    }
+                    </div>
+                </Col>
+            </Row>
+        </div>    
     
-    <div className='tables-grid'>
-        <Row>            
-            <Table striped bordered>
+        <div className='tables-grid'>
+            <Row>            
+                <Table striped bordered>
                     <tbody className="text-center">
                         <tr>
                             <td className='table-title' colSpan={4}>Thống kê Thông tin Bảng Dữ liệu</td>
@@ -339,9 +339,8 @@ export default function ValidationDashBoard() {
                             </tr> 
                         )}
                     </tbody>
-
                 </Table>
-        
+            
                 <Table striped bordered>
                     <tbody className="text-center">
                         <tr>
@@ -363,9 +362,7 @@ export default function ValidationDashBoard() {
                             </tr>
                         )}
                     </tbody>
-
                 </Table>
-
                 <Table striped bordered>
                     <tbody className="text-center">
                         <tr>
@@ -394,11 +391,9 @@ export default function ValidationDashBoard() {
                         }
                         
                     </tbody>
-
                 </Table>
             </Row>
-    </div>   
-
+        </div>   
     </>
     );
 }
