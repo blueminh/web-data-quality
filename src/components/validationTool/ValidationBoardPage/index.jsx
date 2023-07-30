@@ -1,5 +1,7 @@
 import {React, useState} from "react";
-import {Row, Col, Table, Form} from 'react-bootstrap';
+import {Row, Col, Table, Form, Stack} from 'react-bootstrap';
+import Autosuggest from 'react-autosuggest';
+
 
 import './ValidationPage.css';
 import {Pie, Bar} from 'react-chartjs-2';
@@ -99,55 +101,98 @@ export default function ValidationDashBoard() {
         console.log('page to reload')
     }
 
+    
+    const tableNames = [
+        'customers',
+        'orders',
+        'products',
+        'employees',
+        'suppliers',
+        // Add more table names as needed
+    ];
+
+    const [value, setValue] = useState('');
+    const [suggestions, setSuggestions] = useState([]);
+
+    const getSuggestions = (inputValue) => {
+        const inputValueLowerCase = inputValue.trim().toLowerCase();
+        const filteredSuggestions = tableNames.filter((name) =>
+            name.toLowerCase().includes(inputValueLowerCase)
+        );
+        return filteredSuggestions;
+    };
+
+    const onSuggestionsFetchRequested = ({ value }) => {
+        setSuggestions(getSuggestions(value));  
+    };
+
+    const onSuggestionSelected = (event, { suggestion }) => {
+        setValue(suggestion);
+    };
+
+    const inputProps = {
+        placeholder: 'Start typing to search...',
+        value,
+        onChange: (event, { newValue }) => {
+            setValue(newValue);
+        },
+    };
 
     return (
         <>
         <div class="container text-center" style={{marginTop:"20px"}}>
-            <div class="row">
-                <div class="col text-end">
-                <h3>Cơ sở Dữ liệu</h3>
-                </div>
-                <div class="col text-start">
-                <h3>{basicInformation.nameOfDatabase}</h3>
-                </div>
-            </div>
-            <Row style={{marginTop:"20px"}}>
-                <Col className="text-end"><h5>Ngày Dữ liệu</h5></Col>
-                <Col className="text-start">
-                <div className="form-input">
-                    <Form.Label>Bắt đầu</Form.Label>
-                    <Form.Control required type="date" onChange={updateStartDate}/>
-                </div>
-                <div className="form-input">
-                    <Form.Label>Kết thúc</Form.Label>
-                    <Form.Control required type="date" onChange={updateEndDate}/>
-                </div>
-
+            <Row>
+                <Col>
+                    <Stack gap={3}>
+                        <div className="form-input">
+                            <Form.Label>Select Database</Form.Label>
+                            <Autosuggest
+                                suggestions={suggestions}
+                                onSuggestionsFetchRequested={onSuggestionsFetchRequested}
+                                onSuggestionsClearRequested={() => setSuggestions([])}
+                                onSuggestionSelected={onSuggestionSelected}
+                                getSuggestionValue={(suggestion) => suggestion}
+                                renderSuggestion={(suggestion) => <span>{suggestion}</span>}
+                                inputProps={inputProps}
+                            />
+                        </div>
+                        <div className="form-input">
+                            <Form.Label>Tên bảng cần kiểm tra</Form.Label>
+                            <Autosuggest
+                                suggestions={suggestions}
+                                onSuggestionsFetchRequested={onSuggestionsFetchRequested}
+                                onSuggestionsClearRequested={() => setSuggestions([])}
+                                onSuggestionSelected={onSuggestionSelected}
+                                getSuggestionValue={(suggestion) => suggestion}
+                                renderSuggestion={(suggestion) => <span>{suggestion}</span>}
+                                inputProps={inputProps}
+                            />
+                        </div>
+                        <div className="form-input">
+                            <Form.Label>Tên bảng loại trừ</Form.Label>
+                            <Autosuggest
+                                suggestions={suggestions}
+                                onSuggestionsFetchRequested={onSuggestionsFetchRequested}
+                                onSuggestionsClearRequested={() => setSuggestions([])}
+                                onSuggestionSelected={onSuggestionSelected}
+                                getSuggestionValue={(suggestion) => suggestion}
+                                renderSuggestion={(suggestion) => <span>{suggestion}</span>}
+                                inputProps={inputProps}
+                            />
+                        </div>
+                    </Stack>
+                </Col>
+                <Col>
+                    <Stack gap={3}>
+                        
+                    </Stack>
                 </Col>
             </Row>
-            <div class="row">
-                <div class="col text-end">
-                <h5>Tên bảng cần kiểm tra</h5> 
-                </div>
-            <div class="col text-start">
-            {basicInformation.tableCheck.map(x => x).join(', ')}
-            </div>
+        <div class="container text-center" style={{marginTop: "20px"}}>
+            <input class="form-control" type="file" id="formFileMultiple" onChange={handleFileChange} multiple></input>
         </div>
-            <div class="row">
-                <div class="col text-end">
-                    <h5>Tên bảng loại trừ:</h5> 
-                </div>
-                <div class="col text-start">
-                    {basicInformation.tableEliminate.map(x => x).join(', ')}
-                </div>
-            </div>
-        </div>
-    <div>
-<div class="container text-center" style={{marginTop: "20px"}}>
-<input class="form-control" type="file" id="formFileMultiple" onChange={handleFileChange} multiple></input>
-</div>
-<div className='tables-grid'>
-                <Row>
+        <div className='tables-grid'>
+            <Row>
                 <Col>
                     <Table striped bordered>
                             <tbody>
@@ -174,155 +219,153 @@ export default function ValidationDashBoard() {
                     </Col>
 
                 </Row>
-            </div>    
-            <div class="container">
-        <div className="row">
-        <div className="col text-end"><button type="button" class="btn btn-warning" onClick={refreshPage}>Nhập Lại</button></div>
+        </div>    
+        <div class="container">
+            <div className="row">
+                <div className="col text-end"><button type="button" class="btn btn-warning" onClick={refreshPage}>Nhập Lại</button></div>
 
-        {/* Tại bước này tạo một onclick => Khi bấm vào sẽ add tên các file vào một list mới để bắt đầu phân tích  */}
-        <div className="col"><button type="button" class="btn btn-primary">Thực Hiện</button></div>
+                {/* Tại bước này tạo một onclick => Khi bấm vào sẽ add tên các file vào một list mới để bắt đầu phân tích  */}
+                <div className="col"><button type="button" class="btn btn-primary">Thực Hiện</button></div>
+            </div>
         </div>
-</div>
-</div>
-
-<div className='tables-grid'>
-                <Row>
-                    <Col>
-                        <Table striped bordered>
-                            <tbody>
-                                <tr>
-                                    <td className='table-title' colSpan={2}>Biểu đồ Tròn</td>
-                                </tr>
-                                <tr>
-                                    <td><Pie data={dataForPie}/></td>
-                                </tr>
-                                
-                            </tbody>
-                        </Table>
-                    </Col>
-                    <Col>
-                    <Table striped bordered>
-                        {
-                            setOfDataInBar.map(dataInBar => 
-                            <tbody>
-                                <tr>
-                                    <td className='table-title' colSpan={2}>Biểu đồ Cột: {dataInBar.fileName}</td>
-                                </tr>
-                                {/* Component rieng voi props la set of Data! */}
-                                <tr>
-                                    <td colSpan={2}><Bar data={dataForBarChart(dataInBar)} /></td>
-                                </tr>
-                                
-                                <tr>
-                                    <td>Text</td>
-                                    <td>{dataInBar.text}</td>
-                                </tr>
-
-                                <tr>
-                                    <td>Numeric</td>
-                                    <td>{dataInBar.numeric}</td>
-                                </tr>
-
-                                <tr>
-                                    <td>DateTime</td>
-                                    <td>{dataInBar.datetime}</td>
-                                </tr>
-
-                                <tr>
-                                    <td>Number of Lines</td>
-                                    <td>{dataInBar.numberOfLines}</td>
-                                </tr>
-                            </tbody>)
-                        }
-                        </Table>
-                    </Col>
-                </Row>
-            </div>    
-    
-            <div className='tables-grid'>
-                <Row>
-                                
+    </div>
+    <div className='tables-grid'>
+        <Row>
+            <Col>
+                <Table striped bordered>
+                    <tbody>
+                        <tr>
+                            <td className='table-title' colSpan={2}>Biểu đồ Tròn</td>
+                        </tr>
+                        <tr>
+                            <td><Pie data={dataForPie}/></td>
+                        </tr>
+                        
+                    </tbody>
+                </Table>
+            </Col>
+            <Col>
             <Table striped bordered>
-                            <tbody className="text-center">
+                {
+                    setOfDataInBar.map(dataInBar => 
+                    <tbody>
+                        <tr>
+                            <td className='table-title' colSpan={2}>Biểu đồ Cột: {dataInBar.fileName}</td>
+                        </tr>
+                        {/* Component rieng voi props la set of Data! */}
+                        <tr>
+                            <td colSpan={2}><Bar data={dataForBarChart(dataInBar)} /></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Text</td>
+                            <td>{dataInBar.text}</td>
+                        </tr>
+
+                        <tr>
+                            <td>Numeric</td>
+                            <td>{dataInBar.numeric}</td>
+                        </tr>
+
+                        <tr>
+                            <td>DateTime</td>
+                            <td>{dataInBar.datetime}</td>
+                        </tr>
+
+                        <tr>
+                            <td>Number of Lines</td>
+                            <td>{dataInBar.numberOfLines}</td>
+                        </tr>
+                    </tbody>)
+                }
+                </Table>
+            </Col>
+        </Row>
+    </div>    
+    
+    <div className='tables-grid'>
+        <Row>            
+            <Table striped bordered>
+                    <tbody className="text-center">
+                        <tr>
+                            <td className='table-title' colSpan={4}>Thống kê Thông tin Bảng Dữ liệu</td>
+                        </tr>
+                        <tr>
+                            <th>STT</th>
+                            <th>Cơ sở Dữ liệu</th>
+                            <th>Tên Bảng</th>
+                            <th>Chất lượng Dữ liệu</th>
+                        </tr>
+
+                        {basicInformation.tableCheck.map((table, i) => 
+                            <tr>
+                            <td>{++i}</td>
+                            <td>{basicInformation.nameOfDatabase}</td>
+                            <td>{table}</td>
+                            {/* Add thuộc tính của từng bảng? */}
+                            <td>Tốt</td>
+                            </tr> 
+                        )}
+                    </tbody>
+
+                </Table>
+        
+                <Table striped bordered>
+                    <tbody className="text-center">
+                        <tr>
+                            <td className='table-title' colSpan={4}>Thống kê Thông tin File Dữ liệu</td>
+                        </tr>
+
+
+                        <tr>
+                            <th>STT</th>
+                            <th>Tên File</th>
+                            <th>Chất lượng Dữ liệu</th>
+                        </tr>
+
+                        {setOfDataInBar.map((dataInBar, i) => 
+                            <tr>
+                            <td>{++i}</td>
+                            <td>{dataInBar.fileName}</td>
+                            <td>Tốt</td>
+                            </tr>
+                        )}
+                    </tbody>
+
+                </Table>
+
+                <Table striped bordered>
+                    <tbody className="text-center">
+                        <tr>
+                            <td className='table-title' colSpan={6}>Thống kê Thông tin Trường Dữ liệu</td>
+                        </tr>
+                        <tr>
+                            <th>STT</th>
+                            <th>Tên File</th>
+                            <th>Text</th>
+                            <th>Numeric</th>
+                            <th>Date</th>
+                            <th>Số dòng</th>
+                        </tr>
+
+                        {
+                            setOfDataInBar.map((dataInBar,i) =>
                                 <tr>
-                                    <td className='table-title' colSpan={4}>Thống kê Thông tin Bảng Dữ liệu</td>
-                                </tr>
-                                <tr>
-                                    <th>STT</th>
-                                    <th>Cơ sở Dữ liệu</th>
-                                    <th>Tên Bảng</th>
-                                    <th>Chất lượng Dữ liệu</th>
-                                </tr>
+                                <td>{++i}</td>
+                                <td>{dataInBar.fileName}</td>
+                                <td>{dataInBar.text}</td>
+                                <td>{dataInBar.numeric}</td>
+                                <td>{dataInBar.datetime}</td>
+                                <td>{dataInBar.numberOfLines}</td>
+                                </tr>    
+                            )
+                        }
+                        
+                    </tbody>
 
-                                {basicInformation.tableCheck.map((table, i) => 
-                                    <tr>
-                                    <td>{++i}</td>
-                                    <td>{basicInformation.nameOfDatabase}</td>
-                                    <td>{table}</td>
-                                    {/* Add thuộc tính của từng bảng? */}
-                                    <td>Tốt</td>
-                                    </tr> 
-                                )}
-                            </tbody>
-
-                        </Table>
-                
-                        <Table striped bordered>
-                            <tbody className="text-center">
-                                <tr>
-                                    <td className='table-title' colSpan={4}>Thống kê Thông tin File Dữ liệu</td>
-                                </tr>
-
-
-                                <tr>
-                                    <th>STT</th>
-                                    <th>Tên File</th>
-                                    <th>Chất lượng Dữ liệu</th>
-                                </tr>
-
-                                {setOfDataInBar.map((dataInBar, i) => 
-                                    <tr>
-                                    <td>{++i}</td>
-                                    <td>{dataInBar.fileName}</td>
-                                    <td>Tốt</td>
-                                    </tr>
-                                )}
-                            </tbody>
-
-                        </Table>
-
-                        <Table striped bordered>
-                            <tbody className="text-center">
-                                <tr>
-                                    <td className='table-title' colSpan={6}>Thống kê Thông tin Trường Dữ liệu</td>
-                                </tr>
-                                <tr>
-                                    <th>STT</th>
-                                    <th>Tên File</th>
-                                    <th>Text</th>
-                                    <th>Numeric</th>
-                                    <th>Date</th>
-                                    <th>Số dòng</th>
-                                </tr>
-
-                                {
-                                    setOfDataInBar.map((dataInBar,i) =>
-                                        <tr>
-                                        <td>{++i}</td>
-                                        <td>{dataInBar.fileName}</td>
-                                        <td>{dataInBar.text}</td>
-                                        <td>{dataInBar.numeric}</td>
-                                        <td>{dataInBar.datetime}</td>
-                                        <td>{dataInBar.numberOfLines}</td>
-                                        </tr>    
-                                    )
-                                }
-                                
-                            </tbody>
-
-                        </Table>
-                </Row>
-            </div>   
+                </Table>
+            </Row>
+    </div>   
 
       </>
     );

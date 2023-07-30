@@ -13,6 +13,7 @@
     "jquery": "latest",
     "papaparse": "^5.4.1",
     "react": "^18.2.0",
+    "react-autosuggest": "^10.1.0",
     "react-bootstrap": "^2.7.4",
     "react-chartjs-2": "^5.2.0",
     "react-countup": "latest",
