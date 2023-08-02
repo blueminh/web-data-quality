@@ -172,7 +172,7 @@ export default function CalulationQuickDashboard() {
             }
         }
 
-        pdf.save('exported-tables.pdf');
+        pdf.save('dashboard-data.pdf');
     };
 
 

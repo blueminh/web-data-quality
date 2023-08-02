@@ -1,6 +1,9 @@
-import { useState } from 'react'
-import { Table } from 'react-bootstrap';
+import { useState, useRef } from 'react'
+import { Table, Button } from 'react-bootstrap';
 import './lcrBoard.css'
+
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
 
 export default function LCRDashBoard() {
      // eslint-disable-next-line
@@ -62,6 +65,42 @@ export default function LCRDashBoard() {
         ]
     })
 
+    const tableRefs = [useRef(null), useRef(null)];
+    const handleExportPDF = async () => {
+        const pdf = new jsPDF('p', 'mm', 'a4');
+    
+        let currentPage = 1;
+        let currentY = 15; // Starting position for the first table (in mm)
+    
+        const availableHeight = 265; // Total available height on each page (in mm)
+        const marginBottom = 10; // Space between tables (in mm)
+        for (let i = 0; i < tableRefs.length; i++) {
+            const tableRef = tableRefs[i];
+            if (tableRef.current) {
+              const canvas = await html2canvas(tableRef.current);
+              const imgData = canvas.toDataURL('image/png');
+              const imgWidth = 190; // Width of the image (in mm)
+              const imgHeight = (canvas.height * imgWidth) / canvas.width; // Calculate height based on aspect ratio
+      
+              // Check if the current table fits on the current page
+              if (currentY + imgHeight > availableHeight && i > 0) {
+                pdf.addPage();
+                currentPage++;
+                currentY = 15; // Reset the starting position for the next page
+              }
+
+
+                // Add the table at the specified position
+                pdf.addImage(imgData, 'PNG', 10, currentY, imgWidth, imgHeight);
+
+                // Update the current position for the next table
+                currentY += imgHeight + marginBottom;
+            }
+        }
+
+        pdf.save('lcr-data.pdf');
+    };
+
     return (
         <div>
             <div id = "generalInfo">
@@ -69,7 +108,8 @@ export default function LCRDashBoard() {
                 <div>Reported at / Thởi điểm báo cáo: {reportedDate}</div>
             </div>
             <div id = "dataTable">
-                <Table bordered>
+                <Button onClick={handleExportPDF}>Export to PDF</Button>
+                <Table bordered ref={tableRefs[0]}>
                     <tbody>
                         <tr>
                             {lcrBoardData.columnNames.map(col => <td className='table-title'>{col}</td>)}
