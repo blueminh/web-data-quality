@@ -1,9 +1,10 @@
-import { Table, Row, Col } from 'react-bootstrap';
-import { useEffect, useState } from "react";
+import { Table, Row, Col, Button } from 'react-bootstrap';
+import { useEffect, useState, useRef } from "react";
 import '../../../Global.css'
 import './dashboard.css'
 import FetchDataService from '../../../services/fetchDataService'
-
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
 
 export default function CalulationQuickDashboard() {
     const [lcrData, setLcrData] = useState({
@@ -138,6 +139,43 @@ export default function CalulationQuickDashboard() {
     // Format and display the current date
     const formattedDate = formatDate(currentDate);
 
+    const tableRefs = [useRef(null), useRef(null)];
+    const handleExportPDF = async () => {
+        const pdf = new jsPDF('p', 'mm', 'a4');
+    
+        let currentPage = 1;
+        let currentY = 15; // Starting position for the first table (in mm)
+    
+        const availableHeight = 265; // Total available height on each page (in mm)
+        const marginBottom = 10; // Space between tables (in mm)
+        for (let i = 0; i < tableRefs.length; i++) {
+            const tableRef = tableRefs[i];
+            if (tableRef.current) {
+              const canvas = await html2canvas(tableRef.current);
+              const imgData = canvas.toDataURL('image/png');
+              const imgWidth = 150; // Width of the image (in mm)
+              const imgHeight = (canvas.height * imgWidth) / canvas.width; // Calculate height based on aspect ratio
+      
+              // Check if the current table fits on the current page
+              if (currentY + imgHeight > availableHeight && i > 0) {
+                pdf.addPage();
+                currentPage++;
+                currentY = 15; // Reset the starting position for the next page
+              }
+
+
+                // Add the table at the specified position
+                pdf.addImage(imgData, 'PNG', 10, currentY, imgWidth, imgHeight);
+
+                // Update the current position for the next table
+                currentY += imgHeight + marginBottom;
+            }
+        }
+
+        pdf.save('exported-tables.pdf');
+    };
+
+
     return (
         <div>
             <div id="dashboard-general-info">
@@ -149,7 +187,7 @@ export default function CalulationQuickDashboard() {
             <div className='tables-grid'>
                 <Row>
                     <Col>
-                        <Table striped bordered>
+                        <Table striped bordered ref={tableRefs[0]}>
                             <tbody>
                                 <tr>
                                     <td className='table-title' colSpan={2}>{lcrData.title}</td>
@@ -168,9 +206,10 @@ export default function CalulationQuickDashboard() {
                                 )}
                             </tbody>
                         </Table>
+                        <Button onClick={handleExportPDF}>Export to PDF</Button>
                     </Col>
                     <Col>
-                    <Table striped bordered>
+                    <Table striped bordered ref={tableRefs[1]}>
                             <tbody>
                                 <tr>
                                     <td className='table-title' colSpan={2}>{nsfrData.title}</td>
