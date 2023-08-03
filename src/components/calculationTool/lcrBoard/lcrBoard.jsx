@@ -4,6 +4,8 @@ import './lcrBoard.css'
 
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
+import * as XLSX from 'xlsx';
+import { saveAs } from 'file-saver';
 
 export default function LCRDashBoard() {
      // eslint-disable-next-line
@@ -65,7 +67,7 @@ export default function LCRDashBoard() {
         ]
     })
 
-    const tableRefs = [useRef(null), useRef(null)];
+    const tableRefs = [useRef(null)];
     const handleExportPDF = async () => {
         const pdf = new jsPDF('p', 'mm', 'a4');
     
@@ -101,6 +103,17 @@ export default function LCRDashBoard() {
         pdf.save('lcr-data.pdf');
     };
 
+    const exportToExcel = () => {
+        const workbook = XLSX.utils.book_new();
+        tableRefs.forEach((tableRef, index) => {
+          const worksheet = XLSX.utils.table_to_sheet(tableRef.current);
+          XLSX.utils.book_append_sheet(workbook, worksheet, `Sheet${index + 1}`);
+        });
+        const excelBuffer = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
+        const data = new Blob([excelBuffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+        saveAs(data, 'tables.xlsx');
+    };
+
     return (
         <div>
             <div id = "generalInfo">
@@ -108,7 +121,10 @@ export default function LCRDashBoard() {
                 <div>Reported at / Thởi điểm báo cáo: {reportedDate}</div>
             </div>
             <div id = "dataTable">
-                <Button onClick={handleExportPDF}>Export to PDF</Button>
+                <div class="button-container pb-4">
+                    <Button onClick={handleExportPDF}>Export to PDF</Button>
+                    <Button onClick={exportToExcel}>Export to Excel</Button>
+                </div>
                 <Table bordered ref={tableRefs[0]}>
                     <tbody>
                         <tr>

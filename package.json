@@ -10,6 +10,7 @@
     "axios": "^1.4.0",
     "bootstrap": "^5.3.0-alpha3",
     "chart.js": "^4.3.2",
+    "file-saver": "^2.0.5",
     "html2canvas": "^1.4.1",
     "jquery": "latest",
     "jspdf": "^2.5.1",
@@ -30,6 +31,7 @@
     "react-textarea-autosize": "^8.4.1",
     "sfcookies": "^1.0.2",
     "web-vitals": "^2.1.4",
+    "xlsx": "^0.18.5",
     "yup": "^1.1.1"
   },
   "scripts": {

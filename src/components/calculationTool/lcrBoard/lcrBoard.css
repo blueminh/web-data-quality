@@ -19,3 +19,10 @@
     font-weight: bold;
     background-color: var(--third-color) !important;
 }
+
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Adjust this value to set the space between buttons */
+}

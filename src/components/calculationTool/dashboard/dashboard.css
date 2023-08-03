@@ -19,3 +19,9 @@
     margin: 75px auto; /* Center the div horizontally */
     max-width: 600px; /* Set the maximum width */
 }
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Adjust this value to set the space between buttons */
+}

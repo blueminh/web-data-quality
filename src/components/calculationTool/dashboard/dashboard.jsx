@@ -6,6 +6,9 @@ import FetchDataService from '../../../services/fetchDataService'
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 
+import * as XLSX from 'xlsx';
+import { saveAs } from 'file-saver';
+
 export default function CalulationQuickDashboard() {
     const [lcrData, setLcrData] = useState({
         title: "Liquidity Coverage Ratio - Quick Dashboard",
@@ -175,6 +178,17 @@ export default function CalulationQuickDashboard() {
         pdf.save('dashboard-data.pdf');
     };
 
+    const exportToExcel = () => {
+        const workbook = XLSX.utils.book_new();
+        tableRefs.forEach((tableRef, index) => {
+          const worksheet = XLSX.utils.table_to_sheet(tableRef.current);
+          XLSX.utils.book_append_sheet(workbook, worksheet, `Sheet${index + 1}`);
+        });
+        const excelBuffer = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
+        const data = new Blob([excelBuffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+        saveAs(data, 'tables.xlsx');
+    };
+
 
     return (
         <div>
@@ -185,7 +199,13 @@ export default function CalulationQuickDashboard() {
                 </Row>
             </div>
             <div className='tables-grid'>
-                <Row>
+                <Row className='pb-4'>
+                    <div class="button-container">
+                        <Button onClick={handleExportPDF}>Export to PDF</Button>
+                        <Button onClick={exportToExcel}>Export to Excel</Button>
+                    </div>
+                </Row>
+                <Row className='pb-4'>
                     <Col>
                         <Table striped bordered ref={tableRefs[0]}>
                             <tbody>
@@ -206,7 +226,6 @@ export default function CalulationQuickDashboard() {
                                 )}
                             </tbody>
                         </Table>
-                        <Button onClick={handleExportPDF}>Export to PDF</Button>
                     </Col>
                     <Col>
                     <Table striped bordered ref={tableRefs[1]}>
