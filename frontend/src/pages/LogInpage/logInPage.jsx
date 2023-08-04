@@ -1,5 +1,5 @@
 import "./Login.css";
-import './../../styleguide.css'
+import '../../styleguide.css'
 import React, {useState} from "react";
 // import {bake_cookie} from "sfcookies";
 // import AuthService from "../../services/auth.service";
