@@ -1,0 +1,8 @@
+# Python
+log-responses.txt
+contexts
+__pycache__
+*.pyc
+venv
+
+/generative-ai/resources/grant-decoding/*
