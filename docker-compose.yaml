@@ -1,0 +1,7 @@
+version: "1"
+services:
+  frontend:
+    image: 807743836007.dkr.ecr.eu-north-1.amazonaws.com/reactapp:2.0
+    container_name: frontend
+    ports:
+      - 80:3000
