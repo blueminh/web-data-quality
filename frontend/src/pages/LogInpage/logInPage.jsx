@@ -1,14 +1,16 @@
 import "./Login.css";
 import '../../styleguide.css'
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
 // import {bake_cookie} from "sfcookies";
 // import AuthService from "../../services/auth.service";
 import {Button} from "react-bootstrap";
+import AuthService from "../../services/authService";
 // import {LoginContext} from "../../App";
 // import ValidationError from "../../error/ValidationError";
+import {LoginContext} from "../../App";
 
 function LoginPage() {
-    // const [, setLoggedIn]= useContext(LoginContext);
+    const [, setLoggedIn]= useContext(LoginContext);
     const [getEmail, setEmail] = useState("null");
     const [getPassword, setPassword] = useState("null");
     const [getLoginErrorActive, setLoginErrorActive] = useState(false);
@@ -40,7 +42,31 @@ function LoginPage() {
             setLoginErrorActive(true);
             return false;
         }
+
+        const data = {
+            username: getEmail,
+            password: getPassword
+        }
+
         // Code to send request to backend here
+        AuthService.submitLogin(data)
+            .then(response => {
+                console.log("Received auth token! " + response.data);
+                setLoginErrorActive(false);
+                setLoggedIn();
+                setMessage("Log in Success! Redirecting...")
+                setTimeout(() => {
+                    window.location.href = '/home';
+                }, "1000")
+            }) // If login failed, throw an error to the user.
+            .catch(e => {
+                // setLoggedIn();
+                // const validationError = new ValidationError("Login Failed: ", e)
+                // const errorMessage = validationError.readErrorObjectLogin();
+                // setMessage(errorMessage);
+                // setLoginErrorActive(true);
+                console.log(e)
+            });
     }
 
     return (
