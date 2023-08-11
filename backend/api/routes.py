@@ -53,7 +53,7 @@ def token_required(f):
             token = request.headers["authorization"]
 
         if not token:
-            return {"success": False, "msg": "Valid JWT token is missing"}, 400
+            return {"success": False, "msg": "Valid JWT token is missing"}, 401
 
         try:
             data = jwt.decode(token, BaseConfig.SECRET_KEY, algorithms=["HS256"])
@@ -61,18 +61,18 @@ def token_required(f):
 
             if not current_user:
                 return {"success": False,
-                        "msg": "Sorry. Wrong auth token. This user does not exist."}, 400
+                        "msg": "Sorry. Wrong auth token. This user does not exist."}, 401
 
             token_expired = db.session.query(JWTTokenBlocklist.id).filter_by(jwt_token=token).scalar()
 
             if token_expired is not None:
-                return {"success": False, "msg": "Token revoked."}, 400
+                return {"success": False, "msg": "Token revoked."}, 401
 
             if not current_user.check_jwt_auth_active():
-                return {"success": False, "msg": "Token expired."}, 400
+                return {"success": False, "msg": "Token expired."}, 401
 
         except:
-            return {"success": False, "msg": "Token is invalid"}, 400
+            return {"success": False, "msg": "Token is invalid"}, 401
 
         return f(current_user, *args, **kwargs)
 
