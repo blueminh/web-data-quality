@@ -1,11 +1,8 @@
 import {Container, Nav, Navbar,  Button} from "react-bootstrap";
 import "./navbar.css"
-import { LoginContext } from "../../App";
 import { useContext, useEffect} from "react";
 
 export default function NavigationBar() {
-    const [loggedIn, setLoggedIn] = useContext(LoginContext);
-    useEffect(() => { console.log("ahhhh", loggedIn);}, [])
     return (
         <>
         <Navbar collapseOnSelect expand="lg" className="header-footer" sticky="top">
@@ -24,7 +21,7 @@ export default function NavigationBar() {
                         <Nav.Link href="/validation">Validation Tool</Nav.Link>
                     </Nav>
                     <Nav>
-                    {loggedIn ? 
+                    {true ? 
                         <div>
                             <Button
                                 className="primary-button btn-primary shadow-none btn-outline-dark button-navbar-padding"

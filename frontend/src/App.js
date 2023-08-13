@@ -9,29 +9,19 @@ import './App.css'
 import './Global.css'
 import './styleguide.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-export const LoginContext = createContext({
-    state: {
-        loggedIn: true
-    },
-    setState: () => {}
-});
-
 
 const App = () => {
-    const [loggedIn, setLoggedIn] = useState(true);
     return (
-        <LoginContext.Provider value={[loggedIn, setLoggedIn]}>
-            <div>
-                <Nagivationbar />
-                <Routes>
-                    <Route path='/' element={<CalculationHomePage />}></Route>
-                    <Route path='/calculation' element={<CalculationHomePage />}></Route>
-                    <Route path='/login' element={<LoginPage />}></Route>
-                    <Route path='/validation' element={<ValidationHomePage />}></Route>
-                    <Route path='/login' element={<LoginPage />}></Route>
-                </Routes>
-            </div>
-        </LoginContext.Provider>
+        <div>
+            <Nagivationbar />
+            <Routes>
+                <Route path='/' element={<CalculationHomePage />}></Route>
+                <Route path='/calculation' element={<CalculationHomePage />}></Route>
+                <Route path='/login' element={<LoginPage />}></Route>
+                <Route path='/validation' element={<ValidationHomePage />}></Route>
+                <Route path='/login' element={<LoginPage />}></Route>
+            </Routes>
+        </div>
     )
 }
 

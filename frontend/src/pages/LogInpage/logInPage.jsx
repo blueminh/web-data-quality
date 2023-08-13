@@ -7,10 +7,8 @@ import {Button} from "react-bootstrap";
 import AuthService from "../../services/authService";
 // import {LoginContext} from "../../App";
 // import ValidationError from "../../error/ValidationError";
-import {LoginContext} from "../../App";
 
 function LoginPage() {
-    const [, setLoggedIn]= useContext(LoginContext);
     const [getEmail, setEmail] = useState("null");
     const [getPassword, setPassword] = useState("null");
     const [getLoginErrorActive, setLoginErrorActive] = useState(false);
@@ -53,7 +51,6 @@ function LoginPage() {
             .then(response => {
                 console.log("Received auth token! " + response.data);
                 setLoginErrorActive(false);
-                setLoggedIn();
                 setMessage("Log in Success! Redirecting...")
                 setTimeout(() => {
                     window.location.href = '/home';
