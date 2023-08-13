@@ -24,7 +24,7 @@ export default function NavigationBar() {
                         <Nav.Link href="/validation">Validation Tool</Nav.Link>
                     </Nav>
                     <Nav>
-                    {auth ? 
+                    {auth.isLoggedIn ? 
                         <div>
                             <Button
                                 className="primary-button btn-primary shadow-none btn-outline-dark button-navbar-padding"

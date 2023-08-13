@@ -219,7 +219,7 @@ class UploadResource(Resource):
         
 
 @rest_api.route('/upload/history')
-class UploadHistoryResource(Resource):  
+class UploadHistoryResource(Resource):
     def get(self):
         username = request.args.get('username')
         
@@ -228,6 +228,6 @@ class UploadHistoryResource(Resource):
             return {"error": "User not found"}, 401
         
         uploads = Upload.query.filter_by(user_id=user.id).all()
-        upload_history = [{"filename": upload.filename, "upload_time": upload.upload_time} for upload in uploads]
+        upload_history = [{"filename": upload.filename, "upload_time": upload.upload_time.isoformat()} for upload in uploads]
         
         return {"upload_history": upload_history}

@@ -52,7 +52,11 @@ function LoginPage() {
             .then(response => {
                 console.log("Received auth token! ", response.data);
                 setLoginErrorActive(false);
-                setAuth(true);
+                setAuth({
+                    isLoggedIn: true,
+                    username: response.data.user.username,
+                    email: response.data.user.email
+                });
                 navigate("/calculation")
             }) // If login failed, throw an error to the user.
             .catch(e => {

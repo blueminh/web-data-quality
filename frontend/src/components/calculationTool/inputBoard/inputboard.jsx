@@ -1,26 +1,25 @@
 import { Container, Row, Col, Form, Table, Button, Stack, Modal} from 'react-bootstrap';
 import '../../../Global.css'
 import './inputboard.css'
-import { useState } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import axios from 'axios';
+import AuthContext from '../../../contexts/AuthProvider';
 
 export default function InputDashboard() {
-    const [uploadHistory, setUploadHistory] = useState({
-        title: "Lịch sử upload",
-        colNames: ["Ngày", "Tên người upload", "Tên file"],
-        rows: [
-            ["27/07/2023", "Hoang Minh", "data.csv"],
-            ["27/07/2023", "Hoang Minh", "data.csv"],
-            ["27/07/2023", "Hoang Minh", "data.csv"]
+    const {auth} = useContext(AuthContext)
+    const [uploadHistory, setUploadHistory] = useState([
+            ["27/07/2023", "data.csv"],
+            ["27/07/2023", "data.csv"],
+            ["27/07/2023", "data.csv"]
         ]
-    })
+    )
 
     const [formData, setFormData] = useState({
         fileType: '',
         separationSymbol: '',
         selectedFile: null,
       });
-    
+        
     const fileTypes = ['CSV', 'JSON', 'XML'];
     const separationSymbols = [',', ';', '|'];
     const [csvData, setCsvData] = useState([]);
@@ -61,11 +60,27 @@ export default function InputDashboard() {
     };
 
 
+    useEffect(() => {
+      const fetchUploadHistory = async () => {
+        try {
+          const response = await axios.get(`http://localhost:8085/upload/history?username=${auth.username}`, {
+            withCredentials: true
+          });
+          setUploadHistory(response.data.upload_history);
+        } catch (error) {
+          console.error('Error fetching upload history:', error);
+        }
+      };
+  
+      fetchUploadHistory();
+    }, []);
+
+
     const handleSubmit = async (event) => {
         event.preventDefault();
     
         const formData = new FormData();
-        formData.append('username', "m3");
+        formData.append('username', auth.username);
         formData.append('file', selectedFile);
     
         try {
@@ -74,7 +89,6 @@ export default function InputDashboard() {
               'Content-Type': 'multipart/form-data',
             },
             withCredentials: true 
-
           });
           
           setMessage(response.data.message);
@@ -87,6 +101,19 @@ export default function InputDashboard() {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     
+    const formatTimestamp = (inputTimestamp) => {
+        const date = new Date(inputTimestamp);
+        const day = date.getDate();
+        const month = date.getMonth() + 1; // Months are zero-indexed
+        const year = date.getFullYear();
+        const hours = date.getHours();
+        const minutes = date.getMinutes();
+    
+        const formattedDate = `${day}/${month}/${year}`;
+        const formattedTime = `${hours}:${minutes}`;
+    
+        return `${formattedDate} ${formattedTime}`;
+    }
 
     return (
         <>
@@ -146,13 +173,12 @@ export default function InputDashboard() {
                         <Table striped bordered>
                             <tbody>
                                 <tr>
-                                    <td className='table-title' colSpan={3}>{uploadHistory.title}</td>
+                                    <td className='table-title' colSpan={2}>{"Lịch sử upload"}</td>
                                 </tr>
-                                {uploadHistory.rows.map(row => 
+                                {uploadHistory.map(row => 
                                     <tr>
-                                        {row.map(rowData =>
-                                            <td style={{textAlign: "center"}}>{rowData}</td>
-                                        )}
+                                        {<td style={{textAlign: "center"}}>{row.filename}</td>}
+                                        {<td style={{textAlign: "center"}}>{row.upload_time}</td>}
                                     </tr>
                                 )}
                             </tbody>

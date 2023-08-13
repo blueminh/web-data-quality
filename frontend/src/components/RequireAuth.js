@@ -5,7 +5,7 @@ import AuthContext from "../contexts/AuthProvider";
 const RequireAuth = () => {
     const {auth} = useContext(AuthContext)
     return (
-        auth 
+        auth.isLoggedIn 
             ? <Outlet />
             : <Navigate to="/login" />
     );
