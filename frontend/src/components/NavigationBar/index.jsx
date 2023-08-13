@@ -1,8 +1,11 @@
 import {Container, Nav, Navbar,  Button} from "react-bootstrap";
 import "./navbar.css"
 import { useContext, useEffect} from "react";
+import AuthContext from "../../contexts/AuthProvider";
+
 
 export default function NavigationBar() {
+    const {auth} = useContext(AuthContext)
     return (
         <>
         <Navbar collapseOnSelect expand="lg" className="header-footer" sticky="top">
@@ -21,7 +24,7 @@ export default function NavigationBar() {
                         <Nav.Link href="/validation">Validation Tool</Nav.Link>
                     </Nav>
                     <Nav>
-                    {true ? 
+                    {auth ? 
                         <div>
                             <Button
                                 className="primary-button btn-primary shadow-none btn-outline-dark button-navbar-padding"

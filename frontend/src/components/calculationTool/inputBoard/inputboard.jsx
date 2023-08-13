@@ -2,8 +2,7 @@ import { Container, Row, Col, Form, Table, Button, Stack, Modal} from 'react-boo
 import '../../../Global.css'
 import './inputboard.css'
 import { useState } from 'react';
-
-
+import axios from 'axios';
 
 export default function InputDashboard() {
     const [uploadHistory, setUploadHistory] = useState({
@@ -27,7 +26,8 @@ export default function InputDashboard() {
     const [csvData, setCsvData] = useState([]);
     const [numColumns, setNumColumns] = useState(0);
 
-
+    const [message, setMessage] = useState('');
+    const [selectedFile, setSelectedFile] = useState(null);
 
     const handleFileTypeChange = (selectedFileType) => {
         setFormData({ ...formData, fileType: selectedFileType });
@@ -39,6 +39,7 @@ export default function InputDashboard() {
 
     const handleFileInputChange = (event) => {
         const file = event.target.files[0];
+        setSelectedFile(file)
         const reader = new FileReader();
     
         reader.onload = (e) => {
@@ -60,10 +61,31 @@ export default function InputDashboard() {
     };
 
 
-    const [show, setShow] = useState(false);
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+    
+        const formData = new FormData();
+        formData.append('username', "m3");
+        formData.append('file', selectedFile);
+    
+        try {
+          const response = await axios.post('http://localhost:8085/upload', formData, {
+            headers: {
+              'Content-Type': 'multipart/form-data',
+            },
+            withCredentials: true 
 
+          });
+          
+          setMessage(response.data.message);
+        } catch (error) {
+          setMessage('An error occurred while uploading the file.');
+        }
+        setShow(true)
+    };
+
+    const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
     
 
     return (
@@ -72,7 +94,7 @@ export default function InputDashboard() {
                 <Modal.Header closeButton>
                 <Modal.Title>Upload Status</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>Your file has been successfully uploaded</Modal.Body>
+                <Modal.Body>{message}</Modal.Body>
                 <Modal.Footer>
                 <Button variant="secondary" onClick={handleClose}>
                     Close
@@ -100,7 +122,7 @@ export default function InputDashboard() {
                             <Form.Control type="file" required  onChange={handleFileInputChange} />
                         </div>
                         <div>
-                            <Button onClick={handleShow}>Submit file</Button>
+                            <Button onClick={handleSubmit}>Submit file</Button>
                         </div>
                         <Table striped bordered>
                                 <tr>

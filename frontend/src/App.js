@@ -30,7 +30,6 @@ const App = () => {
                 </Route>
                 <Route path='/login' element={<LoginPage />}></Route>
                 <Route path='/validation' element={<ValidationHomePage />}></Route>
-                <Route path='/login' element={<LoginPage />}></Route>
             </Routes>
         </div>
     )

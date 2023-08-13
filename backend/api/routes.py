@@ -12,7 +12,7 @@ from flask_restx import Api, Resource, fields
 
 import jwt
 
-from .models import db, Users, JWTTokenBlocklist
+from .models import db, Users, Upload, JWTTokenBlocklist
 from .config import BaseConfig
 import requests
 
@@ -193,3 +193,41 @@ class LogoutUser(Resource):
         response = make_response(jsonify({"success": True}))
         response.delete_cookie('jwtToken')
         return response
+    
+
+@rest_api.route('/upload')
+class UploadResource(Resource):
+    def post(self):
+        username = request.form.get('username')
+        uploaded_file = request.files.get('file')
+        
+        user = Users.query.filter_by(username=username).first()
+        if not user:
+            return {"error": "User not found"}, 401
+        
+        if uploaded_file and uploaded_file.filename.endswith('.csv'):
+            file_name = f"{user.username}_{datetime.now().strftime('%Y%m%d%H%M%S')}.csv"
+            uploaded_file.save(file_name)
+            
+            upload = Upload(user_id=user.id, filename=file_name)
+            db.session.add(upload)
+            db.session.commit()
+            
+            return {"message": "File uploaded successfully"}
+        else:
+            return {"error": "Invalid file format"}, 400
+        
+
+@rest_api.route('/upload/history')
+class UploadHistoryResource(Resource):  
+    def get(self):
+        username = request.args.get('username')
+        
+        user = Users.query.filter_by(username=username).first()
+        if not user:
+            return {"error": "User not found"}, 401
+        
+        uploads = Upload.query.filter_by(user_id=user.id).all()
+        upload_history = [{"filename": upload.filename, "upload_time": upload.upload_time} for upload in uploads]
+        
+        return {"upload_history": upload_history}

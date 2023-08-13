@@ -20,6 +20,7 @@ class Users(db.Model):
     password = db.Column(db.Text())
     jwt_auth_active = db.Column(db.Boolean())
     date_joined = db.Column(db.DateTime(), default=datetime.utcnow)
+    uploads = db.relationship('Upload', backref='users', lazy=True)
 
     def __repr__(self):
         return f"User {self.username}"
@@ -83,3 +84,11 @@ class JWTTokenBlocklist(db.Model):
     def save(self):
         db.session.add(self)
         db.session.commit()
+
+
+class Upload(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    filename = db.Column(db.String(255), nullable=False)
+    upload_time = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+

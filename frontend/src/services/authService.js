@@ -11,12 +11,11 @@ class AuthService {
      * are valid.
      */
     submitLogin(data) {
-        console.log("data in service", data)
         return axios.create({
             baseURL: "http://localhost:8085/",
             headers: {
                 "Content-type": "application/json"
-            }
+            },
         }).post("/api/users/login", data)
     }
 }
