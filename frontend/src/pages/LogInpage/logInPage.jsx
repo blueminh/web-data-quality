@@ -1,19 +1,23 @@
 import "./Login.css";
 import '../../styleguide.css'
-import React, {useState, useContext} from "react";
+import React, {useState, useContext, useEffect} from "react";
 // import {bake_cookie} from "sfcookies";
 // import AuthService from "../../services/auth.service";
 import {Button} from "react-bootstrap";
-import AuthService from "../../services/authService";
 // import {LoginContext} from "../../App";
 // import ValidationError from "../../error/ValidationError";
+import AuthContext from "../../contexts/AuthProvider";
+import { useNavigate } from "react-router-dom";
+
 
 function LoginPage() {
     const [getEmail, setEmail] = useState("null");
     const [getPassword, setPassword] = useState("null");
     const [getLoginErrorActive, setLoginErrorActive] = useState(false);
     // eslint-disable-next-line
-    const [message, setMessage] = useState("")
+    const [message] = useState("")
+    const {auth, setAuth} = useContext(AuthContext)
+    const navigate = useNavigate()
 
     /**
      * Handler to update the e-mail field.
@@ -36,10 +40,10 @@ function LoginPage() {
         event.preventDefault();
 
         // Throw an error if etiher of the fields is empty.
-        if (getEmail === "null" || getPassword === "null") {
-            setLoginErrorActive(true);
-            return false;
-        }
+        // if (getEmail === "null" || getPassword === "null") {
+        //     setLoginErrorActive(true);
+        //     return false;
+        // }
 
         const data = {
             username: getEmail,
@@ -47,23 +51,25 @@ function LoginPage() {
         }
 
         // Code to send request to backend here
-        AuthService.submitLogin(data)
-            .then(response => {
-                console.log("Received auth token! " + response.data);
-                setLoginErrorActive(false);
-                setMessage("Log in Success! Redirecting...")
-                setTimeout(() => {
-                    window.location.href = '/home';
-                }, "1000")
-            }) // If login failed, throw an error to the user.
-            .catch(e => {
-                // setLoggedIn();
-                // const validationError = new ValidationError("Login Failed: ", e)
-                // const errorMessage = validationError.readErrorObjectLogin();
-                // setMessage(errorMessage);
-                // setLoginErrorActive(true);
-                console.log(e)
-            });
+        // AuthService.submitLogin(data)
+        //     .then(response => {
+        //         console.log("Received auth token! " + response.data);
+        //         setLoginErrorActive(false);
+        //         setMessage("Log in Success! Redirecting...")
+        //         setTimeout(() => {
+        //             window.location.href = '/home';
+        //         }, "1000")
+        //     }) // If login failed, throw an error to the user.
+        //     .catch(e => {
+        //         // setLoggedIn();
+        //         // const validationError = new ValidationError("Login Failed: ", e)
+        //         // const errorMessage = validationError.readErrorObjectLogin();
+        //         // setMessage(errorMessage);
+        //         // setLoginErrorActive(true);
+        //         console.log(e)
+        //     });
+        setAuth(true);
+        navigate("/calculation")
     }
 
     return (
