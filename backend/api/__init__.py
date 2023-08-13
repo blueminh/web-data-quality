@@ -17,7 +17,7 @@ app.config.from_object('api.config.BaseConfig')
 
 db.init_app(app)
 rest_api.init_app(app)
-CORS(app)
+CORS(app, resources={r'/*': {'origins': '*'}})
 
 # Setup database
 @app.before_first_request
