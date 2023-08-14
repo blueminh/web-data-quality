@@ -14,22 +14,23 @@ import { useContext, useEffect } from 'react';
 
 
 const App = () => {
-
-    const {auth, setAuth} = useContext(AuthContext)
-    useEffect(() => {
-        console.log("auth updated to: ", auth);
-    }, [auth])
-
     return (
         <div>
             <Nagivationbar />
             <Routes>
-                <Route path='/' element={<CalculationHomePage />}></Route>
+                <Route path='/login' element={<LoginPage />}></Route>
+
+                <Route element={<RequireAuth />}>
+                    <Route path='/' element={<CalculationHomePage />} />
+                </Route>
+
                 <Route element={<RequireAuth />}>
                     <Route path='/calculation' element={<CalculationHomePage />} />
                 </Route>
-                <Route path='/login' element={<LoginPage />}></Route>
-                <Route path='/validation' element={<ValidationHomePage />}></Route>
+
+                <Route element={<RequireAuth />}>
+                    <Route path='/validation' element={<ValidationHomePage />}></Route>
+                </Route>
             </Routes>
         </div>
     )

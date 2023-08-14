@@ -50,6 +50,7 @@ function LoginPage() {
 
         authService.submitLogin(data)
             .then(response => {
+                console.log("response", response)
                 console.log("Received auth token! ", response.data);
                 setLoginErrorActive(false);
                 setAuth({

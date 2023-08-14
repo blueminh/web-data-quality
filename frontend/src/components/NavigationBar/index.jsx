@@ -1,11 +1,28 @@
 import {Container, Nav, Navbar,  Button} from "react-bootstrap";
 import "./navbar.css"
-import { useContext, useEffect} from "react";
+import { useContext } from "react";
 import AuthContext from "../../contexts/AuthProvider";
+import { useNavigate } from "react-router-dom";
+import authService from "../../services/authService";
+
 
 
 export default function NavigationBar() {
-    const {auth} = useContext(AuthContext)
+    const {auth, setAuth} = useContext(AuthContext)
+    const navigate = useNavigate()
+    const handleLogout = () => {
+        authService.submitLogout()
+            .then(response => {
+                setAuth({
+                    isLoggedIn: false,
+                });
+                navigate("/calculation")
+            }) // If login failed, throw an error to the user.
+            .catch(e => {
+                console.log(e)
+            });
+    };
+
     return (
         <>
         <Navbar collapseOnSelect expand="lg" className="header-footer" sticky="top">
@@ -28,6 +45,7 @@ export default function NavigationBar() {
                         <div>
                             <Button
                                 className="primary-button btn-primary shadow-none btn-outline-dark button-navbar-padding"
+                                onClick={handleLogout}
                             >
                                 Log out
                             </Button>

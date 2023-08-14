@@ -2,8 +2,9 @@ import { Container, Row, Col, Form, Table, Button, Stack, Modal} from 'react-boo
 import '../../../Global.css'
 import './inputboard.css'
 import { useState, useContext, useEffect } from 'react';
-import axios from 'axios';
 import AuthContext from '../../../contexts/AuthProvider';
+import { fetchUploadHistory, uploadFile } from '../../../services/calculationToolService';
+
 
 export default function InputDashboard() {
     const {auth} = useContext(AuthContext)
@@ -61,18 +62,16 @@ export default function InputDashboard() {
 
 
     useEffect(() => {
-      const fetchUploadHistory = async () => {
-        try {
-          const response = await axios.get(`http://ec2-13-49-67-93.eu-north-1.compute.amazonaws.com:8085/upload/history?username=${auth.username}`, {
-            withCredentials: true
-          });
-          setUploadHistory(response.data.upload_history);
-        } catch (error) {
-          console.error('Error fetching upload history:', error);
-        }
-      };
-  
-      fetchUploadHistory();
+        const fetchHistory = async () => {
+            try {
+              const history = await fetchUploadHistory(auth.username);
+              setUploadHistory(history);
+            } catch (error) {
+              console.error('Error fetching upload history:', error);
+            }
+        };
+      
+        fetchHistory();
     }, []);
 
 
@@ -84,16 +83,12 @@ export default function InputDashboard() {
         formData.append('file', selectedFile);
     
         try {
-          const response = await axios.post('http://ec2-13-49-67-93.eu-north-1.compute.amazonaws.com:8085/upload', formData, {
-            headers: {
-              'Content-Type': 'multipart/form-data',
-            },
-            withCredentials: true 
-          });
-          
-          setMessage(response.data.message);
+            const message = await uploadFile(auth.username, selectedFile);
+            setMessage(message);
+            setShow(true);
         } catch (error) {
-          setMessage('An error occurred while uploading the file.');
+            console.error('Error uploading file:', error);
+            setMessage('An error occurred while uploading the file.');
         }
         setShow(true)
     };

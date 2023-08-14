@@ -1,4 +1,5 @@
 import axios from "axios";
+import serverUrl from "../config";
 
 class AuthService {
 
@@ -12,11 +13,22 @@ class AuthService {
      */
     submitLogin(data) {
         return axios.create({
-            baseURL: "http://ec2-13-49-67-93.eu-north-1.compute.amazonaws.com:8085/",
+            baseURL: serverUrl,
             headers: {
                 "Content-type": "application/json"
             },
+            withCredentials: true
         }).post("/api/users/login", data)
+    }
+
+    submitLogout() {
+        return axios.create({
+            baseURL: serverUrl,
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            withCredentials: true,
+        }).post("/api/users/logout");
     }
 }
 

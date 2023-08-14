@@ -182,7 +182,7 @@ class LogoutUser(Resource):
     @token_required
     def post(self, current_user):
 
-        _jwt_token = request.headers["authorization"]
+        _jwt_token = request.cookies.get('jwtToken')
 
         jwt_block = JWTTokenBlocklist(jwt_token=_jwt_token, created_at=datetime.now(timezone.utc))
         jwt_block.save()
