@@ -63,7 +63,7 @@ export default function InputDashboard() {
     useEffect(() => {
       const fetchUploadHistory = async () => {
         try {
-          const response = await axios.get(`http://localhost:8085/upload/history?username=${auth.username}`, {
+          const response = await axios.get(`http://ec2-13-49-67-93.eu-north-1.compute.amazonaws.com:8085/upload/history?username=${auth.username}`, {
             withCredentials: true
           });
           setUploadHistory(response.data.upload_history);
@@ -84,7 +84,7 @@ export default function InputDashboard() {
         formData.append('file', selectedFile);
     
         try {
-          const response = await axios.post('http://localhost:8085/upload', formData, {
+          const response = await axios.post('http://ec2-13-49-67-93.eu-north-1.compute.amazonaws.com:8085/upload', formData, {
             headers: {
               'Content-Type': 'multipart/form-data',
             },

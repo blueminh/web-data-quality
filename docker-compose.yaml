@@ -1,7 +1,13 @@
 version: "1"
 services:
   frontend:
-    image: 807743836007.dkr.ecr.eu-north-1.amazonaws.com/reactapp:2.0
+    image: minhkau/web-data-quality-frontend:1.2
     container_name: frontend
     ports:
       - 80:3000
+  backend:
+    image: minhkau/web-data-quality-backend:1.2
+    container_name: backend
+    ports:
+      - 8085:8085
+

@@ -12,7 +12,7 @@ class AuthService {
      */
     submitLogin(data) {
         return axios.create({
-            baseURL: "http://localhost:8085/",
+            baseURL: "http://ec2-13-49-67-93.eu-north-1.compute.amazonaws.com:8085/",
             headers: {
                 "Content-type": "application/json"
             },
