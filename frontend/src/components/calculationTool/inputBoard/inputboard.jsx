@@ -17,15 +17,11 @@ export default function InputDashboard() {
         ]
     )
 
-    const [formData, setFormData] = useState({
-        fileType: '',
-        separationSymbol: '',
-        tableName: '',
-        selectedFile: null,
-      });
         
-    const fileTypes = ['CSV', 'JSON', 'XML', "EXCEL"];
+    const fileTypes = ['csv', 'json', "xlsx", "xls"];
+    const [fileTyle, setFileType] = useState("csv")
     const separationSymbols = [',', ';', '|'];
+    const [separationSymbol, setSeparationSymbol] = useState(',')
     const [selectedFile, setSelectedFile] = useState(null);
     const [sampleViewData, setSampleViewData] = useState([]);
     const [numColumns, setNumColumns] = useState(0);
@@ -51,14 +47,6 @@ export default function InputDashboard() {
             name.toLowerCase().includes(inputValueLowerCase)
         );
         return filteredSuggestions;
-    };
-
-    const handleFileTypeChange = (event) => {
-        setFormData({ ...formData, fileType: String(event.target.value)});
-    };
-
-    const handleSeparationSymbolChange = (event) => {
-        setFormData({ ...formData, separationSymbol: String(event.target.value)});
     };
 
     const handleFileInputChange = (event) => {
@@ -123,13 +111,15 @@ export default function InputDashboard() {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-    
-        const formData = new FormData();
-        formData.append('username', auth.username);
-        formData.append('file', selectedFile);
-    
+        const data = {
+            fileType: fileTyle,
+            separationSymbol: separationSymbol,
+            username: auth.username,
+            file: selectedFile, 
+            tableName: tableName
+        }
         try {
-            const message = await uploadFile(auth.username, selectedFile);
+            const message = await uploadFile(data);
             setMessage(message);
             setShow(true);
         } catch (error) {
@@ -162,14 +152,18 @@ export default function InputDashboard() {
                         <Stack gap={3}>
                             <div className="form-input">
                                 <Form.Label>Select file type</Form.Label>
-                                <Form.Select required onChange={handleFileTypeChange}>
+                                <Form.Select required onChange={(event) => {
+                                    setFileType(String(event.target.value))
+                                }}>
                                     {fileTypes.map(type => <option>{type}</option>)}
                                 </Form.Select>
                             </div>
-                            {formData.fileType === "CSV" &&                             
+                            {fileTyle === "csv" &&                             
                             <div className="form-input">
                                 <Form.Label>Select separation symbol</Form.Label>
-                                <Form.Select required onChange={handleSeparationSymbolChange}>
+                                <Form.Select required onChange={(event) => {
+                                    setSeparationSymbol(String(event.target.value))
+                                }}>
                                     {separationSymbols.map(type => <option>{type}</option>)}
                                 </Form.Select>
                             </div>}
@@ -183,7 +177,6 @@ export default function InputDashboard() {
                                     onSuggestionsClearRequested={() => setTableSuggestions([])}
                                     onSuggestionSelected={(event, { suggestion }) => {
                                         setTableName(suggestion);
-                                        setFormData({ ...formData, tableName: suggestion });
                                     }}
                                     getSuggestionValue={(suggestion) => suggestion}
                                     renderSuggestion={(suggestion) => <span>{suggestion}</span>}
@@ -192,7 +185,6 @@ export default function InputDashboard() {
                                         value: tableName,
                                         onChange: (event, { newValue }) => {
                                             setTableName(newValue);
-                                            setFormData({ ...formData, tableName: newValue });
                                         },
                                     }}
                                 />

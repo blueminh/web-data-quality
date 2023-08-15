@@ -15,13 +15,10 @@ export async function fetchUploadHistory(username) {
   }
 }
 
-export async function uploadFile(username, selectedFile) {
-  const formData = new FormData();
-  formData.append('username', username);
-  formData.append('file', selectedFile);
-
+export async function uploadFile(data) {
+  console.log(data)
   try {
-    const response = await axios.post(`${BASE_URL}/upload`, formData, {
+    const response = await axios.post(`${BASE_URL}/upload`, data, {
       headers: {
         'Content-Type': 'multipart/form-data',
       },

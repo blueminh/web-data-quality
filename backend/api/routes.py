@@ -11,6 +11,7 @@ from flask import request, jsonify, make_response
 from flask_restx import Api, Resource, fields
 
 import jwt
+import magic
 
 from .models import db, Users, Upload, JWTTokenBlocklist
 from .config import BaseConfig
@@ -197,16 +198,26 @@ class LogoutUser(Resource):
 
 @rest_api.route('/upload')
 class UploadResource(Resource):
-    def post(self):
+    @token_required
+    def post(self, current_user):
         username = request.form.get('username')
         uploaded_file = request.files.get('file')
-        
+        expected_file_type = request.form.get('fileType')  # Get the expected fileType from the request data
+
         user = Users.query.filter_by(username=username).first()
         if not user:
             return {"error": "User not found"}, 401
         
-        if uploaded_file and uploaded_file.filename.endswith('.csv'):
-            file_name = f"{user.username}_{datetime.now().strftime('%Y%m%d%H%M%S')}.csv"
+       # Get the file extension from the uploaded file's filename
+        file_extension = uploaded_file.filename.rsplit('.', 1)[-1]
+        
+        # Validate the expected file type based on file extension
+        if (expected_file_type == 'csv' and file_extension == 'csv') or \
+           (expected_file_type == 'xlsx' and file_extension == 'xlsx') or \
+           (expected_file_type == 'xls' and file_extension == 'xls'):
+            # Handle CSV, Excel (xlsx), and Excel (xls) files
+            file_name = f"{user.username}_{datetime.now().strftime('%Y%m%d%H%M%S')}.{file_extension}"
+            uploaded_file.stream.seek(0)  # Reset the stream position
             uploaded_file.save(file_name)
             
             upload = Upload(user_id=user.id, filename=file_name)
@@ -215,12 +226,13 @@ class UploadResource(Resource):
             
             return {"message": "File uploaded successfully"}
         else:
-            return {"error": "Invalid file format"}, 400
+            return {"error": "Invalid file format or mismatched fileType"}, 400
         
 
 @rest_api.route('/upload/history')
 class UploadHistoryResource(Resource):
-    def get(self):
+    @token_required
+    def get(self, current_user):
         username = request.args.get('username')
         
         user = Users.query.filter_by(username=username).first()
