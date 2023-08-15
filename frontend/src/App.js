@@ -9,9 +9,6 @@ import './Global.css'
 import './styleguide.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import RequireAuth from "./components/RequireAuth";
-import AuthContext from "./contexts/AuthProvider";
-import { useContext, useEffect } from 'react';
-
 
 const App = () => {
     return (
@@ -20,17 +17,17 @@ const App = () => {
             <Routes>
                 <Route path='/login' element={<LoginPage />}></Route>
 
-                <Route element={<RequireAuth />}>
+                {/* <Route element={<RequireAuth />}> */}
                     <Route path='/' element={<CalculationHomePage />} />
-                </Route>
+                {/* </Route> */}
 
                 <Route element={<RequireAuth />}>
                     <Route path='/calculation' element={<CalculationHomePage />} />
                 </Route>
 
-                <Route element={<RequireAuth />}>
-                    <Route path='/validation' element={<ValidationHomePage />}></Route>
-                </Route>
+                {/* <Route element={<RequireAuth />}> */}
+                <Route path='/validation' element={<ValidationHomePage />}></Route>
+                {/* </Route> */}
             </Routes>
         </div>
     )

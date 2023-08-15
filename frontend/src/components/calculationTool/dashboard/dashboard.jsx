@@ -1,4 +1,4 @@
-import { Table, Row, Col, Button } from 'react-bootstrap';
+import { Table, Row, Col, Button, Form, FormLabel, Stack} from 'react-bootstrap';
 import { useEffect, useState, useRef } from "react";
 import '../../../Global.css'
 import './dashboard.css'
@@ -121,26 +121,27 @@ export default function CalulationQuickDashboard() {
         // console.log(FetchDataService.getLcrQuickDashBoard)
         setLcrData(FetchDataService.getLcrQuickDashBoard())
         setNsfrData(FetchDataService.getNsfrQuickDashBoard())
-    }, []) 
+    }, [])
+    
+    const [reportingDate, setReportingDate] = useState(0)
 
-
-    function formatDate(date) {
-        const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-        const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    // function formatDate(date) {
+    //     const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    //     const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
       
-        const dayOfWeek = days[date.getDay()];
-        const month = months[date.getMonth()];
-        const day = date.getDate();
-        const year = date.getFullYear();
+    //     const dayOfWeek = days[date.getDay()];
+    //     const month = months[date.getMonth()];
+    //     const day = date.getDate();
+    //     const year = date.getFullYear();
       
-        return `${dayOfWeek}, ${month} ${day}, ${year}`;
-    }
+    //     return `${dayOfWeek}, ${month} ${day}, ${year}`;
+    // }
       
     // Get the current date
-    const currentDate = new Date();
+    // const currentDate = new Date();
     
-    // Format and display the current date
-    const formattedDate = formatDate(currentDate);
+    // // Format and display the current date
+    // const formattedDate = formatDate(currentDate);
 
     const tableRefs = [useRef(null), useRef(null)];
     const handleExportPDF = async () => {
@@ -189,14 +190,23 @@ export default function CalulationQuickDashboard() {
         saveAs(data, 'dashboard.xlsx');
     };
 
+    const handleFetchReportedData = () => {
+    }
 
     return (
         <div>
             <div id="dashboard-general-info">
-                <Row style={{fontWeight:'bold', fontSize:'larger'}}>
-                    <Col>CAO</Col>
-                    <Col>{formattedDate}</Col>
-                </Row>
+                <Stack gap={2}>
+                    <FormLabel style={{fontWeight:'bold', fontSize:'larger'}} >Reporting Date</FormLabel>
+                    <Form.Control 
+                        required type="date" 
+                        onChange={(event) => {
+                            setReportingDate(String(event.target.value))
+                        }}/>
+                    <div class="button-container">
+                        <Button onClick={handleFetchReportedData}>Fetch Data</Button>    
+                    </div>
+                </Stack>
             </div>
             <div className='tables-grid'>
                 <Row className='pb-4'>
@@ -228,24 +238,24 @@ export default function CalulationQuickDashboard() {
                         </Table>
                     </Col>
                     <Col>
-                    <Table striped bordered ref={tableRefs[1]}>
-                            <tbody>
-                                <tr>
-                                    <td className='table-title' colSpan={2}>{nsfrData.title}</td>
-                                </tr>
-                                {nsfrData.rows.map(row => 
+                        <Table striped bordered ref={tableRefs[1]}>
+                                <tbody>
                                     <tr>
-                                        <td>
-                                            <span className='row-title'>{row.rowTitle.title}</span>
-                                            <br></br>
-                                            <span><em>{row.rowTitle.subTitle}</em></span>
-                                        </td>
-                                        {row.data.map(rowData =>
-                                            <td style={{textAlign: "center"}}>{rowData}</td>
-                                        )}
+                                        <td className='table-title' colSpan={2}>{nsfrData.title}</td>
                                     </tr>
-                                )}
-                            </tbody>
+                                    {nsfrData.rows.map(row => 
+                                        <tr>
+                                            <td>
+                                                <span className='row-title'>{row.rowTitle.title}</span>
+                                                <br></br>
+                                                <span><em>{row.rowTitle.subTitle}</em></span>
+                                            </td>
+                                            {row.data.map(rowData =>
+                                                <td style={{textAlign: "center"}}>{rowData}</td>
+                                            )}
+                                        </tr>
+                                    )}
+                                </tbody>
                         </Table>
                     </Col>
                 </Row>

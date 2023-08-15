@@ -9,13 +9,12 @@
 }
   
 .form-input {
-display: flex;
-align-items: center;
-margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
 }
 
 .form-input label {
-margin-right: 10px;
-flex-basis: 30%
-
+    margin-right: 10px;
+    flex-basis: 30%
 }
