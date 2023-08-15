@@ -1,19 +1,21 @@
 import "./Login.css";
 import '../../styleguide.css'
-import React, {useState} from "react";
+import React, {useState, useContext, useEffect} from "react";
 // import {bake_cookie} from "sfcookies";
-// import AuthService from "../../services/auth.service";
 import {Button} from "react-bootstrap";
 // import {LoginContext} from "../../App";
-// import ValidationError from "../../error/ValidationError";
+import AuthContext from "../../contexts/AuthProvider";
+import { useNavigate } from "react-router-dom";
+import authService from "../../services/authService";
 
 function LoginPage() {
-    // const [, setLoggedIn]= useContext(LoginContext);
     const [getEmail, setEmail] = useState("null");
     const [getPassword, setPassword] = useState("null");
     const [getLoginErrorActive, setLoginErrorActive] = useState(false);
     // eslint-disable-next-line
     const [message, setMessage] = useState("")
+    const {auth, setAuth} = useContext(AuthContext)
+    const navigate = useNavigate()
 
     /**
      * Handler to update the e-mail field.
@@ -36,11 +38,35 @@ function LoginPage() {
         event.preventDefault();
 
         // Throw an error if etiher of the fields is empty.
-        if (getEmail === "null" || getPassword === "null") {
-            setLoginErrorActive(true);
-            return false;
+        // if (getEmail === "null" || getPassword === "null") {
+        //     setLoginErrorActive(true);
+        //     return false;
+        // }
+
+        const data = {
+            email: getEmail,
+            password: getPassword
         }
-        // Code to send request to backend here
+
+        authService.submitLogin(data)
+            .then(response => {
+                console.log("response", response)
+                console.log("Received auth token! ", response.data);
+                setLoginErrorActive(false);
+                setAuth({
+                    isLoggedIn: true,
+                    username: response.data.user.username,
+                    email: response.data.user.email
+                });
+                navigate("/calculation")
+            }) // If login failed, throw an error to the user.
+            .catch(e => {
+                // const validationError = new ValidationError("Login Failed: ", e)
+                // const errorMessage = validationError.readErrorObjectLogin();
+                setMessage("Wrong email or password");
+                setLoginErrorActive(true);
+                console.log(e)
+            });
     }
 
     return (

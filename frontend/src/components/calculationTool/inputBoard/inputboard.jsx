@@ -1,33 +1,33 @@
 import { Container, Row, Col, Form, Table, Button, Stack, Modal} from 'react-bootstrap';
 import '../../../Global.css'
 import './inputboard.css'
-import { useState } from 'react';
-
+import { useState, useContext, useEffect } from 'react';
+import AuthContext from '../../../contexts/AuthProvider';
+import { fetchUploadHistory, uploadFile } from '../../../services/calculationToolService';
 
 
 export default function InputDashboard() {
-    const [uploadHistory, setUploadHistory] = useState({
-        title: "Lịch sử upload",
-        colNames: ["Ngày", "Tên người upload", "Tên file"],
-        rows: [
-            ["27/07/2023", "Hoang Minh", "data.csv"],
-            ["27/07/2023", "Hoang Minh", "data.csv"],
-            ["27/07/2023", "Hoang Minh", "data.csv"]
+    const {auth} = useContext(AuthContext)
+    const [uploadHistory, setUploadHistory] = useState([
+            ["27/07/2023", "data.csv"],
+            ["27/07/2023", "data.csv"],
+            ["27/07/2023", "data.csv"]
         ]
-    })
+    )
 
     const [formData, setFormData] = useState({
         fileType: '',
         separationSymbol: '',
         selectedFile: null,
       });
-    
+        
     const fileTypes = ['CSV', 'JSON', 'XML'];
     const separationSymbols = [',', ';', '|'];
     const [csvData, setCsvData] = useState([]);
     const [numColumns, setNumColumns] = useState(0);
 
-
+    const [message, setMessage] = useState('');
+    const [selectedFile, setSelectedFile] = useState(null);
 
     const handleFileTypeChange = (selectedFileType) => {
         setFormData({ ...formData, fileType: selectedFileType });
@@ -39,6 +39,7 @@ export default function InputDashboard() {
 
     const handleFileInputChange = (event) => {
         const file = event.target.files[0];
+        setSelectedFile(file)
         const reader = new FileReader();
     
         reader.onload = (e) => {
@@ -60,11 +61,54 @@ export default function InputDashboard() {
     };
 
 
-    const [show, setShow] = useState(false);
+    useEffect(() => {
+        const fetchHistory = async () => {
+            try {
+              const history = await fetchUploadHistory(auth.username);
+              setUploadHistory(history);
+            } catch (error) {
+              console.error('Error fetching upload history:', error);
+            }
+        };
+      
+        fetchHistory();
+    }, []);
 
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
     
+        const formData = new FormData();
+        formData.append('username', auth.username);
+        formData.append('file', selectedFile);
+    
+        try {
+            const message = await uploadFile(auth.username, selectedFile);
+            setMessage(message);
+            setShow(true);
+        } catch (error) {
+            console.error('Error uploading file:', error);
+            setMessage('An error occurred while uploading the file.');
+        }
+        setShow(true)
+    };
+
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    
+    const formatTimestamp = (inputTimestamp) => {
+        const date = new Date(inputTimestamp);
+        const day = date.getDate();
+        const month = date.getMonth() + 1; // Months are zero-indexed
+        const year = date.getFullYear();
+        const hours = date.getHours();
+        const minutes = date.getMinutes();
+    
+        const formattedDate = `${day}/${month}/${year}`;
+        const formattedTime = `${hours}:${minutes}`;
+    
+        return `${formattedDate} ${formattedTime}`;
+    }
 
     return (
         <>
@@ -72,7 +116,7 @@ export default function InputDashboard() {
                 <Modal.Header closeButton>
                 <Modal.Title>Upload Status</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>Your file has been successfully uploaded</Modal.Body>
+                <Modal.Body>{message}</Modal.Body>
                 <Modal.Footer>
                 <Button variant="secondary" onClick={handleClose}>
                     Close
@@ -100,7 +144,7 @@ export default function InputDashboard() {
                             <Form.Control type="file" required  onChange={handleFileInputChange} />
                         </div>
                         <div>
-                            <Button onClick={handleShow}>Submit file</Button>
+                            <Button onClick={handleSubmit}>Submit file</Button>
                         </div>
                         <Table striped bordered>
                                 <tr>
@@ -124,13 +168,12 @@ export default function InputDashboard() {
                         <Table striped bordered>
                             <tbody>
                                 <tr>
-                                    <td className='table-title' colSpan={3}>{uploadHistory.title}</td>
+                                    <td className='table-title' colSpan={2}>{"Lịch sử upload"}</td>
                                 </tr>
-                                {uploadHistory.rows.map(row => 
+                                {uploadHistory.map(row => 
                                     <tr>
-                                        {row.map(rowData =>
-                                            <td style={{textAlign: "center"}}>{rowData}</td>
-                                        )}
+                                        {<td style={{textAlign: "center"}}>{row.filename}</td>}
+                                        {<td style={{textAlign: "center"}}>{row.upload_time}</td>}
                                     </tr>
                                 )}
                             </tbody>
