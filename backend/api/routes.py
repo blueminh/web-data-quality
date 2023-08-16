@@ -15,7 +15,6 @@ import jwt
 
 from .models import db, Users, Upload, JWTTokenBlocklist
 from .config import BaseConfig
-import requests
 
 rest_api = Api(version="1.0", title="Users API")
 
@@ -38,6 +37,18 @@ user_edit_model = rest_api.model('UserEditModel', {"userID": fields.String(requi
                                                    "email": fields.String(required=True, min_length=4, max_length=64)
                                                    })
 
+
+"""
+    Helper function for roles check
+"""
+def roles_check(user_roles, required_roles):
+    if "admin" in user_roles:
+        user_roles.append("viewer")
+        user_roles.append("editor")
+    for required_role in required_roles:
+        if required_role not in user_roles:
+            return False
+    return True    
 
 """
    Helper function for JWT token required
@@ -67,18 +78,9 @@ def token_required(required_roles=[]):
                     return {"success": False, "msg": "Token expired."}, 403
 
                 # Check roles here
-                print(current_user.get_roles())
-
                 user_roles = current_user.get_roles()
-
-                for required_role in required_roles:
-                    if required_role not in user_roles:
-                        return {"success": False, "msg": "Insufficient permissions"}, 403
-
-
-                # print("eiyoo " + user_roles)
-                # if not any(role in user_roles for role in required_roles):
-                #     return {"success": False, "msg": "Insufficient permissions"}, 403
+                if not (roles_check(user_roles=user_roles, required_roles=required_roles)):
+                    return {"success": False, "msg": "Insufficient permissions"}, 403
 
             except:
                 return {"success": False, "msg": "Token is invalid"}, 403
@@ -88,8 +90,6 @@ def token_required(required_roles=[]):
         return wrapper
 
     return decorator
-
-
 
 """
     Flask-Restx routes
@@ -210,7 +210,7 @@ class LogoutUser(Resource):
 
 @rest_api.route('/upload')
 class UploadResource(Resource):
-    @token_required
+    @token_required(required_roles=["editor"])
     def post(current_user, self):
         username = current_user.username
         uploaded_file = request.files.get('file')
@@ -248,7 +248,7 @@ class UploadResource(Resource):
 
 @rest_api.route('/upload/history')
 class UploadHistoryResource(Resource):
-    @token_required(required_roles=['admin'])
+    @token_required(required_roles=['viewer'])
     def get(current_user, self):
         username = "m1"
         

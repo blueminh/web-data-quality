@@ -59,7 +59,6 @@ function LoginPage() {
                     email: response.data.user.email,
                     roles: response.data.user.roles
                 });
-                console.log(response.data.user.roles)
                 navigate("/calculation")
             }) // If login failed, throw an error to the user.
             .catch(e => {

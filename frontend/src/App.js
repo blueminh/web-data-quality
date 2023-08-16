@@ -9,6 +9,7 @@ import './Global.css'
 import './styleguide.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import RequireAuth from "./components/RequireAuth";
+import Unauthorized from "./pages/Unauthorized/Unauthorized"
 
 const App = () => {
     return (
@@ -16,10 +17,11 @@ const App = () => {
             <Nagivationbar />
             <Routes>
                 <Route path='/login' element={<LoginPage />}></Route>
+                <Route path="/unauthorized" element={<Unauthorized />} />
 
-                {/* <Route element={<RequireAuth />}> */}
+                <Route element={<RequireAuth />}>
                     <Route path='/' element={<CalculationHomePage />} />
-                {/* </Route> */}
+                </Route>
 
                 <Route element={<RequireAuth />}>
                     <Route path='/calculation' element={<CalculationHomePage />} />
