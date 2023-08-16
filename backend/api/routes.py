@@ -43,38 +43,52 @@ user_edit_model = rest_api.model('UserEditModel', {"userID": fields.String(requi
    Helper function for JWT token required
 """
 
-def token_required(f):
+def token_required(required_roles=[]):
+    def decorator(f):
+        @wraps(f)
+        def wrapper(*args, **kwargs):
+            token = request.cookies.get('jwtToken')
 
-    @wraps(f)
-    def decorator(*args, **kwargs):
+            if not token:
+                return {"success": False, "msg": "Valid JWT token is missing"}, 401
 
-        token = request.cookies.get('jwtToken')
+            try:
+                data = jwt.decode(token, BaseConfig.SECRET_KEY, algorithms=["HS256"])
+                current_user = Users.get_by_email(data["email"])
 
-        if not token:
-            return {"success": False, "msg": "Valid JWT token is missing"}, 401
+                if not current_user:
+                    return {"success": False, "msg": "Sorry. Wrong auth token. This user does not exist."}, 403
 
-        try:
-            data = jwt.decode(token, BaseConfig.SECRET_KEY, algorithms=["HS256"])
-            current_user = Users.get_by_email(data["email"])
+                token_expired = db.session.query(JWTTokenBlocklist.id).filter_by(jwt_token=token).scalar()
+                if token_expired is not None:
+                    return {"success": False, "msg": "Token revoked."}, 403
 
-            if not current_user:
-                return {"success": False,
-                        "msg": "Sorry. Wrong auth token. This user does not exist."}, 403
+                if not current_user.check_jwt_auth_active():
+                    return {"success": False, "msg": "Token expired."}, 403
 
-            token_expired = db.session.query(JWTTokenBlocklist.id).filter_by(jwt_token=token).scalar()
+                # Check roles here
+                print(current_user.get_roles())
 
-            if token_expired is not None:
-                return {"success": False, "msg": "Token revoked."}, 403
+                user_roles = current_user.get_roles()
 
-            if not current_user.check_jwt_auth_active():
-                return {"success": False, "msg": "Token expired."}, 403
+                for required_role in required_roles:
+                    if required_role not in user_roles:
+                        return {"success": False, "msg": "Insufficient permissions"}, 403
 
-        except:
-            return {"success": False, "msg": "Token is invalid"}, 403
 
-        return f(current_user, *args, **kwargs)
+                # print("eiyoo " + user_roles)
+                # if not any(role in user_roles for role in required_roles):
+                #     return {"success": False, "msg": "Insufficient permissions"}, 403
+
+            except:
+                return {"success": False, "msg": "Token is invalid"}, 403
+
+            return f(current_user, *args, **kwargs)
+
+        return wrapper
 
     return decorator
+
 
 
 """
@@ -234,9 +248,8 @@ class UploadResource(Resource):
 
 @rest_api.route('/upload/history')
 class UploadHistoryResource(Resource):
-    # @token_required
-    def get(self):
-        print("got here")
+    @token_required(required_roles=['admin'])
+    def get(current_user, self):
         username = "m1"
         
         user = Users.query.filter_by(username=username).first()
