@@ -197,22 +197,22 @@ export default function CalulationQuickDashboard() {
         <div>
             <div id="dashboard-general-info">
                 <Stack gap={2}>
-                    <FormLabel style={{fontWeight:'bold', fontSize:'larger'}} >Reporting Date</FormLabel>
+                    <FormLabel style={{fontWeight:'bold', fontSize:'larger'}}>Chọn ngày báo cáo</FormLabel>
                     <Form.Control 
                         required type="date" 
                         onChange={(event) => {
                             setReportingDate(String(event.target.value))
                         }}/>
                     <div class="button-container">
-                        <Button onClick={handleFetchReportedData}>Fetch Data</Button>    
+                        <Button onClick={handleFetchReportedData}>Lấy kết quả tổng quan</Button>    
                     </div>
                 </Stack>
             </div>
             <div className='tables-grid'>
                 <Row className='pb-4'>
                     <div class="button-container">
-                        <Button onClick={handleExportPDF}>Export to PDF</Button>
-                        <Button onClick={exportToExcel}>Export to Excel</Button>
+                        <Button onClick={handleExportPDF}>Xuất kết quả ra PDF</Button>
+                        <Button onClick={exportToExcel}>Xuất kết quả ra Excel</Button>
                     </div>
                 </Row>
                 <Row className='pb-4'>
@@ -220,7 +220,7 @@ export default function CalulationQuickDashboard() {
                         <Table striped bordered ref={tableRefs[0]}>
                             <tbody>
                                 <tr>
-                                    <td className='table-title' colSpan={2}>{lcrData.title}</td>
+                                    <td className='table-title' colSpan={2}>Liquidity Coverage Ratio - Tỷ lệ đảm bảo khả năng thanh khoàn</td>
                                 </tr>
                                 {lcrData.rows.map(row => 
                                     <tr>
@@ -241,7 +241,7 @@ export default function CalulationQuickDashboard() {
                         <Table striped bordered ref={tableRefs[1]}>
                                 <tbody>
                                     <tr>
-                                        <td className='table-title' colSpan={2}>{nsfrData.title}</td>
+                                        <td className='table-title' colSpan={2}>Net Stable Funding Ratio - Tỷ lệ quỹ ổn định ròng</td>
                                     </tr>
                                     {nsfrData.rows.map(row => 
                                         <tr>

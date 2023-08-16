@@ -23,7 +23,7 @@ export default function InputDashboard() {
     const separationSymbols = [',', ';', '|'];
     const [separationSymbol, setSeparationSymbol] = useState(',')
     const [selectedFile, setSelectedFile] = useState(null);
-    const [sampleViewData, setSampleViewData] = useState([]);
+    const [previewData, setPreviewData] = useState([]);
     const [numColumns, setNumColumns] = useState(0);
     const [message, setMessage] = useState('');
 
@@ -49,6 +49,59 @@ export default function InputDashboard() {
         return filteredSuggestions;
     };
 
+    // suggestion logic for regulatory table
+    // list of suggested regulatory table
+    const [regulatoryTableOptions, ] = useState([
+        'r1',
+        'r2'
+    ]);
+    const [regulatoryTable, setRegulatoryTable] = useState('');
+    const [regulatoryTableSuggestions, setRegulatoryTableSuggestions] = useState([]);
+    const getRegulatoryTableSuggestions = (inputValue) => {
+        if (inputValue === ""){
+            return regulatoryTableOptions
+        }
+        const inputValueLowerCase = inputValue.trim().toLowerCase();
+        const filteredSuggestions = regulatoryTableOptions.filter((name) =>
+            name.toLowerCase().includes(inputValueLowerCase)
+        );
+        return filteredSuggestions;
+    };
+
+    // suggestion logic for table mapping name
+    // list of suggested table mapping names
+    const [tableMappingNameOptions, ] = useState([
+        'customers m',
+        'orders m',
+        'products',
+        'employees',
+        'suppliers',
+    ]);
+    const [tableMappingName, setTableMappingName] = useState('');
+    const [tableMappingSuggestions, setTableMappingSuggestions] = useState([]);
+    const getTableMappingSuggestions = (inputValue) => {
+        if (inputValue === ""){
+            return tableNameOptions
+        }
+        const inputValueLowerCase = inputValue.trim().toLowerCase();
+        const filteredSuggestions = tableMappingNameOptions.filter((name) =>
+            name.toLowerCase().includes(inputValueLowerCase)
+        );
+        return filteredSuggestions;
+    };
+
+    const [sampleData, setSampleData] = useState([
+        ["Jack","McGinnis","220 hobo Av.","Phila"," PA",9119  ],
+        ["John \"Da Man\"","Repici","120 Jefferson St.","Riverside"," NJ",8075  ],
+        ["Stephen","Tyler","7452 Terrace \"At the Plaza\" road","SomeTown","SD",91234  ],
+        ["","Blankman","","SomeTown"," SD",298  ],
+        ["Joan \"the bone\", Anne","Jet","9th, at Terrace plc","Desert City","CO",123  ]
+    ])
+    const [isOpenAddGrant, setOpenAddGrant] = useState(false)
+    const [showSampleDataPopup, setShowSampleDataPopup] = useState(false);
+    const handleCloseSampleDataPopup = () => setShowSampleDataPopup(false);
+
+
     const handleFileInputChange = (event) => {
         const file = event.target.files[0];
         setSelectedFile(file);
@@ -67,7 +120,7 @@ export default function InputDashboard() {
               // Convert rows to an array of arrays (cells)
               const parsedData = firstFiveRows.map((row) => row.split(','));
           
-              setSampleViewData(parsedData);
+              setPreviewData(parsedData);
       
               // Get the number of columns from the first row (header row)
               const numCols = parsedData[0] ? parsedData[0].length : 0;
@@ -79,7 +132,7 @@ export default function InputDashboard() {
               const worksheet = workbook.Sheets[firstSheetName];
               const parsedData = XLSX.utils.sheet_to_json(worksheet, { header: 1, range: 5 });
       
-              setSampleViewData(parsedData);
+              setPreviewData(parsedData);
       
               // Get the number of columns from the first row
               const numCols = parsedData[0] ? parsedData[0].length : 0;
@@ -116,33 +169,62 @@ export default function InputDashboard() {
             separationSymbol: separationSymbol,
             username: auth.username,
             file: selectedFile, 
-            tableName: tableName
+            tableName: tableName,
+            tableMappingName: tableMappingName,
+            regulatoryTable: regulatoryTable
         }
+        console.log(data)
         try {
             const message = await uploadFile(data);
             setMessage(message);
-            setShow(true);
+            setShowMessagePopup(true);
         } catch (error) {
             console.error('Error uploading file:', error);
             setMessage('An error occurred while uploading the file.');
         }
-        setShow(true)
+        setShowMessagePopup(true)
     };
 
-    const [show, setShow] = useState(false);
-    const handleClose = () => setShow(false);
+    const [showMessagePopup, setShowMessagePopup] = useState(false);
+    const handleCloseMessagePopup = () => setShowMessagePopup(false);
     
     return (
         <>
-            <Modal show={show} onHide={handleClose}>
+            <Modal show={showMessagePopup} onHide={handleCloseMessagePopup}>
                 <Modal.Header closeButton>
-                <Modal.Title>Upload Status</Modal.Title>
+                    <Modal.Title>Trạng thái tải lên</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>{message}</Modal.Body>
                 <Modal.Footer>
-                <Button variant="secondary" onClick={handleClose}>
-                    Close
-                </Button>
+                    <Button variant="secondary" onClick={handleCloseMessagePopup}>
+                        Đóng
+                    </Button>
+                </Modal.Footer>
+            </Modal>
+            <Modal dialogClassName="dialog-tool-wide" show={showSampleDataPopup} onHide={handleCloseSampleDataPopup}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Dữ liệu mẫu của bảng đã chọn</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    {tableName === ""
+                        ? "Vui lòng chọn bảng"
+                        : <Table striped bordered>
+                            <tbody>
+                                {sampleData.map((row, rowIndex) => (
+                                    <tr key={rowIndex}>
+                                    {row.map((cell, cellIndex) => (
+                                        <td key={cellIndex}>{cell}</td>
+                                    ))}
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </Table>      
+                    }
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleCloseSampleDataPopup}>
+                        Đóng
+                    </Button>
                 </Modal.Footer>
             </Modal>
             <Container fluid>
@@ -151,24 +233,7 @@ export default function InputDashboard() {
                         {/* Content for the left half */}
                         <Stack gap={3}>
                             <div className="form-input">
-                                <Form.Label>Select file type</Form.Label>
-                                <Form.Select required onChange={(event) => {
-                                    setFileType(String(event.target.value))
-                                }}>
-                                    {fileTypes.map(type => <option>{type}</option>)}
-                                </Form.Select>
-                            </div>
-                            {fileTyle === "csv" &&                             
-                            <div className="form-input">
-                                <Form.Label>Select separation symbol</Form.Label>
-                                <Form.Select required onChange={(event) => {
-                                    setSeparationSymbol(String(event.target.value))
-                                }}>
-                                    {separationSymbols.map(type => <option>{type}</option>)}
-                                </Form.Select>
-                            </div>}
-                            <div className="form-input">
-                                <Form.Label>Table name</Form.Label>
+                                <Form.Label>Chọn bảng dữ liệu cần nhập</Form.Label>
                                 <Autosuggest
                                     suggestions={tableSuggestions}
                                     onSuggestionsFetchRequested={({ value }) => {
@@ -189,19 +254,86 @@ export default function InputDashboard() {
                                     }}
                                 />
                             </div>
+                            <div className='centered-button-container'>
+                                <Button onClick={() => setShowSampleDataPopup(true)}>Bấm để xem dữ liệu mẫu của bảng đã chọn</Button>
+                            </div>
                             <div className="form-input">
-                                <Form.Label>Choose file</Form.Label>
+                                <Form.Label>Chọn bảng mapping cần nhập</Form.Label>
+                                <Autosuggest
+                                    suggestions={tableMappingSuggestions}
+                                    onSuggestionsFetchRequested={({ value }) => {
+                                        setTableMappingSuggestions(getTableMappingSuggestions(value))
+                                    }}
+                                    onSuggestionsClearRequested={() => setTableMappingSuggestions([])}
+                                    onSuggestionSelected={(event, { suggestion }) => {
+                                        setTableMappingName(suggestion);
+                                    }}
+                                    getSuggestionValue={(suggestion) => suggestion}
+                                    renderSuggestion={(suggestion) => <span>{suggestion}</span>}
+                                    inputProps={{
+                                        placeholder: 'Start typing to search...',
+                                        value: tableMappingName,
+                                        onChange: (event, { newValue }) => {
+                                            setTableMappingName(newValue);
+                                        },
+                                    }}
+                                />
+                            </div>
+                            <div className="form-input">
+                                <Form.Label>Chọn bảng regulatory cần nhập</Form.Label>
+                                <Autosuggest
+                                    suggestions={regulatoryTableOptions}
+                                    onSuggestionsFetchRequested={({ value }) => {
+                                        setRegulatoryTableSuggestions(getRegulatoryTableSuggestions(value))
+                                    }}
+                                    onSuggestionsClearRequested={() => setRegulatoryTableSuggestions([])}
+                                    onSuggestionSelected={(event, { suggestion }) => {
+                                        setRegulatoryTable(suggestion)
+                                    }}
+                                    getSuggestionValue={(suggestion) => suggestion}
+                                    renderSuggestion={(suggestion) => <span>{suggestion}</span>}
+                                    inputProps={{
+                                        placeholder: 'Start typing to search...',
+                                        value: regulatoryTable,
+                                        onChange: (event, { newValue }) => {
+                                            setRegulatoryTable(newValue)
+                                        },
+                                    }}
+                                />
+                            </div>
+
+
+
+                            <div className="form-input">
+                                <Form.Label>Chọn định dạng file</Form.Label>
+                                <Form.Select required onChange={(event) => {
+                                    setFileType(String(event.target.value))
+                                }}>
+                                    {fileTypes.map(type => <option>{type}</option>)}
+                                </Form.Select>
+                            </div>
+                            {fileTyle === "csv" &&                             
+                            <div className="form-input">
+                                <Form.Label>Chọn kí tự phân cách (đối với file csv)</Form.Label>
+                                <Form.Select required onChange={(event) => {
+                                    setSeparationSymbol(String(event.target.value))
+                                }}>
+                                    {separationSymbols.map(type => <option>{type}</option>)}
+                                </Form.Select>
+                            </div>}
+                            <div className="form-input">
+                                <Form.Label>Chọn file dữ liệu</Form.Label>
                                 <Form.Control type="file" required  onChange={handleFileInputChange} />
                             </div>
-                            <div>
-                                <Button onClick={handleSubmit}>Submit file</Button>
+                            <div className='centered-button-container'>
+                                <Button onClick={handleSubmit}>Tải file lên</Button>
                             </div>
                             <Table striped bordered>
                                     <tr>
-                                        <td className='table-title' colSpan={numColumns}>Sample View</td>
+                                        <td className='table-title' colSpan={numColumns}>Bản xem thử file đã chọn</td>
                                     </tr>
                                     <tbody>
-                                        {sampleViewData.map((row, rowIndex) => (
+                                        {previewData.map((row, rowIndex) => (
                                             <tr key={rowIndex}>
                                             {row.map((cell, cellIndex) => (
                                                 <td key={cellIndex}>{cell}</td>

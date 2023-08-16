@@ -10,3 +10,5 @@ env__/
 .vscode/symbols.json
 app/db.sqlite3
 venv
+data_files/
+api/db.sqlite3

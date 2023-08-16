@@ -12,7 +12,7 @@ export default function CalculationHomePage() {
                 defaultActiveKey="home"
                 className="mb-3"
                 >
-                <Tab eventKey="home" title="Home"> 
+                <Tab eventKey="home" title="Tổng quan"> 
                     <CalulationQuickDashboard></CalulationQuickDashboard>
                 </Tab>
                 <Tab eventKey="lcr" title="LCR">
@@ -21,7 +21,7 @@ export default function CalculationHomePage() {
                 <Tab eventKey="nsfr" title="NSFR">
                     Tab content for NSFR
                 </Tab>
-                <Tab eventKey="input" title="Input Data">
+                <Tab eventKey="input" title="Nhập dữ liệu">
                     <InputDashboard></InputDashboard>
                 </Tab>
             </Tabs>

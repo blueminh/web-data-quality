@@ -47,7 +47,7 @@ export default function NavigationBar() {
                                 className="primary-button btn-primary shadow-none btn-outline-dark button-navbar-padding"
                                 onClick={handleLogout}
                             >
-                                Log out
+                                Đăng xuất
                             </Button>
                         </div>
                     : (<div>
@@ -55,13 +55,13 @@ export default function NavigationBar() {
                                 className="primary-button btn-primary shadow-none btn-outline-dark button-navbar-padding"
                                 href="/register"
                             >
-                                Register
+                                Tạo tài khoản
                             </Button>
                             <Button
                                 className="primary-button btn-primary shadow-none btn-outline-dark button-navbar-padding"
                                 href="/login"
                             >
-                                Log In
+                                Đăng nhập
                             </Button>
                         </div>
                         ) 

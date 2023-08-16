@@ -18,3 +18,15 @@
     margin-right: 10px;
     flex-basis: 30%
 }
+
+.dialog-tool-wide {
+    width: 90%;
+    max-width: none !important;
+}
+
+
+.centered-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

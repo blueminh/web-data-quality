@@ -4,6 +4,7 @@ Copyright (c) 2019 - present AppSeed.us
 """
 
 from datetime import datetime, timezone, timedelta
+import os
 
 from functools import wraps
 
@@ -11,7 +12,6 @@ from flask import request, jsonify, make_response
 from flask_restx import Api, Resource, fields
 
 import jwt
-import magic
 
 from .models import db, Users, Upload, JWTTokenBlocklist
 from .config import BaseConfig
@@ -203,6 +203,7 @@ class UploadResource(Resource):
         username = request.form.get('username')
         uploaded_file = request.files.get('file')
         expected_file_type = request.form.get('fileType')  # Get the expected fileType from the request data
+        table_name = request.form.get('tableName')
 
         user = Users.query.filter_by(username=username).first()
         if not user:
@@ -216,9 +217,13 @@ class UploadResource(Resource):
            (expected_file_type == 'xlsx' and file_extension == 'xlsx') or \
            (expected_file_type == 'xls' and file_extension == 'xls'):
             # Handle CSV, Excel (xlsx), and Excel (xls) files
-            file_name = f"{user.username}_{datetime.now().strftime('%Y%m%d%H%M%S')}.{file_extension}"
+            file_name = f"{table_name}_{user.username}_{datetime.now().strftime('%Y%m%d%H%M%S')}.{file_extension}"
+
+            # save file to resource
+            resource_folder = os.path.join(os.path.abspath(os.path.dirname(__file__)), '..', 'data_files')
+            full_file_path = os.path.join(resource_folder, file_name)
             uploaded_file.stream.seek(0)  # Reset the stream position
-            uploaded_file.save(file_name)
+            uploaded_file.save(full_file_path)
             
             upload = Upload(user_id=user.id, filename=file_name)
             db.session.add(upload)
