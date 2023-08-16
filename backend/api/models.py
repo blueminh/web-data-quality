@@ -6,6 +6,7 @@ Copyright (c) 2019 - present AppSeed.us
 from datetime import datetime
 
 import json
+from sqlalchemy import text
 
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_sqlalchemy import SQLAlchemy
@@ -21,9 +22,19 @@ class Users(db.Model):
     jwt_auth_active = db.Column(db.Boolean())
     date_joined = db.Column(db.DateTime(), default=datetime.utcnow)
     uploads = db.relationship('Upload', backref='users', lazy=True)
+    roles = db.Column(db.String(), default='', server_default=text("''"))
 
     def __repr__(self):
         return f"User {self.username}"
+    
+    def __init__(self, username, email, password, roles=None):
+        self.username = username
+        self.email = email
+        self.set_password(password)
+        # ... your existing constructor logic ...
+        if roles is None:
+            roles = []
+        self.roles = ','.join(roles)
 
     def save(self):
         db.session.add(self)
@@ -58,15 +69,24 @@ class Users(db.Model):
     @classmethod
     def get_by_username(cls, username):
         return cls.query.filter_by(username=username).first()
+    
+    def has_role(self, role):
+        return role in self.roles.split(',')
+    
+    def set_roles(self, roles):
+        self.roles = ','.join(roles)
+    
+    def get_roles(self):
+        return self.roles.split(',')
 
     def toDICT(self):
-
-        cls_dict = {}
-        cls_dict['_id'] = self.id
-        cls_dict['username'] = self.username
-        cls_dict['email'] = self.email
-
-        return cls_dict
+        print(self.roles)
+        return {
+            'id': self.id,
+            'username': self.username,
+            'email': self.email,
+            'roles': self.roles.split(','),
+        }
 
     def toJSON(self):
 

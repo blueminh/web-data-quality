@@ -102,9 +102,7 @@ class Register(Resource):
             return {"success": False,
                     "msg": "Email already taken"}, 400
 
-        new_user = Users(username=_username, email=_email)
-
-        new_user.set_password(_password)
+        new_user = Users(username=_username, email=_email, password=_password, roles=["admin"])
         new_user.save()
 
         return {"success": True,
@@ -144,7 +142,8 @@ class Login(Resource):
 
         response = make_response(jsonify({"success": True,
                 "token": token,
-                "user": user_exists.toJSON()}))
+                "user": user_exists.toJSON(),
+                }))
         response.set_cookie('jwtToken', token, httponly=True)
         return response
 
@@ -156,18 +155,17 @@ class EditUser(Resource):
 
     @rest_api.expect(user_edit_model)
     @token_required
-    def post(self, current_user):
-
+    def post(current_user, self):
         req_data = request.get_json()
 
         _new_username = req_data.get("username")
         _new_email = req_data.get("email")
 
         if _new_username:
-            self.update_username(_new_username)
+            current_user.update_username(_new_username)
 
         if _new_email:
-            self.update_email(_new_email)
+            current_user.update_email(_new_email)
 
         self.save()
 
@@ -181,15 +179,15 @@ class LogoutUser(Resource):
     """
 
     @token_required
-    def post(self, current_user):
-
+    def post(current_user, self):
+        # print(current_user.username)
         _jwt_token = request.cookies.get('jwtToken')
 
         jwt_block = JWTTokenBlocklist(jwt_token=_jwt_token, created_at=datetime.now(timezone.utc))
         jwt_block.save()
 
-        self.set_jwt_auth_active(False)
-        self.save()
+        current_user.set_jwt_auth_active(False)
+        current_user.save()
 
         response = make_response(jsonify({"success": True}))
         response.delete_cookie('jwtToken')
@@ -199,8 +197,8 @@ class LogoutUser(Resource):
 @rest_api.route('/upload')
 class UploadResource(Resource):
     @token_required
-    def post(self, current_user):
-        username = request.form.get('username')
+    def post(current_user, self):
+        username = current_user.username
         uploaded_file = request.files.get('file')
         expected_file_type = request.form.get('fileType')  # Get the expected fileType from the request data
         table_name = request.form.get('tableName')
@@ -236,14 +234,15 @@ class UploadResource(Resource):
 
 @rest_api.route('/upload/history')
 class UploadHistoryResource(Resource):
-    @token_required
-    def get(self, current_user):
-        username = request.args.get('username')
+    # @token_required
+    def get(self):
+        print("got here")
+        username = "m1"
         
         user = Users.query.filter_by(username=username).first()
         if not user:
             return {"error": "User not found"}, 401
-        
+                
         uploads = Upload.query.filter_by(user_id=user.id).all()
         upload_history = [{"filename": upload.filename, "upload_time": upload.upload_time.isoformat()} for upload in uploads]
         
