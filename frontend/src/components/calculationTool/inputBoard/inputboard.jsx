@@ -173,14 +173,13 @@ export default function InputDashboard() {
             tableMappingName: tableMappingName,
             regulatoryTable: regulatoryTable
         }
-        console.log(data)
         try {
             const message = await uploadFile(data);
             setMessage(message);
             setShowMessagePopup(true);
         } catch (error) {
             console.error('Error uploading file:', error);
-            setMessage('An error occurred while uploading the file.');
+            setMessage('Tải file không thành công');
         }
         setShowMessagePopup(true)
     };
@@ -282,7 +281,7 @@ export default function InputDashboard() {
                             <div className="form-input">
                                 <Form.Label>Chọn bảng regulatory cần nhập</Form.Label>
                                 <Autosuggest
-                                    suggestions={regulatoryTableOptions}
+                                    suggestions={regulatoryTableSuggestions}
                                     onSuggestionsFetchRequested={({ value }) => {
                                         setRegulatoryTableSuggestions(getRegulatoryTableSuggestions(value))
                                     }}

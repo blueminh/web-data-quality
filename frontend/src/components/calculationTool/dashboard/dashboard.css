@@ -25,3 +25,23 @@
     justify-content: center;
     gap: 20px; /* Adjust this value to set the space between buttons */
 }
+
+.chart-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow charts to wrap to new rows */
+
+    /* Define styles for each chart */
+    .chart {
+        flex: 1; /* Equal width for each chart */
+        padding: 10px;
+        box-sizing: border-box;
+        min-width: 200px; /* Minimum width for each chart */
+        min-height: 300px; 
+        margin:20px;
+
+        @media screen and (max-width: 768px) {
+            /* Adjust chart size for smaller screens */
+            min-width: 100%; /* Full width on smaller screens */
+        }
+    };
+}

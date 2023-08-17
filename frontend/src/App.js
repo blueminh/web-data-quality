@@ -19,11 +19,11 @@ const App = () => {
                 <Route path='/login' element={<LoginPage />}></Route>
                 <Route path="/unauthorized" element={<Unauthorized />} />
 
-                <Route element={<RequireAuth />}>
+                <Route element={<RequireAuth allowedRoles={["admin", "viewer"]}/>}>
                     <Route path='/' element={<CalculationHomePage />} />
                 </Route>
 
-                <Route element={<RequireAuth />}>
+                <Route element={<RequireAuth allowedRoles={["admin", "viewer"]}/>}>
                     <Route path='/calculation' element={<CalculationHomePage />} />
                 </Route>
 

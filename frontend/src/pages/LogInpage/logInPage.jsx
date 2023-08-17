@@ -50,8 +50,6 @@ function LoginPage() {
 
         authService.submitLogin(data)
             .then(response => {
-                console.log("response", response)
-                console.log("Received auth token! ", response.data);
                 setLoginErrorActive(false);
                 setAuth({
                     isLoggedIn: true,
@@ -73,20 +71,20 @@ function LoginPage() {
     return (
         <div className="poppins-bold-white-49px Back">
             <header className="LoginHeader">
-                Log In
+                Đăng nhập
             </header>
             <div className="LoginBackground poppins-normal-white-20px">
                 <form>
                     <hr className="Separator"/>
 
                     <div className="form-group LoginLabelBox">
-                        <label htmlFor="emailLoginForm" className="LoginLabel">Username</label>
+                        <label htmlFor="emailLoginForm" className="LoginLabel">Tên tài khoản</label>
                         <input type="email" className="form-control InputField" id="emailLoginForm"
                                onChange={updateEmail}
                                placeholder="Username..." required/>
                     </div>
                     <div className="form-group LoginLabelBox">
-                        <label htmlFor="passwordLoginForm" className="LoginLabel">Password</label>
+                        <label htmlFor="passwordLoginForm" className="LoginLabel">Mật khẩu</label>
                         <input type="password" className="form-control InputField" id="passwordLoginForm"
                                onChange={updatePassword}
                                placeholder="Password..." required/>
@@ -96,7 +94,7 @@ function LoginPage() {
                 <div className="LoginContainer">
                     {(getLoginErrorActive && 
                             <div className="LoginLabelBoxError poppins-normal-ghost-16px" style={{ color: "red"}}>
-                                <p>Login failed. {message}</p>
+                                <p>Đăng nhập không thành công. {message}</p>
                             </div>
                         ) || (!getLoginErrorActive && 
                             <div className="LoginLabelBoxSuccess poppins-normal-ghost-16px" style={{ color: "green"}}>
@@ -105,7 +103,7 @@ function LoginPage() {
                         )
                     }
                     <Button className="btn primary-button poppins-medium-white-22px btn-lg" onClick={onSubmitHandle}>
-                        Log In
+                        Đăng nhập
                     </Button>
                 </div>
         </div>

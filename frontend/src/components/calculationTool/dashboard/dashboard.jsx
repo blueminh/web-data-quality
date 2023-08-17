@@ -5,9 +5,12 @@ import './dashboard.css'
 import FetchDataService from '../../../services/fetchDataService'
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
+import { getBarChartData } from '../../../services/calculationToolService';
 
 import * as XLSX from 'xlsx';
 import { saveAs } from 'file-saver';
+
+import { Bar } from 'react-chartjs-2';
 
 export default function CalulationQuickDashboard() {
     const [lcrData, setLcrData] = useState({
@@ -121,6 +124,8 @@ export default function CalulationQuickDashboard() {
         // console.log(FetchDataService.getLcrQuickDashBoard)
         setLcrData(FetchDataService.getLcrQuickDashBoard())
         setNsfrData(FetchDataService.getNsfrQuickDashBoard())
+        setSetOfDataForFieldStatsBar(getBarChartData())
+        console.log(getBarChartData())
     }, [])
     
     const [reportingDate, setReportingDate] = useState(0)
@@ -193,8 +198,37 @@ export default function CalulationQuickDashboard() {
     const handleFetchReportedData = () => {
     }
 
+    // Bar charts
+    const [setOfDataForFieldStatsBar, setSetOfDataForFieldStatsBar] = useState([])
+
+
+    const getBarChartOptions = (title) => {
+        return {
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    maxBarThickness: 1 / 3, // Adjust as needed (proportion of 2/3)
+                },
+            },
+            plugins: {
+                title: {
+                    display: true,
+                    text: title, // Use the title prop here
+                    fontSize: 20,
+                },
+            },
+        };
+    }
+
     return (
         <div>
+            <div className="chart-container">
+                {setOfDataForFieldStatsBar.map(data => 
+                    <div className="chart">
+                        <Bar data={data} options={getBarChartOptions(data.title)}></Bar>
+                    </div>
+                )}
+            </div>
             <div id="dashboard-general-info">
                 <Stack gap={2}>
                     <FormLabel style={{fontWeight:'bold', fontSize:'larger'}}>Chọn ngày báo cáo</FormLabel>

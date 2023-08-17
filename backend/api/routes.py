@@ -241,7 +241,7 @@ class UploadResource(Resource):
             db.session.add(upload)
             db.session.commit()
             
-            return {"message": "File uploaded successfully"}
+            return {"message": "File được tải lên thành công"}
         else:
             return {"error": "Invalid file format or mismatched fileType"}, 400
         

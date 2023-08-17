@@ -10,15 +10,14 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend, CategoryScale,
     BarElement,
     Title,} from 'chart.js';
 
-    ChartJS.register(ArcElement, Tooltip, Legend);
-    ChartJS.register(
-        CategoryScale,
-        LinearScale,
-        BarElement,
-        Title,
-        Tooltip,
-        Legend)
-    console.log("test")
+ChartJS.register(ArcElement, Tooltip, Legend);
+ChartJS.register(
+    CategoryScale,
+    LinearScale,
+    BarElement,
+    Title,
+    Tooltip,
+    Legend)
 
 export default function ValidationDashBoard() {
 
