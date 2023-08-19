@@ -1,14 +1,12 @@
 import {Container, Nav, Navbar,  Button} from "react-bootstrap";
 import "./navbar.css"
-import { useContext } from "react";
-import AuthContext from "../../contexts/AuthProvider";
 import { useNavigate } from "react-router-dom";
 import authService from "../../services/authService";
-
+import useLocalStorageAuth from '../../hooks/useLocalStorageAuth'
 
 
 export default function NavigationBar() {
-    const {auth, setAuth} = useContext(AuthContext)
+    const {getAuth, setAuth} = useLocalStorageAuth()
     const navigate = useNavigate()
     const handleLogout = () => {
         authService.submitLogout()
@@ -16,7 +14,7 @@ export default function NavigationBar() {
                 setAuth({
                     isLoggedIn: false,
                 });
-                navigate("/calculation")
+                navigate("/login")
             }) // If login failed, throw an error to the user.
             .catch(e => {
                 console.log(e)
@@ -41,7 +39,7 @@ export default function NavigationBar() {
                         <Nav.Link href="/validation">Validation Tool</Nav.Link>
                     </Nav>
                     <Nav>
-                    {auth.isLoggedIn ? 
+                    {getAuth().isLoggedIn ? 
                         <div>
                             <Button
                                 className="primary-button btn-primary shadow-none btn-outline-dark button-navbar-padding"

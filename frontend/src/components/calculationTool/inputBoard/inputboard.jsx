@@ -1,15 +1,16 @@
 import { Container, Row, Col, Form, Table, Button, Stack, Modal} from 'react-bootstrap';
 import '../../../Global.css'
 import './inputboard.css'
-import { useState, useContext, useEffect } from 'react';
-import AuthContext from '../../../contexts/AuthProvider';
+import { useState, useEffect } from 'react';
 import { fetchUploadHistory, uploadFile } from '../../../services/calculationToolService';
 import Autosuggest from 'react-autosuggest';
 import * as XLSX from 'xlsx'; // Import xlsx library
+import useLocalStorageAuth from '../../../hooks/useLocalStorageAuth'
 
 
 export default function InputDashboard() {
-    const {auth} = useContext(AuthContext)
+    const {getAuth} = useLocalStorageAuth()
+    const auth = getAuth()
     const [uploadHistory, setUploadHistory] = useState([
             ["27/07/2023", "data.csv"],
             ["27/07/2023", "data.csv"],

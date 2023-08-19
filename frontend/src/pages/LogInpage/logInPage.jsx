@@ -1,12 +1,11 @@
 import "./Login.css";
 import '../../styleguide.css'
-import React, {useState, useContext} from "react";
+import React, {useState} from "react";
 // import {bake_cookie} from "sfcookies";
 import {Button} from "react-bootstrap";
-// import {LoginContext} from "../../App";
-import AuthContext from "../../contexts/AuthProvider";
 import { useNavigate } from "react-router-dom";
 import authService from "../../services/authService";
+import useLocalStorageAuth from "../../hooks/useLocalStorageAuth";
 
 function LoginPage() {
     const [getEmail, setEmail] = useState("null");
@@ -14,7 +13,7 @@ function LoginPage() {
     const [getLoginErrorActive, setLoginErrorActive] = useState(false);
     // eslint-disable-next-line
     const [message, setMessage] = useState("")
-    const {auth, setAuth} = useContext(AuthContext)
+    const {setAuth} = useLocalStorageAuth()
     const navigate = useNavigate()
 
     /**

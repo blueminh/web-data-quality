@@ -191,10 +191,9 @@ class LogoutUser(Resource):
     """
        Logs out User using 'logout_model' input
     """
-
-    @token_required
+    @token_required(required_roles=[])
     def post(current_user, self):
-        # print(current_user.username)
+        print("con cancjanckjasdnfjkn")
         _jwt_token = request.cookies.get('jwtToken')
 
         jwt_block = JWTTokenBlocklist(jwt_token=_jwt_token, created_at=datetime.now(timezone.utc))
@@ -205,8 +204,7 @@ class LogoutUser(Resource):
 
         response = make_response(jsonify({"success": True}))
         response.delete_cookie('jwtToken')
-        return response
-    
+        return response    
 
 @rest_api.route('/upload')
 class UploadResource(Resource):

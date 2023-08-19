@@ -1,9 +1,9 @@
 import { Navigate, Outlet } from "react-router-dom";
-import { useContext } from "react";
-import AuthContext from "../contexts/AuthProvider";
+import useLocalStorageAuth from '../hooks/useLocalStorageAuth'
 
 const RequireAuth = ({allowedRoles = []}) => {
-    const {auth} = useContext(AuthContext)
+    const {getAuth} = useLocalStorageAuth()
+    const auth = getAuth()
 
     if (!auth.isLoggedIn) {
         // Redirect to the login page if the user is not logged in
