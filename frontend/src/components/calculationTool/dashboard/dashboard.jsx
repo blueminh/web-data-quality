@@ -125,7 +125,6 @@ export default function CalulationQuickDashboard() {
         setLcrData(FetchDataService.getLcrQuickDashBoard())
         setNsfrData(FetchDataService.getNsfrQuickDashBoard())
         setSetOfDataForFieldStatsBar(getBarChartData())
-        console.log(getBarChartData())
     }, [])
     
     const [reportingDate, setReportingDate] = useState(0)

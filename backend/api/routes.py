@@ -68,14 +68,14 @@ def token_required(required_roles=[]):
                 current_user = Users.get_by_email(data["email"])
 
                 if not current_user:
-                    return {"success": False, "msg": "Sorry. Wrong auth token. This user does not exist."}, 403
+                    return {"success": False, "msg": "Sorry. Wrong auth token. This user does not exist."}, 401
 
                 token_expired = db.session.query(JWTTokenBlocklist.id).filter_by(jwt_token=token).scalar()
                 if token_expired is not None:
-                    return {"success": False, "msg": "Token revoked."}, 403
+                    return {"success": False, "msg": "Token revoked."}, 401
 
                 if not current_user.check_jwt_auth_active():
-                    return {"success": False, "msg": "Token expired."}, 403
+                    return {"success": False, "msg": "Token expired."}, 401
 
                 # Check roles here
                 user_roles = current_user.get_roles()
@@ -83,7 +83,7 @@ def token_required(required_roles=[]):
                     return {"success": False, "msg": "Insufficient permissions"}, 403
 
             except:
-                return {"success": False, "msg": "Token is invalid"}, 403
+                return {"success": False, "msg": "Token is invalid"}, 401
 
             return f(current_user, *args, **kwargs)
 

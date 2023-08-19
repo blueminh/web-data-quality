@@ -1,6 +1,6 @@
 import "./Login.css";
 import '../../styleguide.css'
-import React, {useState, useContext, useEffect} from "react";
+import React, {useState, useContext} from "react";
 // import {bake_cookie} from "sfcookies";
 import {Button} from "react-bootstrap";
 // import {LoginContext} from "../../App";

@@ -1,11 +1,8 @@
-import axios from 'axios';
-import serverUrl from '../config';
-
-const BASE_URL = serverUrl
+import axiosInstance from '../config/axiosConfig'
 
 export async function fetchUploadHistory(username) {
   try {
-    const response = await axios.get(`${BASE_URL}/upload/history?username=${username}`, {
+    const response = await axiosInstance.get(`/upload/history?username=${username}`, {
       withCredentials: true
     });
     return response.data.upload_history;
@@ -17,11 +14,11 @@ export async function fetchUploadHistory(username) {
 
 export async function uploadFile(data) {
   try {
-    const response = await axios.post(`${BASE_URL}/upload`, data, {
+    const response = await axiosInstance.post('/upload', data, {
       headers: {
         'Content-Type': 'multipart/form-data',
       },
-      withCredentials: true 
+      withCredentials: true
     });
 
     return response.data.message;
