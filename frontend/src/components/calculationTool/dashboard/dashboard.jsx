@@ -2,7 +2,6 @@ import { Table, Row, Col, Button, Form, FormLabel, Stack} from 'react-bootstrap'
 import { useEffect, useState, useRef } from "react";
 import '../../../Global.css'
 import './dashboard.css'
-import FetchDataService from '../../../services/fetchDataService'
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 import { getBarChartData } from '../../../services/calculationToolService';
@@ -12,140 +11,27 @@ import { saveAs } from 'file-saver';
 
 import { Bar } from 'react-chartjs-2';
 
+import { getDashboardLcrNsfrData } from '../../../services/calculationToolService';
+
 export default function CalulationQuickDashboard() {
-    const [lcrData, setLcrData] = useState({
-        title: "Liquidity Coverage Ratio - Quick Dashboard",
-        numberOfRows: 4,
-        numberOfCols: 2,
-        rows: [
-            {
-                rowTitle: {
-                    title: "Total HQLA",
-                    subTitle: "Tổng tài sản thanh khoản có chất lượng cao"
-                },
-                data: [
-                    0
-                ]
-            },
-            {
-                rowTitle: {
-                    title: "Total net cash outflows",
-                    subTitle: "Tổng dòng tiền ra ròng"
-                },
-                data: [
-                    0
-                ]
-            },
-            {
-                rowTitle: {
-                    title: "LCR minimum requirements",
-                    subTitle: "Yêu cầu tỷ lệ LCR tối thiểu"
-                },
-                data: [
-                    "100%"
-                ]
-            },
-            {
-                rowTitle: {
-                    title: "Liquidity Coverage Ratio",
-                    subTitle: "Tỷ lệ bao phủ thanh khoản"
-                },
-                data: [
-                    "0%"
-                ]
-            },
-            {
-                rowTitle: {
-                    title: "Remark",
-                    subTitle: "Nhận xét"
-                },
-                data: [
-                    "Below minimum requirements / Chưa đặt yêu cầu tối thiểu"
-                ]
-            },
-        ]
-    })
+    const [lcrData, setLcrData] = useState()
+    const [nsfrData, setNsfrData] = useState()
 
-    const [nsfrData, setNsfrData] = useState({
-        title: "Net Stable Funding Ratio Ratio - Quick Dashboard",
-        numberOfRows: 4,
-        numberOfCols: 2,
-        rows: [
-            {
-                rowTitle: {
-                    title: "Available Stable Funding",
-                    subTitle: "Nguồn vốn ổn định sẵn có"
-                },
-                data: [
-                    "120,062,649,450,300"
-                ]
-            },
-            {
-                rowTitle: {
-                    title: "Required Stable Funding",
-                    subTitle: "Nguồn vốn ổn định yêu cầu"
-                },
-                data: [
-                    "65,664,197,224,010"
-                ]
-            },
-            {
-                rowTitle: {
-                    title: "NSFR Minimum requirement",
-                    subTitle: "Yêu cầu tỷ lệ NSFR tối thiểu"
-                },
-                data: [
-                    "100%"
-                ]
-            },
-            {
-                rowTitle: {
-                    title: "Net Stable Funding Ratio",
-                    subTitle: "Tỷ lệ nguồn vốn ổn định ròng"
-                },
-                data: [
-                    "183%"
-                ]
-            },
-            {
-                rowTitle: {
-                    title: "Remark",
-                    subTitle: "Nhận xét"
-                },
-                data: [
-                    "Meet minimum requirement / Tuân thủ theo yêu cầu tối thiểu"
-                ]
-            },
-        ]
-    })
+    const formatDate = (date) => {
+        const day = String(date.getDate()).padStart(2, '0');
+        const month = String(date.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+        const year = date.getFullYear();
+        
+        return `${day}-${month}-${year}`;
+    }
+    const currentDate = new Date();
+    const formattedDate = formatDate(currentDate);
+    const [reportingDate, setReportingDate] = useState(formattedDate)
 
-    // Load data
     useEffect(() => {
-        // console.log(FetchDataService.getLcrQuickDashBoard)
-        setLcrData(FetchDataService.getLcrQuickDashBoard())
-        setNsfrData(FetchDataService.getNsfrQuickDashBoard())
-        setSetOfDataForFieldStatsBar(getBarChartData())
-    }, [])
+        handleFetchReportedData()
+    }, []);
     
-    const [reportingDate, setReportingDate] = useState(0)
-
-    // function formatDate(date) {
-    //     const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    //     const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-      
-    //     const dayOfWeek = days[date.getDay()];
-    //     const month = months[date.getMonth()];
-    //     const day = date.getDate();
-    //     const year = date.getFullYear();
-      
-    //     return `${dayOfWeek}, ${month} ${day}, ${year}`;
-    // }
-      
-    // Get the current date
-    // const currentDate = new Date();
-    
-    // // Format and display the current date
-    // const formattedDate = formatDate(currentDate);
 
     const tableRefs = [useRef(null), useRef(null)];
     const handleExportPDF = async () => {
@@ -195,6 +81,18 @@ export default function CalulationQuickDashboard() {
     };
 
     const handleFetchReportedData = () => {
+        const fetchLcrNsfr = async () => {
+            try {
+                const lcrNsfrDat = await getDashboardLcrNsfrData(reportingDate)
+                setLcrData(lcrNsfrDat.lcr_data)
+                setNsfrData(lcrNsfrDat.nsfr_data)
+                const barChartData = await getBarChartData()
+                setSetOfDataForFieldStatsBar(barChartData)
+            } catch (error) {
+              console.error('Error fetching data:', error);
+            }
+        };
+        fetchLcrNsfr()
     }
 
     // Bar charts
@@ -222,7 +120,7 @@ export default function CalulationQuickDashboard() {
     return (
         <div>
             <div className="chart-container">
-                {setOfDataForFieldStatsBar.map(data => 
+                {setOfDataForFieldStatsBar && setOfDataForFieldStatsBar.map(data => 
                     <div className="chart">
                         <Bar data={data} options={getBarChartOptions(data.title)}></Bar>
                     </div>
@@ -255,7 +153,7 @@ export default function CalulationQuickDashboard() {
                                 <tr>
                                     <td className='table-title' colSpan={2}>Liquidity Coverage Ratio - Tỷ lệ đảm bảo khả năng thanh khoàn</td>
                                 </tr>
-                                {lcrData.rows.map(row => 
+                                {lcrData && lcrData.rows.map(row => 
                                     <tr>
                                         <td>
                                             <span className='row-title'>{row.rowTitle.title}</span>
@@ -276,7 +174,7 @@ export default function CalulationQuickDashboard() {
                                     <tr>
                                         <td className='table-title' colSpan={2}>Net Stable Funding Ratio - Tỷ lệ quỹ ổn định ròng</td>
                                     </tr>
-                                    {nsfrData.rows.map(row => 
+                                    {nsfrData && nsfrData.rows.map(row => 
                                         <tr>
                                             <td>
                                                 <span className='row-title'>{row.rowTitle.title}</span>

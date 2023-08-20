@@ -16,6 +16,8 @@ import jwt
 from .models import db, Users, Upload, JWTTokenBlocklist
 from .config import BaseConfig
 
+from .service.getData import get_dashboard_lcr_nsfr_data, get_dashboard_bar_charts_data
+
 rest_api = Api(version="1.0", title="Users API")
 
 
@@ -258,3 +260,34 @@ class UploadHistoryResource(Resource):
         upload_history = [{"filename": upload.filename, "upload_time": upload.upload_time.isoformat()} for upload in uploads]
         
         return {"upload_history": upload_history}
+    
+
+# @rest_api.route('/data/getDashboardLcrNsfr')
+# class GetDashboardData(Resource):
+#     @token_required(required_roles=['viewer'])
+#     def get(current_user, self):
+#         date = request.args.get('date')
+#         print(date)
+#         data = get_dashboard_lcr_nsfr_data(date)
+
+#         return jsonify(data)
+        
+
+@rest_api.route('/data/getDashboardLcrNsfr', methods=['POST'])
+class GetDashboardData(Resource):
+    @token_required(required_roles=['viewer'])
+    def post(current_user, self):
+        request_data = request.get_json()
+        requested_date = request_data.get('date')  # Extract the date from the request data
+
+        data = get_dashboard_lcr_nsfr_data(requested_date)
+
+        return jsonify(data) 
+    
+
+@rest_api.route('/data/getDashboardBarCharts', methods=['GET'])
+class GetDashboardBarChartsData(Resource):
+    @token_required(required_roles=['viewer'])
+    def get(current_user, self):
+        data = get_dashboard_bar_charts_data()
+        return jsonify(data)  
