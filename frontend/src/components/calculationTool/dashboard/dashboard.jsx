@@ -1,4 +1,4 @@
-import { Table, Row, Col, Button, Form, FormLabel, Stack} from 'react-bootstrap';
+import { Table, Row, Col, Button, Form, FormLabel, Stack, Modal } from 'react-bootstrap';
 import { useEffect, useState, useRef } from "react";
 import '../../../Global.css'
 import './dashboard.css'
@@ -14,6 +14,7 @@ import { Bar } from 'react-chartjs-2';
 import { getDashboardLcrNsfrData } from '../../../services/calculationToolService';
 
 export default function CalulationQuickDashboard() {
+    const [errorMessage, setErrorMessage] = useState('');
     const [lcrData, setLcrData] = useState()
     const [nsfrData, setNsfrData] = useState()
 
@@ -22,7 +23,7 @@ export default function CalulationQuickDashboard() {
         const month = String(date.getMonth() + 1).padStart(2, '0'); // Months are zero-based
         const year = date.getFullYear();
         
-        return `${day}-${month}-${year}`;
+        return `${year}-${month}-${day}`;
     }
     const currentDate = new Date();
     const formattedDate = formatDate(currentDate);
@@ -90,6 +91,7 @@ export default function CalulationQuickDashboard() {
                 setSetOfDataForFieldStatsBar(barChartData)
             } catch (error) {
               console.error('Error fetching data:', error);
+              setErrorMessage("Có lỗi đã xảy ra")
             }
         };
         fetchLcrNsfr()
@@ -117,8 +119,22 @@ export default function CalulationQuickDashboard() {
         };
     }
 
+    const [showMessagePopup, setShowMessagePopup] = useState(false);
+    const handleCloseMessagePopup = () => setShowMessagePopup(false);
+
     return (
         <div>
+            <Modal show={showMessagePopup} onHide={handleCloseMessagePopup}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Lỗi</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>{errorMessage}</Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleCloseMessagePopup}>
+                        Đóng
+                    </Button>
+                </Modal.Footer>
+            </Modal>
             <div className="chart-container">
                 {setOfDataForFieldStatsBar && setOfDataForFieldStatsBar.map(data => 
                     <div className="chart">
@@ -129,19 +145,20 @@ export default function CalulationQuickDashboard() {
             <div id="dashboard-general-info">
                 <Stack gap={2}>
                     <FormLabel style={{fontWeight:'bold', fontSize:'larger'}}>Chọn ngày báo cáo</FormLabel>
-                    <Form.Control 
+                    <Form.Control
+                        value={reportingDate} 
                         required type="date" 
                         onChange={(event) => {
                             setReportingDate(String(event.target.value))
                         }}/>
-                    <div class="button-container">
+                    <div className="button-container">
                         <Button onClick={handleFetchReportedData}>Lấy kết quả tổng quan</Button>    
                     </div>
                 </Stack>
             </div>
             <div className='tables-grid'>
                 <Row className='pb-4'>
-                    <div class="button-container">
+                    <div className="button-container">
                         <Button onClick={handleExportPDF}>Xuất kết quả ra PDF</Button>
                         <Button onClick={exportToExcel}>Xuất kết quả ra Excel</Button>
                     </div>

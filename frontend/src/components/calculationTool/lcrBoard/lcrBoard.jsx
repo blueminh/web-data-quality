@@ -121,7 +121,7 @@ export default function LCRDashBoard() {
                 <div>Reported at / Thởi điểm báo cáo: {reportedDate}</div>
             </div>
             <div id = "dataTable">
-                <div class="button-container pb-4">
+                <div className="button-container pb-4">
                     <Button onClick={handleExportPDF}>Export to PDF</Button>
                     <Button onClick={exportToExcel}>Export to Excel</Button>
                 </div>

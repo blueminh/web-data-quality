@@ -16,7 +16,8 @@ import jwt
 from .models import db, Users, Upload, JWTTokenBlocklist
 from .config import BaseConfig
 
-from .service.getData import get_dashboard_lcr_nsfr_data, get_dashboard_bar_charts_data
+from .service.getDataService import get_dashboard_lcr_nsfr_data, get_dashboard_bar_charts_data
+from .service.uploadDataService import get_table_list
 
 rest_api = Api(version="1.0", title="Users API")
 
@@ -229,7 +230,7 @@ class UploadResource(Resource):
            (expected_file_type == 'xlsx' and file_extension == 'xlsx') or \
            (expected_file_type == 'xls' and file_extension == 'xls'):
             # Handle CSV, Excel (xlsx), and Excel (xls) files
-            file_name = f"{table_name}_{user.username}_{datetime.now().strftime('%Y%m%d%H%M%S')}.{file_extension}"
+            file_name = f"{table_name}_{datetime.now().strftime('%Y%m%d%H%M%S')}.{file_extension}"
 
             # save file to resource
             resource_folder = os.path.join(os.path.abspath(os.path.dirname(__file__)), '..', 'data_files')
@@ -260,6 +261,13 @@ class UploadHistoryResource(Resource):
         upload_history = [{"filename": upload.filename, "upload_time": upload.upload_time.isoformat()} for upload in uploads]
         
         return {"upload_history": upload_history}
+    
+@rest_api.route('/upload/getTableList', methods=['GET'])
+class GetDashboardBarChartsData(Resource):
+    @token_required(required_roles=['viewer'])
+    def get(current_user, self):
+        data = get_table_list()
+        return jsonify(data)  
     
 
 # @rest_api.route('/data/getDashboardLcrNsfr')

@@ -55,3 +55,17 @@ export async function getBarChartData() {
     return 'Error fetching data';
   }
 }
+
+export async function getTableList() {
+  try {
+    const response = await axiosInstance.get(`/upload/getTableList`, {
+      withCredentials: true
+    });
+
+    return response.data
+
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    return 'Error fetching data';
+  }
+}

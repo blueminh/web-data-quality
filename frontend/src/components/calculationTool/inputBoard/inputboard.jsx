@@ -6,6 +6,7 @@ import { fetchUploadHistory, uploadFile } from '../../../services/calculationToo
 import Autosuggest from 'react-autosuggest';
 import * as XLSX from 'xlsx'; // Import xlsx library
 import useLocalStorageAuth from '../../../hooks/useLocalStorageAuth'
+import { getTableList } from '../../../services/calculationToolService';
 
 
 export default function InputDashboard() {
@@ -30,7 +31,7 @@ export default function InputDashboard() {
 
     // suggestion logic for table name
     // list of suggested table names
-    const [tableNameOptions, ] = useState([
+    const [tableNameOptions, setTableNameOptions] = useState([
         'customers',
         'orders',
         'products',
@@ -158,8 +159,18 @@ export default function InputDashboard() {
               console.error('Error fetching upload history:', error);
             }
         };
+
+        const fetchTableOptions = async () => {
+            try {
+              const tableOptions = await getTableList()
+              setTableNameOptions(tableOptions)
+            } catch (error) {
+              console.error('Error fetching table list', error);
+            }
+        };
       
         fetchHistory();
+        fetchTableOptions()
     }, []);
 
 
@@ -170,9 +181,7 @@ export default function InputDashboard() {
             separationSymbol: separationSymbol,
             username: auth.username,
             file: selectedFile, 
-            tableName: tableName,
-            tableMappingName: tableMappingName,
-            regulatoryTable: regulatoryTable
+            tableName: tableName
         }
         try {
             const message = await uploadFile(data);
