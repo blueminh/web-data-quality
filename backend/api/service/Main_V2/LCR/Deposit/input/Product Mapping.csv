@@ -1,0 +1,60 @@
+﻿Instruments/Products,Instruments/Product Type
+Investment/Issued Securities Product Types,
+Chứng khoán nợ,Marketable Securities
+Chứng chỉ tiền gửi,Others
+Trái phiếu đặc biệt VAMC,Others
+Kỳ phiếu,Others
+Trái Phiếu,Bonds
+Chứng khoán vốn,Equity
+General Product Types,
+Tiền gửi KKH của khách hàng,Demand Deposit
+Tiền gửi tiết kiệm KKH,Demand Deposit
+Tiền gửi KKH của khách hàng nước ngoài,Demand Deposit
+Tiền gửi vốn chuyên dùng,Operational Deposit
+Tiền gửi tiết kiệm CKH từ 12 tháng trở lên,Term Deposit
+Tiền gửi tiết kiệm CKH dưới 12 tháng,Term Deposit
+Tiền gửi CKH dưới 12 tháng của khách hàng,Term Deposit
+Tiền gửi bảo đảm các khoản thanh toán khác,Operational Deposit
+Tiền gửi ký quỹ bảo lãnh,Operational Deposit
+Chứng chỉ tiền gửi dài hạn,Term Deposit
+Tiền gửi CKH từ 12 tháng trở lên của khách hàng,Term Deposit
+Tiền gửi CKH dưới 12 tháng của khách hàng nước ngoài,Term Deposit
+Chứng chỉ tiền gửi ngắn hạn,Term Deposit
+Chứng chỉ tiền gửi trung hạn,Term Deposit
+Trái phiếu,Bonds
+Tiền gửi để đảm bảo thanh toán thẻ,Operational Deposit
+Vay Ngân hàng Nhà nước,Central Bank Loan
+Tiền nhận gửi các TCTD khác,Others
+Tiền vay các TCTD khác,Others
+Vốn tài trợ của định chế tài chính,Others
+Vốn nhận của Chính phủ,Others
+Tiền gửi CKH KHCN,Term Deposit
+Tiền gửi CKH KHDN,Term Deposit
+Tiền gửi KKH KHCN,Demand Deposit
+Tiền gửi KKH KHDN,Demand Deposit
+Vốn tài trợ ủy thác từ Chính Phủ,Others
+Vốn vay từ các quỹ nước ngoài,Others
+Tiền gửi tiết kiệm online CKH dưới 12 tháng,Term Deposit
+Tiền gửi tiết kiệm online CKH từ 12 tháng trở lên,Term Deposit
+Tiền nhận gửi CKH các TCTD khác,Term Deposit
+Tiền nhận gửi KKH các TCTD khác,Demand Deposit
+NA,NA
+Tiền gửi của TCTD khác,Others
+Tiền gửi không kỳ hạn,Demand Deposit
+Tiền gửi có kỳ hạn,Term Deposit
+Tiền gửi để bảo đảm thanh toán Thẻ,Operational Deposit
+Bảo đảm các khoản thanh toán khác,Operational Deposit
+Ký quỹ bảo lãnh,Operational Deposit
+,
+,
+SFT Transaction Types,
+Repo,Secured Borrowing
+Reverse Repo,Secured Lending
+Tiền gửi của TCTD khác,Secured Borrowing
+Vốn vay từ các quỹ nước ngoài,Secured Borrowing
+Vay Ngân hàng Nhà nước,Secured Borrowing
+Tiền vay các TCTD khác,Secured Borrowing
+Vốn tài trợ ủy thác từ Chính phủ,Secured Borrowing
+Trái phiếu,Secured Borrowing
+Kỳ phiếu,Secured Borrowing
+Chứng chỉ tiền gửi,Secured Borrowing

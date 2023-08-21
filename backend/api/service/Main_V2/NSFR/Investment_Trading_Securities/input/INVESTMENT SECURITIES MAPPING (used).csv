@@ -1,0 +1,397 @@
+﻿Product Type,Counterparty Type,Level of Asset,Maturity Bucket,Concat,RSF Factor
+Marketable Securities,Domestic Sovereign,L1,Less than 6 months,Marketable SecuritiesDomestic SovereignL1Less than 6 months,5%
+Marketable Securities,PSEs,L1,Less than 6 months,Marketable SecuritiesPSEsL1Less than 6 months,5%
+Marketable Securities,Central Bank,L1,Less than 6 months,Marketable SecuritiesCentral BankL1Less than 6 months,0%
+Marketable Securities,MDB,L1,Less than 6 months,Marketable SecuritiesMDBL1Less than 6 months,5%
+Marketable Securities,Corp,L1,Less than 6 months,Marketable SecuritiesCorpL1Less than 6 months,5%
+Marketable Securities,FIs,L1,Less than 6 months,Marketable SecuritiesFIsL1Less than 6 months,5%
+Marketable Securities,Small Business Customer,L1,Less than 6 months,Marketable SecuritiesSmall Business CustomerL1Less than 6 months,5%
+Marketable Securities,Others,L1,Less than 6 months,Marketable SecuritiesOthersL1Less than 6 months,5%
+Marketable Securities,Retail,L1,Less than 6 months,Marketable SecuritiesRetailL1Less than 6 months,5%
+Marketable Securities,Domestic Sovereign,L2A,Less than 6 months,Marketable SecuritiesDomestic SovereignL2ALess than 6 months,15%
+Marketable Securities,PSEs,L2A,Less than 6 months,Marketable SecuritiesPSEsL2ALess than 6 months,15%
+Marketable Securities,Central Bank,L2A,Less than 6 months,Marketable SecuritiesCentral BankL2ALess than 6 months,0%
+Marketable Securities,MDB,L2A,Less than 6 months,Marketable SecuritiesMDBL2ALess than 6 months,15%
+Marketable Securities,Corp,L2A,Less than 6 months,Marketable SecuritiesCorpL2ALess than 6 months,15%
+Marketable Securities,FIs,L2A,Less than 6 months,Marketable SecuritiesFIsL2ALess than 6 months,15%
+Marketable Securities,Small Business Customer,L2A,Less than 6 months,Marketable SecuritiesSmall Business CustomerL2ALess than 6 months,15%
+Marketable Securities,Others,L2A,Less than 6 months,Marketable SecuritiesOthersL2ALess than 6 months,15%
+Marketable Securities,Retail,L2A,Less than 6 months,Marketable SecuritiesRetailL2ALess than 6 months,15%
+Marketable Securities,Domestic Sovereign,L2B,Less than 6 months,Marketable SecuritiesDomestic SovereignL2BLess than 6 months,50%
+Marketable Securities,PSEs,L2B,Less than 6 months,Marketable SecuritiesPSEsL2BLess than 6 months,50%
+Marketable Securities,Central Bank,L2B,Less than 6 months,Marketable SecuritiesCentral BankL2BLess than 6 months,0%
+Marketable Securities,MDB,L2B,Less than 6 months,Marketable SecuritiesMDBL2BLess than 6 months,50%
+Marketable Securities,Corp,L2B,Less than 6 months,Marketable SecuritiesCorpL2BLess than 6 months,50%
+Marketable Securities,FIs,L2B,Less than 6 months,Marketable SecuritiesFIsL2BLess than 6 months,50%
+Marketable Securities,Small Business Customer,L2B,Less than 6 months,Marketable SecuritiesSmall Business CustomerL2BLess than 6 months,50%
+Marketable Securities,Others,L2B,Less than 6 months,Marketable SecuritiesOthersL2BLess than 6 months,50%
+Marketable Securities,Retail,L2B,Less than 6 months,Marketable SecuritiesRetailL2BLess than 6 months,50%
+Marketable Securities,Domestic Sovereign,NA,Less than 6 months,Marketable SecuritiesDomestic SovereignNALess than 6 months,50%
+Marketable Securities,PSEs,NA,Less than 6 months,Marketable SecuritiesPSEsNALess than 6 months,50%
+Marketable Securities,Central Bank,NA,Less than 6 months,Marketable SecuritiesCentral BankNALess than 6 months,0%
+Marketable Securities,MDB,NA,Less than 6 months,Marketable SecuritiesMDBNALess than 6 months,50%
+Marketable Securities,Corp,NA,Less than 6 months,Marketable SecuritiesCorpNALess than 6 months,50%
+Marketable Securities,FIs,NA,Less than 6 months,Marketable SecuritiesFIsNALess than 6 months,50%
+Marketable Securities,Small Business Customer,NA,Less than 6 months,Marketable SecuritiesSmall Business CustomerNALess than 6 months,50%
+Marketable Securities,Others,NA,Less than 6 months,Marketable SecuritiesOthersNALess than 6 months,50%
+Marketable Securities,Retail,NA,Less than 6 months,Marketable SecuritiesRetailNALess than 6 months,50%
+Marketable Securities,Domestic Sovereign,L1,6 months to 1 year,Marketable SecuritiesDomestic SovereignL16 months to 1 year,5%
+Marketable Securities,PSEs,L1,6 months to 1 year,Marketable SecuritiesPSEsL16 months to 1 year,5%
+Marketable Securities,Central Bank,L1,6 months to 1 year,Marketable SecuritiesCentral BankL16 months to 1 year,5%
+Marketable Securities,MDB,L1,6 months to 1 year,Marketable SecuritiesMDBL16 months to 1 year,5%
+Marketable Securities,Corp,L1,6 months to 1 year,Marketable SecuritiesCorpL16 months to 1 year,5%
+Marketable Securities,FIs,L1,6 months to 1 year,Marketable SecuritiesFIsL16 months to 1 year,5%
+Marketable Securities,Small Business Customer,L1,6 months to 1 year,Marketable SecuritiesSmall Business CustomerL16 months to 1 year,5%
+Marketable Securities,Others,L1,6 months to 1 year,Marketable SecuritiesOthersL16 months to 1 year,5%
+Marketable Securities,Retail,L1,6 months to 1 year,Marketable SecuritiesRetailL16 months to 1 year,5%
+Marketable Securities,Domestic Sovereign,L2A,6 months to 1 year,Marketable SecuritiesDomestic SovereignL2A6 months to 1 year,15%
+Marketable Securities,PSEs,L2A,6 months to 1 year,Marketable SecuritiesPSEsL2A6 months to 1 year,15%
+Marketable Securities,Central Bank,L2A,6 months to 1 year,Marketable SecuritiesCentral BankL2A6 months to 1 year,15%
+Marketable Securities,MDB,L2A,6 months to 1 year,Marketable SecuritiesMDBL2A6 months to 1 year,15%
+Marketable Securities,Corp,L2A,6 months to 1 year,Marketable SecuritiesCorpL2A6 months to 1 year,15%
+Marketable Securities,FIs,L2A,6 months to 1 year,Marketable SecuritiesFIsL2A6 months to 1 year,15%
+Marketable Securities,Small Business Customer,L2A,6 months to 1 year,Marketable SecuritiesSmall Business CustomerL2A6 months to 1 year,15%
+Marketable Securities,Others,L2A,6 months to 1 year,Marketable SecuritiesOthersL2A6 months to 1 year,15%
+Marketable Securities,Retail,L2A,6 months to 1 year,Marketable SecuritiesRetailL2A6 months to 1 year,15%
+Marketable Securities,Domestic Sovereign,L2B,6 months to 1 year,Marketable SecuritiesDomestic SovereignL2B6 months to 1 year,100%
+Marketable Securities,PSEs,L2B,6 months to 1 year,Marketable SecuritiesPSEsL2B6 months to 1 year,100%
+Marketable Securities,Central Bank,L2B,6 months to 1 year,Marketable SecuritiesCentral BankL2B6 months to 1 year,100%
+Marketable Securities,MDB,L2B,6 months to 1 year,Marketable SecuritiesMDBL2B6 months to 1 year,100%
+Marketable Securities,Corp,L2B,6 months to 1 year,Marketable SecuritiesCorpL2B6 months to 1 year,100%
+Marketable Securities,FIs,L2B,6 months to 1 year,Marketable SecuritiesFIsL2B6 months to 1 year,100%
+Marketable Securities,Small Business Customer,L2B,6 months to 1 year,Marketable SecuritiesSmall Business CustomerL2B6 months to 1 year,100%
+Marketable Securities,Others,L2B,6 months to 1 year,Marketable SecuritiesOthersL2B6 months to 1 year,100%
+Marketable Securities,Retail,L2B,6 months to 1 year,Marketable SecuritiesRetailL2B6 months to 1 year,100%
+Marketable Securities,Domestic Sovereign,NA,6 months to 1 year,Marketable SecuritiesDomestic SovereignNA6 months to 1 year,50%
+Marketable Securities,PSEs,NA,6 months to 1 year,Marketable SecuritiesPSEsNA6 months to 1 year,50%
+Marketable Securities,Central Bank,NA,6 months to 1 year,Marketable SecuritiesCentral BankNA6 months to 1 year,50%
+Marketable Securities,MDB,NA,6 months to 1 year,Marketable SecuritiesMDBNA6 months to 1 year,50%
+Marketable Securities,Corp,NA,6 months to 1 year,Marketable SecuritiesCorpNA6 months to 1 year,50%
+Marketable Securities,FIs,NA,6 months to 1 year,Marketable SecuritiesFIsNA6 months to 1 year,50%
+Marketable Securities,Small Business Customer,NA,6 months to 1 year,Marketable SecuritiesSmall Business CustomerNA6 months to 1 year,50%
+Marketable Securities,Others,NA,6 months to 1 year,Marketable SecuritiesOthersNA6 months to 1 year,50%
+Marketable Securities,Retail,NA,6 months to 1 year,Marketable SecuritiesRetailNA6 months to 1 year,50%
+Marketable Securities,Domestic Sovereign,L1,More than 1 year,Marketable SecuritiesDomestic SovereignL1More than 1 year,5%
+Marketable Securities,PSEs,L1,More than 1 year,Marketable SecuritiesPSEsL1More than 1 year,5%
+Marketable Securities,Central Bank,L1,More than 1 year,Marketable SecuritiesCentral BankL1More than 1 year,5%
+Marketable Securities,MDB,L1,More than 1 year,Marketable SecuritiesMDBL1More than 1 year,5%
+Marketable Securities,Corp,L1,More than 1 year,Marketable SecuritiesCorpL1More than 1 year,5%
+Marketable Securities,FIs,L1,More than 1 year,Marketable SecuritiesFIsL1More than 1 year,5%
+Marketable Securities,Small Business Customer,L1,More than 1 year,Marketable SecuritiesSmall Business CustomerL1More than 1 year,5%
+Marketable Securities,Others,L1,More than 1 year,Marketable SecuritiesOthersL1More than 1 year,5%
+Marketable Securities,Retail,L1,More than 1 year,Marketable SecuritiesRetailL1More than 1 year,5%
+Marketable Securities,Domestic Sovereign,L2A,More than 1 year,Marketable SecuritiesDomestic SovereignL2AMore than 1 year,15%
+Marketable Securities,PSEs,L2A,More than 1 year,Marketable SecuritiesPSEsL2AMore than 1 year,15%
+Marketable Securities,Central Bank,L2A,More than 1 year,Marketable SecuritiesCentral BankL2AMore than 1 year,15%
+Marketable Securities,MDB,L2A,More than 1 year,Marketable SecuritiesMDBL2AMore than 1 year,15%
+Marketable Securities,Corp,L2A,More than 1 year,Marketable SecuritiesCorpL2AMore than 1 year,15%
+Marketable Securities,FIs,L2A,More than 1 year,Marketable SecuritiesFIsL2AMore than 1 year,15%
+Marketable Securities,Small Business Customer,L2A,More than 1 year,Marketable SecuritiesSmall Business CustomerL2AMore than 1 year,15%
+Marketable Securities,Others,L2A,More than 1 year,Marketable SecuritiesOthersL2AMore than 1 year,15%
+Marketable Securities,Retail,L2A,More than 1 year,Marketable SecuritiesRetailL2AMore than 1 year,15%
+Marketable Securities,Domestic Sovereign,L2B,More than 1 year,Marketable SecuritiesDomestic SovereignL2BMore than 1 year,100%
+Marketable Securities,PSEs,L2B,More than 1 year,Marketable SecuritiesPSEsL2BMore than 1 year,100%
+Marketable Securities,Central Bank,L2B,More than 1 year,Marketable SecuritiesCentral BankL2BMore than 1 year,100%
+Marketable Securities,MDB,L2B,More than 1 year,Marketable SecuritiesMDBL2BMore than 1 year,100%
+Marketable Securities,Corp,L2B,More than 1 year,Marketable SecuritiesCorpL2BMore than 1 year,100%
+Marketable Securities,FIs,L2B,More than 1 year,Marketable SecuritiesFIsL2BMore than 1 year,100%
+Marketable Securities,Small Business Customer,L2B,More than 1 year,Marketable SecuritiesSmall Business CustomerL2BMore than 1 year,100%
+Marketable Securities,Others,L2B,More than 1 year,Marketable SecuritiesOthersL2BMore than 1 year,100%
+Marketable Securities,Retail,L2B,More than 1 year,Marketable SecuritiesRetailL2BMore than 1 year,100%
+Marketable Securities,Domestic Sovereign,NA,More than 1 year,Marketable SecuritiesDomestic SovereignNAMore than 1 year,85%
+Marketable Securities,PSEs,NA,More than 1 year,Marketable SecuritiesPSEsNAMore than 1 year,85%
+Marketable Securities,Central Bank,NA,More than 1 year,Marketable SecuritiesCentral BankNAMore than 1 year,85%
+Marketable Securities,MDB,NA,More than 1 year,Marketable SecuritiesMDBNAMore than 1 year,85%
+Marketable Securities,Corp,NA,More than 1 year,Marketable SecuritiesCorpNAMore than 1 year,85%
+Marketable Securities,FIs,NA,More than 1 year,Marketable SecuritiesFIsNAMore than 1 year,85%
+Marketable Securities,Small Business Customer,NA,More than 1 year,Marketable SecuritiesSmall Business CustomerNAMore than 1 year,85%
+Marketable Securities,Others,NA,More than 1 year,Marketable SecuritiesOthersNAMore than 1 year,85%
+Marketable Securities,Retail,NA,More than 1 year,Marketable SecuritiesRetailNAMore than 1 year,85%
+RMBS,Domestic Sovereign,L2B,Less than 6 months,RMBSDomestic SovereignL2BLess than 6 months,50%
+RMBS,PSEs,L2B,Less than 6 months,RMBSPSEsL2BLess than 6 months,50%
+RMBS,Central Bank,L2B,Less than 6 months,RMBSCentral BankL2BLess than 6 months,0%
+RMBS,MDB,L2B,Less than 6 months,RMBSMDBL2BLess than 6 months,50%
+RMBS,Corp,L2B,Less than 6 months,RMBSCorpL2BLess than 6 months,50%
+RMBS,FIs,L2B,Less than 6 months,RMBSFIsL2BLess than 6 months,50%
+RMBS,Small Business Customer,L2B,Less than 6 months,RMBSSmall Business CustomerL2BLess than 6 months,50%
+RMBS,Others,L2B,Less than 6 months,RMBSOthersL2BLess than 6 months,50%
+RMBS,Retail,L2B,Less than 6 months,RMBSRetailL2BLess than 6 months,50%
+RMBS,Domestic Sovereign,NA,Less than 6 months,RMBSDomestic SovereignNALess than 6 months,50%
+RMBS,PSEs,NA,Less than 6 months,RMBSPSEsNALess than 6 months,50%
+RMBS,Central Bank,NA,Less than 6 months,RMBSCentral BankNALess than 6 months,0%
+RMBS,MDB,NA,Less than 6 months,RMBSMDBNALess than 6 months,50%
+RMBS,Corp,NA,Less than 6 months,RMBSCorpNALess than 6 months,50%
+RMBS,FIs,NA,Less than 6 months,RMBSFIsNALess than 6 months,50%
+RMBS,Small Business Customer,NA,Less than 6 months,RMBSSmall Business CustomerNALess than 6 months,50%
+RMBS,Others,NA,Less than 6 months,RMBSOthersNALess than 6 months,50%
+RMBS,Retail,NA,Less than 6 months,RMBSRetailNALess than 6 months,50%
+RMBS,Domestic Sovereign,L2B,6 months to 1 year,RMBSDomestic SovereignL2B6 months to 1 year,50%
+RMBS,PSEs,L2B,6 months to 1 year,RMBSPSEsL2B6 months to 1 year,50%
+RMBS,Central Bank,L2B,6 months to 1 year,RMBSCentral BankL2B6 months to 1 year,50%
+RMBS,MDB,L2B,6 months to 1 year,RMBSMDBL2B6 months to 1 year,50%
+RMBS,Corp,L2B,6 months to 1 year,RMBSCorpL2B6 months to 1 year,50%
+RMBS,FIs,L2B,6 months to 1 year,RMBSFIsL2B6 months to 1 year,50%
+RMBS,Small Business Customer,L2B,6 months to 1 year,RMBSSmall Business CustomerL2B6 months to 1 year,50%
+RMBS,Others,L2B,6 months to 1 year,RMBSOthersL2B6 months to 1 year,50%
+RMBS,Retail,L2B,6 months to 1 year,RMBSRetailL2B6 months to 1 year,50%
+RMBS,Domestic Sovereign,NA,6 months to 1 year,RMBSDomestic SovereignNA6 months to 1 year,50%
+RMBS,PSEs,NA,6 months to 1 year,RMBSPSEsNA6 months to 1 year,50%
+RMBS,Central Bank,NA,6 months to 1 year,RMBSCentral BankNA6 months to 1 year,50%
+RMBS,MDB,NA,6 months to 1 year,RMBSMDBNA6 months to 1 year,50%
+RMBS,Corp,NA,6 months to 1 year,RMBSCorpNA6 months to 1 year,50%
+RMBS,FIs,NA,6 months to 1 year,RMBSFIsNA6 months to 1 year,50%
+RMBS,Small Business Customer,NA,6 months to 1 year,RMBSSmall Business CustomerNA6 months to 1 year,50%
+RMBS,Others,NA,6 months to 1 year,RMBSOthersNA6 months to 1 year,50%
+RMBS,Retail,NA,6 months to 1 year,RMBSRetailNA6 months to 1 year,50%
+RMBS,Domestic Sovereign,L2B,More than 1 year,RMBSDomestic SovereignL2BMore than 1 year,50%
+RMBS,PSEs,L2B,More than 1 year,RMBSPSEsL2BMore than 1 year,50%
+RMBS,Central Bank,L2B,More than 1 year,RMBSCentral BankL2BMore than 1 year,50%
+RMBS,MDB,L2B,More than 1 year,RMBSMDBL2BMore than 1 year,50%
+RMBS,Corp,L2B,More than 1 year,RMBSCorpL2BMore than 1 year,50%
+RMBS,FIs,L2B,More than 1 year,RMBSFIsL2BMore than 1 year,50%
+RMBS,Small Business Customer,L2B,More than 1 year,RMBSSmall Business CustomerL2BMore than 1 year,50%
+RMBS,Others,L2B,More than 1 year,RMBSOthersL2BMore than 1 year,50%
+RMBS,Retail,L2B,More than 1 year,RMBSRetailL2BMore than 1 year,50%
+RMBS,Domestic Sovereign,NA,More than 1 year,RMBSDomestic SovereignNAMore than 1 year,85%
+RMBS,PSEs,NA,More than 1 year,RMBSPSEsNAMore than 1 year,85%
+RMBS,Central Bank,NA,More than 1 year,RMBSCentral BankNAMore than 1 year,85%
+RMBS,MDB,NA,More than 1 year,RMBSMDBNAMore than 1 year,85%
+RMBS,Corp,NA,More than 1 year,RMBSCorpNAMore than 1 year,85%
+RMBS,FIs,NA,More than 1 year,RMBSFIsNAMore than 1 year,85%
+RMBS,Small Business Customer,NA,More than 1 year,RMBSSmall Business CustomerNAMore than 1 year,85%
+RMBS,Others,NA,More than 1 year,RMBSOthersNAMore than 1 year,85%
+RMBS,Retail,NA,More than 1 year,RMBSRetailNAMore than 1 year,85%
+Equity,Domestic Sovereign,L2B,No Maturity,EquityDomestic SovereignL2BNo Maturity,50%
+Equity,PSEs,L2B,No Maturity,EquityPSEsL2BNo Maturity,50%
+Equity,Central Bank,L2B,No Maturity,EquityCentral BankL2BNo Maturity,50%
+Equity,MDB,L2B,No Maturity,EquityMDBL2BNo Maturity,50%
+Equity,Corp,L2B,No Maturity,EquityCorpL2BNo Maturity,50%
+Equity,FIs,L2B,No Maturity,EquityFIsL2BNo Maturity,50%
+Equity,Small Business Customer,L2B,No Maturity,EquitySmall Business CustomerL2BNo Maturity,50%
+Equity,Others,L2B,No Maturity,EquityOthersL2BNo Maturity,50%
+Equity,Retail,L2B,No Maturity,EquityRetailL2BNo Maturity,50%
+Equity,Domestic Sovereign,NA,No Maturity,EquityDomestic SovereignNANo Maturity,85%
+Equity,PSEs,NA,No Maturity,EquityPSEsNANo Maturity,85%
+Equity,Central Bank,NA,No Maturity,EquityCentral BankNANo Maturity,85%
+Equity,MDB,NA,No Maturity,EquityMDBNANo Maturity,85%
+Equity,Corp,NA,No Maturity,EquityCorpNANo Maturity,85%
+Equity,FIs,NA,No Maturity,EquityFIsNANo Maturity,85%
+Equity,Small Business Customer,NA,No Maturity,EquitySmall Business CustomerNANo Maturity,85%
+Equity,Others,NA,No Maturity,EquityOthersNANo Maturity,85%
+Equity,Retail,NA,No Maturity,EquityRetailNANo Maturity,85%
+Others,Domestic Sovereign,L1,Less than 6 months,OthersDomestic SovereignL1Less than 6 months,5%
+Others,PSEs,L1,Less than 6 months,OthersPSEsL1Less than 6 months,5%
+Others,Central Bank,L1,Less than 6 months,OthersCentral BankL1Less than 6 months,0%
+Others,MDB,L1,Less than 6 months,OthersMDBL1Less than 6 months,5%
+Others,Corp,L1,Less than 6 months,OthersCorpL1Less than 6 months,5%
+Others,FIs,L1,Less than 6 months,OthersFIsL1Less than 6 months,5%
+Others,Small Business Customer,L1,Less than 6 months,OthersSmall Business CustomerL1Less than 6 months,5%
+Others,Others,L1,Less than 6 months,OthersOthersL1Less than 6 months,5%
+Others,Retail,L1,Less than 6 months,OthersRetailL1Less than 6 months,5%
+Others,Domestic Sovereign,L2A,Less than 6 months,OthersDomestic SovereignL2ALess than 6 months,15%
+Others,PSEs,L2A,Less than 6 months,OthersPSEsL2ALess than 6 months,15%
+Others,Central Bank,L2A,Less than 6 months,OthersCentral BankL2ALess than 6 months,0%
+Others,MDB,L2A,Less than 6 months,OthersMDBL2ALess than 6 months,15%
+Others,Corp,L2A,Less than 6 months,OthersCorpL2ALess than 6 months,15%
+Others,FIs,L2A,Less than 6 months,OthersFIsL2ALess than 6 months,15%
+Others,Small Business Customer,L2A,Less than 6 months,OthersSmall Business CustomerL2ALess than 6 months,15%
+Others,Others,L2A,Less than 6 months,OthersOthersL2ALess than 6 months,15%
+Others,Retail,L2A,Less than 6 months,OthersRetailL2ALess than 6 months,15%
+Others,Domestic Sovereign,L2B,Less than 6 months,OthersDomestic SovereignL2BLess than 6 months,50%
+Others,PSEs,L2B,Less than 6 months,OthersPSEsL2BLess than 6 months,50%
+Others,Central Bank,L2B,Less than 6 months,OthersCentral BankL2BLess than 6 months,0%
+Others,MDB,L2B,Less than 6 months,OthersMDBL2BLess than 6 months,50%
+Others,Corp,L2B,Less than 6 months,OthersCorpL2BLess than 6 months,50%
+Others,FIs,L2B,Less than 6 months,OthersFIsL2BLess than 6 months,50%
+Others,Small Business Customer,L2B,Less than 6 months,OthersSmall Business CustomerL2BLess than 6 months,50%
+Others,Others,L2B,Less than 6 months,OthersOthersL2BLess than 6 months,50%
+Others,Retail,L2B,Less than 6 months,OthersRetailL2BLess than 6 months,50%
+Others,Domestic Sovereign,NA,Less than 6 months,OthersDomestic SovereignNALess than 6 months,50%
+Others,PSEs,NA,Less than 6 months,OthersPSEsNALess than 6 months,50%
+Others,Central Bank,NA,Less than 6 months,OthersCentral BankNALess than 6 months,0%
+Others,MDB,NA,Less than 6 months,OthersMDBNALess than 6 months,50%
+Others,Corp,NA,Less than 6 months,OthersCorpNALess than 6 months,50%
+Others,FIs,NA,Less than 6 months,OthersFIsNALess than 6 months,50%
+Others,Small Business Customer,NA,Less than 6 months,OthersSmall Business CustomerNALess than 6 months,50%
+Others,Others,NA,Less than 6 months,OthersOthersNALess than 6 months,50%
+Others,Retail,NA,Less than 6 months,OthersRetailNALess than 6 months,50%
+Others,Domestic Sovereign,L1,6 months to 1 year,OthersDomestic SovereignL16 months to 1 year,5%
+Others,PSEs,L1,6 months to 1 year,OthersPSEsL16 months to 1 year,5%
+Others,Central Bank,L1,6 months to 1 year,OthersCentral BankL16 months to 1 year,5%
+Others,MDB,L1,6 months to 1 year,OthersMDBL16 months to 1 year,5%
+Others,Corp,L1,6 months to 1 year,OthersCorpL16 months to 1 year,5%
+Others,FIs,L1,6 months to 1 year,OthersFIsL16 months to 1 year,5%
+Others,Small Business Customer,L1,6 months to 1 year,OthersSmall Business CustomerL16 months to 1 year,5%
+Others,Others,L1,6 months to 1 year,OthersOthersL16 months to 1 year,5%
+Others,Retail,L1,6 months to 1 year,OthersRetailL16 months to 1 year,5%
+Others,Domestic Sovereign,L2A,6 months to 1 year,OthersDomestic SovereignL2A6 months to 1 year,15%
+Others,PSEs,L2A,6 months to 1 year,OthersPSEsL2A6 months to 1 year,15%
+Others,Central Bank,L2A,6 months to 1 year,OthersCentral BankL2A6 months to 1 year,15%
+Others,MDB,L2A,6 months to 1 year,OthersMDBL2A6 months to 1 year,15%
+Others,Corp,L2A,6 months to 1 year,OthersCorpL2A6 months to 1 year,15%
+Others,FIs,L2A,6 months to 1 year,OthersFIsL2A6 months to 1 year,15%
+Others,Small Business Customer,L2A,6 months to 1 year,OthersSmall Business CustomerL2A6 months to 1 year,15%
+Others,Others,L2A,6 months to 1 year,OthersOthersL2A6 months to 1 year,15%
+Others,Retail,L2A,6 months to 1 year,OthersRetailL2A6 months to 1 year,15%
+Others,Domestic Sovereign,L2B,6 months to 1 year,OthersDomestic SovereignL2B6 months to 1 year,50%
+Others,PSEs,L2B,6 months to 1 year,OthersPSEsL2B6 months to 1 year,50%
+Others,Central Bank,L2B,6 months to 1 year,OthersCentral BankL2B6 months to 1 year,50%
+Others,MDB,L2B,6 months to 1 year,OthersMDBL2B6 months to 1 year,50%
+Others,Corp,L2B,6 months to 1 year,OthersCorpL2B6 months to 1 year,50%
+Others,FIs,L2B,6 months to 1 year,OthersFIsL2B6 months to 1 year,50%
+Others,Small Business Customer,L2B,6 months to 1 year,OthersSmall Business CustomerL2B6 months to 1 year,50%
+Others,Others,L2B,6 months to 1 year,OthersOthersL2B6 months to 1 year,50%
+Others,Retail,L2B,6 months to 1 year,OthersRetailL2B6 months to 1 year,50%
+Others,Domestic Sovereign,NA,6 months to 1 year,OthersDomestic SovereignNA6 months to 1 year,50%
+Others,PSEs,NA,6 months to 1 year,OthersPSEsNA6 months to 1 year,50%
+Others,Central Bank,NA,6 months to 1 year,OthersCentral BankNA6 months to 1 year,50%
+Others,MDB,NA,6 months to 1 year,OthersMDBNA6 months to 1 year,50%
+Others,Corp,NA,6 months to 1 year,OthersCorpNA6 months to 1 year,50%
+Others,FIs,NA,6 months to 1 year,OthersFIsNA6 months to 1 year,50%
+Others,Small Business Customer,NA,6 months to 1 year,OthersSmall Business CustomerNA6 months to 1 year,50%
+Others,Others,NA,6 months to 1 year,OthersOthersNA6 months to 1 year,50%
+Others,Retail,NA,6 months to 1 year,OthersRetailNA6 months to 1 year,50%
+Others,Domestic Sovereign,L1,More than 1 year,OthersDomestic SovereignL1More than 1 year,5%
+Others,PSEs,L1,More than 1 year,OthersPSEsL1More than 1 year,5%
+Others,Central Bank,L1,More than 1 year,OthersCentral BankL1More than 1 year,5%
+Others,MDB,L1,More than 1 year,OthersMDBL1More than 1 year,5%
+Others,Corp,L1,More than 1 year,OthersCorpL1More than 1 year,5%
+Others,FIs,L1,More than 1 year,OthersFIsL1More than 1 year,5%
+Others,Small Business Customer,L1,More than 1 year,OthersSmall Business CustomerL1More than 1 year,5%
+Others,Others,L1,More than 1 year,OthersOthersL1More than 1 year,5%
+Others,Retail,L1,More than 1 year,OthersRetailL1More than 1 year,5%
+Others,Domestic Sovereign,L2A,More than 1 year,OthersDomestic SovereignL2AMore than 1 year,15%
+Others,PSEs,L2A,More than 1 year,OthersPSEsL2AMore than 1 year,15%
+Others,Central Bank,L2A,More than 1 year,OthersCentral BankL2AMore than 1 year,15%
+Others,MDB,L2A,More than 1 year,OthersMDBL2AMore than 1 year,15%
+Others,Corp,L2A,More than 1 year,OthersCorpL2AMore than 1 year,15%
+Others,FIs,L2A,More than 1 year,OthersFIsL2AMore than 1 year,15%
+Others,Small Business Customer,L2A,More than 1 year,OthersSmall Business CustomerL2AMore than 1 year,15%
+Others,Others,L2A,More than 1 year,OthersOthersL2AMore than 1 year,15%
+Others,Retail,L2A,More than 1 year,OthersRetailL2AMore than 1 year,15%
+Others,Domestic Sovereign,L2B,More than 1 year,OthersDomestic SovereignL2BMore than 1 year,50%
+Others,PSEs,L2B,More than 1 year,OthersPSEsL2BMore than 1 year,50%
+Others,Central Bank,L2B,More than 1 year,OthersCentral BankL2BMore than 1 year,50%
+Others,MDB,L2B,More than 1 year,OthersMDBL2BMore than 1 year,50%
+Others,Corp,L2B,More than 1 year,OthersCorpL2BMore than 1 year,50%
+Others,FIs,L2B,More than 1 year,OthersFIsL2BMore than 1 year,50%
+Others,Small Business Customer,L2B,More than 1 year,OthersSmall Business CustomerL2BMore than 1 year,50%
+Others,Others,L2B,More than 1 year,OthersOthersL2BMore than 1 year,50%
+Others,Retail,L2B,More than 1 year,OthersRetailL2BMore than 1 year,50%
+Others,Domestic Sovereign,NA,More than 1 year,OthersDomestic SovereignNAMore than 1 year,85%
+Others,PSEs,NA,More than 1 year,OthersPSEsNAMore than 1 year,85%
+Others,Central Bank,NA,More than 1 year,OthersCentral BankNAMore than 1 year,85%
+Others,MDB,NA,More than 1 year,OthersMDBNAMore than 1 year,85%
+Others,Corp,NA,More than 1 year,OthersCorpNAMore than 1 year,85%
+Others,FIs,NA,More than 1 year,OthersFIsNAMore than 1 year,85%
+Others,Small Business Customer,NA,More than 1 year,OthersSmall Business CustomerNAMore than 1 year,85%
+Others,Others,NA,More than 1 year,OthersOthersNAMore than 1 year,85%
+Others,Retail,NA,More than 1 year,OthersRetailNAMore than 1 year,85%
+Bonds,Corp,L2A,More than 1 year,BondsCorpL2AMore than 1 year,15%
+Bonds,MDB,L2A,More than 1 year,BondsMDBL2AMore than 1 year,15%
+Bonds,Domestic Sovereign,L2A,More than 1 year,BondsDomestic SovereignL2AMore than 1 year,15%
+Bonds,FIs,L2A,More than 1 year,BondsFIsL2AMore than 1 year,15%
+Bonds,Small Business Customer,L2A,More than 1 year,BondsSmall Business CustomerL2AMore than 1 year,15%
+Bonds,PSEs,L2A,More than 1 year,BondsPSEsL2AMore than 1 year,15%
+Bonds,Central Bank,L2A,More than 1 year,BondsCentral BankL2AMore than 1 year,15%
+Bonds,Others,L2A,More than 1 year,BondsOthersL2AMore than 1 year,15%
+Bonds,Retail,L2A,More than 1 year,BondsRetailL2AMore than 1 year,15%
+Bonds,Corp,L2A,6 months to 1 year,BondsCorpL2A6 months to 1 year,15%
+Bonds,MDB,L2A,6 months to 1 year,BondsMDBL2A6 months to 1 year,15%
+Bonds,Domestic Sovereign,L2A,6 months to 1 year,BondsDomestic SovereignL2A6 months to 1 year,15%
+Bonds,FIs,L2A,6 months to 1 year,BondsFIsL2A6 months to 1 year,15%
+Bonds,Small Business Customer,L2A,6 months to 1 year,BondsSmall Business CustomerL2A6 months to 1 year,15%
+Bonds,PSEs,L2A,6 months to 1 year,BondsPSEsL2A6 months to 1 year,15%
+Bonds,Central Bank,L2A,6 months to 1 year,BondsCentral BankL2A6 months to 1 year,15%
+Bonds,Others,L2A,6 months to 1 year,BondsOthersL2A6 months to 1 year,15%
+Bonds,Retail,L2A,6 months to 1 year,BondsRetailL2A6 months to 1 year,15%
+Bonds,Corp,L2A,Less than 6 months,BondsCorpL2ALess than 6 months,15%
+Bonds,MDB,L2A,Less than 6 months,BondsMDBL2ALess than 6 months,15%
+Bonds,Domestic Sovereign,L2A,Less than 6 months,BondsDomestic SovereignL2ALess than 6 months,15%
+Bonds,FIs,L2A,Less than 6 months,BondsFIsL2ALess than 6 months,15%
+Bonds,Small Business Customer,L2A,Less than 6 months,BondsSmall Business CustomerL2ALess than 6 months,15%
+Bonds,PSEs,L2A,Less than 6 months,BondsPSEsL2ALess than 6 months,15%
+Bonds,Central Bank,L2A,Less than 6 months,BondsCentral BankL2ALess than 6 months,0%
+Bonds,Others,L2A,Less than 6 months,BondsOthersL2ALess than 6 months,15%
+Bonds,Retail,L2A,Less than 6 months,BondsRetailL2ALess than 6 months,15%
+Bonds,Domestic Sovereign,NA,More than 1 year,BondsDomestic SovereignNAMore than 1 year,85%
+Bonds,PSEs,NA,More than 1 year,BondsPSEsNAMore than 1 year,85%
+Bonds,Central Bank,NA,More than 1 year,BondsCentral BankNAMore than 1 year,85%
+Bonds,MDB,NA,More than 1 year,BondsMDBNAMore than 1 year,85%
+Bonds,Corp,NA,More than 1 year,BondsCorpNAMore than 1 year,85%
+Bonds,FIs,NA,More than 1 year,BondsFIsNAMore than 1 year,85%
+Bonds,Small Business Customer,NA,More than 1 year,BondsSmall Business CustomerNAMore than 1 year,85%
+Bonds,Others,NA,More than 1 year,BondsOthersNAMore than 1 year,85%
+Bonds,Retail,NA,More than 1 year,BondsRetailNAMore than 1 year,85%
+Bonds,Domestic Sovereign,NA,6 months to 1 year,BondsDomestic SovereignNA6 months to 1 year,50%
+Bonds,PSEs,NA,6 months to 1 year,BondsPSEsNA6 months to 1 year,50%
+Bonds,Central Bank,NA,6 months to 1 year,BondsCentral BankNA6 months to 1 year,50%
+Bonds,MDB,NA,6 months to 1 year,BondsMDBNA6 months to 1 year,50%
+Bonds,Corp,NA,6 months to 1 year,BondsCorpNA6 months to 1 year,50%
+Bonds,FIs,NA,6 months to 1 year,BondsFIsNA6 months to 1 year,50%
+Bonds,Small Business Customer,NA,6 months to 1 year,BondsSmall Business CustomerNA6 months to 1 year,50%
+Bonds,Others,NA,6 months to 1 year,BondsOthersNA6 months to 1 year,50%
+Bonds,Retail,NA,6 months to 1 year,BondsRetailNA6 months to 1 year,50%
+Bonds,Domestic Sovereign,NA,Less than 6 months,BondsDomestic SovereignNALess than 6 months,50%
+Bonds,PSEs,NA,Less than 6 months,BondsPSEsNALess than 6 months,50%
+Bonds,Central Bank,NA,Less than 6 months,BondsCentral BankNALess than 6 months,0%
+Bonds,MDB,NA,Less than 6 months,BondsMDBNALess than 6 months,50%
+Bonds,Corp,NA,Less than 6 months,BondsCorpNALess than 6 months,50%
+Bonds,FIs,NA,Less than 6 months,BondsFIsNALess than 6 months,50%
+Bonds,Small Business Customer,NA,Less than 6 months,BondsSmall Business CustomerNALess than 6 months,50%
+Bonds,Others,NA,Less than 6 months,BondsOthersNALess than 6 months,50%
+Bonds,Retail,NA,Less than 6 months,BondsRetailNALess than 6 months,50%
+Bonds,Corp,L2B,More than 1 year,BondsCorpL2BMore than 1 year,50%
+Bonds,MDB,L2B,More than 1 year,BondsMDBL2BMore than 1 year,50%
+Bonds,Domestic Sovereign,L2B,More than 1 year,BondsDomestic SovereignL2BMore than 1 year,50%
+Bonds,FIs,L2B,More than 1 year,BondsFIsL2BMore than 1 year,50%
+Bonds,Small Business Customer,L2B,More than 1 year,BondsSmall Business CustomerL2BMore than 1 year,50%
+Bonds,PSEs,L2B,More than 1 year,BondsPSEsL2BMore than 1 year,50%
+Bonds,Central Bank,L2B,More than 1 year,BondsCentral BankL2BMore than 1 year,50%
+Bonds,Others,L2B,More than 1 year,BondsOthersL2BMore than 1 year,50%
+Bonds,Retail,L2B,More than 1 year,BondsRetailL2BMore than 1 year,50%
+Bonds,Corp,L2B,6 months to 1 year,BondsCorpL2B6 months to 1 year,50%
+Bonds,MDB,L2B,6 months to 1 year,BondsMDBL2B6 months to 1 year,50%
+Bonds,Domestic Sovereign,L2B,6 months to 1 year,BondsDomestic SovereignL2B6 months to 1 year,50%
+Bonds,FIs,L2B,6 months to 1 year,BondsFIsL2B6 months to 1 year,50%
+Bonds,Small Business Customer,L2B,6 months to 1 year,BondsSmall Business CustomerL2B6 months to 1 year,50%
+Bonds,PSEs,L2B,6 months to 1 year,BondsPSEsL2B6 months to 1 year,50%
+Bonds,Central Bank,L2B,6 months to 1 year,BondsCentral BankL2B6 months to 1 year,50%
+Bonds,Others,L2B,6 months to 1 year,BondsOthersL2B6 months to 1 year,50%
+Bonds,Retail,L2B,6 months to 1 year,BondsRetailL2B6 months to 1 year,50%
+Bonds,Corp,L2B,Less than 6 months,BondsCorpL2BLess than 6 months,50%
+Bonds,MDB,L2B,Less than 6 months,BondsMDBL2BLess than 6 months,50%
+Bonds,Domestic Sovereign,L2B,Less than 6 months,BondsDomestic SovereignL2BLess than 6 months,50%
+Bonds,FIs,L2B,Less than 6 months,BondsFIsL2BLess than 6 months,50%
+Bonds,Small Business Customer,L2B,Less than 6 months,BondsSmall Business CustomerL2BLess than 6 months,50%
+Bonds,PSEs,L2B,Less than 6 months,BondsPSEsL2BLess than 6 months,50%
+Bonds,Central Bank,L2B,Less than 6 months,BondsCentral BankL2BLess than 6 months,0%
+Bonds,Others,L2B,Less than 6 months,BondsOthersL2BLess than 6 months,50%
+Bonds,Retail,L2B,Less than 6 months,BondsRetailL2BLess than 6 months,50%
+Bonds,Corp,L1,More than 1 year,BondsCorpL1More than 1 year,5%
+Bonds,MDB,L1,More than 1 year,BondsMDBL1More than 1 year,5%
+Bonds,Domestic Sovereign,L1,More than 1 year,BondsDomestic SovereignL1More than 1 year,5%
+Bonds,FIs,L1,More than 1 year,BondsFIsL1More than 1 year,5%
+Bonds,Small Business Customer,L1,More than 1 year,BondsSmall Business CustomerL1More than 1 year,5%
+Bonds,PSEs,L1,More than 1 year,BondsPSEsL1More than 1 year,5%
+Bonds,Central Bank,L1,More than 1 year,BondsCentral BankL1More than 1 year,5%
+Bonds,Others,L1,More than 1 year,BondsOthersL1More than 1 year,5%
+Bonds,Retail,L1,More than 1 year,BondsRetailL1More than 1 year,5%
+Bonds,Corp,L1,6 months to 1 year,BondsCorpL16 months to 1 year,5%
+Bonds,MDB,L1,6 months to 1 year,BondsMDBL16 months to 1 year,5%
+Bonds,Domestic Sovereign,L1,6 months to 1 year,BondsDomestic SovereignL16 months to 1 year,5%
+Bonds,FIs,L1,6 months to 1 year,BondsFIsL16 months to 1 year,5%
+Bonds,Small Business Customer,L1,6 months to 1 year,BondsSmall Business CustomerL16 months to 1 year,5%
+Bonds,PSEs,L1,6 months to 1 year,BondsPSEsL16 months to 1 year,5%
+Bonds,Central Bank,L1,6 months to 1 year,BondsCentral BankL16 months to 1 year,5%
+Bonds,Others,L1,6 months to 1 year,BondsOthersL16 months to 1 year,5%
+Bonds,Retail,L1,6 months to 1 year,BondsRetailL16 months to 1 year,5%
+Bonds,Corp,L1,Less than 6 months,BondsCorpL1Less than 6 months,5%
+Bonds,MDB,L1,Less than 6 months,BondsMDBL1Less than 6 months,5%
+Bonds,Domestic Sovereign,L1,Less than 6 months,BondsDomestic SovereignL1Less than 6 months,5%
+Bonds,FIs,L1,Less than 6 months,BondsFIsL1Less than 6 months,5%
+Bonds,Small Business Customer,L1,Less than 6 months,BondsSmall Business CustomerL1Less than 6 months,5%
+Bonds,PSEs,L1,Less than 6 months,BondsPSEsL1Less than 6 months,5%
+Bonds,Central Bank,L1,Less than 6 months,BondsCentral BankL1Less than 6 months,0%
+Bonds,Others,L1,Less than 6 months,BondsOthersL1Less than 6 months,5%
+Bonds,Retail,L1,Less than 6 months,BondsRetailL1Less than 6 months,5%

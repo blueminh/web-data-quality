@@ -1,0 +1,28 @@
+﻿Counterparty Type,Maturity Bucket,Concat,ASF Factor
+Corp,Less than 6 months,CorpLess than 6 months,50%
+Domestic Sovereign,Less than 6 months,Domestic SovereignLess than 6 months,50%
+PSEs,Less than 6 months,PSEsLess than 6 months,50%
+MDB,Less than 6 months,MDBLess than 6 months,50%
+Central Bank,Less than 6 months,Central BankLess than 6 months,0%
+FIs,Less than 6 months,FIsLess than 6 months,0%
+Small Business Customer,Less than 6 months,Small Business CustomerLess than 6 months,0%
+Others,Less than 6 months,OthersLess than 6 months,0%
+Retail,Less than 6 months,RetailLess than 6 months,0%
+Corp,6 months to 1 year,Corp6 months to 1 year,50%
+Domestic Sovereign,6 months to 1 year,Domestic Sovereign6 months to 1 year,50%
+PSEs,6 months to 1 year,PSEs6 months to 1 year,50%
+MDB,6 months to 1 year,MDB6 months to 1 year,50%
+Central Bank,6 months to 1 year,Central Bank6 months to 1 year,50%
+FIs,6 months to 1 year,FIs6 months to 1 year,50%
+Small Business Customer,6 months to 1 year,Small Business Customer6 months to 1 year,50%
+Others,6 months to 1 year,Others6 months to 1 year,50%
+Retail,6 months to 1 year,Retail6 months to 1 year,50%
+Corp,More than 1 year,CorpMore than 1 year,100%
+Domestic Sovereign,More than 1 year,Domestic SovereignMore than 1 year,100%
+PSEs,More than 1 year,PSEsMore than 1 year,100%
+MDB,More than 1 year,MDBMore than 1 year,100%
+Central Bank,More than 1 year,Central BankMore than 1 year,100%
+FIs,More than 1 year,FIsMore than 1 year,100%
+Small Business Customer,More than 1 year,Small Business CustomerMore than 1 year,100%
+Others,More than 1 year,OthersMore than 1 year,100%
+Retail,More than 1 year,RetailMore than 1 year,100%
