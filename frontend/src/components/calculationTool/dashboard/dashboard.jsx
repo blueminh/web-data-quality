@@ -91,6 +91,7 @@ export default function CalulationQuickDashboard() {
                 setSetOfDataForFieldStatsBar(barChartData)
             } catch (error) {
               console.error('Error fetching data:', error);
+              console.log("ahhh ", setOfDataForFieldStatsBar)
               setErrorMessage("Có lỗi đã xảy ra")
             }
         };
@@ -136,7 +137,7 @@ export default function CalulationQuickDashboard() {
                 </Modal.Footer>
             </Modal>
             <div className="chart-container">
-                {setOfDataForFieldStatsBar && setOfDataForFieldStatsBar.map(data => 
+                {Array.isArray(setOfDataForFieldStatsBar) && setOfDataForFieldStatsBar.map(data => 
                     <div className="chart">
                         <Bar data={data} options={getBarChartOptions(data.title)}></Bar>
                     </div>
@@ -153,16 +154,12 @@ export default function CalulationQuickDashboard() {
                         }}/>
                     <div className="button-container">
                         <Button onClick={handleFetchReportedData}>Lấy kết quả tổng quan</Button>    
+                        <Button onClick={handleExportPDF}>Xuất kết quả ra PDF</Button>
+                        <Button onClick={exportToExcel}>Xuất kết quả ra Excel</Button>
                     </div>
                 </Stack>
             </div>
             <div className='tables-grid'>
-                <Row className='pb-4'>
-                    <div className="button-container">
-                        <Button onClick={handleExportPDF}>Xuất kết quả ra PDF</Button>
-                        <Button onClick={exportToExcel}>Xuất kết quả ra Excel</Button>
-                    </div>
-                </Row>
                 <Row className='pb-4'>
                     <Col>
                         <Table striped bordered ref={tableRefs[0]}>
