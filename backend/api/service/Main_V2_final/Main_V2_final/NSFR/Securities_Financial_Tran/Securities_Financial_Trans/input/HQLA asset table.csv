@@ -1,0 +1,1010 @@
+﻿Product,Counterparty Category,Currency Flag,Risk Weight Category,RATING_CD,CONCAT,HQLA Asset
+Bonds,Corp,Domestic Currency,RW1,HIGH,BondsCorpDomestic CurrencyRW1HIGH,L2A
+Bonds,Corp,Domestic Currency,RW2,HIGH,BondsCorpDomestic CurrencyRW2HIGH,L2A
+Bonds,Corp,Domestic Currency,RW3,HIGH,BondsCorpDomestic CurrencyRW3HIGH,L2A
+Bonds,Corp,Domestic Currency,RW1,MEDIUM,BondsCorpDomestic CurrencyRW1MEDIUM,L2B
+Bonds,Corp,Domestic Currency,RW2,MEDIUM,BondsCorpDomestic CurrencyRW2MEDIUM,L2B
+Bonds,Corp,Domestic Currency,RW3,MEDIUM,BondsCorpDomestic CurrencyRW3MEDIUM,L2B
+Bonds,Corp,Domestic Currency,RW1,LOW,BondsCorpDomestic CurrencyRW1LOW,NA
+Bonds,Corp,Domestic Currency,RW2,LOW,BondsCorpDomestic CurrencyRW2LOW,NA
+Bonds,Corp,Domestic Currency,RW3,LOW,BondsCorpDomestic CurrencyRW3LOW,NA
+Bonds,Corp,Foreign Currency,RW1,HIGH,BondsCorpForeign CurrencyRW1HIGH,L2A
+Bonds,Corp,Foreign Currency,RW2,HIGH,BondsCorpForeign CurrencyRW2HIGH,L2A
+Bonds,Corp,Foreign Currency,RW3,HIGH,BondsCorpForeign CurrencyRW3HIGH,L2A
+Bonds,Corp,Foreign Currency,RW1,MEDIUM,BondsCorpForeign CurrencyRW1MEDIUM,L2B
+Bonds,Corp,Foreign Currency,RW2,MEDIUM,BondsCorpForeign CurrencyRW2MEDIUM,L2B
+Bonds,Corp,Foreign Currency,RW3,MEDIUM,BondsCorpForeign CurrencyRW3MEDIUM,L2B
+Bonds,Corp,Foreign Currency,RW1,LOW,BondsCorpForeign CurrencyRW1LOW,NA
+Bonds,Corp,Foreign Currency,RW2,LOW,BondsCorpForeign CurrencyRW2LOW,NA
+Bonds,Corp,Foreign Currency,RW3,LOW,BondsCorpForeign CurrencyRW3LOW,NA
+Bonds,MDB,Domestic Currency,RW1,HIGH,BondsMDBDomestic CurrencyRW1HIGH,L2A
+Bonds,MDB,Domestic Currency,RW2,HIGH,BondsMDBDomestic CurrencyRW2HIGH,L2A
+Bonds,MDB,Domestic Currency,RW3,HIGH,BondsMDBDomestic CurrencyRW3HIGH,L2A
+Bonds,MDB,Domestic Currency,RW1,MEDIUM,BondsMDBDomestic CurrencyRW1MEDIUM,L2B
+Bonds,MDB,Domestic Currency,RW2,MEDIUM,BondsMDBDomestic CurrencyRW2MEDIUM,L2B
+Bonds,MDB,Domestic Currency,RW3,MEDIUM,BondsMDBDomestic CurrencyRW3MEDIUM,L2B
+Bonds,MDB,Domestic Currency,RW1,LOW,BondsMDBDomestic CurrencyRW1LOW,NA
+Bonds,MDB,Domestic Currency,RW2,LOW,BondsMDBDomestic CurrencyRW2LOW,NA
+Bonds,MDB,Domestic Currency,RW3,LOW,BondsMDBDomestic CurrencyRW3LOW,NA
+Bonds,MDB,Foreign Currency,RW1,HIGH,BondsMDBForeign CurrencyRW1HIGH,L2A
+Bonds,MDB,Foreign Currency,RW2,HIGH,BondsMDBForeign CurrencyRW2HIGH,L2A
+Bonds,MDB,Foreign Currency,RW3,HIGH,BondsMDBForeign CurrencyRW3HIGH,L2A
+Bonds,MDB,Foreign Currency,RW1,MEDIUM,BondsMDBForeign CurrencyRW1MEDIUM,L2B
+Bonds,MDB,Foreign Currency,RW2,MEDIUM,BondsMDBForeign CurrencyRW2MEDIUM,L2B
+Bonds,MDB,Foreign Currency,RW3,MEDIUM,BondsMDBForeign CurrencyRW3MEDIUM,L2B
+Bonds,MDB,Foreign Currency,RW1,LOW,BondsMDBForeign CurrencyRW1LOW,NA
+Bonds,MDB,Foreign Currency,RW2,LOW,BondsMDBForeign CurrencyRW2LOW,NA
+Bonds,MDB,Foreign Currency,RW3,LOW,BondsMDBForeign CurrencyRW3LOW,NA
+Bonds,Central Bank,Domestic Currency,RW1,HIGH,BondsCentral BankDomestic CurrencyRW1HIGH,L2A
+Bonds,Central Bank,Domestic Currency,RW2,HIGH,BondsCentral BankDomestic CurrencyRW2HIGH,L2A
+Bonds,Central Bank,Domestic Currency,RW3,HIGH,BondsCentral BankDomestic CurrencyRW3HIGH,L2A
+Bonds,Central Bank,Domestic Currency,RW1,MEDIUM,BondsCentral BankDomestic CurrencyRW1MEDIUM,L2B
+Bonds,Central Bank,Domestic Currency,RW2,MEDIUM,BondsCentral BankDomestic CurrencyRW2MEDIUM,L2B
+Bonds,Central Bank,Domestic Currency,RW3,MEDIUM,BondsCentral BankDomestic CurrencyRW3MEDIUM,L2B
+Bonds,Central Bank,Domestic Currency,RW1,LOW,BondsCentral BankDomestic CurrencyRW1LOW,NA
+Bonds,Central Bank,Domestic Currency,RW2,LOW,BondsCentral BankDomestic CurrencyRW2LOW,NA
+Bonds,Central Bank,Domestic Currency,RW3,LOW,BondsCentral BankDomestic CurrencyRW3LOW,NA
+Bonds,Central Bank,Foreign Currency,RW1,HIGH,BondsCentral BankForeign CurrencyRW1HIGH,L2A
+Bonds,Central Bank,Foreign Currency,RW2,HIGH,BondsCentral BankForeign CurrencyRW2HIGH,L2A
+Bonds,Central Bank,Foreign Currency,RW3,HIGH,BondsCentral BankForeign CurrencyRW3HIGH,L2A
+Bonds,Central Bank,Foreign Currency,RW1,MEDIUM,BondsCentral BankForeign CurrencyRW1MEDIUM,L2B
+Bonds,Central Bank,Foreign Currency,RW2,MEDIUM,BondsCentral BankForeign CurrencyRW2MEDIUM,L2B
+Bonds,Central Bank,Foreign Currency,RW3,MEDIUM,BondsCentral BankForeign CurrencyRW3MEDIUM,L2B
+Bonds,Central Bank,Foreign Currency,RW1,LOW,BondsCentral BankForeign CurrencyRW1LOW,NA
+Bonds,Central Bank,Foreign Currency,RW2,LOW,BondsCentral BankForeign CurrencyRW2LOW,NA
+Bonds,Central Bank,Foreign Currency,RW3,LOW,BondsCentral BankForeign CurrencyRW3LOW,NA
+Bonds,FIs,Domestic Currency,RW1,HIGH,BondsFIsDomestic CurrencyRW1HIGH,NA
+Bonds,FIs,Domestic Currency,RW2,HIGH,BondsFIsDomestic CurrencyRW2HIGH,NA
+Bonds,FIs,Domestic Currency,RW3,HIGH,BondsFIsDomestic CurrencyRW3HIGH,NA
+Bonds,FIs,Domestic Currency,RW1,MEDIUM,BondsFIsDomestic CurrencyRW1MEDIUM,NA
+Bonds,FIs,Domestic Currency,RW2,MEDIUM,BondsFIsDomestic CurrencyRW2MEDIUM,NA
+Bonds,FIs,Domestic Currency,RW3,MEDIUM,BondsFIsDomestic CurrencyRW3MEDIUM,NA
+Bonds,FIs,Domestic Currency,RW1,LOW,BondsFIsDomestic CurrencyRW1LOW,NA
+Bonds,FIs,Domestic Currency,RW2,LOW,BondsFIsDomestic CurrencyRW2LOW,NA
+Bonds,FIs,Domestic Currency,RW3,LOW,BondsFIsDomestic CurrencyRW3LOW,NA
+Bonds,FIs,Foreign Currency,RW1,HIGH,BondsFIsForeign CurrencyRW1HIGH,NA
+Bonds,FIs,Foreign Currency,RW2,HIGH,BondsFIsForeign CurrencyRW2HIGH,NA
+Bonds,FIs,Foreign Currency,RW3,HIGH,BondsFIsForeign CurrencyRW3HIGH,NA
+Bonds,FIs,Foreign Currency,RW1,MEDIUM,BondsFIsForeign CurrencyRW1MEDIUM,NA
+Bonds,FIs,Foreign Currency,RW2,MEDIUM,BondsFIsForeign CurrencyRW2MEDIUM,NA
+Bonds,FIs,Foreign Currency,RW3,MEDIUM,BondsFIsForeign CurrencyRW3MEDIUM,NA
+Bonds,FIs,Foreign Currency,RW1,LOW,BondsFIsForeign CurrencyRW1LOW,NA
+Bonds,FIs,Foreign Currency,RW2,LOW,BondsFIsForeign CurrencyRW2LOW,NA
+Bonds,FIs,Foreign Currency,RW3,LOW,BondsFIsForeign CurrencyRW3LOW,NA
+Bonds,PSEs,Domestic Currency,RW1,HIGH,BondsPSEsDomestic CurrencyRW1HIGH,L2A
+Bonds,PSEs,Domestic Currency,RW2,HIGH,BondsPSEsDomestic CurrencyRW2HIGH,L2A
+Bonds,PSEs,Domestic Currency,RW3,HIGH,BondsPSEsDomestic CurrencyRW3HIGH,L2A
+Bonds,PSEs,Domestic Currency,RW1,MEDIUM,BondsPSEsDomestic CurrencyRW1MEDIUM,L2B
+Bonds,PSEs,Domestic Currency,RW2,MEDIUM,BondsPSEsDomestic CurrencyRW2MEDIUM,L2B
+Bonds,PSEs,Domestic Currency,RW3,MEDIUM,BondsPSEsDomestic CurrencyRW3MEDIUM,L2B
+Bonds,PSEs,Domestic Currency,RW1,LOW,BondsPSEsDomestic CurrencyRW1LOW,NA
+Bonds,PSEs,Domestic Currency,RW2,LOW,BondsPSEsDomestic CurrencyRW2LOW,NA
+Bonds,PSEs,Domestic Currency,RW3,LOW,BondsPSEsDomestic CurrencyRW3LOW,NA
+Bonds,PSEs,Foreign Currency,RW1,HIGH,BondsPSEsForeign CurrencyRW1HIGH,L2A
+Bonds,PSEs,Foreign Currency,RW2,HIGH,BondsPSEsForeign CurrencyRW2HIGH,L2A
+Bonds,PSEs,Foreign Currency,RW3,HIGH,BondsPSEsForeign CurrencyRW3HIGH,L2A
+Bonds,PSEs,Foreign Currency,RW1,MEDIUM,BondsPSEsForeign CurrencyRW1MEDIUM,L2B
+Bonds,PSEs,Foreign Currency,RW2,MEDIUM,BondsPSEsForeign CurrencyRW2MEDIUM,L2B
+Bonds,PSEs,Foreign Currency,RW3,MEDIUM,BondsPSEsForeign CurrencyRW3MEDIUM,L2B
+Bonds,PSEs,Foreign Currency,RW1,LOW,BondsPSEsForeign CurrencyRW1LOW,NA
+Bonds,PSEs,Foreign Currency,RW2,LOW,BondsPSEsForeign CurrencyRW2LOW,NA
+Bonds,PSEs,Foreign Currency,RW3,LOW,BondsPSEsForeign CurrencyRW3LOW,NA
+Bonds,Others,Domestic Currency,RW1,HIGH,BondsOthersDomestic CurrencyRW1HIGH,NA
+Bonds,Others,Domestic Currency,RW2,HIGH,BondsOthersDomestic CurrencyRW2HIGH,NA
+Bonds,Others,Domestic Currency,RW3,HIGH,BondsOthersDomestic CurrencyRW3HIGH,NA
+Bonds,Others,Domestic Currency,RW1,MEDIUM,BondsOthersDomestic CurrencyRW1MEDIUM,NA
+Bonds,Others,Domestic Currency,RW2,MEDIUM,BondsOthersDomestic CurrencyRW2MEDIUM,NA
+Bonds,Others,Domestic Currency,RW3,MEDIUM,BondsOthersDomestic CurrencyRW3MEDIUM,NA
+Bonds,Others,Domestic Currency,RW1,LOW,BondsOthersDomestic CurrencyRW1LOW,NA
+Bonds,Others,Domestic Currency,RW2,LOW,BondsOthersDomestic CurrencyRW2LOW,NA
+Bonds,Others,Domestic Currency,RW3,LOW,BondsOthersDomestic CurrencyRW3LOW,NA
+Bonds,Others,Foreign Currency,RW1,HIGH,BondsOthersForeign CurrencyRW1HIGH,NA
+Bonds,Others,Foreign Currency,RW2,HIGH,BondsOthersForeign CurrencyRW2HIGH,NA
+Bonds,Others,Foreign Currency,RW3,HIGH,BondsOthersForeign CurrencyRW3HIGH,NA
+Bonds,Others,Foreign Currency,RW1,MEDIUM,BondsOthersForeign CurrencyRW1MEDIUM,NA
+Bonds,Others,Foreign Currency,RW2,MEDIUM,BondsOthersForeign CurrencyRW2MEDIUM,NA
+Bonds,Others,Foreign Currency,RW3,MEDIUM,BondsOthersForeign CurrencyRW3MEDIUM,NA
+Bonds,Others,Foreign Currency,RW1,LOW,BondsOthersForeign CurrencyRW1LOW,NA
+Bonds,Others,Foreign Currency,RW2,LOW,BondsOthersForeign CurrencyRW2LOW,NA
+Bonds,Others,Foreign Currency,RW3,LOW,BondsOthersForeign CurrencyRW3LOW,NA
+Bonds,Domestic Sovereign,Domestic Currency,RW1,HIGH,BondsDomestic SovereignDomestic CurrencyRW1HIGH,L1
+Bonds,Domestic Sovereign,Domestic Currency,RW2,HIGH,BondsDomestic SovereignDomestic CurrencyRW2HIGH,L1
+Bonds,Domestic Sovereign,Domestic Currency,RW3,HIGH,BondsDomestic SovereignDomestic CurrencyRW3HIGH,L1
+Bonds,Domestic Sovereign,Domestic Currency,RW1,MEDIUM,BondsDomestic SovereignDomestic CurrencyRW1MEDIUM,L1
+Bonds,Domestic Sovereign,Domestic Currency,RW2,MEDIUM,BondsDomestic SovereignDomestic CurrencyRW2MEDIUM,L1
+Bonds,Domestic Sovereign,Domestic Currency,RW3,MEDIUM,BondsDomestic SovereignDomestic CurrencyRW3MEDIUM,L1
+Bonds,Domestic Sovereign,Domestic Currency,RW1,LOW,BondsDomestic SovereignDomestic CurrencyRW1LOW,L1
+Bonds,Domestic Sovereign,Domestic Currency,RW2,LOW,BondsDomestic SovereignDomestic CurrencyRW2LOW,L1
+Bonds,Domestic Sovereign,Domestic Currency,RW3,LOW,BondsDomestic SovereignDomestic CurrencyRW3LOW,L1
+Bonds,Domestic Sovereign,Foreign Currency,RW1,HIGH,BondsDomestic SovereignForeign CurrencyRW1HIGH,L2A
+Bonds,Domestic Sovereign,Foreign Currency,RW2,HIGH,BondsDomestic SovereignForeign CurrencyRW2HIGH,L2A
+Bonds,Domestic Sovereign,Foreign Currency,RW3,HIGH,BondsDomestic SovereignForeign CurrencyRW3HIGH,L2A
+Bonds,Domestic Sovereign,Foreign Currency,RW1,MEDIUM,BondsDomestic SovereignForeign CurrencyRW1MEDIUM,L2B
+Bonds,Domestic Sovereign,Foreign Currency,RW2,MEDIUM,BondsDomestic SovereignForeign CurrencyRW2MEDIUM,L2B
+Bonds,Domestic Sovereign,Foreign Currency,RW3,MEDIUM,BondsDomestic SovereignForeign CurrencyRW3MEDIUM,L2B
+Bonds,Domestic Sovereign,Foreign Currency,RW1,LOW,BondsDomestic SovereignForeign CurrencyRW1LOW,NA
+Bonds,Domestic Sovereign,Foreign Currency,RW2,LOW,BondsDomestic SovereignForeign CurrencyRW2LOW,NA
+Bonds,Domestic Sovereign,Foreign Currency,RW3,LOW,BondsDomestic SovereignForeign CurrencyRW3LOW,NA
+Bonds,Foreign Sovereign,Domestic Currency,RW1,HIGH,BondsForeign SovereignDomestic CurrencyRW1HIGH,L2A
+Bonds,Foreign Sovereign,Domestic Currency,RW2,HIGH,BondsForeign SovereignDomestic CurrencyRW2HIGH,L2A
+Bonds,Foreign Sovereign,Domestic Currency,RW3,HIGH,BondsForeign SovereignDomestic CurrencyRW3HIGH,L2A
+Bonds,Foreign Sovereign,Domestic Currency,RW1,MEDIUM,BondsForeign SovereignDomestic CurrencyRW1MEDIUM,L2B
+Bonds,Foreign Sovereign,Domestic Currency,RW2,MEDIUM,BondsForeign SovereignDomestic CurrencyRW2MEDIUM,L2B
+Bonds,Foreign Sovereign,Domestic Currency,RW3,MEDIUM,BondsForeign SovereignDomestic CurrencyRW3MEDIUM,L2B
+Bonds,Foreign Sovereign,Domestic Currency,RW1,LOW,BondsForeign SovereignDomestic CurrencyRW1LOW,NA
+Bonds,Foreign Sovereign,Domestic Currency,RW2,LOW,BondsForeign SovereignDomestic CurrencyRW2LOW,NA
+Bonds,Foreign Sovereign,Domestic Currency,RW3,LOW,BondsForeign SovereignDomestic CurrencyRW3LOW,NA
+Bonds,Foreign Sovereign,Foreign Currency,RW1,HIGH,BondsForeign SovereignForeign CurrencyRW1HIGH,L2A
+Bonds,Foreign Sovereign,Foreign Currency,RW2,HIGH,BondsForeign SovereignForeign CurrencyRW2HIGH,L2A
+Bonds,Foreign Sovereign,Foreign Currency,RW3,HIGH,BondsForeign SovereignForeign CurrencyRW3HIGH,L2A
+Bonds,Foreign Sovereign,Foreign Currency,RW1,MEDIUM,BondsForeign SovereignForeign CurrencyRW1MEDIUM,L2B
+Bonds,Foreign Sovereign,Foreign Currency,RW2,MEDIUM,BondsForeign SovereignForeign CurrencyRW2MEDIUM,L2B
+Bonds,Foreign Sovereign,Foreign Currency,RW3,MEDIUM,BondsForeign SovereignForeign CurrencyRW3MEDIUM,L2B
+Bonds,Foreign Sovereign,Foreign Currency,RW1,LOW,BondsForeign SovereignForeign CurrencyRW1LOW,NA
+Bonds,Foreign Sovereign,Foreign Currency,RW2,LOW,BondsForeign SovereignForeign CurrencyRW2LOW,NA
+Bonds,Foreign Sovereign,Foreign Currency,RW3,LOW,BondsForeign SovereignForeign CurrencyRW3LOW,NA
+Marketable Securities,Central bank,Domestic Currency,RW1,HIGH,Marketable SecuritiesCentral bankDomestic CurrencyRW1HIGH,L1
+Marketable Securities,Central bank,Domestic Currency,RW2,HIGH,Marketable SecuritiesCentral bankDomestic CurrencyRW2HIGH,L1
+Marketable Securities,Central bank,Domestic Currency,RW3,HIGH,Marketable SecuritiesCentral bankDomestic CurrencyRW3HIGH,L1
+Marketable Securities,Central bank,Domestic Currency,RW1,MEDIUM,Marketable SecuritiesCentral bankDomestic CurrencyRW1MEDIUM,L1
+Marketable Securities,Central bank,Domestic Currency,RW2,MEDIUM,Marketable SecuritiesCentral bankDomestic CurrencyRW2MEDIUM,L1
+Marketable Securities,Central bank,Domestic Currency,RW3,MEDIUM,Marketable SecuritiesCentral bankDomestic CurrencyRW3MEDIUM,L1
+Marketable Securities,Central bank,Domestic Currency,RW1,LOW,Marketable SecuritiesCentral bankDomestic CurrencyRW1LOW,L1
+Marketable Securities,Central bank,Domestic Currency,RW2,LOW,Marketable SecuritiesCentral bankDomestic CurrencyRW2LOW,L1
+Marketable Securities,Central bank,Domestic Currency,RW3,LOW,Marketable SecuritiesCentral bankDomestic CurrencyRW3LOW,L1
+Marketable Securities,Central bank,Foreign Currency,RW1,HIGH,Marketable SecuritiesCentral bankForeign CurrencyRW1HIGH,L1
+Marketable Securities,Central bank,Foreign Currency,RW2,HIGH,Marketable SecuritiesCentral bankForeign CurrencyRW2HIGH,L1
+Marketable Securities,Central bank,Foreign Currency,RW3,HIGH,Marketable SecuritiesCentral bankForeign CurrencyRW3HIGH,L1
+Marketable Securities,Central bank,Foreign Currency,RW1,MEDIUM,Marketable SecuritiesCentral bankForeign CurrencyRW1MEDIUM,L1
+Marketable Securities,Central bank,Foreign Currency,RW2,MEDIUM,Marketable SecuritiesCentral bankForeign CurrencyRW2MEDIUM,L1
+Marketable Securities,Central bank,Foreign Currency,RW3,MEDIUM,Marketable SecuritiesCentral bankForeign CurrencyRW3MEDIUM,L1
+Marketable Securities,Central bank,Foreign Currency,RW1,LOW,Marketable SecuritiesCentral bankForeign CurrencyRW1LOW,L1
+Marketable Securities,Central bank,Foreign Currency,RW2,LOW,Marketable SecuritiesCentral bankForeign CurrencyRW2LOW,L1
+Marketable Securities,Central bank,Foreign Currency,RW3,LOW,Marketable SecuritiesCentral bankForeign CurrencyRW3LOW,L1
+Marketable Securities,PSEs,Domestic Currency,RW1,HIGH,Marketable SecuritiesPSEsDomestic CurrencyRW1HIGH,L1
+Marketable Securities,PSEs,Domestic Currency,RW2,HIGH,Marketable SecuritiesPSEsDomestic CurrencyRW2HIGH,L2A
+Marketable Securities,PSEs,Domestic Currency,RW3,HIGH,Marketable SecuritiesPSEsDomestic CurrencyRW3HIGH,L2B
+Marketable Securities,PSEs,Domestic Currency,RW1,MEDIUM,Marketable SecuritiesPSEsDomestic CurrencyRW1MEDIUM,L1
+Marketable Securities,PSEs,Domestic Currency,RW2,MEDIUM,Marketable SecuritiesPSEsDomestic CurrencyRW2MEDIUM,L2A
+Marketable Securities,PSEs,Domestic Currency,RW3,MEDIUM,Marketable SecuritiesPSEsDomestic CurrencyRW3MEDIUM,L2B
+Marketable Securities,PSEs,Domestic Currency,RW1,LOW,Marketable SecuritiesPSEsDomestic CurrencyRW1LOW,L1
+Marketable Securities,PSEs,Domestic Currency,RW2,LOW,Marketable SecuritiesPSEsDomestic CurrencyRW2LOW,L2A
+Marketable Securities,PSEs,Domestic Currency,RW3,LOW,Marketable SecuritiesPSEsDomestic CurrencyRW3LOW,L2B
+Marketable Securities,PSEs,Foreign Currency,RW1,HIGH,Marketable SecuritiesPSEsForeign CurrencyRW1HIGH,L1
+Marketable Securities,PSEs,Foreign Currency,RW2,HIGH,Marketable SecuritiesPSEsForeign CurrencyRW2HIGH,L2A
+Marketable Securities,PSEs,Foreign Currency,RW3,HIGH,Marketable SecuritiesPSEsForeign CurrencyRW3HIGH,L2B
+Marketable Securities,PSEs,Foreign Currency,RW1,MEDIUM,Marketable SecuritiesPSEsForeign CurrencyRW1MEDIUM,L1
+Marketable Securities,PSEs,Foreign Currency,RW2,MEDIUM,Marketable SecuritiesPSEsForeign CurrencyRW2MEDIUM,L2A
+Marketable Securities,PSEs,Foreign Currency,RW3,MEDIUM,Marketable SecuritiesPSEsForeign CurrencyRW3MEDIUM,L2B
+Marketable Securities,PSEs,Foreign Currency,RW1,LOW,Marketable SecuritiesPSEsForeign CurrencyRW1LOW,L1
+Marketable Securities,PSEs,Foreign Currency,RW2,LOW,Marketable SecuritiesPSEsForeign CurrencyRW2LOW,L2A
+Marketable Securities,PSEs,Foreign Currency,RW3,LOW,Marketable SecuritiesPSEsForeign CurrencyRW3LOW,L2B
+Marketable Securities,MDB,Domestic Currency,RW1,HIGH,Marketable SecuritiesMDBDomestic CurrencyRW1HIGH,L1
+Marketable Securities,MDB,Domestic Currency,RW2,HIGH,Marketable SecuritiesMDBDomestic CurrencyRW2HIGH,L2A
+Marketable Securities,MDB,Domestic Currency,RW3,HIGH,Marketable SecuritiesMDBDomestic CurrencyRW3HIGH,L2B
+Marketable Securities,MDB,Domestic Currency,RW1,MEDIUM,Marketable SecuritiesMDBDomestic CurrencyRW1MEDIUM,L1
+Marketable Securities,MDB,Domestic Currency,RW2,MEDIUM,Marketable SecuritiesMDBDomestic CurrencyRW2MEDIUM,L2A
+Marketable Securities,MDB,Domestic Currency,RW3,MEDIUM,Marketable SecuritiesMDBDomestic CurrencyRW3MEDIUM,L2B
+Marketable Securities,MDB,Domestic Currency,RW1,LOW,Marketable SecuritiesMDBDomestic CurrencyRW1LOW,L1
+Marketable Securities,MDB,Domestic Currency,RW2,LOW,Marketable SecuritiesMDBDomestic CurrencyRW2LOW,L2A
+Marketable Securities,MDB,Domestic Currency,RW3,LOW,Marketable SecuritiesMDBDomestic CurrencyRW3LOW,L2B
+Marketable Securities,MDB,Foreign Currency,RW1,HIGH,Marketable SecuritiesMDBForeign CurrencyRW1HIGH,L1
+Marketable Securities,MDB,Foreign Currency,RW2,HIGH,Marketable SecuritiesMDBForeign CurrencyRW2HIGH,L2A
+Marketable Securities,MDB,Foreign Currency,RW3,HIGH,Marketable SecuritiesMDBForeign CurrencyRW3HIGH,L2B
+Marketable Securities,MDB,Foreign Currency,RW1,MEDIUM,Marketable SecuritiesMDBForeign CurrencyRW1MEDIUM,L1
+Marketable Securities,MDB,Foreign Currency,RW2,MEDIUM,Marketable SecuritiesMDBForeign CurrencyRW2MEDIUM,L2A
+Marketable Securities,MDB,Foreign Currency,RW3,MEDIUM,Marketable SecuritiesMDBForeign CurrencyRW3MEDIUM,L2B
+Marketable Securities,MDB,Foreign Currency,RW1,LOW,Marketable SecuritiesMDBForeign CurrencyRW1LOW,L1
+Marketable Securities,MDB,Foreign Currency,RW2,LOW,Marketable SecuritiesMDBForeign CurrencyRW2LOW,L2A
+Marketable Securities,MDB,Foreign Currency,RW3,LOW,Marketable SecuritiesMDBForeign CurrencyRW3LOW,L2B
+Marketable Securities,Domestic Sovereign,Domestic Currency,RW1,HIGH,Marketable SecuritiesDomestic SovereignDomestic CurrencyRW1HIGH,L1
+Marketable Securities,Domestic Sovereign,Domestic Currency,RW2,HIGH,Marketable SecuritiesDomestic SovereignDomestic CurrencyRW2HIGH,L1
+Marketable Securities,Domestic Sovereign,Domestic Currency,RW3,HIGH,Marketable SecuritiesDomestic SovereignDomestic CurrencyRW3HIGH,L1
+Marketable Securities,Domestic Sovereign,Domestic Currency,RW1,MEDIUM,Marketable SecuritiesDomestic SovereignDomestic CurrencyRW1MEDIUM,L1
+Marketable Securities,Domestic Sovereign,Domestic Currency,RW2,MEDIUM,Marketable SecuritiesDomestic SovereignDomestic CurrencyRW2MEDIUM,L1
+Marketable Securities,Domestic Sovereign,Domestic Currency,RW3,MEDIUM,Marketable SecuritiesDomestic SovereignDomestic CurrencyRW3MEDIUM,L1
+Marketable Securities,Domestic Sovereign,Domestic Currency,RW1,LOW,Marketable SecuritiesDomestic SovereignDomestic CurrencyRW1LOW,L1
+Marketable Securities,Domestic Sovereign,Domestic Currency,RW2,LOW,Marketable SecuritiesDomestic SovereignDomestic CurrencyRW2LOW,L1
+Marketable Securities,Domestic Sovereign,Domestic Currency,RW3,LOW,Marketable SecuritiesDomestic SovereignDomestic CurrencyRW3LOW,L1
+Marketable Securities,Domestic Sovereign,Foreign Currency,RW1,HIGH,Marketable SecuritiesDomestic SovereignForeign CurrencyRW1HIGH,L1
+Marketable Securities,Domestic Sovereign,Foreign Currency,RW2,HIGH,Marketable SecuritiesDomestic SovereignForeign CurrencyRW2HIGH,L1
+Marketable Securities,Domestic Sovereign,Foreign Currency,RW3,HIGH,Marketable SecuritiesDomestic SovereignForeign CurrencyRW3HIGH,L1
+Marketable Securities,Domestic Sovereign,Foreign Currency,RW1,MEDIUM,Marketable SecuritiesDomestic SovereignForeign CurrencyRW1MEDIUM,L1
+Marketable Securities,Domestic Sovereign,Foreign Currency,RW2,MEDIUM,Marketable SecuritiesDomestic SovereignForeign CurrencyRW2MEDIUM,L1
+Marketable Securities,Domestic Sovereign,Foreign Currency,RW3,MEDIUM,Marketable SecuritiesDomestic SovereignForeign CurrencyRW3MEDIUM,L1
+Marketable Securities,Domestic Sovereign,Foreign Currency,RW1,LOW,Marketable SecuritiesDomestic SovereignForeign CurrencyRW1LOW,L1
+Marketable Securities,Domestic Sovereign,Foreign Currency,RW2,LOW,Marketable SecuritiesDomestic SovereignForeign CurrencyRW2LOW,L1
+Marketable Securities,Domestic Sovereign,Foreign Currency,RW3,LOW,Marketable SecuritiesDomestic SovereignForeign CurrencyRW3LOW,L1
+Marketable Securities,Foreign Sovereign,Domestic Currency,RW1,HIGH,Marketable SecuritiesForeign SovereignDomestic CurrencyRW1HIGH,L1
+Marketable Securities,Foreign Sovereign,Domestic Currency,RW2,HIGH,Marketable SecuritiesForeign SovereignDomestic CurrencyRW2HIGH,L2A
+Marketable Securities,Foreign Sovereign,Domestic Currency,RW3,HIGH,Marketable SecuritiesForeign SovereignDomestic CurrencyRW3HIGH,L2B
+Marketable Securities,Foreign Sovereign,Domestic Currency,RW1,MEDIUM,Marketable SecuritiesForeign SovereignDomestic CurrencyRW1MEDIUM,L1
+Marketable Securities,Foreign Sovereign,Domestic Currency,RW2,MEDIUM,Marketable SecuritiesForeign SovereignDomestic CurrencyRW2MEDIUM,L2A
+Marketable Securities,Foreign Sovereign,Domestic Currency,RW3,MEDIUM,Marketable SecuritiesForeign SovereignDomestic CurrencyRW3MEDIUM,L2B
+Marketable Securities,Foreign Sovereign,Domestic Currency,RW1,LOW,Marketable SecuritiesForeign SovereignDomestic CurrencyRW1LOW,L1
+Marketable Securities,Foreign Sovereign,Domestic Currency,RW2,LOW,Marketable SecuritiesForeign SovereignDomestic CurrencyRW2LOW,L2A
+Marketable Securities,Foreign Sovereign,Domestic Currency,RW3,LOW,Marketable SecuritiesForeign SovereignDomestic CurrencyRW3LOW,L2B
+Marketable Securities,Foreign Sovereign,Foreign Currency,RW1,HIGH,Marketable SecuritiesForeign SovereignForeign CurrencyRW1HIGH,L1
+Marketable Securities,Foreign Sovereign,Foreign Currency,RW2,HIGH,Marketable SecuritiesForeign SovereignForeign CurrencyRW2HIGH,L2A
+Marketable Securities,Foreign Sovereign,Foreign Currency,RW3,HIGH,Marketable SecuritiesForeign SovereignForeign CurrencyRW3HIGH,L2B
+Marketable Securities,Foreign Sovereign,Foreign Currency,RW1,MEDIUM,Marketable SecuritiesForeign SovereignForeign CurrencyRW1MEDIUM,L1
+Marketable Securities,Foreign Sovereign,Foreign Currency,RW2,MEDIUM,Marketable SecuritiesForeign SovereignForeign CurrencyRW2MEDIUM,L2A
+Marketable Securities,Foreign Sovereign,Foreign Currency,RW3,MEDIUM,Marketable SecuritiesForeign SovereignForeign CurrencyRW3MEDIUM,L2B
+Marketable Securities,Foreign Sovereign,Foreign Currency,RW1,LOW,Marketable SecuritiesForeign SovereignForeign CurrencyRW1LOW,L1
+Marketable Securities,Foreign Sovereign,Foreign Currency,RW2,LOW,Marketable SecuritiesForeign SovereignForeign CurrencyRW2LOW,L2A
+Marketable Securities,Foreign Sovereign,Foreign Currency,RW3,LOW,Marketable SecuritiesForeign SovereignForeign CurrencyRW3LOW,L2B
+Marketable Securities,FIs,Domestic Currency,RW1,HIGH,Marketable SecuritiesFIsDomestic CurrencyRW1HIGH,NA
+Marketable Securities,FIs,Domestic Currency,RW2,HIGH,Marketable SecuritiesFIsDomestic CurrencyRW2HIGH,NA
+Marketable Securities,FIs,Domestic Currency,RW3,HIGH,Marketable SecuritiesFIsDomestic CurrencyRW3HIGH,NA
+Marketable Securities,FIs,Domestic Currency,RW1,MEDIUM,Marketable SecuritiesFIsDomestic CurrencyRW1MEDIUM,NA
+Marketable Securities,FIs,Domestic Currency,RW2,MEDIUM,Marketable SecuritiesFIsDomestic CurrencyRW2MEDIUM,NA
+Marketable Securities,FIs,Domestic Currency,RW3,MEDIUM,Marketable SecuritiesFIsDomestic CurrencyRW3MEDIUM,NA
+Marketable Securities,FIs,Domestic Currency,RW1,LOW,Marketable SecuritiesFIsDomestic CurrencyRW1LOW,NA
+Marketable Securities,FIs,Domestic Currency,RW2,LOW,Marketable SecuritiesFIsDomestic CurrencyRW2LOW,NA
+Marketable Securities,FIs,Domestic Currency,RW3,LOW,Marketable SecuritiesFIsDomestic CurrencyRW3LOW,NA
+Marketable Securities,FIs,Foreign Currency,RW1,HIGH,Marketable SecuritiesFIsForeign CurrencyRW1HIGH,NA
+Marketable Securities,FIs,Foreign Currency,RW2,HIGH,Marketable SecuritiesFIsForeign CurrencyRW2HIGH,NA
+Marketable Securities,FIs,Foreign Currency,RW3,HIGH,Marketable SecuritiesFIsForeign CurrencyRW3HIGH,NA
+Marketable Securities,FIs,Foreign Currency,RW1,MEDIUM,Marketable SecuritiesFIsForeign CurrencyRW1MEDIUM,NA
+Marketable Securities,FIs,Foreign Currency,RW2,MEDIUM,Marketable SecuritiesFIsForeign CurrencyRW2MEDIUM,NA
+Marketable Securities,FIs,Foreign Currency,RW3,MEDIUM,Marketable SecuritiesFIsForeign CurrencyRW3MEDIUM,NA
+Marketable Securities,FIs,Foreign Currency,RW1,LOW,Marketable SecuritiesFIsForeign CurrencyRW1LOW,NA
+Marketable Securities,FIs,Foreign Currency,RW2,LOW,Marketable SecuritiesFIsForeign CurrencyRW2LOW,NA
+Marketable Securities,FIs,Foreign Currency,RW3,LOW,Marketable SecuritiesFIsForeign CurrencyRW3LOW,NA
+Marketable Securities,Corp,Domestic Currency,RW1,HIGH,Marketable SecuritiesCorpDomestic CurrencyRW1HIGH,L2A
+Marketable Securities,Corp,Domestic Currency,RW2,HIGH,Marketable SecuritiesCorpDomestic CurrencyRW2HIGH,L2A
+Marketable Securities,Corp,Domestic Currency,RW3,HIGH,Marketable SecuritiesCorpDomestic CurrencyRW3HIGH,L2A
+Marketable Securities,Corp,Domestic Currency,RW1,MEDIUM,Marketable SecuritiesCorpDomestic CurrencyRW1MEDIUM,L2B
+Marketable Securities,Corp,Domestic Currency,RW2,MEDIUM,Marketable SecuritiesCorpDomestic CurrencyRW2MEDIUM,L2B
+Marketable Securities,Corp,Domestic Currency,RW3,MEDIUM,Marketable SecuritiesCorpDomestic CurrencyRW3MEDIUM,L2B
+Marketable Securities,Corp,Domestic Currency,RW1,LOW,Marketable SecuritiesCorpDomestic CurrencyRW1LOW,NA
+Marketable Securities,Corp,Domestic Currency,RW2,LOW,Marketable SecuritiesCorpDomestic CurrencyRW2LOW,NA
+Marketable Securities,Corp,Domestic Currency,RW3,LOW,Marketable SecuritiesCorpDomestic CurrencyRW3LOW,NA
+Marketable Securities,Corp,Foreign Currency,RW1,HIGH,Marketable SecuritiesCorpForeign CurrencyRW1HIGH,L2A
+Marketable Securities,Corp,Foreign Currency,RW2,HIGH,Marketable SecuritiesCorpForeign CurrencyRW2HIGH,L2A
+Marketable Securities,Corp,Foreign Currency,RW3,HIGH,Marketable SecuritiesCorpForeign CurrencyRW3HIGH,L2A
+Marketable Securities,Corp,Foreign Currency,RW1,MEDIUM,Marketable SecuritiesCorpForeign CurrencyRW1MEDIUM,L2B
+Marketable Securities,Corp,Foreign Currency,RW2,MEDIUM,Marketable SecuritiesCorpForeign CurrencyRW2MEDIUM,L2B
+Marketable Securities,Corp,Foreign Currency,RW3,MEDIUM,Marketable SecuritiesCorpForeign CurrencyRW3MEDIUM,L2B
+Marketable Securities,Corp,Foreign Currency,RW1,LOW,Marketable SecuritiesCorpForeign CurrencyRW1LOW,NA
+Marketable Securities,Corp,Foreign Currency,RW2,LOW,Marketable SecuritiesCorpForeign CurrencyRW2LOW,NA
+Marketable Securities,Corp,Foreign Currency,RW3,LOW,Marketable SecuritiesCorpForeign CurrencyRW3LOW,NA
+Marketable Securities,Others,Domestic Currency,RW1,HIGH,Marketable SecuritiesOthersDomestic CurrencyRW1HIGH,NA
+Marketable Securities,Others,Domestic Currency,RW2,HIGH,Marketable SecuritiesOthersDomestic CurrencyRW2HIGH,NA
+Marketable Securities,Others,Domestic Currency,RW3,HIGH,Marketable SecuritiesOthersDomestic CurrencyRW3HIGH,NA
+Marketable Securities,Others,Domestic Currency,RW1,MEDIUM,Marketable SecuritiesOthersDomestic CurrencyRW1MEDIUM,NA
+Marketable Securities,Others,Domestic Currency,RW2,MEDIUM,Marketable SecuritiesOthersDomestic CurrencyRW2MEDIUM,NA
+Marketable Securities,Others,Domestic Currency,RW3,MEDIUM,Marketable SecuritiesOthersDomestic CurrencyRW3MEDIUM,NA
+Marketable Securities,Others,Domestic Currency,RW1,LOW,Marketable SecuritiesOthersDomestic CurrencyRW1LOW,NA
+Marketable Securities,Others,Domestic Currency,RW2,LOW,Marketable SecuritiesOthersDomestic CurrencyRW2LOW,NA
+Marketable Securities,Others,Domestic Currency,RW3,LOW,Marketable SecuritiesOthersDomestic CurrencyRW3LOW,NA
+Marketable Securities,Others,Foreign Currency,RW1,HIGH,Marketable SecuritiesOthersForeign CurrencyRW1HIGH,NA
+Marketable Securities,Others,Foreign Currency,RW2,HIGH,Marketable SecuritiesOthersForeign CurrencyRW2HIGH,NA
+Marketable Securities,Others,Foreign Currency,RW3,HIGH,Marketable SecuritiesOthersForeign CurrencyRW3HIGH,NA
+Marketable Securities,Others,Foreign Currency,RW1,MEDIUM,Marketable SecuritiesOthersForeign CurrencyRW1MEDIUM,NA
+Marketable Securities,Others,Foreign Currency,RW2,MEDIUM,Marketable SecuritiesOthersForeign CurrencyRW2MEDIUM,NA
+Marketable Securities,Others,Foreign Currency,RW3,MEDIUM,Marketable SecuritiesOthersForeign CurrencyRW3MEDIUM,NA
+Marketable Securities,Others,Foreign Currency,RW1,LOW,Marketable SecuritiesOthersForeign CurrencyRW1LOW,NA
+Marketable Securities,Others,Foreign Currency,RW2,LOW,Marketable SecuritiesOthersForeign CurrencyRW2LOW,NA
+Marketable Securities,Others,Foreign Currency,RW3,LOW,Marketable SecuritiesOthersForeign CurrencyRW3LOW,NA
+RMBS,Corp,Domestic Currency,RW1,HIGH,RMBSCorpDomestic CurrencyRW1HIGH,NA
+RMBS,Corp,Domestic Currency,RW2,HIGH,RMBSCorpDomestic CurrencyRW2HIGH,NA
+RMBS,Corp,Domestic Currency,RW3,HIGH,RMBSCorpDomestic CurrencyRW3HIGH,NA
+RMBS,Corp,Domestic Currency,RW1,MEDIUM,RMBSCorpDomestic CurrencyRW1MEDIUM,NA
+RMBS,Corp,Domestic Currency,RW2,MEDIUM,RMBSCorpDomestic CurrencyRW2MEDIUM,NA
+RMBS,Corp,Domestic Currency,RW3,MEDIUM,RMBSCorpDomestic CurrencyRW3MEDIUM,NA
+RMBS,Corp,Domestic Currency,RW1,LOW,RMBSCorpDomestic CurrencyRW1LOW,NA
+RMBS,Corp,Domestic Currency,RW2,LOW,RMBSCorpDomestic CurrencyRW2LOW,NA
+RMBS,Corp,Domestic Currency,RW3,LOW,RMBSCorpDomestic CurrencyRW3LOW,NA
+RMBS,Corp,Foreign Currency,RW1,HIGH,RMBSCorpForeign CurrencyRW1HIGH,NA
+RMBS,Corp,Foreign Currency,RW2,HIGH,RMBSCorpForeign CurrencyRW2HIGH,NA
+RMBS,Corp,Foreign Currency,RW3,HIGH,RMBSCorpForeign CurrencyRW3HIGH,NA
+RMBS,Corp,Foreign Currency,RW1,MEDIUM,RMBSCorpForeign CurrencyRW1MEDIUM,NA
+RMBS,Corp,Foreign Currency,RW2,MEDIUM,RMBSCorpForeign CurrencyRW2MEDIUM,NA
+RMBS,Corp,Foreign Currency,RW3,MEDIUM,RMBSCorpForeign CurrencyRW3MEDIUM,NA
+RMBS,Corp,Foreign Currency,RW1,LOW,RMBSCorpForeign CurrencyRW1LOW,NA
+RMBS,Corp,Foreign Currency,RW2,LOW,RMBSCorpForeign CurrencyRW2LOW,NA
+RMBS,Corp,Foreign Currency,RW3,LOW,RMBSCorpForeign CurrencyRW3LOW,NA
+RMBS,Central Bank,Domestic Currency,RW1,HIGH,RMBSCentral BankDomestic CurrencyRW1HIGH,NA
+RMBS,Central Bank,Domestic Currency,RW2,HIGH,RMBSCentral BankDomestic CurrencyRW2HIGH,NA
+RMBS,Central Bank,Domestic Currency,RW3,HIGH,RMBSCentral BankDomestic CurrencyRW3HIGH,NA
+RMBS,Central Bank,Domestic Currency,RW1,MEDIUM,RMBSCentral BankDomestic CurrencyRW1MEDIUM,NA
+RMBS,Central Bank,Domestic Currency,RW2,MEDIUM,RMBSCentral BankDomestic CurrencyRW2MEDIUM,NA
+RMBS,Central Bank,Domestic Currency,RW3,MEDIUM,RMBSCentral BankDomestic CurrencyRW3MEDIUM,NA
+RMBS,Central Bank,Domestic Currency,RW1,LOW,RMBSCentral BankDomestic CurrencyRW1LOW,NA
+RMBS,Central Bank,Domestic Currency,RW2,LOW,RMBSCentral BankDomestic CurrencyRW2LOW,NA
+RMBS,Central Bank,Domestic Currency,RW3,LOW,RMBSCentral BankDomestic CurrencyRW3LOW,NA
+RMBS,Central Bank,Foreign Currency,RW1,HIGH,RMBSCentral BankForeign CurrencyRW1HIGH,NA
+RMBS,Central Bank,Foreign Currency,RW2,HIGH,RMBSCentral BankForeign CurrencyRW2HIGH,NA
+RMBS,Central Bank,Foreign Currency,RW3,HIGH,RMBSCentral BankForeign CurrencyRW3HIGH,NA
+RMBS,Central Bank,Foreign Currency,RW1,MEDIUM,RMBSCentral BankForeign CurrencyRW1MEDIUM,NA
+RMBS,Central Bank,Foreign Currency,RW2,MEDIUM,RMBSCentral BankForeign CurrencyRW2MEDIUM,NA
+RMBS,Central Bank,Foreign Currency,RW3,MEDIUM,RMBSCentral BankForeign CurrencyRW3MEDIUM,NA
+RMBS,Central Bank,Foreign Currency,RW1,LOW,RMBSCentral BankForeign CurrencyRW1LOW,NA
+RMBS,Central Bank,Foreign Currency,RW2,LOW,RMBSCentral BankForeign CurrencyRW2LOW,NA
+RMBS,Central Bank,Foreign Currency,RW3,LOW,RMBSCentral BankForeign CurrencyRW3LOW,NA
+RMBS,MDB,Domestic Currency,RW1,HIGH,RMBSMDBDomestic CurrencyRW1HIGH,NA
+RMBS,MDB,Domestic Currency,RW2,HIGH,RMBSMDBDomestic CurrencyRW2HIGH,NA
+RMBS,MDB,Domestic Currency,RW3,HIGH,RMBSMDBDomestic CurrencyRW3HIGH,NA
+RMBS,MDB,Domestic Currency,RW1,MEDIUM,RMBSMDBDomestic CurrencyRW1MEDIUM,NA
+RMBS,MDB,Domestic Currency,RW2,MEDIUM,RMBSMDBDomestic CurrencyRW2MEDIUM,NA
+RMBS,MDB,Domestic Currency,RW3,MEDIUM,RMBSMDBDomestic CurrencyRW3MEDIUM,NA
+RMBS,MDB,Domestic Currency,RW1,LOW,RMBSMDBDomestic CurrencyRW1LOW,NA
+RMBS,MDB,Domestic Currency,RW2,LOW,RMBSMDBDomestic CurrencyRW2LOW,NA
+RMBS,MDB,Domestic Currency,RW3,LOW,RMBSMDBDomestic CurrencyRW3LOW,NA
+RMBS,MDB,Foreign Currency,RW1,HIGH,RMBSMDBForeign CurrencyRW1HIGH,NA
+RMBS,MDB,Foreign Currency,RW2,HIGH,RMBSMDBForeign CurrencyRW2HIGH,NA
+RMBS,MDB,Foreign Currency,RW3,HIGH,RMBSMDBForeign CurrencyRW3HIGH,NA
+RMBS,MDB,Foreign Currency,RW1,MEDIUM,RMBSMDBForeign CurrencyRW1MEDIUM,NA
+RMBS,MDB,Foreign Currency,RW2,MEDIUM,RMBSMDBForeign CurrencyRW2MEDIUM,NA
+RMBS,MDB,Foreign Currency,RW3,MEDIUM,RMBSMDBForeign CurrencyRW3MEDIUM,NA
+RMBS,MDB,Foreign Currency,RW1,LOW,RMBSMDBForeign CurrencyRW1LOW,NA
+RMBS,MDB,Foreign Currency,RW2,LOW,RMBSMDBForeign CurrencyRW2LOW,NA
+RMBS,MDB,Foreign Currency,RW3,LOW,RMBSMDBForeign CurrencyRW3LOW,NA
+RMBS,PSEs,Domestic Currency,RW1,HIGH,RMBSPSEsDomestic CurrencyRW1HIGH,NA
+RMBS,PSEs,Domestic Currency,RW2,HIGH,RMBSPSEsDomestic CurrencyRW2HIGH,NA
+RMBS,PSEs,Domestic Currency,RW3,HIGH,RMBSPSEsDomestic CurrencyRW3HIGH,NA
+RMBS,PSEs,Domestic Currency,RW1,MEDIUM,RMBSPSEsDomestic CurrencyRW1MEDIUM,NA
+RMBS,PSEs,Domestic Currency,RW2,MEDIUM,RMBSPSEsDomestic CurrencyRW2MEDIUM,NA
+RMBS,PSEs,Domestic Currency,RW3,MEDIUM,RMBSPSEsDomestic CurrencyRW3MEDIUM,NA
+RMBS,PSEs,Domestic Currency,RW1,LOW,RMBSPSEsDomestic CurrencyRW1LOW,NA
+RMBS,PSEs,Domestic Currency,RW2,LOW,RMBSPSEsDomestic CurrencyRW2LOW,NA
+RMBS,PSEs,Domestic Currency,RW3,LOW,RMBSPSEsDomestic CurrencyRW3LOW,NA
+RMBS,PSEs,Foreign Currency,RW1,HIGH,RMBSPSEsForeign CurrencyRW1HIGH,NA
+RMBS,PSEs,Foreign Currency,RW2,HIGH,RMBSPSEsForeign CurrencyRW2HIGH,NA
+RMBS,PSEs,Foreign Currency,RW3,HIGH,RMBSPSEsForeign CurrencyRW3HIGH,NA
+RMBS,PSEs,Foreign Currency,RW1,MEDIUM,RMBSPSEsForeign CurrencyRW1MEDIUM,NA
+RMBS,PSEs,Foreign Currency,RW2,MEDIUM,RMBSPSEsForeign CurrencyRW2MEDIUM,NA
+RMBS,PSEs,Foreign Currency,RW3,MEDIUM,RMBSPSEsForeign CurrencyRW3MEDIUM,NA
+RMBS,PSEs,Foreign Currency,RW1,LOW,RMBSPSEsForeign CurrencyRW1LOW,NA
+RMBS,PSEs,Foreign Currency,RW2,LOW,RMBSPSEsForeign CurrencyRW2LOW,NA
+RMBS,PSEs,Foreign Currency,RW3,LOW,RMBSPSEsForeign CurrencyRW3LOW,NA
+RMBS,Domestic Sovereign,Domestic Currency,RW1,HIGH,RMBSDomestic SovereignDomestic CurrencyRW1HIGH,NA
+RMBS,Domestic Sovereign,Domestic Currency,RW2,HIGH,RMBSDomestic SovereignDomestic CurrencyRW2HIGH,NA
+RMBS,Domestic Sovereign,Domestic Currency,RW3,HIGH,RMBSDomestic SovereignDomestic CurrencyRW3HIGH,NA
+RMBS,Domestic Sovereign,Domestic Currency,RW1,MEDIUM,RMBSDomestic SovereignDomestic CurrencyRW1MEDIUM,NA
+RMBS,Domestic Sovereign,Domestic Currency,RW2,MEDIUM,RMBSDomestic SovereignDomestic CurrencyRW2MEDIUM,NA
+RMBS,Domestic Sovereign,Domestic Currency,RW3,MEDIUM,RMBSDomestic SovereignDomestic CurrencyRW3MEDIUM,NA
+RMBS,Domestic Sovereign,Domestic Currency,RW1,LOW,RMBSDomestic SovereignDomestic CurrencyRW1LOW,NA
+RMBS,Domestic Sovereign,Domestic Currency,RW2,LOW,RMBSDomestic SovereignDomestic CurrencyRW2LOW,NA
+RMBS,Domestic Sovereign,Domestic Currency,RW3,LOW,RMBSDomestic SovereignDomestic CurrencyRW3LOW,NA
+RMBS,Domestic Sovereign,Foreign Currency,RW1,HIGH,RMBSDomestic SovereignForeign CurrencyRW1HIGH,NA
+RMBS,Domestic Sovereign,Foreign Currency,RW2,HIGH,RMBSDomestic SovereignForeign CurrencyRW2HIGH,NA
+RMBS,Domestic Sovereign,Foreign Currency,RW3,HIGH,RMBSDomestic SovereignForeign CurrencyRW3HIGH,NA
+RMBS,Domestic Sovereign,Foreign Currency,RW1,MEDIUM,RMBSDomestic SovereignForeign CurrencyRW1MEDIUM,NA
+RMBS,Domestic Sovereign,Foreign Currency,RW2,MEDIUM,RMBSDomestic SovereignForeign CurrencyRW2MEDIUM,NA
+RMBS,Domestic Sovereign,Foreign Currency,RW3,MEDIUM,RMBSDomestic SovereignForeign CurrencyRW3MEDIUM,NA
+RMBS,Domestic Sovereign,Foreign Currency,RW1,LOW,RMBSDomestic SovereignForeign CurrencyRW1LOW,NA
+RMBS,Domestic Sovereign,Foreign Currency,RW2,LOW,RMBSDomestic SovereignForeign CurrencyRW2LOW,NA
+RMBS,Domestic Sovereign,Foreign Currency,RW3,LOW,RMBSDomestic SovereignForeign CurrencyRW3LOW,NA
+RMBS,Foreign Sovereign,Domestic Currency,RW1,HIGH,RMBSForeign SovereignDomestic CurrencyRW1HIGH,NA
+RMBS,Foreign Sovereign,Domestic Currency,RW2,HIGH,RMBSForeign SovereignDomestic CurrencyRW2HIGH,NA
+RMBS,Foreign Sovereign,Domestic Currency,RW3,HIGH,RMBSForeign SovereignDomestic CurrencyRW3HIGH,NA
+RMBS,Foreign Sovereign,Domestic Currency,RW1,MEDIUM,RMBSForeign SovereignDomestic CurrencyRW1MEDIUM,NA
+RMBS,Foreign Sovereign,Domestic Currency,RW2,MEDIUM,RMBSForeign SovereignDomestic CurrencyRW2MEDIUM,NA
+RMBS,Foreign Sovereign,Domestic Currency,RW3,MEDIUM,RMBSForeign SovereignDomestic CurrencyRW3MEDIUM,NA
+RMBS,Foreign Sovereign,Domestic Currency,RW1,LOW,RMBSForeign SovereignDomestic CurrencyRW1LOW,NA
+RMBS,Foreign Sovereign,Domestic Currency,RW2,LOW,RMBSForeign SovereignDomestic CurrencyRW2LOW,NA
+RMBS,Foreign Sovereign,Domestic Currency,RW3,LOW,RMBSForeign SovereignDomestic CurrencyRW3LOW,NA
+RMBS,Foreign Sovereign,Foreign Currency,RW1,HIGH,RMBSForeign SovereignForeign CurrencyRW1HIGH,NA
+RMBS,Foreign Sovereign,Foreign Currency,RW2,HIGH,RMBSForeign SovereignForeign CurrencyRW2HIGH,NA
+RMBS,Foreign Sovereign,Foreign Currency,RW3,HIGH,RMBSForeign SovereignForeign CurrencyRW3HIGH,NA
+RMBS,Foreign Sovereign,Foreign Currency,RW1,MEDIUM,RMBSForeign SovereignForeign CurrencyRW1MEDIUM,NA
+RMBS,Foreign Sovereign,Foreign Currency,RW2,MEDIUM,RMBSForeign SovereignForeign CurrencyRW2MEDIUM,NA
+RMBS,Foreign Sovereign,Foreign Currency,RW3,MEDIUM,RMBSForeign SovereignForeign CurrencyRW3MEDIUM,NA
+RMBS,Foreign Sovereign,Foreign Currency,RW1,LOW,RMBSForeign SovereignForeign CurrencyRW1LOW,NA
+RMBS,Foreign Sovereign,Foreign Currency,RW2,LOW,RMBSForeign SovereignForeign CurrencyRW2LOW,NA
+RMBS,Foreign Sovereign,Foreign Currency,RW3,LOW,RMBSForeign SovereignForeign CurrencyRW3LOW,NA
+RMBS,Others,Domestic Currency,RW1,HIGH,RMBSOthersDomestic CurrencyRW1HIGH,NA
+RMBS,Others,Domestic Currency,RW2,HIGH,RMBSOthersDomestic CurrencyRW2HIGH,NA
+RMBS,Others,Domestic Currency,RW3,HIGH,RMBSOthersDomestic CurrencyRW3HIGH,NA
+RMBS,Others,Domestic Currency,RW1,MEDIUM,RMBSOthersDomestic CurrencyRW1MEDIUM,NA
+RMBS,Others,Domestic Currency,RW2,MEDIUM,RMBSOthersDomestic CurrencyRW2MEDIUM,NA
+RMBS,Others,Domestic Currency,RW3,MEDIUM,RMBSOthersDomestic CurrencyRW3MEDIUM,NA
+RMBS,Others,Domestic Currency,RW1,LOW,RMBSOthersDomestic CurrencyRW1LOW,NA
+RMBS,Others,Domestic Currency,RW2,LOW,RMBSOthersDomestic CurrencyRW2LOW,NA
+RMBS,Others,Domestic Currency,RW3,LOW,RMBSOthersDomestic CurrencyRW3LOW,NA
+RMBS,Others,Foreign Currency,RW1,HIGH,RMBSOthersForeign CurrencyRW1HIGH,NA
+RMBS,Others,Foreign Currency,RW2,HIGH,RMBSOthersForeign CurrencyRW2HIGH,NA
+RMBS,Others,Foreign Currency,RW3,HIGH,RMBSOthersForeign CurrencyRW3HIGH,NA
+RMBS,Others,Foreign Currency,RW1,MEDIUM,RMBSOthersForeign CurrencyRW1MEDIUM,NA
+RMBS,Others,Foreign Currency,RW2,MEDIUM,RMBSOthersForeign CurrencyRW2MEDIUM,NA
+RMBS,Others,Foreign Currency,RW3,MEDIUM,RMBSOthersForeign CurrencyRW3MEDIUM,NA
+RMBS,Others,Foreign Currency,RW1,LOW,RMBSOthersForeign CurrencyRW1LOW,NA
+RMBS,Others,Foreign Currency,RW2,LOW,RMBSOthersForeign CurrencyRW2LOW,NA
+RMBS,Others,Foreign Currency,RW3,LOW,RMBSOthersForeign CurrencyRW3LOW,NA
+RMBS,FIs,Domestic Currency,RW1,HIGH,RMBSFIsDomestic CurrencyRW1HIGH,NA
+RMBS,FIs,Domestic Currency,RW2,HIGH,RMBSFIsDomestic CurrencyRW2HIGH,NA
+RMBS,FIs,Domestic Currency,RW3,HIGH,RMBSFIsDomestic CurrencyRW3HIGH,NA
+RMBS,FIs,Domestic Currency,RW1,MEDIUM,RMBSFIsDomestic CurrencyRW1MEDIUM,NA
+RMBS,FIs,Domestic Currency,RW2,MEDIUM,RMBSFIsDomestic CurrencyRW2MEDIUM,NA
+RMBS,FIs,Domestic Currency,RW3,MEDIUM,RMBSFIsDomestic CurrencyRW3MEDIUM,NA
+RMBS,FIs,Domestic Currency,RW1,LOW,RMBSFIsDomestic CurrencyRW1LOW,NA
+RMBS,FIs,Domestic Currency,RW2,LOW,RMBSFIsDomestic CurrencyRW2LOW,NA
+RMBS,FIs,Domestic Currency,RW3,LOW,RMBSFIsDomestic CurrencyRW3LOW,NA
+RMBS,FIs,Foreign Currency,RW1,HIGH,RMBSFIsForeign CurrencyRW1HIGH,NA
+RMBS,FIs,Foreign Currency,RW2,HIGH,RMBSFIsForeign CurrencyRW2HIGH,NA
+RMBS,FIs,Foreign Currency,RW3,HIGH,RMBSFIsForeign CurrencyRW3HIGH,NA
+RMBS,FIs,Foreign Currency,RW1,MEDIUM,RMBSFIsForeign CurrencyRW1MEDIUM,NA
+RMBS,FIs,Foreign Currency,RW2,MEDIUM,RMBSFIsForeign CurrencyRW2MEDIUM,NA
+RMBS,FIs,Foreign Currency,RW3,MEDIUM,RMBSFIsForeign CurrencyRW3MEDIUM,NA
+RMBS,FIs,Foreign Currency,RW1,LOW,RMBSFIsForeign CurrencyRW1LOW,NA
+RMBS,FIs,Foreign Currency,RW2,LOW,RMBSFIsForeign CurrencyRW2LOW,NA
+RMBS,FIs,Foreign Currency,RW3,LOW,RMBSFIsForeign CurrencyRW3LOW,NA
+Equity,Central Bank,Domestic Currency,RW1,HIGH,EquityCentral BankDomestic CurrencyRW1HIGH,L2B
+Equity,Central Bank,Domestic Currency,RW2,HIGH,EquityCentral BankDomestic CurrencyRW2HIGH,L2B
+Equity,Central Bank,Domestic Currency,RW3,HIGH,EquityCentral BankDomestic CurrencyRW3HIGH,L2B
+Equity,Central Bank,Domestic Currency,RW1,MEDIUM,EquityCentral BankDomestic CurrencyRW1MEDIUM,L2B
+Equity,Central Bank,Domestic Currency,RW2,MEDIUM,EquityCentral BankDomestic CurrencyRW2MEDIUM,L2B
+Equity,Central Bank,Domestic Currency,RW3,MEDIUM,EquityCentral BankDomestic CurrencyRW3MEDIUM,L2B
+Equity,Central Bank,Domestic Currency,RW1,LOW,EquityCentral BankDomestic CurrencyRW1LOW,L2B
+Equity,Central Bank,Domestic Currency,RW2,LOW,EquityCentral BankDomestic CurrencyRW2LOW,L2B
+Equity,Central Bank,Domestic Currency,RW3,LOW,EquityCentral BankDomestic CurrencyRW3LOW,L2B
+Equity,Central Bank,Foreign Currency,RW1,HIGH,EquityCentral BankForeign CurrencyRW1HIGH,NA
+Equity,Central Bank,Foreign Currency,RW2,HIGH,EquityCentral BankForeign CurrencyRW2HIGH,NA
+Equity,Central Bank,Foreign Currency,RW3,HIGH,EquityCentral BankForeign CurrencyRW3HIGH,NA
+Equity,Central Bank,Foreign Currency,RW1,MEDIUM,EquityCentral BankForeign CurrencyRW1MEDIUM,NA
+Equity,Central Bank,Foreign Currency,RW2,MEDIUM,EquityCentral BankForeign CurrencyRW2MEDIUM,NA
+Equity,Central Bank,Foreign Currency,RW3,MEDIUM,EquityCentral BankForeign CurrencyRW3MEDIUM,NA
+Equity,Central Bank,Foreign Currency,RW1,LOW,EquityCentral BankForeign CurrencyRW1LOW,NA
+Equity,Central Bank,Foreign Currency,RW2,LOW,EquityCentral BankForeign CurrencyRW2LOW,NA
+Equity,Central Bank,Foreign Currency,RW3,LOW,EquityCentral BankForeign CurrencyRW3LOW,NA
+Equity,PSEs,Domestic Currency,RW1,HIGH,EquityPSEsDomestic CurrencyRW1HIGH,L2B
+Equity,PSEs,Domestic Currency,RW2,HIGH,EquityPSEsDomestic CurrencyRW2HIGH,L2B
+Equity,PSEs,Domestic Currency,RW3,HIGH,EquityPSEsDomestic CurrencyRW3HIGH,L2B
+Equity,PSEs,Domestic Currency,RW1,MEDIUM,EquityPSEsDomestic CurrencyRW1MEDIUM,L2B
+Equity,PSEs,Domestic Currency,RW2,MEDIUM,EquityPSEsDomestic CurrencyRW2MEDIUM,L2B
+Equity,PSEs,Domestic Currency,RW3,MEDIUM,EquityPSEsDomestic CurrencyRW3MEDIUM,L2B
+Equity,PSEs,Domestic Currency,RW1,LOW,EquityPSEsDomestic CurrencyRW1LOW,L2B
+Equity,PSEs,Domestic Currency,RW2,LOW,EquityPSEsDomestic CurrencyRW2LOW,L2B
+Equity,PSEs,Domestic Currency,RW3,LOW,EquityPSEsDomestic CurrencyRW3LOW,L2B
+Equity,PSEs,Foreign Currency,RW1,HIGH,EquityPSEsForeign CurrencyRW1HIGH,NA
+Equity,PSEs,Foreign Currency,RW2,HIGH,EquityPSEsForeign CurrencyRW2HIGH,NA
+Equity,PSEs,Foreign Currency,RW3,HIGH,EquityPSEsForeign CurrencyRW3HIGH,NA
+Equity,PSEs,Foreign Currency,RW1,MEDIUM,EquityPSEsForeign CurrencyRW1MEDIUM,NA
+Equity,PSEs,Foreign Currency,RW2,MEDIUM,EquityPSEsForeign CurrencyRW2MEDIUM,NA
+Equity,PSEs,Foreign Currency,RW3,MEDIUM,EquityPSEsForeign CurrencyRW3MEDIUM,NA
+Equity,PSEs,Foreign Currency,RW1,LOW,EquityPSEsForeign CurrencyRW1LOW,NA
+Equity,PSEs,Foreign Currency,RW2,LOW,EquityPSEsForeign CurrencyRW2LOW,NA
+Equity,PSEs,Foreign Currency,RW3,LOW,EquityPSEsForeign CurrencyRW3LOW,NA
+Equity,Domestic Sovereign,Domestic Currency,RW1,HIGH,EquityDomestic SovereignDomestic CurrencyRW1HIGH,L2B
+Equity,Domestic Sovereign,Domestic Currency,RW2,HIGH,EquityDomestic SovereignDomestic CurrencyRW2HIGH,L2B
+Equity,Domestic Sovereign,Domestic Currency,RW3,HIGH,EquityDomestic SovereignDomestic CurrencyRW3HIGH,L2B
+Equity,Domestic Sovereign,Domestic Currency,RW1,MEDIUM,EquityDomestic SovereignDomestic CurrencyRW1MEDIUM,L2B
+Equity,Domestic Sovereign,Domestic Currency,RW2,MEDIUM,EquityDomestic SovereignDomestic CurrencyRW2MEDIUM,L2B
+Equity,Domestic Sovereign,Domestic Currency,RW3,MEDIUM,EquityDomestic SovereignDomestic CurrencyRW3MEDIUM,L2B
+Equity,Domestic Sovereign,Domestic Currency,RW1,LOW,EquityDomestic SovereignDomestic CurrencyRW1LOW,L2B
+Equity,Domestic Sovereign,Domestic Currency,RW2,LOW,EquityDomestic SovereignDomestic CurrencyRW2LOW,L2B
+Equity,Domestic Sovereign,Domestic Currency,RW3,LOW,EquityDomestic SovereignDomestic CurrencyRW3LOW,L2B
+Equity,Domestic Sovereign,Foreign Currency,RW1,HIGH,EquityDomestic SovereignForeign CurrencyRW1HIGH,NA
+Equity,Domestic Sovereign,Foreign Currency,RW2,HIGH,EquityDomestic SovereignForeign CurrencyRW2HIGH,NA
+Equity,Domestic Sovereign,Foreign Currency,RW3,HIGH,EquityDomestic SovereignForeign CurrencyRW3HIGH,NA
+Equity,Domestic Sovereign,Foreign Currency,RW1,MEDIUM,EquityDomestic SovereignForeign CurrencyRW1MEDIUM,NA
+Equity,Domestic Sovereign,Foreign Currency,RW2,MEDIUM,EquityDomestic SovereignForeign CurrencyRW2MEDIUM,NA
+Equity,Domestic Sovereign,Foreign Currency,RW3,MEDIUM,EquityDomestic SovereignForeign CurrencyRW3MEDIUM,NA
+Equity,Domestic Sovereign,Foreign Currency,RW1,LOW,EquityDomestic SovereignForeign CurrencyRW1LOW,NA
+Equity,Domestic Sovereign,Foreign Currency,RW2,LOW,EquityDomestic SovereignForeign CurrencyRW2LOW,NA
+Equity,Domestic Sovereign,Foreign Currency,RW3,LOW,EquityDomestic SovereignForeign CurrencyRW3LOW,NA
+Equity,Foreign Sovereign,Domestic Currency,RW1,HIGH,EquityForeign SovereignDomestic CurrencyRW1HIGH,L2B
+Equity,Foreign Sovereign,Domestic Currency,RW2,HIGH,EquityForeign SovereignDomestic CurrencyRW2HIGH,L2B
+Equity,Foreign Sovereign,Domestic Currency,RW3,HIGH,EquityForeign SovereignDomestic CurrencyRW3HIGH,L2B
+Equity,Foreign Sovereign,Domestic Currency,RW1,MEDIUM,EquityForeign SovereignDomestic CurrencyRW1MEDIUM,L2B
+Equity,Foreign Sovereign,Domestic Currency,RW2,MEDIUM,EquityForeign SovereignDomestic CurrencyRW2MEDIUM,L2B
+Equity,Foreign Sovereign,Domestic Currency,RW3,MEDIUM,EquityForeign SovereignDomestic CurrencyRW3MEDIUM,L2B
+Equity,Foreign Sovereign,Domestic Currency,RW1,LOW,EquityForeign SovereignDomestic CurrencyRW1LOW,L2B
+Equity,Foreign Sovereign,Domestic Currency,RW2,LOW,EquityForeign SovereignDomestic CurrencyRW2LOW,L2B
+Equity,Foreign Sovereign,Domestic Currency,RW3,LOW,EquityForeign SovereignDomestic CurrencyRW3LOW,L2B
+Equity,Foreign Sovereign,Foreign Currency,RW1,HIGH,EquityForeign SovereignForeign CurrencyRW1HIGH,NA
+Equity,Foreign Sovereign,Foreign Currency,RW2,HIGH,EquityForeign SovereignForeign CurrencyRW2HIGH,NA
+Equity,Foreign Sovereign,Foreign Currency,RW3,HIGH,EquityForeign SovereignForeign CurrencyRW3HIGH,NA
+Equity,Foreign Sovereign,Foreign Currency,RW1,MEDIUM,EquityForeign SovereignForeign CurrencyRW1MEDIUM,NA
+Equity,Foreign Sovereign,Foreign Currency,RW2,MEDIUM,EquityForeign SovereignForeign CurrencyRW2MEDIUM,NA
+Equity,Foreign Sovereign,Foreign Currency,RW3,MEDIUM,EquityForeign SovereignForeign CurrencyRW3MEDIUM,NA
+Equity,Foreign Sovereign,Foreign Currency,RW1,LOW,EquityForeign SovereignForeign CurrencyRW1LOW,NA
+Equity,Foreign Sovereign,Foreign Currency,RW2,LOW,EquityForeign SovereignForeign CurrencyRW2LOW,NA
+Equity,Foreign Sovereign,Foreign Currency,RW3,LOW,EquityForeign SovereignForeign CurrencyRW3LOW,NA
+Equity,Corp,Domestic Currency,RW1,HIGH,EquityCorpDomestic CurrencyRW1HIGH,L2B
+Equity,Corp,Domestic Currency,RW2,HIGH,EquityCorpDomestic CurrencyRW2HIGH,L2B
+Equity,Corp,Domestic Currency,RW3,HIGH,EquityCorpDomestic CurrencyRW3HIGH,L2B
+Equity,Corp,Domestic Currency,RW1,MEDIUM,EquityCorpDomestic CurrencyRW1MEDIUM,L2B
+Equity,Corp,Domestic Currency,RW2,MEDIUM,EquityCorpDomestic CurrencyRW2MEDIUM,L2B
+Equity,Corp,Domestic Currency,RW3,MEDIUM,EquityCorpDomestic CurrencyRW3MEDIUM,L2B
+Equity,Corp,Domestic Currency,RW1,LOW,EquityCorpDomestic CurrencyRW1LOW,L2B
+Equity,Corp,Domestic Currency,RW2,LOW,EquityCorpDomestic CurrencyRW2LOW,L2B
+Equity,Corp,Domestic Currency,RW3,LOW,EquityCorpDomestic CurrencyRW3LOW,L2B
+Equity,Corp,Foreign Currency,RW1,HIGH,EquityCorpForeign CurrencyRW1HIGH,NA
+Equity,Corp,Foreign Currency,RW2,HIGH,EquityCorpForeign CurrencyRW2HIGH,NA
+Equity,Corp,Foreign Currency,RW3,HIGH,EquityCorpForeign CurrencyRW3HIGH,NA
+Equity,Corp,Foreign Currency,RW1,MEDIUM,EquityCorpForeign CurrencyRW1MEDIUM,NA
+Equity,Corp,Foreign Currency,RW2,MEDIUM,EquityCorpForeign CurrencyRW2MEDIUM,NA
+Equity,Corp,Foreign Currency,RW3,MEDIUM,EquityCorpForeign CurrencyRW3MEDIUM,NA
+Equity,Corp,Foreign Currency,RW1,LOW,EquityCorpForeign CurrencyRW1LOW,NA
+Equity,Corp,Foreign Currency,RW2,LOW,EquityCorpForeign CurrencyRW2LOW,NA
+Equity,Corp,Foreign Currency,RW3,LOW,EquityCorpForeign CurrencyRW3LOW,NA
+Equity,MDB,Domestic Currency,RW1,HIGH,EquityMDBDomestic CurrencyRW1HIGH,L2B
+Equity,MDB,Domestic Currency,RW2,HIGH,EquityMDBDomestic CurrencyRW2HIGH,L2B
+Equity,MDB,Domestic Currency,RW3,HIGH,EquityMDBDomestic CurrencyRW3HIGH,L2B
+Equity,MDB,Domestic Currency,RW1,MEDIUM,EquityMDBDomestic CurrencyRW1MEDIUM,L2B
+Equity,MDB,Domestic Currency,RW2,MEDIUM,EquityMDBDomestic CurrencyRW2MEDIUM,L2B
+Equity,MDB,Domestic Currency,RW3,MEDIUM,EquityMDBDomestic CurrencyRW3MEDIUM,L2B
+Equity,MDB,Domestic Currency,RW1,LOW,EquityMDBDomestic CurrencyRW1LOW,L2B
+Equity,MDB,Domestic Currency,RW2,LOW,EquityMDBDomestic CurrencyRW2LOW,L2B
+Equity,MDB,Domestic Currency,RW3,LOW,EquityMDBDomestic CurrencyRW3LOW,L2B
+Equity,MDB,Foreign Currency,RW1,HIGH,EquityMDBForeign CurrencyRW1HIGH,NA
+Equity,MDB,Foreign Currency,RW2,HIGH,EquityMDBForeign CurrencyRW2HIGH,NA
+Equity,MDB,Foreign Currency,RW3,HIGH,EquityMDBForeign CurrencyRW3HIGH,NA
+Equity,MDB,Foreign Currency,RW1,MEDIUM,EquityMDBForeign CurrencyRW1MEDIUM,NA
+Equity,MDB,Foreign Currency,RW2,MEDIUM,EquityMDBForeign CurrencyRW2MEDIUM,NA
+Equity,MDB,Foreign Currency,RW3,MEDIUM,EquityMDBForeign CurrencyRW3MEDIUM,NA
+Equity,MDB,Foreign Currency,RW1,LOW,EquityMDBForeign CurrencyRW1LOW,NA
+Equity,MDB,Foreign Currency,RW2,LOW,EquityMDBForeign CurrencyRW2LOW,NA
+Equity,MDB,Foreign Currency,RW3,LOW,EquityMDBForeign CurrencyRW3LOW,NA
+Equity,FIs,Domestic Currency,RW1,HIGH,EquityFIsDomestic CurrencyRW1HIGH,NA
+Equity,FIs,Domestic Currency,RW2,HIGH,EquityFIsDomestic CurrencyRW2HIGH,NA
+Equity,FIs,Domestic Currency,RW3,HIGH,EquityFIsDomestic CurrencyRW3HIGH,NA
+Equity,FIs,Domestic Currency,RW1,MEDIUM,EquityFIsDomestic CurrencyRW1MEDIUM,NA
+Equity,FIs,Domestic Currency,RW2,MEDIUM,EquityFIsDomestic CurrencyRW2MEDIUM,NA
+Equity,FIs,Domestic Currency,RW3,MEDIUM,EquityFIsDomestic CurrencyRW3MEDIUM,NA
+Equity,FIs,Domestic Currency,RW1,LOW,EquityFIsDomestic CurrencyRW1LOW,NA
+Equity,FIs,Domestic Currency,RW2,LOW,EquityFIsDomestic CurrencyRW2LOW,NA
+Equity,FIs,Domestic Currency,RW3,LOW,EquityFIsDomestic CurrencyRW3LOW,NA
+Equity,FIs,Foreign Currency,RW1,HIGH,EquityFIsForeign CurrencyRW1HIGH,NA
+Equity,FIs,Foreign Currency,RW2,HIGH,EquityFIsForeign CurrencyRW2HIGH,NA
+Equity,FIs,Foreign Currency,RW3,HIGH,EquityFIsForeign CurrencyRW3HIGH,NA
+Equity,FIs,Foreign Currency,RW1,MEDIUM,EquityFIsForeign CurrencyRW1MEDIUM,NA
+Equity,FIs,Foreign Currency,RW2,MEDIUM,EquityFIsForeign CurrencyRW2MEDIUM,NA
+Equity,FIs,Foreign Currency,RW3,MEDIUM,EquityFIsForeign CurrencyRW3MEDIUM,NA
+Equity,FIs,Foreign Currency,RW1,LOW,EquityFIsForeign CurrencyRW1LOW,NA
+Equity,FIs,Foreign Currency,RW2,LOW,EquityFIsForeign CurrencyRW2LOW,NA
+Equity,FIs,Foreign Currency,RW3,LOW,EquityFIsForeign CurrencyRW3LOW,NA
+Equity,Others,Domestic Currency,RW1,HIGH,EquityOthersDomestic CurrencyRW1HIGH,NA
+Equity,Others,Domestic Currency,RW2,HIGH,EquityOthersDomestic CurrencyRW2HIGH,NA
+Equity,Others,Domestic Currency,RW3,HIGH,EquityOthersDomestic CurrencyRW3HIGH,NA
+Equity,Others,Domestic Currency,RW1,MEDIUM,EquityOthersDomestic CurrencyRW1MEDIUM,NA
+Equity,Others,Domestic Currency,RW2,MEDIUM,EquityOthersDomestic CurrencyRW2MEDIUM,NA
+Equity,Others,Domestic Currency,RW3,MEDIUM,EquityOthersDomestic CurrencyRW3MEDIUM,NA
+Equity,Others,Domestic Currency,RW1,LOW,EquityOthersDomestic CurrencyRW1LOW,NA
+Equity,Others,Domestic Currency,RW2,LOW,EquityOthersDomestic CurrencyRW2LOW,NA
+Equity,Others,Domestic Currency,RW3,LOW,EquityOthersDomestic CurrencyRW3LOW,NA
+Equity,Others,Foreign Currency,RW1,HIGH,EquityOthersForeign CurrencyRW1HIGH,NA
+Equity,Others,Foreign Currency,RW2,HIGH,EquityOthersForeign CurrencyRW2HIGH,NA
+Equity,Others,Foreign Currency,RW3,HIGH,EquityOthersForeign CurrencyRW3HIGH,NA
+Equity,Others,Foreign Currency,RW1,MEDIUM,EquityOthersForeign CurrencyRW1MEDIUM,NA
+Equity,Others,Foreign Currency,RW2,MEDIUM,EquityOthersForeign CurrencyRW2MEDIUM,NA
+Equity,Others,Foreign Currency,RW3,MEDIUM,EquityOthersForeign CurrencyRW3MEDIUM,NA
+Equity,Others,Foreign Currency,RW1,LOW,EquityOthersForeign CurrencyRW1LOW,NA
+Equity,Others,Foreign Currency,RW2,LOW,EquityOthersForeign CurrencyRW2LOW,NA
+Equity,Others,Foreign Currency,RW3,LOW,EquityOthersForeign CurrencyRW3LOW,NA
+Others,Others,Domestic Currency,RW1,HIGH,OthersOthersDomestic CurrencyRW1HIGH,NA
+Others,Others,Domestic Currency,RW2,HIGH,OthersOthersDomestic CurrencyRW2HIGH,NA
+Others,Others,Domestic Currency,RW3,HIGH,OthersOthersDomestic CurrencyRW3HIGH,NA
+Others,Others,Domestic Currency,RW1,MEDIUM,OthersOthersDomestic CurrencyRW1MEDIUM,NA
+Others,Others,Domestic Currency,RW2,MEDIUM,OthersOthersDomestic CurrencyRW2MEDIUM,NA
+Others,Others,Domestic Currency,RW3,MEDIUM,OthersOthersDomestic CurrencyRW3MEDIUM,NA
+Others,Others,Domestic Currency,RW1,LOW,OthersOthersDomestic CurrencyRW1LOW,NA
+Others,Others,Domestic Currency,RW2,LOW,OthersOthersDomestic CurrencyRW2LOW,NA
+Others,Others,Domestic Currency,RW3,LOW,OthersOthersDomestic CurrencyRW3LOW,NA
+Others,Others,Foreign Currency,RW1,HIGH,OthersOthersForeign CurrencyRW1HIGH,NA
+Others,Others,Foreign Currency,RW2,HIGH,OthersOthersForeign CurrencyRW2HIGH,NA
+Others,Others,Foreign Currency,RW3,HIGH,OthersOthersForeign CurrencyRW3HIGH,NA
+Others,Others,Foreign Currency,RW1,MEDIUM,OthersOthersForeign CurrencyRW1MEDIUM,NA
+Others,Others,Foreign Currency,RW2,MEDIUM,OthersOthersForeign CurrencyRW2MEDIUM,NA
+Others,Others,Foreign Currency,RW3,MEDIUM,OthersOthersForeign CurrencyRW3MEDIUM,NA
+Others,Others,Foreign Currency,RW1,LOW,OthersOthersForeign CurrencyRW1LOW,NA
+Others,Others,Foreign Currency,RW2,LOW,OthersOthersForeign CurrencyRW2LOW,NA
+Others,Others,Foreign Currency,RW3,LOW,OthersOthersForeign CurrencyRW3LOW,NA
+Others,Domestic Sovereign,Domestic Currency,RW1,HIGH,OthersDomestic SovereignDomestic CurrencyRW1HIGH,NA
+Others,Domestic Sovereign,Domestic Currency,RW2,HIGH,OthersDomestic SovereignDomestic CurrencyRW2HIGH,NA
+Others,Domestic Sovereign,Domestic Currency,RW3,HIGH,OthersDomestic SovereignDomestic CurrencyRW3HIGH,NA
+Others,Domestic Sovereign,Domestic Currency,RW1,MEDIUM,OthersDomestic SovereignDomestic CurrencyRW1MEDIUM,NA
+Others,Domestic Sovereign,Domestic Currency,RW2,MEDIUM,OthersDomestic SovereignDomestic CurrencyRW2MEDIUM,NA
+Others,Domestic Sovereign,Domestic Currency,RW3,MEDIUM,OthersDomestic SovereignDomestic CurrencyRW3MEDIUM,NA
+Others,Domestic Sovereign,Domestic Currency,RW1,LOW,OthersDomestic SovereignDomestic CurrencyRW1LOW,NA
+Others,Domestic Sovereign,Domestic Currency,RW2,LOW,OthersDomestic SovereignDomestic CurrencyRW2LOW,NA
+Others,Domestic Sovereign,Domestic Currency,RW3,LOW,OthersDomestic SovereignDomestic CurrencyRW3LOW,NA
+Others,Domestic Sovereign,Foreign Currency,RW1,HIGH,OthersDomestic SovereignForeign CurrencyRW1HIGH,NA
+Others,Domestic Sovereign,Foreign Currency,RW2,HIGH,OthersDomestic SovereignForeign CurrencyRW2HIGH,NA
+Others,Domestic Sovereign,Foreign Currency,RW3,HIGH,OthersDomestic SovereignForeign CurrencyRW3HIGH,NA
+Others,Domestic Sovereign,Foreign Currency,RW1,MEDIUM,OthersDomestic SovereignForeign CurrencyRW1MEDIUM,NA
+Others,Domestic Sovereign,Foreign Currency,RW2,MEDIUM,OthersDomestic SovereignForeign CurrencyRW2MEDIUM,NA
+Others,Domestic Sovereign,Foreign Currency,RW3,MEDIUM,OthersDomestic SovereignForeign CurrencyRW3MEDIUM,NA
+Others,Domestic Sovereign,Foreign Currency,RW1,LOW,OthersDomestic SovereignForeign CurrencyRW1LOW,NA
+Others,Domestic Sovereign,Foreign Currency,RW2,LOW,OthersDomestic SovereignForeign CurrencyRW2LOW,NA
+Others,Domestic Sovereign,Foreign Currency,RW3,LOW,OthersDomestic SovereignForeign CurrencyRW3LOW,NA
+Others,Foreign Sovereign,Domestic Currency,RW1,HIGH,OthersForeign SovereignDomestic CurrencyRW1HIGH,NA
+Others,Foreign Sovereign,Domestic Currency,RW2,HIGH,OthersForeign SovereignDomestic CurrencyRW2HIGH,NA
+Others,Foreign Sovereign,Domestic Currency,RW3,HIGH,OthersForeign SovereignDomestic CurrencyRW3HIGH,NA
+Others,Foreign Sovereign,Domestic Currency,RW1,MEDIUM,OthersForeign SovereignDomestic CurrencyRW1MEDIUM,NA
+Others,Foreign Sovereign,Domestic Currency,RW2,MEDIUM,OthersForeign SovereignDomestic CurrencyRW2MEDIUM,NA
+Others,Foreign Sovereign,Domestic Currency,RW3,MEDIUM,OthersForeign SovereignDomestic CurrencyRW3MEDIUM,NA
+Others,Foreign Sovereign,Domestic Currency,RW1,LOW,OthersForeign SovereignDomestic CurrencyRW1LOW,NA
+Others,Foreign Sovereign,Domestic Currency,RW2,LOW,OthersForeign SovereignDomestic CurrencyRW2LOW,NA
+Others,Foreign Sovereign,Domestic Currency,RW3,LOW,OthersForeign SovereignDomestic CurrencyRW3LOW,NA
+Others,Foreign Sovereign,Foreign Currency,RW1,HIGH,OthersForeign SovereignForeign CurrencyRW1HIGH,NA
+Others,Foreign Sovereign,Foreign Currency,RW2,HIGH,OthersForeign SovereignForeign CurrencyRW2HIGH,NA
+Others,Foreign Sovereign,Foreign Currency,RW3,HIGH,OthersForeign SovereignForeign CurrencyRW3HIGH,NA
+Others,Foreign Sovereign,Foreign Currency,RW1,MEDIUM,OthersForeign SovereignForeign CurrencyRW1MEDIUM,NA
+Others,Foreign Sovereign,Foreign Currency,RW2,MEDIUM,OthersForeign SovereignForeign CurrencyRW2MEDIUM,NA
+Others,Foreign Sovereign,Foreign Currency,RW3,MEDIUM,OthersForeign SovereignForeign CurrencyRW3MEDIUM,NA
+Others,Foreign Sovereign,Foreign Currency,RW1,LOW,OthersForeign SovereignForeign CurrencyRW1LOW,NA
+Others,Foreign Sovereign,Foreign Currency,RW2,LOW,OthersForeign SovereignForeign CurrencyRW2LOW,NA
+Others,Foreign Sovereign,Foreign Currency,RW3,LOW,OthersForeign SovereignForeign CurrencyRW3LOW,NA
+Others,Central Bank,Domestic Currency,RW1,HIGH,OthersCentral BankDomestic CurrencyRW1HIGH,NA
+Others,Central Bank,Domestic Currency,RW2,HIGH,OthersCentral BankDomestic CurrencyRW2HIGH,NA
+Others,Central Bank,Domestic Currency,RW3,HIGH,OthersCentral BankDomestic CurrencyRW3HIGH,NA
+Others,Central Bank,Domestic Currency,RW1,MEDIUM,OthersCentral BankDomestic CurrencyRW1MEDIUM,NA
+Others,Central Bank,Domestic Currency,RW2,MEDIUM,OthersCentral BankDomestic CurrencyRW2MEDIUM,NA
+Others,Central Bank,Domestic Currency,RW3,MEDIUM,OthersCentral BankDomestic CurrencyRW3MEDIUM,NA
+Others,Central Bank,Domestic Currency,RW1,LOW,OthersCentral BankDomestic CurrencyRW1LOW,NA
+Others,Central Bank,Domestic Currency,RW2,LOW,OthersCentral BankDomestic CurrencyRW2LOW,NA
+Others,Central Bank,Domestic Currency,RW3,LOW,OthersCentral BankDomestic CurrencyRW3LOW,NA
+Others,Central Bank,Foreign Currency,RW1,HIGH,OthersCentral BankForeign CurrencyRW1HIGH,NA
+Others,Central Bank,Foreign Currency,RW2,HIGH,OthersCentral BankForeign CurrencyRW2HIGH,NA
+Others,Central Bank,Foreign Currency,RW3,HIGH,OthersCentral BankForeign CurrencyRW3HIGH,NA
+Others,Central Bank,Foreign Currency,RW1,MEDIUM,OthersCentral BankForeign CurrencyRW1MEDIUM,NA
+Others,Central Bank,Foreign Currency,RW2,MEDIUM,OthersCentral BankForeign CurrencyRW2MEDIUM,NA
+Others,Central Bank,Foreign Currency,RW3,MEDIUM,OthersCentral BankForeign CurrencyRW3MEDIUM,NA
+Others,Central Bank,Foreign Currency,RW1,LOW,OthersCentral BankForeign CurrencyRW1LOW,NA
+Others,Central Bank,Foreign Currency,RW2,LOW,OthersCentral BankForeign CurrencyRW2LOW,NA
+Others,Central Bank,Foreign Currency,RW3,LOW,OthersCentral BankForeign CurrencyRW3LOW,NA
+Others,MDB,Domestic Currency,RW1,HIGH,OthersMDBDomestic CurrencyRW1HIGH,NA
+Others,MDB,Domestic Currency,RW2,HIGH,OthersMDBDomestic CurrencyRW2HIGH,NA
+Others,MDB,Domestic Currency,RW3,HIGH,OthersMDBDomestic CurrencyRW3HIGH,NA
+Others,MDB,Domestic Currency,RW1,MEDIUM,OthersMDBDomestic CurrencyRW1MEDIUM,NA
+Others,MDB,Domestic Currency,RW2,MEDIUM,OthersMDBDomestic CurrencyRW2MEDIUM,NA
+Others,MDB,Domestic Currency,RW3,MEDIUM,OthersMDBDomestic CurrencyRW3MEDIUM,NA
+Others,MDB,Domestic Currency,RW1,LOW,OthersMDBDomestic CurrencyRW1LOW,NA
+Others,MDB,Domestic Currency,RW2,LOW,OthersMDBDomestic CurrencyRW2LOW,NA
+Others,MDB,Domestic Currency,RW3,LOW,OthersMDBDomestic CurrencyRW3LOW,NA
+Others,MDB,Foreign Currency,RW1,HIGH,OthersMDBForeign CurrencyRW1HIGH,NA
+Others,MDB,Foreign Currency,RW2,HIGH,OthersMDBForeign CurrencyRW2HIGH,NA
+Others,MDB,Foreign Currency,RW3,HIGH,OthersMDBForeign CurrencyRW3HIGH,NA
+Others,MDB,Foreign Currency,RW1,MEDIUM,OthersMDBForeign CurrencyRW1MEDIUM,NA
+Others,MDB,Foreign Currency,RW2,MEDIUM,OthersMDBForeign CurrencyRW2MEDIUM,NA
+Others,MDB,Foreign Currency,RW3,MEDIUM,OthersMDBForeign CurrencyRW3MEDIUM,NA
+Others,MDB,Foreign Currency,RW1,LOW,OthersMDBForeign CurrencyRW1LOW,NA
+Others,MDB,Foreign Currency,RW2,LOW,OthersMDBForeign CurrencyRW2LOW,NA
+Others,MDB,Foreign Currency,RW3,LOW,OthersMDBForeign CurrencyRW3LOW,NA
+Others,PSEs,Domestic Currency,RW1,HIGH,OthersPSEsDomestic CurrencyRW1HIGH,NA
+Others,PSEs,Domestic Currency,RW2,HIGH,OthersPSEsDomestic CurrencyRW2HIGH,NA
+Others,PSEs,Domestic Currency,RW3,HIGH,OthersPSEsDomestic CurrencyRW3HIGH,NA
+Others,PSEs,Domestic Currency,RW1,MEDIUM,OthersPSEsDomestic CurrencyRW1MEDIUM,NA
+Others,PSEs,Domestic Currency,RW2,MEDIUM,OthersPSEsDomestic CurrencyRW2MEDIUM,NA
+Others,PSEs,Domestic Currency,RW3,MEDIUM,OthersPSEsDomestic CurrencyRW3MEDIUM,NA
+Others,PSEs,Domestic Currency,RW1,LOW,OthersPSEsDomestic CurrencyRW1LOW,NA
+Others,PSEs,Domestic Currency,RW2,LOW,OthersPSEsDomestic CurrencyRW2LOW,NA
+Others,PSEs,Domestic Currency,RW3,LOW,OthersPSEsDomestic CurrencyRW3LOW,NA
+Others,PSEs,Foreign Currency,RW1,HIGH,OthersPSEsForeign CurrencyRW1HIGH,NA
+Others,PSEs,Foreign Currency,RW2,HIGH,OthersPSEsForeign CurrencyRW2HIGH,NA
+Others,PSEs,Foreign Currency,RW3,HIGH,OthersPSEsForeign CurrencyRW3HIGH,NA
+Others,PSEs,Foreign Currency,RW1,MEDIUM,OthersPSEsForeign CurrencyRW1MEDIUM,NA
+Others,PSEs,Foreign Currency,RW2,MEDIUM,OthersPSEsForeign CurrencyRW2MEDIUM,NA
+Others,PSEs,Foreign Currency,RW3,MEDIUM,OthersPSEsForeign CurrencyRW3MEDIUM,NA
+Others,PSEs,Foreign Currency,RW1,LOW,OthersPSEsForeign CurrencyRW1LOW,NA
+Others,PSEs,Foreign Currency,RW2,LOW,OthersPSEsForeign CurrencyRW2LOW,NA
+Others,PSEs,Foreign Currency,RW3,LOW,OthersPSEsForeign CurrencyRW3LOW,NA
+Others,FIs,Domestic Currency,RW1,HIGH,OthersFIsDomestic CurrencyRW1HIGH,NA
+Others,FIs,Domestic Currency,RW2,HIGH,OthersFIsDomestic CurrencyRW2HIGH,NA
+Others,FIs,Domestic Currency,RW3,HIGH,OthersFIsDomestic CurrencyRW3HIGH,NA
+Others,FIs,Domestic Currency,RW1,MEDIUM,OthersFIsDomestic CurrencyRW1MEDIUM,NA
+Others,FIs,Domestic Currency,RW2,MEDIUM,OthersFIsDomestic CurrencyRW2MEDIUM,NA
+Others,FIs,Domestic Currency,RW3,MEDIUM,OthersFIsDomestic CurrencyRW3MEDIUM,NA
+Others,FIs,Domestic Currency,RW1,LOW,OthersFIsDomestic CurrencyRW1LOW,NA
+Others,FIs,Domestic Currency,RW2,LOW,OthersFIsDomestic CurrencyRW2LOW,NA
+Others,FIs,Domestic Currency,RW3,LOW,OthersFIsDomestic CurrencyRW3LOW,NA
+Others,FIs,Foreign Currency,RW1,HIGH,OthersFIsForeign CurrencyRW1HIGH,NA
+Others,FIs,Foreign Currency,RW2,HIGH,OthersFIsForeign CurrencyRW2HIGH,NA
+Others,FIs,Foreign Currency,RW3,HIGH,OthersFIsForeign CurrencyRW3HIGH,NA
+Others,FIs,Foreign Currency,RW1,MEDIUM,OthersFIsForeign CurrencyRW1MEDIUM,NA
+Others,FIs,Foreign Currency,RW2,MEDIUM,OthersFIsForeign CurrencyRW2MEDIUM,NA
+Others,FIs,Foreign Currency,RW3,MEDIUM,OthersFIsForeign CurrencyRW3MEDIUM,NA
+Others,FIs,Foreign Currency,RW1,LOW,OthersFIsForeign CurrencyRW1LOW,NA
+Others,FIs,Foreign Currency,RW2,LOW,OthersFIsForeign CurrencyRW2LOW,NA
+Others,FIs,Foreign Currency,RW3,LOW,OthersFIsForeign CurrencyRW3LOW,NA
+Others,Corp,Domestic Currency,RW1,HIGH,OthersCorpDomestic CurrencyRW1HIGH,NA
+Others,Corp,Domestic Currency,RW2,HIGH,OthersCorpDomestic CurrencyRW2HIGH,NA
+Others,Corp,Domestic Currency,RW3,HIGH,OthersCorpDomestic CurrencyRW3HIGH,NA
+Others,Corp,Domestic Currency,RW1,MEDIUM,OthersCorpDomestic CurrencyRW1MEDIUM,NA
+Others,Corp,Domestic Currency,RW2,MEDIUM,OthersCorpDomestic CurrencyRW2MEDIUM,NA
+Others,Corp,Domestic Currency,RW3,MEDIUM,OthersCorpDomestic CurrencyRW3MEDIUM,NA
+Others,Corp,Domestic Currency,RW1,LOW,OthersCorpDomestic CurrencyRW1LOW,NA
+Others,Corp,Domestic Currency,RW2,LOW,OthersCorpDomestic CurrencyRW2LOW,NA
+Others,Corp,Domestic Currency,RW3,LOW,OthersCorpDomestic CurrencyRW3LOW,NA
+Others,Corp,Foreign Currency,RW1,HIGH,OthersCorpForeign CurrencyRW1HIGH,NA
+Others,Corp,Foreign Currency,RW2,HIGH,OthersCorpForeign CurrencyRW2HIGH,NA
+Others,Corp,Foreign Currency,RW3,HIGH,OthersCorpForeign CurrencyRW3HIGH,NA
+Others,Corp,Foreign Currency,RW1,MEDIUM,OthersCorpForeign CurrencyRW1MEDIUM,NA
+Others,Corp,Foreign Currency,RW2,MEDIUM,OthersCorpForeign CurrencyRW2MEDIUM,NA
+Others,Corp,Foreign Currency,RW3,MEDIUM,OthersCorpForeign CurrencyRW3MEDIUM,NA
+Others,Corp,Foreign Currency,RW1,LOW,OthersCorpForeign CurrencyRW1LOW,NA
+Others,Corp,Foreign Currency,RW2,LOW,OthersCorpForeign CurrencyRW2LOW,NA
+Others,Corp,Foreign Currency,RW3,LOW,OthersCorpForeign CurrencyRW3LOW,NA
+Bonds,Corp,Domestic Currency,RW1,VERY HIGH,BondsCorpDomestic CurrencyRW1VERY HIGH,L2A
+Bonds,Corp,Domestic Currency,RW2,VERY HIGH,BondsCorpDomestic CurrencyRW2VERY HIGH,L2A
+Bonds,Corp,Domestic Currency,RW3,VERY HIGH,BondsCorpDomestic CurrencyRW3VERY HIGH,L2A
+Bonds,Corp,Foreign Currency,RW1,VERY HIGH,BondsCorpForeign CurrencyRW1VERY HIGH,L2A
+Bonds,Corp,Foreign Currency,RW2,VERY HIGH,BondsCorpForeign CurrencyRW2VERY HIGH,L2A
+Bonds,Corp,Foreign Currency,RW3,VERY HIGH,BondsCorpForeign CurrencyRW3VERY HIGH,L2A
+Bonds,MDB,Domestic Currency,RW1,VERY HIGH,BondsMDBDomestic CurrencyRW1VERY HIGH,L2A
+Bonds,MDB,Domestic Currency,RW2,VERY HIGH,BondsMDBDomestic CurrencyRW2VERY HIGH,L2A
+Bonds,MDB,Domestic Currency,RW3,VERY HIGH,BondsMDBDomestic CurrencyRW3VERY HIGH,L2A
+Bonds,MDB,Foreign Currency,RW1,VERY HIGH,BondsMDBForeign CurrencyRW1VERY HIGH,L2A
+Bonds,MDB,Foreign Currency,RW2,VERY HIGH,BondsMDBForeign CurrencyRW2VERY HIGH,L2A
+Bonds,MDB,Foreign Currency,RW3,VERY HIGH,BondsMDBForeign CurrencyRW3VERY HIGH,L2A
+Bonds,Central Bank,Domestic Currency,RW1,VERY HIGH,BondsCentral BankDomestic CurrencyRW1VERY HIGH,L2A
+Bonds,Central Bank,Domestic Currency,RW2,VERY HIGH,BondsCentral BankDomestic CurrencyRW2VERY HIGH,L2A
+Bonds,Central Bank,Domestic Currency,RW3,VERY HIGH,BondsCentral BankDomestic CurrencyRW3VERY HIGH,L2A
+Bonds,Central Bank,Foreign Currency,RW1,VERY HIGH,BondsCentral BankForeign CurrencyRW1VERY HIGH,L2A
+Bonds,Central Bank,Foreign Currency,RW2,VERY HIGH,BondsCentral BankForeign CurrencyRW2VERY HIGH,L2A
+Bonds,Central Bank,Foreign Currency,RW3,VERY HIGH,BondsCentral BankForeign CurrencyRW3VERY HIGH,L2A
+Bonds,FIs,Domestic Currency,RW1,VERY HIGH,BondsFIsDomestic CurrencyRW1VERY HIGH,NA
+Bonds,FIs,Domestic Currency,RW2,VERY HIGH,BondsFIsDomestic CurrencyRW2VERY HIGH,NA
+Bonds,FIs,Domestic Currency,RW3,VERY HIGH,BondsFIsDomestic CurrencyRW3VERY HIGH,NA
+Bonds,FIs,Foreign Currency,RW1,VERY HIGH,BondsFIsForeign CurrencyRW1VERY HIGH,NA
+Bonds,FIs,Foreign Currency,RW2,VERY HIGH,BondsFIsForeign CurrencyRW2VERY HIGH,NA
+Bonds,FIs,Foreign Currency,RW3,VERY HIGH,BondsFIsForeign CurrencyRW3VERY HIGH,NA
+Bonds,PSEs,Domestic Currency,RW1,VERY HIGH,BondsPSEsDomestic CurrencyRW1VERY HIGH,L2A
+Bonds,PSEs,Domestic Currency,RW2,VERY HIGH,BondsPSEsDomestic CurrencyRW2VERY HIGH,L2A
+Bonds,PSEs,Domestic Currency,RW3,VERY HIGH,BondsPSEsDomestic CurrencyRW3VERY HIGH,L2A
+Bonds,PSEs,Foreign Currency,RW1,VERY HIGH,BondsPSEsForeign CurrencyRW1VERY HIGH,L2A
+Bonds,PSEs,Foreign Currency,RW2,VERY HIGH,BondsPSEsForeign CurrencyRW2VERY HIGH,L2A
+Bonds,PSEs,Foreign Currency,RW3,VERY HIGH,BondsPSEsForeign CurrencyRW3VERY HIGH,L2A
+Bonds,Others,Domestic Currency,RW1,VERY HIGH,BondsOthersDomestic CurrencyRW1VERY HIGH,NA
+Bonds,Others,Domestic Currency,RW2,VERY HIGH,BondsOthersDomestic CurrencyRW2VERY HIGH,NA
+Bonds,Others,Domestic Currency,RW3,VERY HIGH,BondsOthersDomestic CurrencyRW3VERY HIGH,NA
+Bonds,Others,Foreign Currency,RW1,VERY HIGH,BondsOthersForeign CurrencyRW1VERY HIGH,NA
+Bonds,Others,Foreign Currency,RW2,VERY HIGH,BondsOthersForeign CurrencyRW2VERY HIGH,NA
+Bonds,Others,Foreign Currency,RW3,VERY HIGH,BondsOthersForeign CurrencyRW3VERY HIGH,NA
+Bonds,Domestic Sovereign,Domestic Currency,RW1,VERY HIGH,BondsDomestic SovereignDomestic CurrencyRW1VERY HIGH,L1
+Bonds,Domestic Sovereign,Domestic Currency,RW2,VERY HIGH,BondsDomestic SovereignDomestic CurrencyRW2VERY HIGH,L1
+Bonds,Domestic Sovereign,Domestic Currency,RW3,VERY HIGH,BondsDomestic SovereignDomestic CurrencyRW3VERY HIGH,L1
+Bonds,Domestic Sovereign,Foreign Currency,RW1,VERY HIGH,BondsDomestic SovereignForeign CurrencyRW1VERY HIGH,L2A
+Bonds,Domestic Sovereign,Foreign Currency,RW2,VERY HIGH,BondsDomestic SovereignForeign CurrencyRW2VERY HIGH,L2A
+Bonds,Domestic Sovereign,Foreign Currency,RW3,VERY HIGH,BondsDomestic SovereignForeign CurrencyRW3VERY HIGH,L2A
+Bonds,Foreign Sovereign,Domestic Currency,RW1,VERY HIGH,BondsForeign SovereignDomestic CurrencyRW1VERY HIGH,L2A
+Bonds,Foreign Sovereign,Domestic Currency,RW2,VERY HIGH,BondsForeign SovereignDomestic CurrencyRW2VERY HIGH,L2A
+Bonds,Foreign Sovereign,Domestic Currency,RW3,VERY HIGH,BondsForeign SovereignDomestic CurrencyRW3VERY HIGH,L2A
+Bonds,Foreign Sovereign,Foreign Currency,RW1,VERY HIGH,BondsForeign SovereignForeign CurrencyRW1VERY HIGH,L2A
+Bonds,Foreign Sovereign,Foreign Currency,RW2,VERY HIGH,BondsForeign SovereignForeign CurrencyRW2VERY HIGH,L2A
+Bonds,Foreign Sovereign,Foreign Currency,RW3,VERY HIGH,BondsForeign SovereignForeign CurrencyRW3VERY HIGH,L2A
+Marketable Securities,Central bank,Domestic Currency,RW1,VERY HIGH,Marketable SecuritiesCentral bankDomestic CurrencyRW1VERY HIGH,L1
+Marketable Securities,Central bank,Domestic Currency,RW2,VERY HIGH,Marketable SecuritiesCentral bankDomestic CurrencyRW2VERY HIGH,L1
+Marketable Securities,Central bank,Domestic Currency,RW3,VERY HIGH,Marketable SecuritiesCentral bankDomestic CurrencyRW3VERY HIGH,L1
+Marketable Securities,Central bank,Foreign Currency,RW1,VERY HIGH,Marketable SecuritiesCentral bankForeign CurrencyRW1VERY HIGH,L1
+Marketable Securities,Central bank,Foreign Currency,RW2,VERY HIGH,Marketable SecuritiesCentral bankForeign CurrencyRW2VERY HIGH,L1
+Marketable Securities,Central bank,Foreign Currency,RW3,VERY HIGH,Marketable SecuritiesCentral bankForeign CurrencyRW3VERY HIGH,L1
+Marketable Securities,PSEs,Domestic Currency,RW1,VERY HIGH,Marketable SecuritiesPSEsDomestic CurrencyRW1VERY HIGH,L1
+Marketable Securities,PSEs,Domestic Currency,RW2,VERY HIGH,Marketable SecuritiesPSEsDomestic CurrencyRW2VERY HIGH,L2A
+Marketable Securities,PSEs,Domestic Currency,RW3,VERY HIGH,Marketable SecuritiesPSEsDomestic CurrencyRW3VERY HIGH,L2B
+Marketable Securities,PSEs,Foreign Currency,RW1,VERY HIGH,Marketable SecuritiesPSEsForeign CurrencyRW1VERY HIGH,L1
+Marketable Securities,PSEs,Foreign Currency,RW2,VERY HIGH,Marketable SecuritiesPSEsForeign CurrencyRW2VERY HIGH,L2A
+Marketable Securities,PSEs,Foreign Currency,RW3,VERY HIGH,Marketable SecuritiesPSEsForeign CurrencyRW3VERY HIGH,L2B
+Marketable Securities,MDB,Domestic Currency,RW1,VERY HIGH,Marketable SecuritiesMDBDomestic CurrencyRW1VERY HIGH,L1
+Marketable Securities,MDB,Domestic Currency,RW2,VERY HIGH,Marketable SecuritiesMDBDomestic CurrencyRW2VERY HIGH,L2A
+Marketable Securities,MDB,Domestic Currency,RW3,VERY HIGH,Marketable SecuritiesMDBDomestic CurrencyRW3VERY HIGH,L2B
+Marketable Securities,MDB,Foreign Currency,RW1,VERY HIGH,Marketable SecuritiesMDBForeign CurrencyRW1VERY HIGH,L1
+Marketable Securities,MDB,Foreign Currency,RW2,VERY HIGH,Marketable SecuritiesMDBForeign CurrencyRW2VERY HIGH,L2A
+Marketable Securities,MDB,Foreign Currency,RW3,VERY HIGH,Marketable SecuritiesMDBForeign CurrencyRW3VERY HIGH,L2B
+Marketable Securities,Domestic Sovereign,Domestic Currency,RW1,VERY HIGH,Marketable SecuritiesDomestic SovereignDomestic CurrencyRW1VERY HIGH,L1
+Marketable Securities,Domestic Sovereign,Domestic Currency,RW2,VERY HIGH,Marketable SecuritiesDomestic SovereignDomestic CurrencyRW2VERY HIGH,L1
+Marketable Securities,Domestic Sovereign,Domestic Currency,RW3,VERY HIGH,Marketable SecuritiesDomestic SovereignDomestic CurrencyRW3VERY HIGH,L1
+Marketable Securities,Domestic Sovereign,Foreign Currency,RW1,VERY HIGH,Marketable SecuritiesDomestic SovereignForeign CurrencyRW1VERY HIGH,L1
+Marketable Securities,Domestic Sovereign,Foreign Currency,RW2,VERY HIGH,Marketable SecuritiesDomestic SovereignForeign CurrencyRW2VERY HIGH,L1
+Marketable Securities,Domestic Sovereign,Foreign Currency,RW3,VERY HIGH,Marketable SecuritiesDomestic SovereignForeign CurrencyRW3VERY HIGH,L1
+Marketable Securities,Foreign Sovereign,Domestic Currency,RW1,VERY HIGH,Marketable SecuritiesForeign SovereignDomestic CurrencyRW1VERY HIGH,L1
+Marketable Securities,Foreign Sovereign,Domestic Currency,RW2,VERY HIGH,Marketable SecuritiesForeign SovereignDomestic CurrencyRW2VERY HIGH,L2A
+Marketable Securities,Foreign Sovereign,Domestic Currency,RW3,VERY HIGH,Marketable SecuritiesForeign SovereignDomestic CurrencyRW3VERY HIGH,L2B
+Marketable Securities,Foreign Sovereign,Foreign Currency,RW1,VERY HIGH,Marketable SecuritiesForeign SovereignForeign CurrencyRW1VERY HIGH,L1
+Marketable Securities,Foreign Sovereign,Foreign Currency,RW2,VERY HIGH,Marketable SecuritiesForeign SovereignForeign CurrencyRW2VERY HIGH,L2A
+Marketable Securities,Foreign Sovereign,Foreign Currency,RW3,VERY HIGH,Marketable SecuritiesForeign SovereignForeign CurrencyRW3VERY HIGH,L2B
+Marketable Securities,FIs,Domestic Currency,RW1,VERY HIGH,Marketable SecuritiesFIsDomestic CurrencyRW1VERY HIGH,NA
+Marketable Securities,FIs,Domestic Currency,RW2,VERY HIGH,Marketable SecuritiesFIsDomestic CurrencyRW2VERY HIGH,NA
+Marketable Securities,FIs,Domestic Currency,RW3,VERY HIGH,Marketable SecuritiesFIsDomestic CurrencyRW3VERY HIGH,NA
+Marketable Securities,FIs,Foreign Currency,RW1,VERY HIGH,Marketable SecuritiesFIsForeign CurrencyRW1VERY HIGH,NA
+Marketable Securities,FIs,Foreign Currency,RW2,VERY HIGH,Marketable SecuritiesFIsForeign CurrencyRW2VERY HIGH,NA
+Marketable Securities,FIs,Foreign Currency,RW3,VERY HIGH,Marketable SecuritiesFIsForeign CurrencyRW3VERY HIGH,NA
+Marketable Securities,Corp,Domestic Currency,RW1,VERY HIGH,Marketable SecuritiesCorpDomestic CurrencyRW1VERY HIGH,L2A
+Marketable Securities,Corp,Domestic Currency,RW2,VERY HIGH,Marketable SecuritiesCorpDomestic CurrencyRW2VERY HIGH,L2A
+Marketable Securities,Corp,Domestic Currency,RW3,VERY HIGH,Marketable SecuritiesCorpDomestic CurrencyRW3VERY HIGH,L2A
+Marketable Securities,Corp,Foreign Currency,RW1,VERY HIGH,Marketable SecuritiesCorpForeign CurrencyRW1VERY HIGH,L2A
+Marketable Securities,Corp,Foreign Currency,RW2,VERY HIGH,Marketable SecuritiesCorpForeign CurrencyRW2VERY HIGH,L2A
+Marketable Securities,Corp,Foreign Currency,RW3,VERY HIGH,Marketable SecuritiesCorpForeign CurrencyRW3VERY HIGH,L2A
+Marketable Securities,Others,Domestic Currency,RW1,VERY HIGH,Marketable SecuritiesOthersDomestic CurrencyRW1VERY HIGH,NA
+Marketable Securities,Others,Domestic Currency,RW2,VERY HIGH,Marketable SecuritiesOthersDomestic CurrencyRW2VERY HIGH,NA
+Marketable Securities,Others,Domestic Currency,RW3,VERY HIGH,Marketable SecuritiesOthersDomestic CurrencyRW3VERY HIGH,NA
+Marketable Securities,Others,Foreign Currency,RW1,VERY HIGH,Marketable SecuritiesOthersForeign CurrencyRW1VERY HIGH,NA
+Marketable Securities,Others,Foreign Currency,RW2,VERY HIGH,Marketable SecuritiesOthersForeign CurrencyRW2VERY HIGH,NA
+Marketable Securities,Others,Foreign Currency,RW3,VERY HIGH,Marketable SecuritiesOthersForeign CurrencyRW3VERY HIGH,NA
+RMBS,Corp,Domestic Currency,RW1,VERY HIGH,RMBSCorpDomestic CurrencyRW1VERY HIGH,L2B
+RMBS,Corp,Domestic Currency,RW2,VERY HIGH,RMBSCorpDomestic CurrencyRW2VERY HIGH,L2B
+RMBS,Corp,Domestic Currency,RW3,VERY HIGH,RMBSCorpDomestic CurrencyRW3VERY HIGH,L2B
+RMBS,Corp,Foreign Currency,RW1,VERY HIGH,RMBSCorpForeign CurrencyRW1VERY HIGH,L2B
+RMBS,Corp,Foreign Currency,RW2,VERY HIGH,RMBSCorpForeign CurrencyRW2VERY HIGH,L2B
+RMBS,Corp,Foreign Currency,RW3,VERY HIGH,RMBSCorpForeign CurrencyRW3VERY HIGH,L2B
+RMBS,Central Bank,Domestic Currency,RW1,VERY HIGH,RMBSCentral BankDomestic CurrencyRW1VERY HIGH,L2B
+RMBS,Central Bank,Domestic Currency,RW2,VERY HIGH,RMBSCentral BankDomestic CurrencyRW2VERY HIGH,L2B
+RMBS,Central Bank,Domestic Currency,RW3,VERY HIGH,RMBSCentral BankDomestic CurrencyRW3VERY HIGH,L2B
+RMBS,Central Bank,Foreign Currency,RW1,VERY HIGH,RMBSCentral BankForeign CurrencyRW1VERY HIGH,L2B
+RMBS,Central Bank,Foreign Currency,RW2,VERY HIGH,RMBSCentral BankForeign CurrencyRW2VERY HIGH,L2B
+RMBS,Central Bank,Foreign Currency,RW3,VERY HIGH,RMBSCentral BankForeign CurrencyRW3VERY HIGH,L2B
+RMBS,MDB,Domestic Currency,RW1,VERY HIGH,RMBSMDBDomestic CurrencyRW1VERY HIGH,L2B
+RMBS,MDB,Domestic Currency,RW2,VERY HIGH,RMBSMDBDomestic CurrencyRW2VERY HIGH,L2B
+RMBS,MDB,Domestic Currency,RW3,VERY HIGH,RMBSMDBDomestic CurrencyRW3VERY HIGH,L2B
+RMBS,MDB,Foreign Currency,RW1,VERY HIGH,RMBSMDBForeign CurrencyRW1VERY HIGH,L2B
+RMBS,MDB,Foreign Currency,RW2,VERY HIGH,RMBSMDBForeign CurrencyRW2VERY HIGH,L2B
+RMBS,MDB,Foreign Currency,RW3,VERY HIGH,RMBSMDBForeign CurrencyRW3VERY HIGH,L2B
+RMBS,PSEs,Domestic Currency,RW1,VERY HIGH,RMBSPSEsDomestic CurrencyRW1VERY HIGH,L2B
+RMBS,PSEs,Domestic Currency,RW2,VERY HIGH,RMBSPSEsDomestic CurrencyRW2VERY HIGH,L2B
+RMBS,PSEs,Domestic Currency,RW3,VERY HIGH,RMBSPSEsDomestic CurrencyRW3VERY HIGH,L2B
+RMBS,PSEs,Foreign Currency,RW1,VERY HIGH,RMBSPSEsForeign CurrencyRW1VERY HIGH,L2B
+RMBS,PSEs,Foreign Currency,RW2,VERY HIGH,RMBSPSEsForeign CurrencyRW2VERY HIGH,L2B
+RMBS,PSEs,Foreign Currency,RW3,VERY HIGH,RMBSPSEsForeign CurrencyRW3VERY HIGH,L2B
+RMBS,Domestic Sovereign,Domestic Currency,RW1,VERY HIGH,RMBSDomestic SovereignDomestic CurrencyRW1VERY HIGH,L2B
+RMBS,Domestic Sovereign,Domestic Currency,RW2,VERY HIGH,RMBSDomestic SovereignDomestic CurrencyRW2VERY HIGH,L2B
+RMBS,Domestic Sovereign,Domestic Currency,RW3,VERY HIGH,RMBSDomestic SovereignDomestic CurrencyRW3VERY HIGH,L2B
+RMBS,Domestic Sovereign,Foreign Currency,RW1,VERY HIGH,RMBSDomestic SovereignForeign CurrencyRW1VERY HIGH,L2B
+RMBS,Domestic Sovereign,Foreign Currency,RW2,VERY HIGH,RMBSDomestic SovereignForeign CurrencyRW2VERY HIGH,L2B
+RMBS,Domestic Sovereign,Foreign Currency,RW3,VERY HIGH,RMBSDomestic SovereignForeign CurrencyRW3VERY HIGH,L2B
+RMBS,Foreign Sovereign,Domestic Currency,RW1,VERY HIGH,RMBSForeign SovereignDomestic CurrencyRW1VERY HIGH,L2B
+RMBS,Foreign Sovereign,Domestic Currency,RW2,VERY HIGH,RMBSForeign SovereignDomestic CurrencyRW2VERY HIGH,L2B
+RMBS,Foreign Sovereign,Domestic Currency,RW3,VERY HIGH,RMBSForeign SovereignDomestic CurrencyRW3VERY HIGH,L2B
+RMBS,Foreign Sovereign,Foreign Currency,RW1,VERY HIGH,RMBSForeign SovereignForeign CurrencyRW1VERY HIGH,L2B
+RMBS,Foreign Sovereign,Foreign Currency,RW2,VERY HIGH,RMBSForeign SovereignForeign CurrencyRW2VERY HIGH,L2B
+RMBS,Foreign Sovereign,Foreign Currency,RW3,VERY HIGH,RMBSForeign SovereignForeign CurrencyRW3VERY HIGH,L2B
+RMBS,Others,Domestic Currency,RW1,VERY HIGH,RMBSOthersDomestic CurrencyRW1VERY HIGH,NA
+RMBS,Others,Domestic Currency,RW2,VERY HIGH,RMBSOthersDomestic CurrencyRW2VERY HIGH,NA
+RMBS,Others,Domestic Currency,RW3,VERY HIGH,RMBSOthersDomestic CurrencyRW3VERY HIGH,NA
+RMBS,Others,Foreign Currency,RW1,VERY HIGH,RMBSOthersForeign CurrencyRW1VERY HIGH,NA
+RMBS,Others,Foreign Currency,RW2,VERY HIGH,RMBSOthersForeign CurrencyRW2VERY HIGH,NA
+RMBS,Others,Foreign Currency,RW3,VERY HIGH,RMBSOthersForeign CurrencyRW3VERY HIGH,NA
+RMBS,FIs,Domestic Currency,RW1,VERY HIGH,RMBSFIsDomestic CurrencyRW1VERY HIGH,NA
+RMBS,FIs,Domestic Currency,RW2,VERY HIGH,RMBSFIsDomestic CurrencyRW2VERY HIGH,NA
+RMBS,FIs,Domestic Currency,RW3,VERY HIGH,RMBSFIsDomestic CurrencyRW3VERY HIGH,NA
+RMBS,FIs,Foreign Currency,RW1,VERY HIGH,RMBSFIsForeign CurrencyRW1VERY HIGH,NA
+RMBS,FIs,Foreign Currency,RW2,VERY HIGH,RMBSFIsForeign CurrencyRW2VERY HIGH,NA
+RMBS,FIs,Foreign Currency,RW3,VERY HIGH,RMBSFIsForeign CurrencyRW3VERY HIGH,NA
+Equity,Central Bank,Domestic Currency,RW1,VERY HIGH,EquityCentral BankDomestic CurrencyRW1VERY HIGH,L2B
+Equity,Central Bank,Domestic Currency,RW2,VERY HIGH,EquityCentral BankDomestic CurrencyRW2VERY HIGH,L2B
+Equity,Central Bank,Domestic Currency,RW3,VERY HIGH,EquityCentral BankDomestic CurrencyRW3VERY HIGH,L2B
+Equity,Central Bank,Foreign Currency,RW1,VERY HIGH,EquityCentral BankForeign CurrencyRW1VERY HIGH,NA
+Equity,Central Bank,Foreign Currency,RW2,VERY HIGH,EquityCentral BankForeign CurrencyRW2VERY HIGH,NA
+Equity,Central Bank,Foreign Currency,RW3,VERY HIGH,EquityCentral BankForeign CurrencyRW3VERY HIGH,NA
+Equity,PSEs,Domestic Currency,RW1,VERY HIGH,EquityPSEsDomestic CurrencyRW1VERY HIGH,L2B
+Equity,PSEs,Domestic Currency,RW2,VERY HIGH,EquityPSEsDomestic CurrencyRW2VERY HIGH,L2B
+Equity,PSEs,Domestic Currency,RW3,VERY HIGH,EquityPSEsDomestic CurrencyRW3VERY HIGH,L2B
+Equity,PSEs,Foreign Currency,RW1,VERY HIGH,EquityPSEsForeign CurrencyRW1VERY HIGH,NA
+Equity,PSEs,Foreign Currency,RW2,VERY HIGH,EquityPSEsForeign CurrencyRW2VERY HIGH,NA
+Equity,PSEs,Foreign Currency,RW3,VERY HIGH,EquityPSEsForeign CurrencyRW3VERY HIGH,NA
+Equity,Domestic Sovereign,Domestic Currency,RW1,VERY HIGH,EquityDomestic SovereignDomestic CurrencyRW1VERY HIGH,L2B
+Equity,Domestic Sovereign,Domestic Currency,RW2,VERY HIGH,EquityDomestic SovereignDomestic CurrencyRW2VERY HIGH,L2B
+Equity,Domestic Sovereign,Domestic Currency,RW3,VERY HIGH,EquityDomestic SovereignDomestic CurrencyRW3VERY HIGH,L2B
+Equity,Domestic Sovereign,Foreign Currency,RW1,VERY HIGH,EquityDomestic SovereignForeign CurrencyRW1VERY HIGH,NA
+Equity,Domestic Sovereign,Foreign Currency,RW2,VERY HIGH,EquityDomestic SovereignForeign CurrencyRW2VERY HIGH,NA
+Equity,Domestic Sovereign,Foreign Currency,RW3,VERY HIGH,EquityDomestic SovereignForeign CurrencyRW3VERY HIGH,NA
+Equity,Foreign Sovereign,Domestic Currency,RW1,VERY HIGH,EquityForeign SovereignDomestic CurrencyRW1VERY HIGH,L2B
+Equity,Foreign Sovereign,Domestic Currency,RW2,VERY HIGH,EquityForeign SovereignDomestic CurrencyRW2VERY HIGH,L2B
+Equity,Foreign Sovereign,Domestic Currency,RW3,VERY HIGH,EquityForeign SovereignDomestic CurrencyRW3VERY HIGH,L2B
+Equity,Foreign Sovereign,Foreign Currency,RW1,VERY HIGH,EquityForeign SovereignForeign CurrencyRW1VERY HIGH,NA
+Equity,Foreign Sovereign,Foreign Currency,RW2,VERY HIGH,EquityForeign SovereignForeign CurrencyRW2VERY HIGH,NA
+Equity,Foreign Sovereign,Foreign Currency,RW3,VERY HIGH,EquityForeign SovereignForeign CurrencyRW3VERY HIGH,NA
+Equity,Corp,Domestic Currency,RW1,VERY HIGH,EquityCorpDomestic CurrencyRW1VERY HIGH,L2B
+Equity,Corp,Domestic Currency,RW2,VERY HIGH,EquityCorpDomestic CurrencyRW2VERY HIGH,L2B
+Equity,Corp,Domestic Currency,RW3,VERY HIGH,EquityCorpDomestic CurrencyRW3VERY HIGH,L2B
+Equity,Corp,Foreign Currency,RW1,VERY HIGH,EquityCorpForeign CurrencyRW1VERY HIGH,NA
+Equity,Corp,Foreign Currency,RW2,VERY HIGH,EquityCorpForeign CurrencyRW2VERY HIGH,NA
+Equity,Corp,Foreign Currency,RW3,VERY HIGH,EquityCorpForeign CurrencyRW3VERY HIGH,NA
+Equity,MDB,Domestic Currency,RW1,VERY HIGH,EquityMDBDomestic CurrencyRW1VERY HIGH,L2B
+Equity,MDB,Domestic Currency,RW2,VERY HIGH,EquityMDBDomestic CurrencyRW2VERY HIGH,L2B
+Equity,MDB,Domestic Currency,RW3,VERY HIGH,EquityMDBDomestic CurrencyRW3VERY HIGH,L2B
+Equity,MDB,Foreign Currency,RW1,VERY HIGH,EquityMDBForeign CurrencyRW1VERY HIGH,NA
+Equity,MDB,Foreign Currency,RW2,VERY HIGH,EquityMDBForeign CurrencyRW2VERY HIGH,NA
+Equity,MDB,Foreign Currency,RW3,VERY HIGH,EquityMDBForeign CurrencyRW3VERY HIGH,NA
+Equity,FIs,Domestic Currency,RW1,VERY HIGH,EquityFIsDomestic CurrencyRW1VERY HIGH,NA
+Equity,FIs,Domestic Currency,RW2,VERY HIGH,EquityFIsDomestic CurrencyRW2VERY HIGH,NA
+Equity,FIs,Domestic Currency,RW3,VERY HIGH,EquityFIsDomestic CurrencyRW3VERY HIGH,NA
+Equity,FIs,Foreign Currency,RW1,VERY HIGH,EquityFIsForeign CurrencyRW1VERY HIGH,NA
+Equity,FIs,Foreign Currency,RW2,VERY HIGH,EquityFIsForeign CurrencyRW2VERY HIGH,NA
+Equity,FIs,Foreign Currency,RW3,VERY HIGH,EquityFIsForeign CurrencyRW3VERY HIGH,NA
+Equity,Others,Domestic Currency,RW1,VERY HIGH,EquityOthersDomestic CurrencyRW1VERY HIGH,NA
+Equity,Others,Domestic Currency,RW2,VERY HIGH,EquityOthersDomestic CurrencyRW2VERY HIGH,NA
+Equity,Others,Domestic Currency,RW3,VERY HIGH,EquityOthersDomestic CurrencyRW3VERY HIGH,NA
+Equity,Others,Foreign Currency,RW1,VERY HIGH,EquityOthersForeign CurrencyRW1VERY HIGH,NA
+Equity,Others,Foreign Currency,RW2,VERY HIGH,EquityOthersForeign CurrencyRW2VERY HIGH,NA
+Equity,Others,Foreign Currency,RW3,VERY HIGH,EquityOthersForeign CurrencyRW3VERY HIGH,NA
+Others,Others,Domestic Currency,RW1,VERY HIGH,OthersOthersDomestic CurrencyRW1VERY HIGH,NA
+Others,Others,Domestic Currency,RW2,VERY HIGH,OthersOthersDomestic CurrencyRW2VERY HIGH,NA
+Others,Others,Domestic Currency,RW3,VERY HIGH,OthersOthersDomestic CurrencyRW3VERY HIGH,NA
+Others,Others,Foreign Currency,RW1,VERY HIGH,OthersOthersForeign CurrencyRW1VERY HIGH,NA
+Others,Others,Foreign Currency,RW2,VERY HIGH,OthersOthersForeign CurrencyRW2VERY HIGH,NA
+Others,Others,Foreign Currency,RW3,VERY HIGH,OthersOthersForeign CurrencyRW3VERY HIGH,NA
+Others,Domestic Sovereign,Domestic Currency,RW1,VERY HIGH,OthersDomestic SovereignDomestic CurrencyRW1VERY HIGH,NA
+Others,Domestic Sovereign,Domestic Currency,RW2,VERY HIGH,OthersDomestic SovereignDomestic CurrencyRW2VERY HIGH,NA
+Others,Domestic Sovereign,Domestic Currency,RW3,VERY HIGH,OthersDomestic SovereignDomestic CurrencyRW3VERY HIGH,NA
+Others,Domestic Sovereign,Foreign Currency,RW1,VERY HIGH,OthersDomestic SovereignForeign CurrencyRW1VERY HIGH,NA
+Others,Domestic Sovereign,Foreign Currency,RW2,VERY HIGH,OthersDomestic SovereignForeign CurrencyRW2VERY HIGH,NA
+Others,Domestic Sovereign,Foreign Currency,RW3,VERY HIGH,OthersDomestic SovereignForeign CurrencyRW3VERY HIGH,NA
+Others,Foreign Sovereign,Domestic Currency,RW1,VERY HIGH,OthersForeign SovereignDomestic CurrencyRW1VERY HIGH,NA
+Others,Foreign Sovereign,Domestic Currency,RW2,VERY HIGH,OthersForeign SovereignDomestic CurrencyRW2VERY HIGH,NA
+Others,Foreign Sovereign,Domestic Currency,RW3,VERY HIGH,OthersForeign SovereignDomestic CurrencyRW3VERY HIGH,NA
+Others,Foreign Sovereign,Foreign Currency,RW1,VERY HIGH,OthersForeign SovereignForeign CurrencyRW1VERY HIGH,NA
+Others,Foreign Sovereign,Foreign Currency,RW2,VERY HIGH,OthersForeign SovereignForeign CurrencyRW2VERY HIGH,NA
+Others,Foreign Sovereign,Foreign Currency,RW3,VERY HIGH,OthersForeign SovereignForeign CurrencyRW3VERY HIGH,NA
+Others,Central Bank,Domestic Currency,RW1,VERY HIGH,OthersCentral BankDomestic CurrencyRW1VERY HIGH,NA
+Others,Central Bank,Domestic Currency,RW2,VERY HIGH,OthersCentral BankDomestic CurrencyRW2VERY HIGH,NA
+Others,Central Bank,Domestic Currency,RW3,VERY HIGH,OthersCentral BankDomestic CurrencyRW3VERY HIGH,NA
+Others,Central Bank,Foreign Currency,RW1,VERY HIGH,OthersCentral BankForeign CurrencyRW1VERY HIGH,NA
+Others,Central Bank,Foreign Currency,RW2,VERY HIGH,OthersCentral BankForeign CurrencyRW2VERY HIGH,NA
+Others,Central Bank,Foreign Currency,RW3,VERY HIGH,OthersCentral BankForeign CurrencyRW3VERY HIGH,NA
+Others,MDB,Domestic Currency,RW1,VERY HIGH,OthersMDBDomestic CurrencyRW1VERY HIGH,NA
+Others,MDB,Domestic Currency,RW2,VERY HIGH,OthersMDBDomestic CurrencyRW2VERY HIGH,NA
+Others,MDB,Domestic Currency,RW3,VERY HIGH,OthersMDBDomestic CurrencyRW3VERY HIGH,NA
+Others,MDB,Foreign Currency,RW1,VERY HIGH,OthersMDBForeign CurrencyRW1VERY HIGH,NA
+Others,MDB,Foreign Currency,RW2,VERY HIGH,OthersMDBForeign CurrencyRW2VERY HIGH,NA
+Others,MDB,Foreign Currency,RW3,VERY HIGH,OthersMDBForeign CurrencyRW3VERY HIGH,NA
+Others,PSEs,Domestic Currency,RW1,VERY HIGH,OthersPSEsDomestic CurrencyRW1VERY HIGH,NA
+Others,PSEs,Domestic Currency,RW2,VERY HIGH,OthersPSEsDomestic CurrencyRW2VERY HIGH,NA
+Others,PSEs,Domestic Currency,RW3,VERY HIGH,OthersPSEsDomestic CurrencyRW3VERY HIGH,NA
+Others,PSEs,Foreign Currency,RW1,VERY HIGH,OthersPSEsForeign CurrencyRW1VERY HIGH,NA
+Others,PSEs,Foreign Currency,RW2,VERY HIGH,OthersPSEsForeign CurrencyRW2VERY HIGH,NA
+Others,PSEs,Foreign Currency,RW3,VERY HIGH,OthersPSEsForeign CurrencyRW3VERY HIGH,NA
+Others,FIs,Domestic Currency,RW1,VERY HIGH,OthersFIsDomestic CurrencyRW1VERY HIGH,NA
+Others,FIs,Domestic Currency,RW2,VERY HIGH,OthersFIsDomestic CurrencyRW2VERY HIGH,NA
+Others,FIs,Domestic Currency,RW3,VERY HIGH,OthersFIsDomestic CurrencyRW3VERY HIGH,NA
+Others,FIs,Foreign Currency,RW1,VERY HIGH,OthersFIsForeign CurrencyRW1VERY HIGH,NA
+Others,FIs,Foreign Currency,RW2,VERY HIGH,OthersFIsForeign CurrencyRW2VERY HIGH,NA
+Others,FIs,Foreign Currency,RW3,VERY HIGH,OthersFIsForeign CurrencyRW3VERY HIGH,NA
+Others,Corp,Domestic Currency,RW1,VERY HIGH,OthersCorpDomestic CurrencyRW1VERY HIGH,NA
+Others,Corp,Domestic Currency,RW2,VERY HIGH,OthersCorpDomestic CurrencyRW2VERY HIGH,NA
+Others,Corp,Domestic Currency,RW3,VERY HIGH,OthersCorpDomestic CurrencyRW3VERY HIGH,NA
+Others,Corp,Foreign Currency,RW1,VERY HIGH,OthersCorpForeign CurrencyRW1VERY HIGH,NA
+Others,Corp,Foreign Currency,RW2,VERY HIGH,OthersCorpForeign CurrencyRW2VERY HIGH,NA
+Others,Corp,Foreign Currency,RW3,VERY HIGH,OthersCorpForeign CurrencyRW3VERY HIGH,NA
+Others,Retail,Domestic Currency,RW1,VERY HIGH,OthersRetailDomestic CurrencyRW1VERY HIGH,NA
+Others,Retail,Foreign Currency,RW1,VERY HIGH,OthersRetailForeign CurrencyRW1VERY HIGH,NA
+Others,Retail,Domestic Currency,RW2,VERY HIGH,OthersRetailDomestic CurrencyRW2VERY HIGH,NA
+Others,Retail,Foreign Currency,RW2,VERY HIGH,OthersRetailForeign CurrencyRW2VERY HIGH,NA
+Others,Retail,Domestic Currency,RW3,VERY HIGH,OthersRetailDomestic CurrencyRW3VERY HIGH,NA
+Others,Retail,Foreign Currency,RW3,VERY HIGH,OthersRetailForeign CurrencyRW3VERY HIGH,NA
+Others,Retail,Domestic Currency,RW1,HIGH,OthersRetailDomestic CurrencyRW1HIGH,NA
+Others,Retail,Foreign Currency,RW1,HIGH,OthersRetailForeign CurrencyRW1HIGH,NA
+Others,Retail,Domestic Currency,RW2,HIGH,OthersRetailDomestic CurrencyRW2HIGH,NA
+Others,Retail,Foreign Currency,RW2,HIGH,OthersRetailForeign CurrencyRW2HIGH,NA
+Others,Retail,Domestic Currency,RW3,HIGH,OthersRetailDomestic CurrencyRW3HIGH,NA
+Others,Retail,Foreign Currency,RW3,HIGH,OthersRetailForeign CurrencyRW3HIGH,NA
+Others,Retail,Domestic Currency,RW1,MEDIUM,OthersRetailDomestic CurrencyRW1MEDIUM,NA
+Others,Retail,Foreign Currency,RW1,MEDIUM,OthersRetailForeign CurrencyRW1MEDIUM,NA
+Others,Retail,Domestic Currency,RW2,MEDIUM,OthersRetailDomestic CurrencyRW2MEDIUM,NA
+Others,Retail,Foreign Currency,RW2,MEDIUM,OthersRetailForeign CurrencyRW2MEDIUM,NA
+Others,Retail,Domestic Currency,RW3,MEDIUM,OthersRetailDomestic CurrencyRW3MEDIUM,NA
+Others,Retail,Foreign Currency,RW3,MEDIUM,OthersRetailForeign CurrencyRW3MEDIUM,NA
+Others,Retail,Domestic Currency,RW1,LOW,OthersRetailDomestic CurrencyRW1LOW,NA
+Others,Retail,Foreign Currency,RW1,LOW,OthersRetailForeign CurrencyRW1LOW,NA
+Others,Retail,Domestic Currency,RW2,LOW,OthersRetailDomestic CurrencyRW2LOW,NA
+Others,Retail,Foreign Currency,RW2,LOW,OthersRetailForeign CurrencyRW2LOW,NA
+Others,Retail,Domestic Currency,RW3,LOW,OthersRetailDomestic CurrencyRW3LOW,NA
+Others,Retail,Foreign Currency,RW3,LOW,OthersRetailForeign CurrencyRW3LOW,NA
+Marketable Securities,Retail,Domestic Currency,RW1,VERY HIGH,Marketable SecuritiesRetailDomestic CurrencyRW1VERY HIGH,NA
+Marketable Securities,Retail,Foreign Currency,RW1,VERY HIGH,Marketable SecuritiesRetailForeign CurrencyRW1VERY HIGH,NA
+Marketable Securities,Retail,Domestic Currency,RW2,VERY HIGH,Marketable SecuritiesRetailDomestic CurrencyRW2VERY HIGH,NA
+Marketable Securities,Retail,Foreign Currency,RW2,VERY HIGH,Marketable SecuritiesRetailForeign CurrencyRW2VERY HIGH,NA
+Marketable Securities,Retail,Domestic Currency,RW3,VERY HIGH,Marketable SecuritiesRetailDomestic CurrencyRW3VERY HIGH,NA
+Marketable Securities,Retail,Foreign Currency,RW3,VERY HIGH,Marketable SecuritiesRetailForeign CurrencyRW3VERY HIGH,NA
+Marketable Securities,Retail,Domestic Currency,RW1,HIGH,Marketable SecuritiesRetailDomestic CurrencyRW1HIGH,NA
+Marketable Securities,Retail,Foreign Currency,RW1,HIGH,Marketable SecuritiesRetailForeign CurrencyRW1HIGH,NA
+Marketable Securities,Retail,Domestic Currency,RW2,HIGH,Marketable SecuritiesRetailDomestic CurrencyRW2HIGH,NA
+Marketable Securities,Retail,Foreign Currency,RW2,HIGH,Marketable SecuritiesRetailForeign CurrencyRW2HIGH,NA
+Marketable Securities,Retail,Domestic Currency,RW3,HIGH,Marketable SecuritiesRetailDomestic CurrencyRW3HIGH,NA
+Marketable Securities,Retail,Foreign Currency,RW3,HIGH,Marketable SecuritiesRetailForeign CurrencyRW3HIGH,NA
+Marketable Securities,Retail,Domestic Currency,RW1,MEDIUM,Marketable SecuritiesRetailDomestic CurrencyRW1MEDIUM,NA
+Marketable Securities,Retail,Foreign Currency,RW1,MEDIUM,Marketable SecuritiesRetailForeign CurrencyRW1MEDIUM,NA
+Marketable Securities,Retail,Domestic Currency,RW2,MEDIUM,Marketable SecuritiesRetailDomestic CurrencyRW2MEDIUM,NA
+Marketable Securities,Retail,Foreign Currency,RW2,MEDIUM,Marketable SecuritiesRetailForeign CurrencyRW2MEDIUM,NA
+Marketable Securities,Retail,Domestic Currency,RW3,MEDIUM,Marketable SecuritiesRetailDomestic CurrencyRW3MEDIUM,NA
+Marketable Securities,Retail,Foreign Currency,RW3,MEDIUM,Marketable SecuritiesRetailForeign CurrencyRW3MEDIUM,NA
+Marketable Securities,Retail,Domestic Currency,RW1,LOW,Marketable SecuritiesRetailDomestic CurrencyRW1LOW,NA
+Marketable Securities,Retail,Foreign Currency,RW1,LOW,Marketable SecuritiesRetailForeign CurrencyRW1LOW,NA
+Marketable Securities,Retail,Domestic Currency,RW2,LOW,Marketable SecuritiesRetailDomestic CurrencyRW2LOW,NA
+Marketable Securities,Retail,Foreign Currency,RW2,LOW,Marketable SecuritiesRetailForeign CurrencyRW2LOW,NA
+Marketable Securities,Retail,Domestic Currency,RW3,LOW,Marketable SecuritiesRetailDomestic CurrencyRW3LOW,NA
+Marketable Securities,Retail,Foreign Currency,RW3,LOW,Marketable SecuritiesRetailForeign CurrencyRW3LOW,NA
+,,,,,NA,NA

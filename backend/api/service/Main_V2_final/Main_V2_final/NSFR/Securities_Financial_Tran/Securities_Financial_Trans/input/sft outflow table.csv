@@ -1,0 +1,110 @@
+﻿Loan Type,Counterparty Type,Collateral,Risk Weight,CONCAT,Outflow %
+Secured Borrowing,Retail,L1,RW1,Secured BorrowingRetailL1RW1,0%
+Secured Borrowing,Small Business Customer,L1,RW1,Secured BorrowingSmall Business CustomerL1RW1,0%
+Secured Borrowing,Corp,L1,RW1,Secured BorrowingCorpL1RW1,0%
+Secured Borrowing,Domestic Sovereign,L1,RW1,Secured BorrowingDomestic SovereignL1RW1,0%
+Secured Borrowing,Central Bank,L1,RW1,Secured BorrowingCentral BankL1RW1,0%
+Secured Borrowing,PSEs,L1,RW1,Secured BorrowingPSEsL1RW1,0%
+Secured Borrowing,MDB,L1,RW1,Secured BorrowingMDBL1RW1,0%
+Secured Borrowing,FIs,L1,RW1,Secured BorrowingFIsL1RW1,0%
+Secured Borrowing,Others,L1,RW1,Secured BorrowingOthersL1RW1,0%
+Secured Borrowing,Retail,L1,RW2,Secured BorrowingRetailL1RW2,0%
+Secured Borrowing,Small Business Customer,L1,RW2,Secured BorrowingSmall Business CustomerL1RW2,0%
+Secured Borrowing,Corp,L1,RW2,Secured BorrowingCorpL1RW2,0%
+Secured Borrowing,Domestic Sovereign,L1,RW2,Secured BorrowingDomestic SovereignL1RW2,0%
+Secured Borrowing,Central Bank,L1,RW2,Secured BorrowingCentral BankL1RW2,0%
+Secured Borrowing,PSEs,L1,RW2,Secured BorrowingPSEsL1RW2,0%
+Secured Borrowing,MDB,L1,RW2,Secured BorrowingMDBL1RW2,0%
+Secured Borrowing,FIs,L1,RW2,Secured BorrowingFIsL1RW2,0%
+Secured Borrowing,Others,L1,RW2,Secured BorrowingOthersL1RW2,0%
+Secured Borrowing,Retail,L1,RW3,Secured BorrowingRetailL1RW3,0%
+Secured Borrowing,Small Business Customer,L1,RW3,Secured BorrowingSmall Business CustomerL1RW3,0%
+Secured Borrowing,Corp,L1,RW3,Secured BorrowingCorpL1RW3,0%
+Secured Borrowing,Domestic Sovereign,L1,RW3,Secured BorrowingDomestic SovereignL1RW3,0%
+Secured Borrowing,Central Bank,L1,RW3,Secured BorrowingCentral BankL1RW3,0%
+Secured Borrowing,PSEs,L1,RW3,Secured BorrowingPSEsL1RW3,0%
+Secured Borrowing,MDB,L1,RW3,Secured BorrowingMDBL1RW3,0%
+Secured Borrowing,FIs,L1,RW3,Secured BorrowingFIsL1RW3,0%
+Secured Borrowing,Others,L1,RW3,Secured BorrowingOthersL1RW3,0%
+Secured Borrowing,Retail,L2A,RW1,Secured BorrowingRetailL2ARW1,15%
+Secured Borrowing,Small Business Customer,L2A,RW1,Secured BorrowingSmall Business CustomerL2ARW1,15%
+Secured Borrowing,Corp,L2A,RW1,Secured BorrowingCorpL2ARW1,15%
+Secured Borrowing,Domestic Sovereign,L2A,RW1,Secured BorrowingDomestic SovereignL2ARW1,15%
+Secured Borrowing,Central Bank,L2A,RW1,Secured BorrowingCentral BankL2ARW1,15%
+Secured Borrowing,PSEs,L2A,RW1,Secured BorrowingPSEsL2ARW1,15%
+Secured Borrowing,MDB,L2A,RW1,Secured BorrowingMDBL2ARW1,15%
+Secured Borrowing,FIs,L2A,RW1,Secured BorrowingFIsL2ARW1,15%
+Secured Borrowing,Others,L2A,RW1,Secured BorrowingOthersL2ARW1,15%
+Secured Borrowing,Retail,L2A,RW2,Secured BorrowingRetailL2ARW2,15%
+Secured Borrowing,Small Business Customer,L2A,RW2,Secured BorrowingSmall Business CustomerL2ARW2,15%
+Secured Borrowing,Corp,L2A,RW2,Secured BorrowingCorpL2ARW2,15%
+Secured Borrowing,Domestic Sovereign,L2A,RW2,Secured BorrowingDomestic SovereignL2ARW2,15%
+Secured Borrowing,Central Bank,L2A,RW2,Secured BorrowingCentral BankL2ARW2,15%
+Secured Borrowing,PSEs,L2A,RW2,Secured BorrowingPSEsL2ARW2,15%
+Secured Borrowing,MDB,L2A,RW2,Secured BorrowingMDBL2ARW2,15%
+Secured Borrowing,FIs,L2A,RW2,Secured BorrowingFIsL2ARW2,15%
+Secured Borrowing,Others,L2A,RW2,Secured BorrowingOthersL2ARW2,15%
+Secured Borrowing,Retail,L2A,RW3,Secured BorrowingRetailL2ARW3,15%
+Secured Borrowing,Small Business Customer,L2A,RW3,Secured BorrowingSmall Business CustomerL2ARW3,15%
+Secured Borrowing,Corp,L2A,RW3,Secured BorrowingCorpL2ARW3,15%
+Secured Borrowing,Domestic Sovereign,L2A,RW3,Secured BorrowingDomestic SovereignL2ARW3,15%
+Secured Borrowing,Central Bank,L2A,RW3,Secured BorrowingCentral BankL2ARW3,15%
+Secured Borrowing,PSEs,L2A,RW3,Secured BorrowingPSEsL2ARW3,15%
+Secured Borrowing,MDB,L2A,RW3,Secured BorrowingMDBL2ARW3,15%
+Secured Borrowing,FIs,L2A,RW3,Secured BorrowingFIsL2ARW3,15%
+Secured Borrowing,Others,L2A,RW3,Secured BorrowingOthersL2ARW3,15%
+Secured Borrowing,Retail,L2B,RW1,Secured BorrowingRetailL2BRW1,50%
+Secured Borrowing,Small Business Customer,L2B,RW1,Secured BorrowingSmall Business CustomerL2BRW1,50%
+Secured Borrowing,Corp,L2B,RW1,Secured BorrowingCorpL2BRW1,50%
+Secured Borrowing,Domestic Sovereign,L2B,RW1,Secured BorrowingDomestic SovereignL2BRW1,25%
+Secured Borrowing,Central Bank,L2B,RW1,Secured BorrowingCentral BankL2BRW1,50%
+Secured Borrowing,PSEs,L2B,RW1,Secured BorrowingPSEsL2BRW1,25%
+Secured Borrowing,MDB,L2B,RW1,Secured BorrowingMDBL2BRW1,25%
+Secured Borrowing,FIs,L2B,RW1,Secured BorrowingFIsL2BRW1,50%
+Secured Borrowing,Others,L2B,RW1,Secured BorrowingOthersL2BRW1,50%
+Secured Borrowing,Retail,L2B,RW2,Secured BorrowingRetailL2BRW2,50%
+Secured Borrowing,Small Business Customer,L2B,RW2,Secured BorrowingSmall Business CustomerL2BRW2,50%
+Secured Borrowing,Corp,L2B,RW2,Secured BorrowingCorpL2BRW2,50%
+Secured Borrowing,Domestic Sovereign,L2B,RW2,Secured BorrowingDomestic SovereignL2BRW2,25%
+Secured Borrowing,Central Bank,L2B,RW2,Secured BorrowingCentral BankL2BRW2,50%
+Secured Borrowing,PSEs,L2B,RW2,Secured BorrowingPSEsL2BRW2,25%
+Secured Borrowing,MDB,L2B,RW2,Secured BorrowingMDBL2BRW2,50%
+Secured Borrowing,FIs,L2B,RW2,Secured BorrowingFIsL2BRW2,25%
+Secured Borrowing,Others,L2B,RW2,Secured BorrowingOthersL2BRW2,50%
+Secured Borrowing,Retail,L2B,RW3,Secured BorrowingRetailL2BRW3,50%
+Secured Borrowing,Small Business Customer,L2B,RW3,Secured BorrowingSmall Business CustomerL2BRW3,50%
+Secured Borrowing,Corp,L2B,RW3,Secured BorrowingCorpL2BRW3,50%
+Secured Borrowing,Domestic Sovereign,L2B,RW3,Secured BorrowingDomestic SovereignL2BRW3,25%
+Secured Borrowing,Central Bank,L2B,RW3,Secured BorrowingCentral BankL2BRW3,50%
+Secured Borrowing,PSEs,L2B,RW3,Secured BorrowingPSEsL2BRW3,50%
+Secured Borrowing,MDB,L2B,RW3,Secured BorrowingMDBL2BRW3,25%
+Secured Borrowing,FIs,L2B,RW3,Secured BorrowingFIsL2BRW3,50%
+Secured Borrowing,Others,L2B,RW3,Secured BorrowingOthersL2BRW3,50%
+Secured Borrowing,Retail,NA,RW1,Secured BorrowingRetailNARW1,100%
+Secured Borrowing,Small Business Customer,NA,RW1,Secured BorrowingSmall Business CustomerNARW1,100%
+Secured Borrowing,Corp,NA,RW1,Secured BorrowingCorpNARW1,100%
+Secured Borrowing,Domestic Sovereign,NA,RW1,Secured BorrowingDomestic SovereignNARW1,100%
+Secured Borrowing,Central Bank,NA,RW1,Secured BorrowingCentral BankNARW1,100%
+Secured Borrowing,PSEs,NA,RW1,Secured BorrowingPSEsNARW1,100%
+Secured Borrowing,MDB,NA,RW1,Secured BorrowingMDBNARW1,100%
+Secured Borrowing,FIs,NA,RW1,Secured BorrowingFIsNARW1,100%
+Secured Borrowing,Others,NA,RW1,Secured BorrowingOthersNARW1,100%
+Secured Borrowing,Retail,NA,RW2,Secured BorrowingRetailNARW2,100%
+Secured Borrowing,Small Business Customer,NA,RW2,Secured BorrowingSmall Business CustomerNARW2,100%
+Secured Borrowing,Corp,NA,RW2,Secured BorrowingCorpNARW2,100%
+Secured Borrowing,Domestic Sovereign,NA,RW2,Secured BorrowingDomestic SovereignNARW2,100%
+Secured Borrowing,Central Bank,NA,RW2,Secured BorrowingCentral BankNARW2,100%
+Secured Borrowing,PSEs,NA,RW2,Secured BorrowingPSEsNARW2,100%
+Secured Borrowing,MDB,NA,RW2,Secured BorrowingMDBNARW2,100%
+Secured Borrowing,FIs,NA,RW2,Secured BorrowingFIsNARW2,100%
+Secured Borrowing,Others,NA,RW2,Secured BorrowingOthersNARW2,100%
+Secured Borrowing,Retail,NA,RW3,Secured BorrowingRetailNARW3,100%
+Secured Borrowing,Small Business Customer,NA,RW3,Secured BorrowingSmall Business CustomerNARW3,100%
+Secured Borrowing,Corp,NA,RW3,Secured BorrowingCorpNARW3,100%
+Secured Borrowing,Domestic Sovereign,NA,RW3,Secured BorrowingDomestic SovereignNARW3,100%
+Secured Borrowing,Central Bank,NA,RW3,Secured BorrowingCentral BankNARW3,100%
+Secured Borrowing,PSEs,NA,RW3,Secured BorrowingPSEsNARW3,100%
+Secured Borrowing,MDB,NA,RW3,Secured BorrowingMDBNARW3,100%
+Secured Borrowing,FIs,NA,RW3,Secured BorrowingFIsNARW3,100%
+Secured Borrowing,Others,NA,RW3,Secured BorrowingOthersNARW3,100%
+,,,,NA,NA
