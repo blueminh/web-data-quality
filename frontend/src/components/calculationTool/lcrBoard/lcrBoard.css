@@ -1,14 +1,15 @@
 #pageTitle {
     text-align: center;
-    max-width: 1400px; /* Set the maximum width */
     color: var(--secondary-color);
     font-weight: bold;
     font-size: xx-large;
+    margin:auto
 }
 
 #generalInfo {
     text-align: center;
-    margin: 30px, auto;
+    margin: auto;
+    max-width: 600px; /* Set the maximum width */
 }
 
 #dataTable {
@@ -25,4 +26,9 @@
     display: flex;
     justify-content: center;
     gap: 20px; /* Adjust this value to set the space between buttons */
+}
+
+
+.custom-input-width {
+    max-width: 600px; 
 }

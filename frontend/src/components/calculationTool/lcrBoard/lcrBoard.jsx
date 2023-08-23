@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react'
-import { Table, Button } from 'react-bootstrap';
+import { Table, Button, Form, FormLabel, Stack } from 'react-bootstrap';
 import './lcrBoard.css'
 
 import html2canvas from 'html2canvas';
@@ -9,7 +9,17 @@ import { saveAs } from 'file-saver';
 
 export default function LCRDashBoard() {
      // eslint-disable-next-line
-    const [reportedDate, setReportedDate] = useState("9/30/2022")
+     const formatDate = (date) => {
+        const day = String(date.getDate()).padStart(2, '0');
+        const month = String(date.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+        const year = date.getFullYear();
+        
+        return `${year}-${month}-${day}`;
+    }
+    const currentDate = new Date();
+    const formattedDate = formatDate(currentDate);
+    const [reportingDate, setReportingDate] = useState(formattedDate)
+
      // eslint-disable-next-line
     const [lcrBoardData, setLcrBoardData] = useState({
         columnNames: ["Items", "Khoản mục", "Total unweighted value"],
@@ -114,17 +124,29 @@ export default function LCRDashBoard() {
         saveAs(data, 'lcr.xlsx');
     };
 
+    const handleFetchLcrData = () => {
+    }
+
     return (
         <div>
+            <div id = "pageTitle">NAB - Basel III Tỷ lệ bao phủ thanh khoản (LCR) - Công bố thông tin (Public Discloure)</div>
             <div id = "generalInfo">
-                <div id = "pageTitle">NAB - Basel III Tỷ lệ bao phủ thanh khoản (LCR) - Công bố thông tin (Public Discloure)</div>
-                <div>Reported at / Thởi điểm báo cáo: {reportedDate}</div>
+                <Stack gap={2}>
+                    <FormLabel style={{fontWeight:'bold', fontSize:'larger'}}>Chọn ngày báo cáo</FormLabel>
+                    <Form.Control
+                        value={reportingDate} 
+                        required type="date" 
+                        onChange={(event) => {
+                            setReportingDate(String(event.target.value))
+                        }}/>
+                    <div className="button-container">
+                        <Button onClick={handleFetchLcrData}>Lấy kết quả LCR</Button>    
+                        <Button onClick={handleExportPDF}>Export to PDF</Button>
+                        <Button onClick={exportToExcel}>Export to Excel</Button>
+                    </div>
+                </Stack>
             </div>
             <div id = "dataTable">
-                <div className="button-container pb-4">
-                    <Button onClick={handleExportPDF}>Export to PDF</Button>
-                    <Button onClick={exportToExcel}>Export to Excel</Button>
-                </div>
                 <Table bordered ref={tableRefs[0]}>
                     <tbody>
                         <tr>
