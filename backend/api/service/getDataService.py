@@ -1,3 +1,6 @@
+from .Main_V2_final.Main_V2_final.LCR.main_LCR import main as main_lcr
+import json
+
 def get_dashboard_lcr_nsfr_data(date):
     lcr_data = {
         "title": "Liquidity Coverage Ratio - Quick Dashboard",
@@ -179,3 +182,91 @@ def get_dashboard_bar_charts_data():
         }
     ]
     return data
+
+class Row:
+    def __init__(self, code, depth, data, children=[]):
+        self.code = code # need code to fetch data
+        self.depth = depth # depth for displaying collapesable componenets
+        self.data = data # array of data, including the index
+        self.children = children # children
+        self.hasChildren = len(children) > 0
+
+
+    def setChildren(self, children):
+        self.hasChildren = len(children) > 0
+        self.children = children
+
+# Custom JSON Encoder for Row objects
+class RowEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, Row):
+            return {
+                "code": obj.code,
+                "depth": obj.depth,
+                "data": obj.data,
+                "children": obj.children,
+                "hasChildren": obj.hasChildren
+            }
+        return super().default(obj)
+
+def get_lcr_data(date):
+    df = main_lcr()
+    hqla = Row("hqla", 0, ["", "High-quality liquid assets", "Tài sản thanh khoản có chất lượng cao", "", ""])
+    hqla.setChildren(
+        [
+            Row("total_1_assets", 2, df.iloc[0].tolist()),
+            Row("total_2a_assets", 2, df.iloc[1].tolist()),
+            Row("total_2b_assets", 2, df.iloc[2].tolist()),
+            Row("adj_40_of_2a", 2, df.iloc[3].tolist()),
+            Row("adj_15_of_2b", 2, df.iloc[4].tolist()),
+            Row("total_hqla", 1, df.iloc[5].tolist()),
+        ]
+    )
+
+    cash_outflow = Row("cash_outflows", 0, ["", "Cash outflows", "Các dòng tiền ra", "", ""])
+    cash_outflow.setChildren(
+        [
+            Row('retail_dep', 2, df.iloc[7].tolist(), [
+                Row('stale_dep', 3, df.iloc[8].tolist()),
+                Row('less_stale_dep', 3, df.iloc[9].tolist())
+            ]),
+            Row('unsec_wholesale_fund', 2, df.iloc[10].tolist(), [
+                Row('opt_dep', 3, df.iloc[11].tolist()),
+                Row('non_opt_dep', 3, df.iloc[12].tolist()),
+                Row('unsec_debt', 3, df.iloc[13].tolist()),
+            ]),
+            Row('sec_wholesale_fund', 2, df.iloc[14].tolist()),
+            Row('add_req', 2, df.iloc[15].tolist(), [
+                Row('deri_expo', 3, df.iloc[16].tolist()),
+                Row('loss_of_fund', 3, df.iloc[17].tolist()),
+                Row('credit', 3, df.iloc[18].tolist()),
+            ]),
+            Row('other_contrac', 2, df.iloc[19].tolist()),
+            Row('other_contingent', 2, df.iloc[20].tolist()),
+            Row('total_outflows', 1, df.iloc[21].tolist())
+        ]
+    )
+
+    cash_inflow = Row("cash_inflows", 0, ["", "Cash inflows", "Các dòng tiền vào", "", ""])
+    cash_inflow.setChildren(
+        [
+            Row('sec_lend', 2, df.iloc[23].tolist()),
+            Row('inflows_from_fully', 2, df.iloc[24].tolist()),
+            Row('other_inflows', 2, df.iloc[25].tolist()),
+            Row('total_inflows', 1, df.iloc[26].tolist())
+        ]
+    )
+
+    total_hqla = Row('total_hqla', 1, df.iloc[28].tolist())
+    total_net_outflow = Row('total_net_outflow', 1, df.iloc[29].tolist())
+    liquid_cov_ratio = Row('liquid_cov_ratio', 1, df.iloc[30].tolist())
+
+    hqla_json = json.dumps(hqla, cls=RowEncoder )
+    cash_outflow_json = json.dumps(cash_outflow, cls=RowEncoder)
+    cash_inflow_json = json.dumps(cash_inflow, cls=RowEncoder )
+    total_hqla_json = json.dumps(total_hqla, cls=RowEncoder )
+    total_net_outflow_json = json.dumps(total_net_outflow, cls=RowEncoder )
+    liquid_cov_ratio_json = json.dumps(liquid_cov_ratio, cls=RowEncoder )
+
+    lcr_data = json.dumps([hqla_json, cash_outflow_json, cash_inflow_json, total_hqla_json, total_net_outflow_json, liquid_cov_ratio_json])
+    return lcr_data

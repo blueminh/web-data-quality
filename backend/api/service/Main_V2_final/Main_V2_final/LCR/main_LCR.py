@@ -5,17 +5,17 @@
 import os
 import pandas as pd
 import numpy as np
-from Borrowings import Borrowings_output
-from Investment_Trading_Securities import Investment_Trading_Securities_output
-from Deposit import Deposits_output
-from Facility import Facility_output
-from Other_Items import Other_Items
-from Issued_Securities import Issued_Securities
-from Securities_Financial_Trans import Securities_Financial_Trans
-from Derivatives import Derivatives_output
-from Off_Balance_Sheet import Off_Balance_Sheet_output
-from Loans_Advances import Loans_Advances
-from Deposits_with_other_banks import Deposits_with_other_banks_output
+from .Borrowings import Borrowings_output
+from .Investment_Trading_Securities import Investment_Trading_Securities_output
+from .Deposit import Deposits_output
+from .Facility import Facility_output
+from .Other_Items import Other_Items
+from .Issued_Securities import Issued_Securities
+from .Securities_Financial_Trans import Securities_Financial_Trans
+from .Derivatives import Derivatives_output
+from .Off_Balance_Sheet import Off_Balance_Sheet_output
+from .Loans_Advances import Loans_Advances
+from .Deposits_with_other_banks import Deposits_with_other_banks_output
 def set_output_df():
     """
     Create output dataframe
@@ -598,8 +598,9 @@ def percent(df, G_row46, G_row47):
 End of Calculations:
 @Return: the result of the cell in Row x, column Blank 1/2
 """
-path = os.path.dirname(os.path.realpath(__file__))
-def main(path):
+def main():
+    path = os.path.dirname(os.path.realpath(__file__))
+
    
    #Change path on your computer
    #------------------------------------------------Paths------------------------------------------------------------
@@ -813,9 +814,8 @@ def main(path):
     #Row index 29
     output_df.at[29,'Blank 2'] = calc_difference2(output_df, 'Blank 2', 21, 26)
     output_df.at[30, 'Blank 2'] = percent(output_df, 28, 29)
-    print (output_df)
 
     return output_df
 
 if __name__ == "__main__":
-    main(path)
+    main() 

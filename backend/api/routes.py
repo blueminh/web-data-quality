@@ -16,7 +16,7 @@ import jwt
 from .models import db, Users, Upload, JWTTokenBlocklist
 from .config import BaseConfig
 
-from .service.getDataService import get_dashboard_lcr_nsfr_data, get_dashboard_bar_charts_data
+from .service.getDataService import get_dashboard_lcr_nsfr_data, get_dashboard_bar_charts_data, get_lcr_data
 from .service.uploadDataService import get_table_list
 
 rest_api = Api(version="1.0", title="Users API")
@@ -299,3 +299,10 @@ class GetDashboardBarChartsData(Resource):
     def get(current_user, self):
         data = get_dashboard_bar_charts_data()
         return jsonify(data)  
+    
+
+@rest_api.route('/data/getLcr', methods=['GET'])
+class GetLcr(Resource):
+    def get(self):
+        lcr_data = get_lcr_data(0)
+        return lcr_data
