@@ -301,8 +301,11 @@ class GetDashboardBarChartsData(Resource):
         return jsonify(data)  
     
 
-@rest_api.route('/data/getLcr', methods=['GET'])
+@rest_api.route('/data/getLcr', methods=['POST'])
 class GetLcr(Resource):
-    def get(self):
-        lcr_data = get_lcr_data(0)
+    @token_required(required_roles=['viewer'])
+    def post(current_user, self):
+        request_data = request.get_json()
+        requested_date = request_data.get('date')  # Extract the date from the request data
+        lcr_data = get_lcr_data(requested_date)
         return lcr_data

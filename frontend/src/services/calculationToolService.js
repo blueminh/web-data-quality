@@ -37,8 +37,8 @@ export async function getDashboardLcrNsfrData(date) {
     return response.data
 
   } catch (error) {
-    console.error('Error uploading file:', error);
-    return 'An error occurred while uploading the file';
+    console.error('Error fetching dashboard data', error);
+    return 'An error occurred while fetching dashboard data';
   }
 }
 
@@ -67,5 +67,19 @@ export async function getTableList() {
   } catch (error) {
     console.error('Error fetching data:', error);
     return 'Error fetching data';
+  }
+}
+
+export async function getLcrData(date) {
+  try {
+    const response = await axiosInstance.post(`/data/getLcr`, {date}, {
+      withCredentials: true
+    });
+
+    return response.data
+
+  } catch (error) {
+    console.error('Error fetching LCR data:', error);
+    return 'An error occurred while fetching LCR data';
   }
 }

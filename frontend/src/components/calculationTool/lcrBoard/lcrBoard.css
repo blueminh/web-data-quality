@@ -16,11 +16,29 @@
     margin: 40px;
 }
 
-.sectionNameTd {
+.lcr-table-title {
+    background-color: var(--secondary-color) !important;
+    color: white !important;
+    text-align: center;
     font-weight: bold;
-    background-color: var(--third-color) !important;
+    padding: 1rem !important;
 }
 
+.depth-0-row {
+    font-weight: bold;
+    color: white !important;
+
+    background-color: #154c79 !important;
+}
+
+.depth-1-row {
+    font-weight: bold;
+    background-color:var(--third-color)  !important;
+}
+
+.depth-2-row {
+    background-color: #abdbe3 !important;
+}
 
 .button-container {
     display: flex;
