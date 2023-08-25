@@ -21,7 +21,21 @@ export const lcrBoardDataDefault = [
                     "10087317073551.0"
                 ],
                 "children": [],
-                "hasChildren": false
+                "hasChildren": false,
+                "volatility_data": {
+                    "x": [
+                        2020,
+                        2021,
+                        2022
+                    ],
+                    "y":
+                        [
+                            29,
+                            34,
+                            16
+                        ]
+                    
+                }
             },
             {
                 "code": "total_2a_assets",
@@ -34,7 +48,21 @@ export const lcrBoardDataDefault = [
                     "0.0"
                 ],
                 "children": [],
-                "hasChildren": false
+                "hasChildren": false,
+                "volatility_data": {
+                    "x": [
+                        2020,
+                        2021,
+                        2022
+                    ],
+                    "y":
+                        [
+                            29,
+                            34,
+                            16
+                        ]
+                    
+                }
             },
             {
                 "code": "total_2b_assets",
@@ -47,7 +75,21 @@ export const lcrBoardDataDefault = [
                     "0.0"
                 ],
                 "children": [],
-                "hasChildren": false
+                "hasChildren": false,
+                "volatility_data": {
+                    "x": [
+                        2020,
+                        2021,
+                        2022
+                    ],
+                    "y":
+                        [
+                            29,
+                            34,
+                            16
+                        ]
+                    
+                }
             },
             {
                 "code": "adj_40_of_2a",
@@ -60,7 +102,21 @@ export const lcrBoardDataDefault = [
                     "0.0"
                 ],
                 "children": [],
-                "hasChildren": false
+                "hasChildren": false,
+                "volatility_data": {
+                    "x": [
+                        2020,
+                        2021,
+                        2022
+                    ],
+                    "y":
+                        [
+                            29,
+                            34,
+                            16
+                        ]
+                    
+                }
             },
             {
                 "code": "adj_15_of_2b",
@@ -73,7 +129,21 @@ export const lcrBoardDataDefault = [
                     "0.0"
                 ],
                 "children": [],
-                "hasChildren": false
+                "hasChildren": false,
+                "volatility_data": {
+                    "x": [
+                        2020,
+                        2021,
+                        2022
+                    ],
+                    "y":
+                        [
+                            29,
+                            34,
+                            16
+                        ]
+                    
+                }
             },
             {
                 "code": "total_hqla",
@@ -86,10 +156,38 @@ export const lcrBoardDataDefault = [
                     "10087317073551.0"
                 ],
                 "children": [],
-                "hasChildren": false
+                "hasChildren": false,
+                "volatility_data": {
+                    "x": [
+                        2020,
+                        2021,
+                        2022
+                    ],
+                    "y":
+                        [
+                            29,
+                            34,
+                            16
+                        ]
+                    
+                }
             }
         ],
-        "hasChildren": true
+        "hasChildren": true,
+        "volatility_data": {
+            "x": [
+                2020,
+                2021,
+                2022
+            ],
+            "y":
+                [
+                    29,
+                    34,
+                    16
+                ]
+            
+        }
     },
 
     {
@@ -125,7 +223,21 @@ export const lcrBoardDataDefault = [
                             "493776998647.75073"
                         ],
                         "children": [],
-                        "hasChildren": false
+                        "hasChildren": false,
+                        "volatility_data": {
+                            "x": [
+                                2020,
+                                2021,
+                                2022
+                            ],
+                            "y":
+                                [
+                                    29,
+                                    34,
+                                    16
+                                ]
+                            
+                        }
                     },
                     {
                         "code": "less_stale_dep",
@@ -138,10 +250,38 @@ export const lcrBoardDataDefault = [
                             "8538674741986.409"
                         ],
                         "children": [],
-                        "hasChildren": false
+                        "hasChildren": false,
+                        "volatility_data": {
+                            "x": [
+                                2020,
+                                2021,
+                                2022
+                            ],
+                            "y":
+                                [
+                                    29,
+                                    34,
+                                    16
+                                ]
+                            
+                        }
                     }
                 ],
-                "hasChildren": true
+                "hasChildren": true,
+                "volatility_data": {
+                    "x": [
+                        2020,
+                        2021,
+                        2022
+                    ],
+                    "y":
+                        [
+                            29,
+                            34,
+                            16
+                        ]
+                    
+                }
             },
             {
                 "code": "unsec_wholesale_fund",
@@ -165,7 +305,21 @@ export const lcrBoardDataDefault = [
                             "72510834032.71121"
                         ],
                         "children": [],
-                        "hasChildren": false
+                        "hasChildren": false,
+                        "volatility_data": {
+                            "x": [
+                                2020,
+                                2021,
+                                2022
+                            ],
+                            "y":
+                                [
+                                    29,
+                                    34,
+                                    16
+                                ]
+                            
+                        }
                     },
                     {
                         "code": "non_opt_dep",
@@ -178,7 +332,21 @@ export const lcrBoardDataDefault = [
                             "29163497285602.59"
                         ],
                         "children": [],
-                        "hasChildren": false
+                        "hasChildren": false,
+                        "volatility_data": {
+                            "x": [
+                                2020,
+                                2021,
+                                2022
+                            ],
+                            "y":
+                                [
+                                    29,
+                                    34,
+                                    16
+                                ]
+                            
+                        }
                     },
                     {
                         "code": "unsec_debt",
@@ -191,10 +359,38 @@ export const lcrBoardDataDefault = [
                             "458960000000.0"
                         ],
                         "children": [],
-                        "hasChildren": false
+                        "hasChildren": false,
+                        "volatility_data": {
+                            "x": [
+                                2020,
+                                2021,
+                                2022
+                            ],
+                            "y":
+                                [
+                                    29,
+                                    34,
+                                    16
+                                ]
+                            
+                        }
                     }
                 ],
-                "hasChildren": true
+                "hasChildren": true,
+                "volatility_data": {
+                    "x": [
+                        2020,
+                        2021,
+                        2022
+                    ],
+                    "y":
+                        [
+                            29,
+                            34,
+                            16
+                        ]
+                    
+                }
             },
             {
                 "code": "sec_wholesale_fund",
@@ -207,7 +403,21 @@ export const lcrBoardDataDefault = [
                     "0.0"
                 ],
                 "children": [],
-                "hasChildren": false
+                "hasChildren": false,
+                "volatility_data": {
+                    "x": [
+                        2020,
+                        2021,
+                        2022
+                    ],
+                    "y":
+                        [
+                            29,
+                            34,
+                            16
+                        ]
+                    
+                }
             },
             {
                 "code": "add_req",
@@ -231,7 +441,21 @@ export const lcrBoardDataDefault = [
                             "909400000.0"
                         ],
                         "children": [],
-                        "hasChildren": false
+                        "hasChildren": false,
+                        "volatility_data": {
+                            "x": [
+                                2020,
+                                2021,
+                                2022
+                            ],
+                            "y":
+                                [
+                                    29,
+                                    34,
+                                    16
+                                ]
+                            
+                        }
                     },
                     {
                         "code": "loss_of_fund",
@@ -244,7 +468,21 @@ export const lcrBoardDataDefault = [
                             "0.0"
                         ],
                         "children": [],
-                        "hasChildren": false
+                        "hasChildren": false,
+                        "volatility_data": {
+                            "x": [
+                                2020,
+                                2021,
+                                2022
+                            ],
+                            "y":
+                                [
+                                    29,
+                                    34,
+                                    16
+                                ]
+                            
+                        }
                     },
                     {
                         "code": "credit",
@@ -257,10 +495,38 @@ export const lcrBoardDataDefault = [
                             "430982427553.9001"
                         ],
                         "children": [],
-                        "hasChildren": false
+                        "hasChildren": false,
+                        "volatility_data": {
+                            "x": [
+                                2020,
+                                2021,
+                                2022
+                            ],
+                            "y":
+                                [
+                                    29,
+                                    34,
+                                    16
+                                ]
+                            
+                        }
                     }
                 ],
-                "hasChildren": true
+                "hasChildren": true,
+                "volatility_data": {
+                    "x": [
+                        2020,
+                        2021,
+                        2022
+                    ],
+                    "y":
+                        [
+                            29,
+                            34,
+                            16
+                        ]
+                    
+                }
             },
             {
                 "code": "other_contrac",
@@ -273,7 +539,21 @@ export const lcrBoardDataDefault = [
                     "0.0"
                 ],
                 "children": [],
-                "hasChildren": false
+                "hasChildren": false,
+                "volatility_data": {
+                    "x": [
+                        2020,
+                        2021,
+                        2022
+                    ],
+                    "y":
+                        [
+                            29,
+                            34,
+                            16
+                        ]
+                    
+                }
             },
             {
                 "code": "other_contingent",
@@ -286,7 +566,21 @@ export const lcrBoardDataDefault = [
                     "257540839859.84998"
                 ],
                 "children": [],
-                "hasChildren": false
+                "hasChildren": false,
+                "volatility_data": {
+                    "x": [
+                        2020,
+                        2021,
+                        2022
+                    ],
+                    "y":
+                        [
+                            29,
+                            34,
+                            16
+                        ]
+                    
+                }
             },
             {
                 "code": "total_outflows",
@@ -299,12 +593,39 @@ export const lcrBoardDataDefault = [
                     "39416852527683.21"
                 ],
                 "children": [],
-                "hasChildren": false
+                "hasChildren": false,
+                "volatility_data": {
+                    "x": [
+                        2020,
+                        2021,
+                        2022
+                    ],
+                    "y":
+                        [
+                            29,
+                            34,
+                            16
+                        ]
+                    
+                }
             }
         ],
-        "hasChildren": true
+        "hasChildren": true,
+        "volatility_data": {
+            "x": [
+                2020,
+                2021,
+                2022
+            ],
+            "y":
+                [
+                    29,
+                    34,
+                    16
+                ]
+            
+        }
     },
-
     {
         "code": "cash_inflows",
         "depth": 0,
@@ -327,7 +648,21 @@ export const lcrBoardDataDefault = [
                     "0.0"
                 ],
                 "children": [],
-                "hasChildren": false
+                "hasChildren": false,
+                "volatility_data": {
+                    "x": [
+                        2020,
+                        2021,
+                        2022
+                    ],
+                    "y":
+                        [
+                            29,
+                            34,
+                            16
+                        ]
+                    
+                }
             },
             {
                 "code": "inflows_from_fully",
@@ -340,7 +675,21 @@ export const lcrBoardDataDefault = [
                     "6.0532783109880744e+16"
                 ],
                 "children": [],
-                "hasChildren": false
+                "hasChildren": false,
+                "volatility_data": {
+                    "x": [
+                        2020,
+                        2021,
+                        2022
+                    ],
+                    "y":
+                        [
+                            29,
+                            34,
+                            16
+                        ]
+                    
+                }
             },
             {
                 "code": "other_inflows",
@@ -353,7 +702,21 @@ export const lcrBoardDataDefault = [
                     "17423497158266.0"
                 ],
                 "children": [],
-                "hasChildren": false
+                "hasChildren": false,
+                "volatility_data": {
+                    "x": [
+                        2020,
+                        2021,
+                        2022
+                    ],
+                    "y":
+                        [
+                            29,
+                            34,
+                            16
+                        ]
+                    
+                }
             },
             {
                 "code": "total_inflows",
@@ -366,12 +729,39 @@ export const lcrBoardDataDefault = [
                     "6.055020660703901e+16"
                 ],
                 "children": [],
-                "hasChildren": false
+                "hasChildren": false,
+                "volatility_data": {
+                    "x": [
+                        2020,
+                        2021,
+                        2022
+                    ],
+                    "y":
+                        [
+                            29,
+                            34,
+                            16
+                        ]
+                    
+                }
             }
         ],
-        "hasChildren": true
+        "hasChildren": true,
+        "volatility_data": {
+            "x": [
+                2020,
+                2021,
+                2022
+            ],
+            "y":
+                [
+                    29,
+                    34,
+                    16
+                ]
+            
+        }
     },
-
     {
         "code": "total_hqla",
         "depth": 1,
@@ -383,9 +773,22 @@ export const lcrBoardDataDefault = [
             "10087317073551.0"
         ],
         "children": [],
-        "hasChildren": false
+        "hasChildren": false,
+        "volatility_data": {
+            "x": [
+                2020,
+                2021,
+                2022
+            ],
+            "y":
+                [
+                    29,
+                    34,
+                    16
+                ]
+            
+        }
     },
-
     {
         "code": "total_net_outflow",
         "depth": 1,
@@ -397,9 +800,22 @@ export const lcrBoardDataDefault = [
             "9854213131920.805"
         ],
         "children": [],
-        "hasChildren": false
+        "hasChildren": false,
+        "volatility_data": {
+            "x": [
+                2020,
+                2021,
+                2022
+            ],
+            "y":
+                [
+                    29,
+                    34,
+                    16
+                ]
+            
+        }
     },
-
     {
         "code": "liquid_cov_ratio",
         "depth": 1,
@@ -411,6 +827,20 @@ export const lcrBoardDataDefault = [
             "1.0236552567424284"
         ],
         "children": [],
-        "hasChildren": false
+        "hasChildren": false,
+        "volatility_data": {
+            "x": [
+                2020,
+                2021,
+                2022
+            ],
+            "y":
+                [
+                    29,
+                    34,
+                    16
+                ]
+        
+        }
     }
 ]

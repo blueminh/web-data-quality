@@ -117,7 +117,7 @@ export default function LCRDashBoard() {
                 <Table bordered>
                     <tbody>
                         <tr>
-                            {["No.", "Items", "Khoản mục", "Total unweighted value", "Total weighted value"].map(col => <td className='table-title'>{col}</td>)}
+                            {["No.", "Item", "Khoản mục", "Total unweighted value", "Total weighted value"].map(col => <td className='table-title'>{col}</td>)}
                         </tr>
                         {lcrBoardData.map(row => <ExpandableRow row={row}></ExpandableRow>)}
                     </tbody>
