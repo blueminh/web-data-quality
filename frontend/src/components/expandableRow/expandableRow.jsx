@@ -83,8 +83,10 @@ export default function ExpandableRow({row}) {
                         <td className={"depth-"+ row.depth+"-row"}>{data}</td>
                     ))}
                     <td>
-                        <Button onClick={() => {setIsOpenChart(!isOpenChart)}}>Chart</Button>
-                        {row.hasChildren && <Button onClick={() => {setIsOpenChildren(!isOpenChildren)}}>{isOpenChildren ? "Close" : "Open"}</Button>}
+                        <Button variant="light" className="icon-button" onClick={() => {setIsOpenChart(!isOpenChart)}}>
+                            <img src="/img/chart_symbol2.png" alt="Icon" className="icon" />
+                        </Button>
+                        {row.hasChildren && <Button variant="light" onClick={() => {setIsOpenChildren(!isOpenChildren)}}>{isOpenChildren ? "^" : ">"}</Button>}
                     </td>
                 </tr>
                 {isOpenChart && <tr>
