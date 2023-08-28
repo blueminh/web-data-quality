@@ -19,6 +19,8 @@ from .config import BaseConfig
 from .service.getDataService import get_dashboard_lcr_nsfr_data, get_dashboard_bar_charts_data, get_lcr_data
 from .service.uploadDataService import get_table_list
 
+from .tableNames import TABLE_NAMES
+
 rest_api = Api(version="1.0", title="Users API")
 
 
@@ -225,23 +227,25 @@ class UploadResource(Resource):
         
        # Get the file extension from the uploaded file's filename
         file_extension = uploaded_file.filename.rsplit('.', 1)[-1]
-        
+        # existing_upload = Upload.query.filter_by(filename=table_name, upload_time=uploaded_date).first()
         # Validate the expected file type based on file extension
         if (expected_file_type == 'csv' and file_extension == 'csv') or \
            (expected_file_type == 'xlsx' and file_extension == 'xlsx') or \
            (expected_file_type == 'xls' and file_extension == 'xls'):
             # Handle CSV, Excel (xlsx), and Excel (xls) files
-            file_name = f"{table_name}.{file_extension}"
-
+            file_name = f"{table_name}-{uploaded_date}.{file_extension}"
             # save file to resource
             resource_folder = os.path.join(os.path.abspath(os.path.dirname(__file__)), '..', 'data_files')
             full_file_path = os.path.join(resource_folder, file_name)
             uploaded_file.stream.seek(0)  # Reset the stream position
             uploaded_file.save(full_file_path)
             
-            upload = Upload(user_id=user.id, filename=file_name, upload_time=uploaded_date)
-            db.session.add(upload)
-            db.session.commit()
+            # only do this if the file has not been uploaded in the same day 
+            existing_upload = Upload.query.filter_by(filename=table_name, upload_time=uploaded_date).first()
+            if existing_upload is None:
+                upload = Upload(user_id=user.id, filename=table_name, upload_time=uploaded_date)
+                db.session.add(upload)
+                db.session.commit()
             
             return {"message": "File được tải lên thành công"}
         else:
@@ -252,23 +256,19 @@ class UploadResource(Resource):
 class UploadHistoryResource(Resource):
     @token_required(required_roles=['viewer'])
     def get(current_user, self):
-        username = "m1"
-        
-        user = Users.query.filter_by(username=username).first()
-        if not user:
-            return {"error": "User not found"}, 401
-                
-        uploads = Upload.query.filter_by(user_id=user.id).all()
-        upload_history = [{"filename": upload.filename, "upload_time": upload.upload_time.isoformat()} for upload in uploads]
-        
-        return {"upload_history": upload_history}
+        files_latest_upload_dates = []
+
+        for tablename in TABLE_NAMES:
+            latest_upload = Upload.query.filter_by(filename=tablename).order_by(Upload.upload_time.desc()).first()
+            if latest_upload:
+                files_latest_upload_dates.append({'filename':latest_upload.filename, 'upload_time': latest_upload.upload_time.strftime("%Y-%m-%d")})
+        return {"upload_history": files_latest_upload_dates}
     
 @rest_api.route('/upload/getTableList', methods=['GET'])
 class GetDashboardBarChartsData(Resource):
     @token_required(required_roles=['viewer'])
     def get(current_user, self):
-        data = get_table_list()
-        return jsonify(data)  
+        return jsonify(TABLE_NAMES)  
     
 
 # @rest_api.route('/data/getDashboardLcrNsfr')
@@ -310,3 +310,58 @@ class GetLcr(Resource):
         requested_date = request_data.get('date')  # Extract the date from the request data
         lcr_data = get_lcr_data(requested_date)
         return lcr_data
+    
+
+@rest_api.route('/uploads/get_files_by_date', methods=['GET'])
+class GetFilesByDate(Resource):
+    # @token_required(required_roles=['viewer'])
+    def get(self):
+        data = request.get_json()
+        reporting_date = data.get("reportingDate")
+        extra_tables_request = data.get("extraTables")
+        if not reporting_date:
+            return {"message": "Reporting date is missing in the request."}, 400
+
+        requested_date = datetime.strptime(reporting_date, '%Y-%m-%d').date()
+
+        files_by_date = {}
+        response_data = {
+            'success': True,
+            'extraTables': {}
+        }
+
+        extra_table_response = {}
+
+        for tablename in TABLE_NAMES:
+            # check for each table
+            if tablename in extra_tables_request:
+                extra_requested_date =  datetime.strptime(extra_tables_request[tablename], '%Y-%m-%d').date()
+                uploads_on_date = Upload.query.filter(
+                    Upload.filename == tablename,
+                    Upload.upload_time >= datetime.combine(extra_requested_date, datetime.min.time()),
+                    Upload.upload_time < datetime.combine(extra_requested_date+ timedelta(days=1), datetime.min.time())
+                ).order_by(Upload.upload_time.desc()).limit(1).all()
+            else:
+                uploads_on_date = Upload.query.filter(
+                    Upload.filename == tablename,
+                    Upload.upload_time >= datetime.combine(requested_date, datetime.min.time()),
+                    Upload.upload_time < datetime.combine(requested_date + timedelta(days=1), datetime.min.time())
+                ).order_by(Upload.upload_time.desc()).limit(1).all()
+
+
+            # if found the requested version
+            if uploads_on_date:
+                upload = uploads_on_date[0]
+                files_by_date[tablename] = upload.upload_time.strftime("%Y-%m-%d %H:%M:%S")
+            else:
+                # If no uploads on the requested date, find closest versions
+                closest_versions = Upload.query.filter(
+                    Upload.filename == tablename,
+                    Upload.upload_time <= requested_date
+                ).order_by(Upload.upload_time.desc()).limit(5).all()
+                closest_dates = [upload.upload_time.strftime("%Y-%m-%d") for upload in closest_versions]
+                extra_table_response[tablename] = closest_dates
+                response_data['success']=False
+
+        response_data['extraTables'] = extra_table_response
+        return response_data
