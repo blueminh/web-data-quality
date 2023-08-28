@@ -7,8 +7,7 @@ export async function fetchUploadHistory(username) {
     });
     return response.data.upload_history;
   } catch (error) {
-    console.error('Error fetching upload history:', error);
-    return [];
+    throw new Error('Error fetching upload history:', error)
   }
 }
 
@@ -23,8 +22,7 @@ export async function uploadFile(data) {
 
     return response.data.message;
   } catch (error) {
-    console.error('Error fetching dashboard data:', error);
-    return 'Error fetching dashboard data'
+    throw new Error ('fetching dashboard data:', error);
   }
 }
 
@@ -37,8 +35,7 @@ export async function getDashboardLcrNsfrData(date) {
     return response.data
 
   } catch (error) {
-    console.error('Error fetching dashboard data', error);
-    return 'An error occurred while fetching dashboard data';
+    throw new Error('Error fetching dashboard data', error);
   }
 }
 
@@ -51,8 +48,7 @@ export async function getBarChartData() {
     return response.data
 
   } catch (error) {
-    console.error('Error fetching data:', error);
-    return 'Error fetching data';
+    throw new Error('Error fetching data:', error);
   }
 }
 
@@ -65,21 +61,20 @@ export async function getTableList() {
     return response.data
 
   } catch (error) {
-    console.error('Error fetching data:', error);
-    return 'Error fetching data';
+    throw new Error('Error fetching data:', error);
   }
 }
 
 export async function getLcrData(requestData) {
   try {
     const response = await axiosInstance.post(`/data/getLcr`, requestData, {
-      withCredentials: true
+      withCredentials: true,
     });
 
     return response.data
 
   } catch (error) {
-    console.error('Error fetching LCR data:', error);
-    return 'An error occurred while fetching LCR data';
+    console.log(error)
+    throw new Error('Error fetching LCR data:', error);
   }
 }

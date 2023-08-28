@@ -153,7 +153,7 @@ export const lcrBoardDataDefault = [
                     "Total HQLA",
                     "T\u1ed5ng t\u00e0i s\u1ea3n thanh kho\u1ea3n c\u00f3 ch\u1ea5t l\u01b0\u1ee3ng cao",
                     NaN,
-                    "10087317073551.0"
+                    "0"
                 ],
                 "children": [],
                 "hasChildren": false,
@@ -770,7 +770,7 @@ export const lcrBoardDataDefault = [
             "Total HQLA",
             "T\u1ed5ng t\u00e0i s\u1ea3n thanh kho\u1ea3n ch\u1ea5t l\u01b0\u1ee3ng cao",
             NaN,
-            "10087317073551.0"
+            "0"
         ],
         "children": [],
         "hasChildren": false,
@@ -797,7 +797,7 @@ export const lcrBoardDataDefault = [
             "Total net cash outflows",
             "T\u1ed5ng d\u00f2ng ti\u1ec1n ra r\u00f2ng",
             NaN,
-            "9854213131920.805"
+            "0"
         ],
         "children": [],
         "hasChildren": false,
@@ -824,7 +824,7 @@ export const lcrBoardDataDefault = [
             "Liquidity Coverage Ratio (>=100%)",
             "T\u1ef7 l\u1ec7 \u0111\u1ea3m b\u1ea3o kh\u1ea3 n\u0103ng thanh kho\u1ea3n LCR (gi\u1edbi h\u1ea1n \u2265100%)",
             NaN,
-            "1.0236552567424284"
+            "0"
         ],
         "children": [],
         "hasChildren": false,

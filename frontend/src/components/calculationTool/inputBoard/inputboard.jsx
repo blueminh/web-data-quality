@@ -99,7 +99,7 @@ export default function InputDashboard() {
         ["","Blankman","","SomeTown"," SD",298  ],
         ["Joan \"the bone\", Anne","Jet","9th, at Terrace plc","Desert City","CO",123  ]
     ])
-    const [isOpenAddGrant, setOpenAddGrant] = useState(false)
+
     const [showSampleDataPopup, setShowSampleDataPopup] = useState(false);
     const handleCloseSampleDataPopup = () => setShowSampleDataPopup(false);
 

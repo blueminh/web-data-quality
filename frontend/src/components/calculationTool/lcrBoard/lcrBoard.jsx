@@ -9,6 +9,7 @@ import { saveAs } from 'file-saver';
 import { getLcrData } from '../../../services/calculationToolService';
 import ExpandableRow from '../../expandableRow/expandableRow';
 import { lcrBoardDataDefault } from './defaultValues';
+import ChooseFileDateDialog from '../chooseFileDateDialog/chooseFileDateDialog';
 
 export default function LCRDashBoard() {
      // eslint-disable-next-line
@@ -22,31 +23,30 @@ export default function LCRDashBoard() {
     const currentDate = new Date();
     const formattedDate = formatDate(currentDate);
     const [reportingDate, setReportingDate] = useState(formattedDate)
-
+    const [extraTables, setExtraTables] = useState({})
+ 
     const [isLoading, setIsLoading] = useState(false);
 
      // eslint-disable-next-line
     const [lcrBoardData, setLcrBoardData] = useState(lcrBoardDataDefault)
 
-    const [message, setMessage] = useState('');
-    const [showMessagePopup, setShowMessagePopup] = useState(false);
-    const handleCloseMessagePopup = () => setShowMessagePopup(false);
+    const [showChooseFileDateDialog, setShowChooseFileDateDialog] = useState(false);
+    const modalChooseFileDateDialogToggle = () => setShowChooseFileDateDialog(!showChooseFileDateDialog)
 
-    const handleFetchLcrData = (extraTables = {}) => {
+    const handleFetchLcrData = (requestData) => {
         const fetchLcr = async () => {
             try {
                 setIsLoading(true)
-                const requestData = {
-                    "repotingDate": reportingDate,
-                    "extraTables": extraTables
-                }
-                const data = await getLcrData(reportingDate)
-                console.log(data)
-                setLcrBoardData(data)
+                const response = await getLcrData(requestData)
                 setIsLoading(false)
 
-                if (false) { 
-                    setMessage("Ngày đã chọn không có đủ tất cả các bảng dữ liệu cần thiết, vui lòng chọn ngày tải lên cho mỗi bảng còn thiếu")
+                if (response.success) {
+                    setLcrBoardData(response.data)
+                    setIsLoading(false)
+                    setShowChooseFileDateDialog(false)
+                } else {
+                    setExtraTables(response.extraTables)
+                    setShowChooseFileDateDialog(true)
                 }
             } catch (error) {
                 setLcrBoardData(lcrBoardDataDefault)
@@ -107,17 +107,12 @@ export default function LCRDashBoard() {
 
     return (
         <>
-        <Modal show={showMessagePopup} onHide={handleCloseMessagePopup}>
-                <Modal.Header closeButton>
-                    <Modal.Title>Kiểm tra dữ liệu</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>{message}</Modal.Body>
-                <Modal.Footer>
-                    <Button variant="secondary" onClick={handleCloseMessagePopup}>
-                        Đóng
-                    </Button>
-                </Modal.Footer>
-            </Modal>
+        {showChooseFileDateDialog && <ChooseFileDateDialog  
+            onCloseHandle={modalChooseFileDateDialogToggle}
+            reportingDate={reportingDate}
+            extraTables={extraTables}
+            onSubmitHandle={handleFetchLcrData}
+        />}
         <div>
             <div id = "pageTitle">NAB - Basel III Tỷ lệ bao phủ thanh khoản (LCR) - Công bố thông tin (Public Discloure)</div>
             <div id = "generalInfo">
@@ -131,7 +126,11 @@ export default function LCRDashBoard() {
                         }}/>
                     <div className="button-container">
                         {isLoading && <Spinner />}
-                        <Button onClick={handleFetchLcrData}>Lấy kết quả LCR</Button>    
+                        <Button onClick={() => handleFetchLcrData({
+                                "reportingDate":reportingDate,
+                                "extraTables":{}
+                            })}>Lấy kết quả LCR
+                        </Button>    
                         <Button onClick={handleExportPDF}>Export to PDF</Button>
                         <Button onClick={exportToExcel}>Export to Excel</Button>
                     </div>

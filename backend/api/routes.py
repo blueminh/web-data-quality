@@ -304,64 +304,60 @@ class GetDashboardBarChartsData(Resource):
 
 @rest_api.route('/data/getLcr', methods=['POST'])
 class GetLcr(Resource):
-    @token_required(required_roles=['viewer'])
-    def post(current_user, self):
-        request_data = request.get_json()
-        requested_date = request_data.get('date')  # Extract the date from the request data
-        lcr_data = get_lcr_data(requested_date)
-        return lcr_data
-    
-
-@rest_api.route('/uploads/get_files_by_date', methods=['GET'])
-class GetFilesByDate(Resource):
-    # @token_required(required_roles=['viewer'])
-    def get(self):
+    def post(current_user):
         data = request.get_json()
         reporting_date = data.get("reportingDate")
         extra_tables_request = data.get("extraTables")
         if not reporting_date:
             return {"message": "Reporting date is missing in the request."}, 400
 
-        requested_date = datetime.strptime(reporting_date, '%Y-%m-%d').date()
+        extra_tables_needed = checkTables(extra_tables_request, reporting_date)
+        if (len(extra_tables_needed) > 0):
+            return jsonify({
+                "success":False,
+                "extraTables":extra_tables_needed,
+                "data":{}
+            })
+    
+        request_data = request.get_json()
+        requested_date = request_data.get('reportingDate')  # Extract the date from the request data
+        lcr_data = get_lcr_data(requested_date)
 
-        files_by_date = {}
-        response_data = {
-            'success': True,
-            'extraTables': {}
-        }
+        return jsonify({
+            "success":True,
+            "extraTables": {},
+            "data": lcr_data
+        })
 
-        extra_table_response = {}
+def checkTables(extra_tables_request, reporting_date):
+    # extra_tables_request is a dictionary with name of table and date
 
-        for tablename in TABLE_NAMES:
-            # check for each table
-            if tablename in extra_tables_request:
-                extra_requested_date =  datetime.strptime(extra_tables_request[tablename], '%Y-%m-%d').date()
-                uploads_on_date = Upload.query.filter(
-                    Upload.filename == tablename,
-                    Upload.upload_time >= datetime.combine(extra_requested_date, datetime.min.time()),
-                    Upload.upload_time < datetime.combine(extra_requested_date+ timedelta(days=1), datetime.min.time())
-                ).order_by(Upload.upload_time.desc()).limit(1).all()
-            else:
-                uploads_on_date = Upload.query.filter(
-                    Upload.filename == tablename,
-                    Upload.upload_time >= datetime.combine(requested_date, datetime.min.time()),
-                    Upload.upload_time < datetime.combine(requested_date + timedelta(days=1), datetime.min.time())
-                ).order_by(Upload.upload_time.desc()).limit(1).all()
+    requested_date = datetime.strptime(reporting_date, '%Y-%m-%d').date()
+    extra_table_needed = {}
 
+    for tablename in TABLE_NAMES:
+        # check for each table
+        if tablename in extra_tables_request:
+            extra_requested_date =  datetime.strptime(extra_tables_request[tablename], '%Y-%m-%d').date()
+            uploads_on_date = Upload.query.filter(
+                Upload.filename == tablename,
+                Upload.upload_time >= datetime.combine(extra_requested_date, datetime.min.time()),
+                Upload.upload_time < datetime.combine(extra_requested_date+ timedelta(days=1), datetime.min.time())
+            ).order_by(Upload.upload_time.desc()).limit(1).all()
+        else:
+            uploads_on_date = Upload.query.filter(
+                Upload.filename == tablename,
+                Upload.upload_time >= datetime.combine(requested_date, datetime.min.time()),
+                Upload.upload_time < datetime.combine(requested_date + timedelta(days=1), datetime.min.time())
+            ).order_by(Upload.upload_time.desc()).limit(1).all()
 
-            # if found the requested version
-            if uploads_on_date:
-                upload = uploads_on_date[0]
-                files_by_date[tablename] = upload.upload_time.strftime("%Y-%m-%d %H:%M:%S")
-            else:
-                # If no uploads on the requested date, find closest versions
-                closest_versions = Upload.query.filter(
-                    Upload.filename == tablename,
-                    Upload.upload_time <= requested_date
-                ).order_by(Upload.upload_time.desc()).limit(5).all()
-                closest_dates = [upload.upload_time.strftime("%Y-%m-%d") for upload in closest_versions]
-                extra_table_response[tablename] = closest_dates
-                response_data['success']=False
+        if not uploads_on_date:
+            # If no uploads on the requested date, find closest versions
+            closest_versions = Upload.query.filter(
+                Upload.filename == tablename,
+                Upload.upload_time <= requested_date
+            ).order_by(Upload.upload_time.desc()).limit(5).all()
+            closest_dates = [upload.upload_time.strftime("%Y-%m-%d") for upload in closest_versions]
+            extra_table_needed[tablename] = closest_dates
 
-        response_data['extraTables'] = extra_table_response
-        return response_data
+    return extra_table_needed

@@ -1,5 +1,5 @@
 from .Main_V2_final.Main_V2_final.LCR.main_LCR import main as main_lcr
-import json
+import math
 
 def get_dashboard_lcr_nsfr_data(date):
     lcr_data = {
@@ -196,18 +196,22 @@ class Row:
         self.hasChildren = len(children) > 0
         self.children = children
 
-# Custom JSON Encoder for Row objects
-class RowEncoder(json.JSONEncoder):
-    def default(self, obj):
-        if isinstance(obj, Row):
-            return {
-                "code": obj.code,
-                "depth": obj.depth,
-                "data": obj.data,
-                "children": obj.children,
-                "hasChildren": obj.hasChildren
-            }
-        return super().default(obj)
+    def toJSON(self):
+        def convert_nan(value):
+            if isinstance(value, float) and math.isnan(value):
+                return "Nan"
+            return value
+        
+        json_children = [child.toJSON() for child in self.children]
+        converted_data = [convert_nan(value) for value in self.data]
+
+        return {
+            "code":self.code,
+            "depth":self.depth,
+            "data":converted_data,
+            "children":json_children,
+            "hasChildren":self.hasChildren
+        }
 
 def get_lcr_data(date):
     df = main_lcr()
@@ -261,12 +265,5 @@ def get_lcr_data(date):
     total_net_outflow = Row('total_net_outflow', 1, df.iloc[29].tolist())
     liquid_cov_ratio = Row('liquid_cov_ratio', 1, df.iloc[30].tolist())
 
-    hqla_json = json.dumps(hqla, cls=RowEncoder )
-    cash_outflow_json = json.dumps(cash_outflow, cls=RowEncoder)
-    cash_inflow_json = json.dumps(cash_inflow, cls=RowEncoder )
-    total_hqla_json = json.dumps(total_hqla, cls=RowEncoder )
-    total_net_outflow_json = json.dumps(total_net_outflow, cls=RowEncoder )
-    liquid_cov_ratio_json = json.dumps(liquid_cov_ratio, cls=RowEncoder )
-
-    lcr_data = json.dumps([hqla_json, cash_outflow_json, cash_inflow_json, total_hqla_json, total_net_outflow_json, liquid_cov_ratio_json])
+    lcr_data = [hqla.toJSON(), cash_outflow.toJSON(), cash_inflow.toJSON(), total_hqla.toJSON(), total_net_outflow.toJSON(), liquid_cov_ratio.toJSON()]
     return lcr_data
