@@ -1,0 +1,164 @@
+﻿Less Stable,Product,Days to Maturity,Counterparty Type,Significant Penalty,Concat,ASF Factor
+Less Stable,Demand Deposit,Less than 6 months,Retail,Yes,Demand DepositLess than 6 monthsRetailYes,0%
+Less Stable,Demand Deposit,Less than 6 months,Small Business Customer,Yes,Demand DepositLess than 6 monthsSmall Business CustomerYes,0%
+Less Stable,Demand Deposit,6 months to 1 year,Retail,Yes,Demand Deposit6 months to 1 yearRetailYes,0%
+Less Stable,Demand Deposit,6 months to 1 year,Small Business Customer,Yes,Demand Deposit6 months to 1 yearSmall Business CustomerYes,0%
+Less Stable,Term Deposit,Less than 6 months,Retail,Yes,Term DepositLess than 6 monthsRetailYes,90%
+Less Stable,Term Deposit,Less than 6 months,Small Business Customer,Yes,Term DepositLess than 6 monthsSmall Business CustomerYes,90%
+Less Stable,Term Deposit,6 months to 1 year,Retail,Yes,Term Deposit6 months to 1 yearRetailYes,90%
+Less Stable,Term Deposit,6 months to 1 year,Small Business Customer,Yes,Term Deposit6 months to 1 yearSmall Business CustomerYes,90%
+Less Stable,Demand Deposit,Less than 6 months,Corp,Yes,Demand DepositLess than 6 monthsCorpYes,0%
+Less Stable,Demand Deposit,6 months to 1 year,Corp,Yes,Demand Deposit6 months to 1 yearCorpYes,0%
+Less Stable,Term Deposit,Less than 6 months,Corp,Yes,Term DepositLess than 6 monthsCorpYes,50%
+Less Stable,Term Deposit,6 months to 1 year,Corp,Yes,Term Deposit6 months to 1 yearCorpYes,50%
+Less Stable,Operational Deposit,Less than 6 months,Domestic Sovereign,Yes,Operational DepositLess than 6 monthsDomestic SovereignYes,50%
+Less Stable,Operational Deposit,6 months to 1 year,Domestic Sovereign,Yes,Operational Deposit6 months to 1 yearDomestic SovereignYes,50%
+Less Stable,Operational Deposit,More than 1 year,Domestic Sovereign,Yes,Operational DepositMore than 1 yearDomestic SovereignYes,50%
+Less Stable,Operational Deposit,Less than 6 months,MDB,Yes,Operational DepositLess than 6 monthsMDBYes,50%
+Less Stable,Operational Deposit,6 months to 1 year,MDB,Yes,Operational Deposit6 months to 1 yearMDBYes,50%
+Less Stable,Operational Deposit,More than 1 year,MDB,Yes,Operational DepositMore than 1 yearMDBYes,50%
+Less Stable,Operational Deposit,Less than 6 months,FIs,Yes,Operational DepositLess than 6 monthsFIsYes,50%
+Less Stable,Operational Deposit,6 months to 1 year,FIs,Yes,Operational Deposit6 months to 1 yearFIsYes,50%
+Less Stable,Operational Deposit,More than 1 year,FIs,Yes,Operational DepositMore than 1 yearFIsYes,50%
+Less Stable,Operational Deposit,Less than 6 months,Corp,Yes,Operational DepositLess than 6 monthsCorpYes,50%
+Less Stable,Operational Deposit,6 months to 1 year,Corp,Yes,Operational Deposit6 months to 1 yearCorpYes,50%
+Less Stable,Operational Deposit,More than 1 year,Corp,Yes,Operational DepositMore than 1 yearCorpYes,50%
+Less Stable,Operational Deposit,Less than 6 months,Others,Yes,Operational DepositLess than 6 monthsOthersYes,50%
+Less Stable,Operational Deposit,6 months to 1 year,Others,Yes,Operational Deposit6 months to 1 yearOthersYes,50%
+Less Stable,Operational Deposit,More than 1 year,Others,Yes,Operational DepositMore than 1 yearOthersYes,50%
+Less Stable,Operational Deposit,Less than 6 months,Retail,Yes,Operational DepositLess than 6 monthsRetailYes,50%
+Less Stable,Operational Deposit,6 months to 1 year,Retail,Yes,Operational Deposit6 months to 1 yearRetailYes,50%
+Less Stable,Operational Deposit,More than 1 year,Retail,Yes,Operational DepositMore than 1 yearRetailYes,50%
+Less Stable,Operational Deposit,Less than 6 months,Small Business Customer,Yes,Operational DepositLess than 6 monthsSmall Business CustomerYes,50%
+Less Stable,Operational Deposit,6 months to 1 year,Small Business Customer,Yes,Operational Deposit6 months to 1 yearSmall Business CustomerYes,50%
+Less Stable,Operational Deposit,More than 1 year,Small Business Customer,Yes,Operational DepositMore than 1 yearSmall Business CustomerYes,50%
+Less Stable,Operational Deposit,Less than 6 months,PSEs,Yes,Operational DepositLess than 6 monthsPSEsYes,50%
+Less Stable,Operational Deposit,6 months to 1 year,PSEs,Yes,Operational Deposit6 months to 1 yearPSEsYes,50%
+Less Stable,Operational Deposit,More than 1 year,PSEs,Yes,Operational DepositMore than 1 yearPSEsYes,50%
+Less Stable,Operational Deposit,Less than 6 months,Central Bank,Yes,Operational DepositLess than 6 monthsCentral BankYes,50%
+Less Stable,Operational Deposit,6 months to 1 year,Central Bank,Yes,Operational Deposit6 months to 1 yearCentral BankYes,50%
+Less Stable,Operational Deposit,More than 1 year,Central Bank,Yes,Operational DepositMore than 1 yearCentral BankYes,50%
+Less Stable,Demand Deposit,6 months to 1 year,Domestic Sovereign,Yes,Demand Deposit6 months to 1 yearDomestic SovereignYes,0%
+Less Stable,Demand Deposit,Less than 6 months,Domestic Sovereign,Yes,Demand DepositLess than 6 monthsDomestic SovereignYes,0%
+Less Stable,Demand Deposit,6 months to 1 year,PSEs,Yes,Demand Deposit6 months to 1 yearPSEsYes,0%
+Less Stable,Demand Deposit,Less than 6 months,PSEs,Yes,Demand DepositLess than 6 monthsPSEsYes,0%
+Less Stable,Demand Deposit,6 months to 1 year,MDB,Yes,Demand Deposit6 months to 1 yearMDBYes,0%
+Less Stable,Demand Deposit,Less than 6 months,MDB,Yes,Demand DepositLess than 6 monthsMDBYes,0%
+Less Stable,Term Deposit,6 months to 1 year,Domestic Sovereign,Yes,Term Deposit6 months to 1 yearDomestic SovereignYes,50%
+Less Stable,Term Deposit,Less than 6 months,Domestic Sovereign,Yes,Term DepositLess than 6 monthsDomestic SovereignYes,50%
+Less Stable,Term Deposit,6 months to 1 year,PSEs,Yes,Term Deposit6 months to 1 yearPSEsYes,50%
+Less Stable,Term Deposit,Less than 6 months,PSEs,Yes,Term DepositLess than 6 monthsPSEsYes,50%
+Less Stable,Term Deposit,6 months to 1 year,MDB,Yes,Term Deposit6 months to 1 yearMDBYes,50%
+Less Stable,Term Deposit,Less than 6 months,MDB,Yes,Term DepositLess than 6 monthsMDBYes,50%
+Less Stable,Demand Deposit,6 months to 1 year,FIs,Yes,Demand Deposit6 months to 1 yearFIsYes,0%
+Less Stable,Term Deposit,6 months to 1 year,FIs,Yes,Term Deposit6 months to 1 yearFIsYes,50%
+Less Stable,Demand Deposit,6 months to 1 year,Central Bank,Yes,Demand Deposit6 months to 1 yearCentral BankYes,0%
+Less Stable,Term Deposit,6 months to 1 year,Central Bank,Yes,Term Deposit6 months to 1 yearCentral BankYes,50%
+Less Stable,Demand Deposit,Less than 6 months,FIs,Yes,Demand DepositLess than 6 monthsFIsYes,0%
+Less Stable,Term Deposit,Less than 6 months,FIs,Yes,Term DepositLess than 6 monthsFIsYes,0%
+Less Stable,Demand Deposit,Less than 6 months,Central Bank,Yes,Demand DepositLess than 6 monthsCentral BankYes,0%
+Less Stable,Term Deposit,Less than 6 months,Central Bank,Yes,Term DepositLess than 6 monthsCentral BankYes,0%
+Less Stable,Demand Deposit,More than 1 year,Domestic Sovereign,Yes,Demand DepositMore than 1 yearDomestic SovereignYes,0%
+Less Stable,Demand Deposit,More than 1 year,MDB,Yes,Demand DepositMore than 1 yearMDBYes,0%
+Less Stable,Demand Deposit,More than 1 year,FIs,Yes,Demand DepositMore than 1 yearFIsYes,0%
+Less Stable,Demand Deposit,More than 1 year,Corp,Yes,Demand DepositMore than 1 yearCorpYes,0%
+Less Stable,Demand Deposit,More than 1 year,Others,Yes,Demand DepositMore than 1 yearOthersYes,0%
+Less Stable,Demand Deposit,More than 1 year,Retail,Yes,Demand DepositMore than 1 yearRetailYes,0%
+Less Stable,Demand Deposit,More than 1 year,Small Business Customer,Yes,Demand DepositMore than 1 yearSmall Business CustomerYes,0%
+Less Stable,Demand Deposit,More than 1 year,PSEs,Yes,Demand DepositMore than 1 yearPSEsYes,0%
+Less Stable,Demand Deposit,More than 1 year,Central Bank,Yes,Demand DepositMore than 1 yearCentral BankYes,0%
+Less Stable,Term Deposit,More than 1 year,Domestic Sovereign,Yes,Term DepositMore than 1 yearDomestic SovereignYes,100%
+Less Stable,Term Deposit,More than 1 year,MDB,Yes,Term DepositMore than 1 yearMDBYes,100%
+Less Stable,Term Deposit,More than 1 year,FIs,Yes,Term DepositMore than 1 yearFIsYes,100%
+Less Stable,Term Deposit,More than 1 year,Corp,Yes,Term DepositMore than 1 yearCorpYes,100%
+Less Stable,Term Deposit,More than 1 year,Others,Yes,Term DepositMore than 1 yearOthersYes,100%
+Less Stable,Term Deposit,More than 1 year,Retail,Yes,Term DepositMore than 1 yearRetailYes,100%
+Less Stable,Term Deposit,More than 1 year,Small Business Customer,Yes,Term DepositMore than 1 yearSmall Business CustomerYes,100%
+Less Stable,Term Deposit,More than 1 year,PSEs,Yes,Term DepositMore than 1 yearPSEsYes,100%
+Less Stable,Term Deposit,More than 1 year,Central Bank,Yes,Term DepositMore than 1 yearCentral BankYes,100%
+Less Stable,Demand Deposit,Less than 6 months,Retail,No,Demand DepositLess than 6 monthsRetailNo,90%
+Less Stable,Demand Deposit,Less than 6 months,Small Business Customer,No,Demand DepositLess than 6 monthsSmall Business CustomerNo,90%
+Less Stable,Demand Deposit,6 months to 1 year,Retail,No,Demand Deposit6 months to 1 yearRetailNo,90%
+Less Stable,Demand Deposit,6 months to 1 year,Small Business Customer,No,Demand Deposit6 months to 1 yearSmall Business CustomerNo,90%
+Less Stable,Term Deposit,Less than 6 months,Retail,No,Term DepositLess than 6 monthsRetailNo,90%
+Less Stable,Term Deposit,Less than 6 months,Small Business Customer,No,Term DepositLess than 6 monthsSmall Business CustomerNo,90%
+Less Stable,Term Deposit,6 months to 1 year,Retail,No,Term Deposit6 months to 1 yearRetailNo,90%
+Less Stable,Term Deposit,6 months to 1 year,Small Business Customer,No,Term Deposit6 months to 1 yearSmall Business CustomerNo,90%
+Less Stable,Demand Deposit,Less than 6 months,Corp,No,Demand DepositLess than 6 monthsCorpNo,0%
+Less Stable,Demand Deposit,6 months to 1 year,Corp,No,Demand Deposit6 months to 1 yearCorpNo,0%
+Less Stable,Term Deposit,Less than 6 months,Corp,No,Term DepositLess than 6 monthsCorpNo,50%
+Less Stable,Term Deposit,6 months to 1 year,Corp,No,Term Deposit6 months to 1 yearCorpNo,50%
+Less Stable,Operational Deposit,Less than 6 months,Domestic Sovereign,No,Operational DepositLess than 6 monthsDomestic SovereignNo,50%
+Less Stable,Operational Deposit,6 months to 1 year,Domestic Sovereign,No,Operational Deposit6 months to 1 yearDomestic SovereignNo,50%
+Less Stable,Operational Deposit,More than 1 year,Domestic Sovereign,No,Operational DepositMore than 1 yearDomestic SovereignNo,50%
+Less Stable,Operational Deposit,Less than 6 months,MDB,No,Operational DepositLess than 6 monthsMDBNo,50%
+Less Stable,Operational Deposit,6 months to 1 year,MDB,No,Operational Deposit6 months to 1 yearMDBNo,50%
+Less Stable,Operational Deposit,More than 1 year,MDB,No,Operational DepositMore than 1 yearMDBNo,50%
+Less Stable,Operational Deposit,Less than 6 months,FIs,No,Operational DepositLess than 6 monthsFIsNo,50%
+Less Stable,Operational Deposit,6 months to 1 year,FIs,No,Operational Deposit6 months to 1 yearFIsNo,50%
+Less Stable,Operational Deposit,More than 1 year,FIs,No,Operational DepositMore than 1 yearFIsNo,50%
+Less Stable,Operational Deposit,Less than 6 months,Corp,No,Operational DepositLess than 6 monthsCorpNo,50%
+Less Stable,Operational Deposit,6 months to 1 year,Corp,No,Operational Deposit6 months to 1 yearCorpNo,50%
+Less Stable,Operational Deposit,More than 1 year,Corp,No,Operational DepositMore than 1 yearCorpNo,50%
+Less Stable,Operational Deposit,Less than 6 months,Others,No,Operational DepositLess than 6 monthsOthersNo,50%
+Less Stable,Operational Deposit,6 months to 1 year,Others,No,Operational Deposit6 months to 1 yearOthersNo,50%
+Less Stable,Operational Deposit,More than 1 year,Others,No,Operational DepositMore than 1 yearOthersNo,50%
+Less Stable,Operational Deposit,Less than 6 months,Retail,No,Operational DepositLess than 6 monthsRetailNo,50%
+Less Stable,Operational Deposit,6 months to 1 year,Retail,No,Operational Deposit6 months to 1 yearRetailNo,50%
+Less Stable,Operational Deposit,More than 1 year,Retail,No,Operational DepositMore than 1 yearRetailNo,50%
+Less Stable,Operational Deposit,Less than 6 months,Small Business Customer,No,Operational DepositLess than 6 monthsSmall Business CustomerNo,50%
+Less Stable,Operational Deposit,6 months to 1 year,Small Business Customer,No,Operational Deposit6 months to 1 yearSmall Business CustomerNo,50%
+Less Stable,Operational Deposit,More than 1 year,Small Business Customer,No,Operational DepositMore than 1 yearSmall Business CustomerNo,50%
+Less Stable,Operational Deposit,Less than 6 months,PSEs,No,Operational DepositLess than 6 monthsPSEsNo,50%
+Less Stable,Operational Deposit,6 months to 1 year,PSEs,No,Operational Deposit6 months to 1 yearPSEsNo,50%
+Less Stable,Operational Deposit,More than 1 year,PSEs,No,Operational DepositMore than 1 yearPSEsNo,50%
+Less Stable,Operational Deposit,Less than 6 months,Central Bank,No,Operational DepositLess than 6 monthsCentral BankNo,50%
+Less Stable,Operational Deposit,6 months to 1 year,Central Bank,No,Operational Deposit6 months to 1 yearCentral BankNo,50%
+Less Stable,Operational Deposit,More than 1 year,Central Bank,No,Operational DepositMore than 1 yearCentral BankNo,50%
+Less Stable,Demand Deposit,6 months to 1 year,Domestic Sovereign,No,Demand Deposit6 months to 1 yearDomestic SovereignNo,0%
+Less Stable,Demand Deposit,Less than 6 months,Domestic Sovereign,No,Demand DepositLess than 6 monthsDomestic SovereignNo,0%
+Less Stable,Demand Deposit,6 months to 1 year,PSEs,No,Demand Deposit6 months to 1 yearPSEsNo,0%
+Less Stable,Demand Deposit,Less than 6 months,PSEs,No,Demand DepositLess than 6 monthsPSEsNo,0%
+Less Stable,Demand Deposit,6 months to 1 year,MDB,No,Demand Deposit6 months to 1 yearMDBNo,0%
+Less Stable,Demand Deposit,Less than 6 months,MDB,No,Demand DepositLess than 6 monthsMDBNo,0%
+Less Stable,Term Deposit,6 months to 1 year,Domestic Sovereign,No,Term Deposit6 months to 1 yearDomestic SovereignNo,50%
+Less Stable,Term Deposit,Less than 6 months,Domestic Sovereign,No,Term DepositLess than 6 monthsDomestic SovereignNo,50%
+Less Stable,Term Deposit,6 months to 1 year,PSEs,No,Term Deposit6 months to 1 yearPSEsNo,50%
+Less Stable,Term Deposit,Less than 6 months,PSEs,No,Term DepositLess than 6 monthsPSEsNo,50%
+Less Stable,Term Deposit,6 months to 1 year,MDB,No,Term Deposit6 months to 1 yearMDBNo,50%
+Less Stable,Term Deposit,Less than 6 months,MDB,No,Term DepositLess than 6 monthsMDBNo,50%
+Less Stable,Demand Deposit,6 months to 1 year,FIs,No,Demand Deposit6 months to 1 yearFIsNo,0%
+Less Stable,Term Deposit,6 months to 1 year,FIs,No,Term Deposit6 months to 1 yearFIsNo,50%
+Less Stable,Demand Deposit,6 months to 1 year,Central Bank,No,Demand Deposit6 months to 1 yearCentral BankNo,0%
+Less Stable,Term Deposit,6 months to 1 year,Central Bank,No,Term Deposit6 months to 1 yearCentral BankNo,50%
+Less Stable,Demand Deposit,Less than 6 months,FIs,No,Demand DepositLess than 6 monthsFIsNo,0%
+Less Stable,Term Deposit,Less than 6 months,FIs,No,Term DepositLess than 6 monthsFIsNo,0%
+Less Stable,Demand Deposit,Less than 6 months,Central Bank,No,Demand DepositLess than 6 monthsCentral BankNo,0%
+Less Stable,Term Deposit,Less than 6 months,Central Bank,No,Term DepositLess than 6 monthsCentral BankNo,0%
+Less Stable,Demand Deposit,More than 1 year,Domestic Sovereign,No,Demand DepositMore than 1 yearDomestic SovereignNo,0%
+Less Stable,Demand Deposit,More than 1 year,MDB,No,Demand DepositMore than 1 yearMDBNo,0%
+Less Stable,Demand Deposit,More than 1 year,FIs,No,Demand DepositMore than 1 yearFIsNo,0%
+Less Stable,Demand Deposit,More than 1 year,Corp,No,Demand DepositMore than 1 yearCorpNo,0%
+Less Stable,Demand Deposit,More than 1 year,Others,No,Demand DepositMore than 1 yearOthersNo,0%
+Less Stable,Demand Deposit,More than 1 year,Retail,No,Demand DepositMore than 1 yearRetailNo,90%
+Less Stable,Demand Deposit,More than 1 year,Small Business Customer,No,Demand DepositMore than 1 yearSmall Business CustomerNo,90%
+Less Stable,Demand Deposit,More than 1 year,PSEs,No,Demand DepositMore than 1 yearPSEsNo,0%
+Less Stable,Demand Deposit,More than 1 year,Central Bank,No,Demand DepositMore than 1 yearCentral BankNo,0%
+Less Stable,Term Deposit,More than 1 year,Domestic Sovereign,No,Term DepositMore than 1 yearDomestic SovereignNo,100%
+Less Stable,Term Deposit,More than 1 year,MDB,No,Term DepositMore than 1 yearMDBNo,100%
+Less Stable,Term Deposit,More than 1 year,FIs,No,Term DepositMore than 1 yearFIsNo,100%
+Less Stable,Term Deposit,More than 1 year,Corp,No,Term DepositMore than 1 yearCorpNo,100%
+Less Stable,Term Deposit,More than 1 year,Others,No,Term DepositMore than 1 yearOthersNo,100%
+Less Stable,Term Deposit,More than 1 year,Retail,No,Term DepositMore than 1 yearRetailNo,90%
+Less Stable,Term Deposit,More than 1 year,Small Business Customer,No,Term DepositMore than 1 yearSmall Business CustomerNo,90%
+Less Stable,Term Deposit,More than 1 year,PSEs,No,Term DepositMore than 1 yearPSEsNo,100%
+Less Stable,Term Deposit,More than 1 year,Central Bank,No,Term DepositMore than 1 yearCentral BankNo,100%
+Less Stable,Demand Deposit,No Maturity,Domestic Sovereign,No,Demand DepositNo MaturityDomestic SovereignNo,0%
+Less Stable,Demand Deposit,No Maturity,MDB,No,Demand DepositNo MaturityMDBNo,0%
+Less Stable,Demand Deposit,No Maturity,FIs,No,Demand DepositNo MaturityFIsNo,0%
+Less Stable,Demand Deposit,No Maturity,Corp,No,Demand DepositNo MaturityCorpNo,0%
+Less Stable,Demand Deposit,No Maturity,Others,No,Demand DepositNo MaturityOthersNo,0%
+Less Stable,Demand Deposit,No Maturity,Retail,No,Demand DepositNo MaturityRetailNo,90%
+Less Stable,Demand Deposit,No Maturity,Small Business Customer,No,Demand DepositNo MaturitySmall Business CustomerNo,90%
+Less Stable,Demand Deposit,No Maturity,PSEs,No,Demand DepositNo MaturityPSEsNo,0%
+Less Stable,Demand Deposit,No Maturity,Central Bank,No,Demand DepositNo MaturityCentral BankNo,0%

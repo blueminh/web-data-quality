@@ -1,0 +1,51 @@
+﻿NO,ITEM,AMOUNT ALL MATURITY,AMOUNT UNDER 6M,AMOUNT 6M TO 1Y,AMOUNT ABOVE 1Y,,CURRENCY,WEIGHTS,WEIGHTED AMOUNT FOR HQLA,RSF FACTOR ALL MATURITY,WEIGHTED RSF AMOUNT,ASF FACTOR UNDER 6M,ASF FACTOR 6M TO 1Y,ASF FACTOR ABOVE 1Y,WEIGHTED ASF FACTOR
+1,"Cash at Bank
+Tiền mặt tại Ngân hàng","960,222,848,915",,,,,VND,100%,,0%,,,,,
+2,"Cash at SBV - Investment in Central bank reserves
+Tiền gửi tại NHNN","4,068,195,399,636",,,,,VND,100%,,0%,,,,,
+3,"Physical Traded commodities including gold
+Vàng bạc, đá quý","1,552,950,000",,,,,VND,0%,,85%,,,,,
+4,"Fixed Assets
+Tài sản cố định","1,008,038,119,795",,,,,VND,,,100%,,,,,
+5,"Investing real estates
+Bất động sản đầu tư","15,971,453,328",,,,,VND,,,100%,,,,,
+6,"Items deducted from regulatory capital
+Các khoản giảm trừ khỏi vốn tự có","725,074,899,656",,,,,VND,,,100%,,,,,
+7,"Debt purchasing activities
+Hoạt động mua nợ", -   ,,,,,VND,,,100%,,,,,
+8,"Receivables
+Các khoản phải thu","1,885,184,799,455",,,,,VND,,,100%,,,,,
+9,"Investment in subsidaries
+Đầu tư vào công ty con", -   ,,,,,VND,,,100%,,,,,
+10,"Contribution in joint ventures
+Vốn góp liên doanh", -   ,,,,,VND,,,100%,,,,,
+11,"Invest in affiliates
+Đầu tư vào công ty liên kết", -   ,,,,,VND,,,100%,,,,,
+12,"Other long-term investments
+Đầu tư dài hạn khác","125,800,280,000",,,,,VND,,,100%,,,,,
+13,"Provision for devaluation of long-term investments
+Dự phòng giảm giá đầu tư dài hạn", -   ,,,,,VND,,,100%,,,,,
+14,"Deferred tax asset
+Tài sản thuế TNDN hoãn lại", -   ,,,,,VND,,,100%,,,,,
+15,"Other assets
+Tài sản Có khác","385,472,951,156",,,,,VND,,,100%,,,,,
+16,"Goodwill
+Lợi thế thương mại", -   ,,,,,VND,,,100%,,,,,
+17,"Provision for Other On Balance Sheet Assets
+Dự phòng rủi ro cho tài sản Có nội bảng khác","-59,547,883,532",,,,,VND,,,100%,,,,,
+18,"Deferred tax liabilities
+Thuế TNDN hoãn lại phải trả", -   , -   , -   , -   ,,VND,,,,,0%,50%,100%,
+19,"Other payables
+Các khoản phải trả và công nợ khác","1,453,555,167,257","484,518,389,085.67","484,518,389,086","484,518,389,086",,VND,,,,,0%,50%,100%,
+20,"Capital Tier 1 before application of capital deductions
+Công cụ Vốn cấp 1 trước khi áp dụng các khoản giảm trừ","12,399,584,753,715",,,,,VND,,,,,100%,100%,100%,
+21,"Capital Tier 2 with residual maturity of more than 1 Year
+Công cụ vốn cấp 2 có kỳ hạn còn lại trên 1 năm","5,540,313,000,000",,,"5,540,313,000,000",,VND,,,,,100%,100%,100%,
+22,"Capital Tier 2 with residual maturity of less than 1 Year
+Công cụ vốn cấp 2 có kỳ hạn còn lại dưới 1 năm", -   , -   , -   ,,,VND,,,,,100%,100%,100%,
+23,"Minority Interest
+Lợi ích cổ đông thiểu số", -   ,,,,,VND,,,,,100%,100%,100%,
+24,"Other contractual Cash Outflows
+Các dòng tiền ra theo hợp đồng khác trong vòng 30 ngày tiếp theo", -   ,,,,,VND,100%,,,,,,,
+25,"Other contractual Cash Inflows
+Các dòng tiền vào theo hợp đồng khác trong vòng 30 ngày tiếp theo", -   ,,,,,VND,100%,,,,,,,

@@ -1,0 +1,22 @@
+﻿Type of Facility,Counterparty Category,CONCAT,Run Off Factor
+Credit,Retail,CreditRetail,5%
+Credit,Small Business Customer,CreditSmall Business Customer,5%
+Credit,Corp,CreditCorp,10%
+Credit,Domestic Sovereign,CreditDomestic Sovereign,10%
+Credit,Central Bank,CreditCentral Bank,10%
+Credit,PSEs,CreditPSEs,10%
+Credit,MDB,CreditMDB,10%
+Credit,FIs,CreditFIs,40%
+Credit,Others,CreditOthers,100%
+Credit,Foreign Sovereign,CreditForeign Sovereign,10%
+Liquidity,Retail,LiquidityRetail,5%
+Liquidity,Small Business Customer,LiquiditySmall Business Customer,5%
+Liquidity,Corp,LiquidityCorp,30%
+Liquidity,Domestic Sovereign,LiquidityDomestic Sovereign,30%
+Liquidity,Central Bank,LiquidityCentral Bank,30%
+Liquidity,PSEs,LiquidityPSEs,30%
+Liquidity,MDB,LiquidityMDB,30%
+Liquidity,FIs,LiquidityFIs,100%
+Liquidity,Others,LiquidityOthers,100%
+Liquidity,Foreign Sovereign,LiquidityForeign Sovereign,30%
+Trade finance,,,5%
