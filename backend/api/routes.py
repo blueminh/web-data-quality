@@ -217,6 +217,7 @@ class UploadResource(Resource):
         uploaded_file = request.files.get('file')
         expected_file_type = request.form.get('fileType')  # Get the expected fileType from the request data
         table_name = request.form.get('tableName')
+        uploaded_date = datetime.strptime(request.form.get('uploadDate'), '%Y-%m-%d')
 
         user = Users.query.filter_by(username=username).first()
         if not user:
@@ -230,7 +231,7 @@ class UploadResource(Resource):
            (expected_file_type == 'xlsx' and file_extension == 'xlsx') or \
            (expected_file_type == 'xls' and file_extension == 'xls'):
             # Handle CSV, Excel (xlsx), and Excel (xls) files
-            file_name = f"{table_name}_{datetime.now().strftime('%Y%m%d%H%M%S')}.{file_extension}"
+            file_name = f"{table_name}.{file_extension}"
 
             # save file to resource
             resource_folder = os.path.join(os.path.abspath(os.path.dirname(__file__)), '..', 'data_files')
@@ -238,7 +239,7 @@ class UploadResource(Resource):
             uploaded_file.stream.seek(0)  # Reset the stream position
             uploaded_file.save(full_file_path)
             
-            upload = Upload(user_id=user.id, filename=file_name)
+            upload = Upload(user_id=user.id, filename=file_name, upload_time=uploaded_date)
             db.session.add(upload)
             db.session.commit()
             

@@ -70,9 +70,9 @@ export async function getTableList() {
   }
 }
 
-export async function getLcrData(date) {
+export async function getLcrData(requestData) {
   try {
-    const response = await axiosInstance.post(`/data/getLcr`, {date}, {
+    const response = await axiosInstance.post(`/data/getLcr`, requestData, {
       withCredentials: true
     });
 

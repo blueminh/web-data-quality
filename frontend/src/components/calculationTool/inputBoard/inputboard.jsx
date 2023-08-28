@@ -103,6 +103,17 @@ export default function InputDashboard() {
     const [showSampleDataPopup, setShowSampleDataPopup] = useState(false);
     const handleCloseSampleDataPopup = () => setShowSampleDataPopup(false);
 
+    const formatDate = (date) => {
+        const day = String(date.getDate()).padStart(2, '0');
+        const month = String(date.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+        const year = date.getFullYear();
+        
+        return `${year}-${month}-${day}`;
+    }
+    const currentDate = new Date();
+    const formattedDate = formatDate(currentDate);
+    const [uploadDate, setUploadDate] = useState(formattedDate)
+
 
     const handleFileInputChange = (event) => {
         const file = event.target.files[0];
@@ -181,7 +192,8 @@ export default function InputDashboard() {
             separationSymbol: separationSymbol,
             username: auth.username,
             file: selectedFile, 
-            tableName: tableName
+            tableName: tableName,
+            uploadDate: uploadDate
         }
         try {
             const message = await uploadFile(data);
@@ -190,8 +202,8 @@ export default function InputDashboard() {
         } catch (error) {
             console.error('Error uploading file:', error);
             setMessage('Tải file không thành công');
+            setShowMessagePopup(true)
         }
-        setShowMessagePopup(true)
     };
 
     const [showMessagePopup, setShowMessagePopup] = useState(false);
@@ -266,7 +278,7 @@ export default function InputDashboard() {
                             <div className='centered-button-container'>
                                 <Button onClick={() => setShowSampleDataPopup(true)}>Bấm để xem dữ liệu mẫu của bảng đã chọn</Button>
                             </div>
-                            <div className="form-input">
+                            {/* <div className="form-input">
                                 <Form.Label>Chọn bảng mapping cần nhập</Form.Label>
                                 <Autosuggest
                                     suggestions={tableMappingSuggestions}
@@ -309,10 +321,7 @@ export default function InputDashboard() {
                                         },
                                     }}
                                 />
-                            </div>
-
-
-
+                            </div>*/}
                             <div className="form-input">
                                 <Form.Label>Chọn định dạng file</Form.Label>
                                 <Form.Select required onChange={(event) => {
@@ -333,6 +342,15 @@ export default function InputDashboard() {
                             <div className="form-input">
                                 <Form.Label>Chọn file dữ liệu</Form.Label>
                                 <Form.Control type="file" required  onChange={handleFileInputChange} />
+                            </div>
+                            <div className="form-input">
+                                <Form.Label>Chọn ngày</Form.Label>
+                                <Form.Control
+                                value={uploadDate} 
+                                required type="date" 
+                                onChange={(event) => {
+                                    setUploadDate(String(event.target.value))
+                                }}/>                            
                             </div>
                             <div className='centered-button-container'>
                                 <Button onClick={handleSubmit}>Tải file lên</Button>

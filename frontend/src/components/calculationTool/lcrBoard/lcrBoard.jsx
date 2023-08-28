@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react'
-import { Table, Button, Form, FormLabel, Stack, Spinner, Accordion, Tab } from 'react-bootstrap';
+import { Table, Button, Form, FormLabel, Stack, Spinner, Modal } from 'react-bootstrap';
 import './lcrBoard.css'
 
 import html2canvas from 'html2canvas';
@@ -28,14 +28,26 @@ export default function LCRDashBoard() {
      // eslint-disable-next-line
     const [lcrBoardData, setLcrBoardData] = useState(lcrBoardDataDefault)
 
-    const handleFetchLcrData = () => {
+    const [message, setMessage] = useState('');
+    const [showMessagePopup, setShowMessagePopup] = useState(false);
+    const handleCloseMessagePopup = () => setShowMessagePopup(false);
+
+    const handleFetchLcrData = (extraTables = {}) => {
         const fetchLcr = async () => {
             try {
                 setIsLoading(true)
+                const requestData = {
+                    "repotingDate": reportingDate,
+                    "extraTables": extraTables
+                }
                 const data = await getLcrData(reportingDate)
                 console.log(data)
                 setLcrBoardData(data)
                 setIsLoading(false)
+
+                if (false) { 
+                    setMessage("Ngày đã chọn không có đủ tất cả các bảng dữ liệu cần thiết, vui lòng chọn ngày tải lên cho mỗi bảng còn thiếu")
+                }
             } catch (error) {
                 setLcrBoardData(lcrBoardDataDefault)
                 setIsLoading(false)
@@ -94,6 +106,18 @@ export default function LCRDashBoard() {
     };
 
     return (
+        <>
+        <Modal show={showMessagePopup} onHide={handleCloseMessagePopup}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Kiểm tra dữ liệu</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>{message}</Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleCloseMessagePopup}>
+                        Đóng
+                    </Button>
+                </Modal.Footer>
+            </Modal>
         <div>
             <div id = "pageTitle">NAB - Basel III Tỷ lệ bao phủ thanh khoản (LCR) - Công bố thông tin (Public Discloure)</div>
             <div id = "generalInfo">
@@ -124,5 +148,6 @@ export default function LCRDashBoard() {
                 </Table>
             </div>
         </div>
+        </>
     )
 }
