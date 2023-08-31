@@ -165,7 +165,3 @@ def lcr_securitiesfinancialtrans(path):
     return final_output_df
 
 
-final_output_df = lcr_securitiesfinancialtrans(path)
-
-
-

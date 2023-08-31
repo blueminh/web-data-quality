@@ -62,6 +62,3 @@ def lcr_deposits(path):
     final_output_df = df1.join(output_df)
 
     return final_output_df
-
-final_output_df = lcr_deposits(path)
-

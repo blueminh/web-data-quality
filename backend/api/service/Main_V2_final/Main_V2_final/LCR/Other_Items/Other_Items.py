@@ -49,5 +49,3 @@ def lcr_Other_Items(path):
 
     
     return final_output_df
-
-final_output_df = lcr_Other_Items(path)

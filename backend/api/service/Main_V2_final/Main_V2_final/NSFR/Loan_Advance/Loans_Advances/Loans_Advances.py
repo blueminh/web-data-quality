@@ -126,9 +126,5 @@ def lcr_Loans_Advances(path):
     return final_output_df
 
 
-final_output_df = lcr_Loans_Advances(path)
-
-
-
 
 

@@ -167,7 +167,5 @@ def lcr_investmentandtradingsecurities(path):
 
     return final_output_df
 
-final_output_df = lcr_investmentandtradingsecurities(path)
-
 
 

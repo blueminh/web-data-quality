@@ -22,5 +22,3 @@ def nsfr_facility(path):
 
     return final_output_df
 
-#output file
-final_output_df = nsfr_facility(path)

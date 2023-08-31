@@ -88,6 +88,3 @@ def nsfr_deposits(path):
     return final_output_df
 
 #output file
-
-final_output_df = nsfr_deposits(path)
-

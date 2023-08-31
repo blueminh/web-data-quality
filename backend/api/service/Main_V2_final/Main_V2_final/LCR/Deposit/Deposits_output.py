@@ -169,6 +169,3 @@ def Deposits_LCR(path):
     
     
     return final_output_df
-
-final_output_df = Deposits_LCR(path)
-

@@ -598,7 +598,7 @@ def percent(df, G_row46, G_row47):
 End of Calculations:
 @Return: the result of the cell in Row x, column Blank 1/2
 """
-def main():
+def main(date_str):
     path = os.path.dirname(os.path.realpath(__file__))
 
    
@@ -617,7 +617,7 @@ def main():
     path_loan_advances =os.path.join(path, 'Loans_Advances')
     path_deposits_w_otherbanks = os.path.join(path, 'Deposits_with_other_banks')
    #------------------------------------------------Paths------------------------------------------------------------
-    borrowings = Borrowings_output.lcr_borrowing(path_borrowings)
+    borrowings = Borrowings_output.lcr_borrowing(path_borrowings, date_str)
     investment = Investment_Trading_Securities_output.lcr_investmentandtradingsecurities(path_investment)
     securities_fin_trans = Securities_Financial_Trans.lcr_securitiesfinancialtrans(path_securities_fin_trans)
     deposit = Deposits_output.Deposits_LCR(path_deposit)

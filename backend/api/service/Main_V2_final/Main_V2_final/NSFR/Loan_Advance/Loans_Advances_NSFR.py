@@ -67,7 +67,3 @@ def Loans_Advances_NSFR(path):
     final_output_df['Loan Outstanding'] = final_output_df['Loan Outstanding'].str.replace(',', '').replace(' -   ', '0').astype(float)
     final_output_df['Risk Weight  as per C41'] = final_output_df['Risk Weight  as per C41'].str.rstrip('%').astype('float') / 100.0
     return final_output_df
-
-#output file
-
-final_output_df = Loans_Advances_NSFR(path)

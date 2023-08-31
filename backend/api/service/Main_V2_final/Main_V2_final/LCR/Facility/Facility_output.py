@@ -65,7 +65,3 @@ def lcr_facility(path):
 
     return final_output_df
 
-
-final_output_df = lcr_facility(path)
-
-
