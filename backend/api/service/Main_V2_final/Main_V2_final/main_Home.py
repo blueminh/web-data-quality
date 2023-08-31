@@ -92,7 +92,7 @@ def nsfr_5(df, n_3, colname):
 def main():
     path = os.path.dirname(os.path.realpath(__file__))
 
-    lcr_df = main_LCR.main(os.path.join(path, 'LCR'))
+    lcr_df = main_LCR.main()
     nsfr_df = main_NSFR.main(os.path.join(path, 'NSFR'))
     left_df = set_LCR()
     right_df = set_NSFR()

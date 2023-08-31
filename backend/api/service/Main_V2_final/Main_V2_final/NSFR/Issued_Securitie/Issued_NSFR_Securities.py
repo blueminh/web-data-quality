@@ -34,7 +34,7 @@ def Issued_Securities_NSFR(path):
         output_df['ASF Factor'] * df1['Book Value']
     ]
     
-    output_df['ASF Amount'] = pd.np.select(conditions, choices, default=0)
+    output_df['ASF Amount'] = np.select(conditions, choices, default=0)
 
     df1['Next Interest Payment Due Date'] = pd.to_datetime(df1['Next Interest Payment Due Date'], errors='coerce')
     df2['Reporting Date'] = pd.to_datetime(df2['Reporting Date'], errors='coerce')
