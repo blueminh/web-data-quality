@@ -5,14 +5,14 @@
 import os
 import pandas as pd
 import numpy as np
-from datetime import date
-path = os.path.dirname(os.path.realpath(__file__))
+from datetime import datetime
 
-def lcr_Issued_Securities(path):
-    df1 = pd.read_csv(os.path.join(path, 'input', 'Issued Securities.csv'))
+def lcr_Issued_Securities(path, input_date_str):
+
+    df1 = pd.read_csv(os.path.join(path, 'input', f'Issued Securities_{input_date_str}.csv'))
     df2 = pd.read_csv(os.path.join(path, 'input', 'CounterParty Mapping.csv'))
     df4 = pd.read_csv(os.path.join(path, 'input', 'Product Mapping.csv'))
-    reporting_date = date(2022, 9, 30)
+    reporting_date = datetime.strptime(input_date_str, "%d-%m-%Y")
 
     # Tạo output_df để chứa kết quả
     output_df = pd.DataFrame()

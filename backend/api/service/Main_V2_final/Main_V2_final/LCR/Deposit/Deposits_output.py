@@ -5,25 +5,22 @@
 import os
 import pandas as pd
 import numpy as np
-from datetime import date
-from .Loans_Advances import Loans_Advances
-path = os.path.dirname(os.path.realpath(__file__))
+from datetime import datetime
+from ..Loans_Advances import Loans_Advances
 
-
-def Deposits_LCR(path):
-    df1 = pd.read_csv(os.path.join(path, 'input', 'Deposit.csv'))
+def Deposits_LCR(path, input_date_str):
+    df1 = pd.read_csv(os.path.join(path, 'input', f'Deposit_{input_date_str}.csv'))
     df2 = pd.read_csv(os.path.join(path, 'input', 'Currency table regulatry.csv'))
     df3 = pd.read_csv(os.path.join(path, 'input', 'CounterParty Mapping.csv'))
     df5 = pd.read_csv(os.path.join(path, 'input', 'insurance table.csv'))
-    df6 = Loans_Advances.lcr_Loans_Advances(os.path.join(path, 'Loans_Advances') ) # Assuming Loans_Advances is a module
-    df7 = pd.read_csv(os.path.join(path, 'input', 'Loans & Advances.csv'))
+    df6 = Loans_Advances.lcr_Loans_Advances(os.path.join(os.path.dirname(os.getcwd()),'Main_V2_final', 'LCR', 'Loans_Advances') , input_date_str) # Assuming Loans_Advances is a module
+    df7 = Loans_Advances.get_loans_advances_df(os.path.join(os.path.dirname(os.getcwd()),'Main_V2_final', 'LCR', 'Loans_Advances') , input_date_str)
     df8 = pd.read_csv(os.path.join(path, 'input', 'Product Mapping.csv'))
     df9 = pd.read_csv(os.path.join(path, 'input', 'unstable deposit run-off factor table.csv'))
     
     # Tạo output_df để chứa kết quả
     output_df = pd.DataFrame()
-    reporting_date = date(2022, 9, 30)
-
+    reporting_date = datetime.strptime(input_date_str, "%d-%m-%Y")
     df1.fillna(0, inplace=True)
     
     #reporting date

@@ -5,16 +5,16 @@
 import os 
 import pandas as pd
 import numpy as np
-from datetime import date
+from datetime import date, datetime
 
 # Đường dẫn đến file
 path = os.path.dirname(os.path.realpath(__file__))
 
-def lcr_securitiesfinancialtrans(path):
+def lcr_securitiesfinancialtrans(path, input_date_str):
     # Reporting date
-    reporting_date = date(2022, 9, 30)
+    reporting_date = datetime.strptime(input_date_str, "%d-%m-%Y")
 
-    df1 = pd.read_csv(os.path.join(path, 'input', 'Securities Financial Trans.csv'))
+    df1 = pd.read_csv(os.path.join(path, 'input', f'Securities Financial Trans_{input_date_str}.csv'))
     df2 = pd.read_csv(os.path.join(path, 'input', 'Product Mapping.csv'))
     df3 = pd.read_csv(os.path.join(path, 'input', 'Counterparty Mapping.csv'))
     df4 = pd.read_csv(os.path.join(path, 'input', 'Currency table regulatry.csv'))

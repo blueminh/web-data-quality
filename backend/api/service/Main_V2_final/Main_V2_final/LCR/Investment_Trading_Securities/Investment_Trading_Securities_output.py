@@ -5,14 +5,16 @@
 import os
 import pandas as pd
 import numpy as np
-from datetime import date
+from datetime import date, datetime
 
 path = os.path.dirname(os.path.realpath(__file__))
 
 # Reporting date
 
-def lcr_investmentandtradingsecurities(path):
-    df1 = pd.read_csv(os.path.join(path, 'input', 'Investment&Trading Securities.csv'))
+def lcr_investmentandtradingsecurities(path, input_date_str):
+    input_date = datetime.strptime(input_date_str, "%d-%m-%Y")
+
+    df1 = pd.read_csv(os.path.join(path, 'input', f'Investment&Trading Securities_{input_date_str}.csv'))
     df2 = pd.read_csv(os.path.join(path, 'input', 'Asset Issuers HQLA Mapping.csv'))
     df3 = pd.read_csv(os.path.join(path, 'input', 'Product Mapping.csv'))
     df4 = pd.read_csv(os.path.join(path, 'input', 'Counterparty Mapping.csv'))
@@ -22,7 +24,7 @@ def lcr_investmentandtradingsecurities(path):
     df8 = pd.read_csv(os.path.join(path, 'input', 'HQLA asset table.csv'))
     df9 = pd.read_csv(os.path.join(path, 'input', 'HQLA weight table.csv'))
     df10 = pd.read_csv(os.path.join(path, 'input', 'Cash Inflow Counterparty Mapping.csv'))
-    reporting_date = date(2022, 9, 30)
+    reporting_date = input_date
 
     df1.fillna(0, inplace=True)
     output_df = pd.DataFrame()

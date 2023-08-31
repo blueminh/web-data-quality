@@ -5,14 +5,18 @@
 import os
 import pandas as pd
 import numpy as np
-from datetime import date
-path = os.path.dirname(os.path.realpath(__file__))
+from datetime import datetime
 
-def lcr_Loans_Advances(path):
-    df1 = pd.read_csv(os.path.join(path,'input', 'Loans & Advances.csv'))
+def get_loans_advances_df(path, input_date_str):
+    df1 = pd.read_csv(os.path.join(path,'input', f'Loans & Advances_{input_date_str}.csv'))
+    return df1
+
+def lcr_Loans_Advances(path, input_date_str):
+    df1 = pd.read_csv(os.path.join(path,'input', f'Loans & Advances_{input_date_str}.csv'))
     df2 = pd.read_csv(os.path.join(path,'input', 'CounterParty Mapping.csv'))
     df3 = pd.read_csv(os.path.join(path,'input', 'Cash Inflow Counterparty Mapping.csv'))
-    reporting_date = date(2022, 9, 30)
+    reporting_date = datetime.strptime(input_date_str, "%d-%m-%Y")
+
 
     # Tạo output_df để chứa kết quả
     output_df = pd.DataFrame()
