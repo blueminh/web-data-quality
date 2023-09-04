@@ -1,5 +1,7 @@
 from .Main_V2_final.Main_V2_final.LCR.main_LCR import main as main_lcr
 import math
+from datetime import datetime
+
 
 def get_dashboard_lcr_nsfr_data(date):
     lcr_data = {
@@ -214,7 +216,12 @@ class Row:
         }
 
 def get_lcr_data(date):
-    df = main_lcr()
+    # all python script use the format day-month-year
+    date_object = datetime.strptime(date, '%Y-%m-%d')
+    # Format the date as '28-08-2023'
+    formatted_date = date_object.strftime('%d-%m-%Y')
+
+    df = main_lcr(formatted_date)
     hqla = Row("hqla", 0, ["", "High-quality liquid assets", "Tài sản thanh khoản có chất lượng cao", "", ""])
     hqla.setChildren(
         [

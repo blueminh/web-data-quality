@@ -625,7 +625,7 @@ def main(date_str):
     Facility = Facility_output.lcr_facility(path_facility, date_str)
     other_items = Other_Items.lcr_Other_Items(path_otheritems, date_str)
     off_balance_sheet = Off_Balance_Sheet_output.lcr_offbalancesheet(path_offbalancesheet, date_str)
-    loans_advances = Loans_Advances.lcr_Loans_Advances(path_loan_advances, date_str)
+    loans_advances = Loans_Advances.lcr_Loans_Advances(date_str)
     issued_securities = Issued_Securities.lcr_Issued_Securities(path_issuedsecurities, date_str)
     dep_w_other_banks = Deposits_with_other_banks_output.lcr_deposits(path_deposits_w_otherbanks, date_str)
     output_df = set_output_df()

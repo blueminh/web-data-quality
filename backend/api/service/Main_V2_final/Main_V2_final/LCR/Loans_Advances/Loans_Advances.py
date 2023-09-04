@@ -7,14 +7,16 @@ import pandas as pd
 import numpy as np
 from datetime import datetime
 
-def get_loans_advances_df(path, input_date_str):
-    df1 = pd.read_csv(os.path.join(path,'input', f'Loans & Advances_{input_date_str}.csv'))
+def get_loans_advances_df(input_date_str):
+    current_script_directory = os.path.dirname(os.path.abspath(__file__))
+    df1 = pd.read_csv(os.path.join(current_script_directory,'input', f'Loans & Advances_{input_date_str}.csv'))
     return df1
 
-def lcr_Loans_Advances(path, input_date_str):
-    df1 = pd.read_csv(os.path.join(path,'input', f'Loans & Advances_{input_date_str}.csv'))
-    df2 = pd.read_csv(os.path.join(path,'input', 'CounterParty Mapping.csv'))
-    df3 = pd.read_csv(os.path.join(path,'input', 'Cash Inflow Counterparty Mapping.csv'))
+def lcr_Loans_Advances(input_date_str):
+    current_script_directory = os.path.dirname(os.path.abspath(__file__))
+    df1 = pd.read_csv(os.path.join(current_script_directory,'input', f'Loans & Advances_{input_date_str}.csv'))
+    df2 = pd.read_csv(os.path.join(current_script_directory,'input', 'CounterParty Mapping.csv'))
+    df3 = pd.read_csv(os.path.join(current_script_directory,'input', 'Cash Inflow Counterparty Mapping.csv'))
     reporting_date = datetime.strptime(input_date_str, "%d-%m-%Y")
 
 

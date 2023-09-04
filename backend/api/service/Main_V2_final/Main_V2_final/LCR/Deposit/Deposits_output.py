@@ -13,8 +13,8 @@ def Deposits_LCR(path, input_date_str):
     df2 = pd.read_csv(os.path.join(path, 'input', 'Currency table regulatry.csv'))
     df3 = pd.read_csv(os.path.join(path, 'input', 'CounterParty Mapping.csv'))
     df5 = pd.read_csv(os.path.join(path, 'input', 'insurance table.csv'))
-    df6 = Loans_Advances.lcr_Loans_Advances(os.path.join(os.path.dirname(os.getcwd()),'Main_V2_final', 'LCR', 'Loans_Advances') , input_date_str) # Assuming Loans_Advances is a module
-    df7 = Loans_Advances.get_loans_advances_df(os.path.join(os.path.dirname(os.getcwd()),'Main_V2_final', 'LCR', 'Loans_Advances') , input_date_str)
+    df6 = Loans_Advances.lcr_Loans_Advances(input_date_str) # Assuming Loans_Advances is a module
+    df7 = Loans_Advances.get_loans_advances_df(input_date_str)
     df8 = pd.read_csv(os.path.join(path, 'input', 'Product Mapping.csv'))
     df9 = pd.read_csv(os.path.join(path, 'input', 'unstable deposit run-off factor table.csv'))
     
