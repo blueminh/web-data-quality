@@ -598,10 +598,7 @@ def percent(df, G_row46, G_row47):
 End of Calculations:
 @Return: the result of the cell in Row x, column Blank 1/2
 """
-def main(date_str):
-    path = os.path.dirname(os.path.realpath(__file__))
-
-   
+def main(date_str):   
    #Change path on your computer
    #------------------------------------------------Paths------------------------------------------------------------
     

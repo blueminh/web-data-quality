@@ -186,12 +186,16 @@ def get_dashboard_bar_charts_data():
     return data
 
 class Row:
-    def __init__(self, code, depth, data, children=[]):
+    def __init__(self, code, depth, data, children=[], volatility_data = {
+        "x":[2020, 2021,2022],
+        "y":[29, 34, 16]
+    }):
         self.code = code # need code to fetch data
         self.depth = depth # depth for displaying collapesable componenets
         self.data = data # array of data, including the index
         self.children = children # children
         self.hasChildren = len(children) > 0
+        self.volatility_data = volatility_data
 
 
     def setChildren(self, children):
@@ -212,7 +216,8 @@ class Row:
             "depth":self.depth,
             "data":converted_data,
             "children":json_children,
-            "hasChildren":self.hasChildren
+            "hasChildren":self.hasChildren,
+            "volatility_data":self.volatility_data
         }
 
 def get_lcr_data(date):

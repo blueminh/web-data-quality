@@ -17,9 +17,8 @@ from .models import db, Users, Upload, JWTTokenBlocklist
 from .config import BaseConfig
 
 from .service.getDataService import get_dashboard_lcr_nsfr_data, get_dashboard_bar_charts_data, get_lcr_data
-from .service.uploadDataService import get_table_list
 
-from .tableNames import TABLE_NAMES
+from .tableNames import TABLES
 
 rest_api = Api(version="1.0", title="Users API")
 
@@ -220,6 +219,7 @@ class UploadResource(Resource):
         expected_file_type = request.form.get('fileType')  # Get the expected fileType from the request data
         table_name = request.form.get('tableName')
         uploaded_date = datetime.strptime(request.form.get('uploadDate'), '%Y-%m-%d')
+        converted_uploaded_time = uploaded_date.strftime('%d-%m-%Y')
 
         user = Users.query.filter_by(username=username).first()
         if not user:
@@ -233,12 +233,12 @@ class UploadResource(Resource):
            (expected_file_type == 'xlsx' and file_extension == 'xlsx') or \
            (expected_file_type == 'xls' and file_extension == 'xls'):
             # Handle CSV, Excel (xlsx), and Excel (xls) files
-            file_name = f"{table_name}-{uploaded_date}.{file_extension}"
+            file_name = f"{table_name}_{converted_uploaded_time}.{file_extension}"
             # save file to resource
-            resource_folder = os.path.join(os.path.abspath(os.path.dirname(__file__)), '..', 'data_files')
-            full_file_path = os.path.join(resource_folder, file_name)
+            # resource_folder = os.path.join(os.path.abspath(os.path.dirname(__file__)), '..', 'data_files')
+            path_to_file = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'service', 'Main_V2_final', 'Main_V2_final', TABLES[table_name], file_name)
             uploaded_file.stream.seek(0)  # Reset the stream position
-            uploaded_file.save(full_file_path)
+            uploaded_file.save(path_to_file)
             
             # only do this if the file has not been uploaded in the same day 
             existing_upload = Upload.query.filter_by(filename=table_name, upload_time=uploaded_date).first()
@@ -258,7 +258,7 @@ class UploadHistoryResource(Resource):
     def get(current_user, self):
         files_latest_upload_dates = []
 
-        for tablename in TABLE_NAMES:
+        for tablename in list(TABLES.keys()):
             latest_upload = Upload.query.filter_by(filename=tablename).order_by(Upload.upload_time.desc()).first()
             if latest_upload:
                 files_latest_upload_dates.append({'filename':latest_upload.filename, 'upload_time': latest_upload.upload_time.strftime("%Y-%m-%d")})
@@ -268,7 +268,7 @@ class UploadHistoryResource(Resource):
 class GetDashboardBarChartsData(Resource):
     @token_required(required_roles=['viewer'])
     def get(current_user, self):
-        return jsonify(TABLE_NAMES)  
+        return jsonify(list(TABLES.keys()))
     
 
 # @rest_api.route('/data/getDashboardLcrNsfr')
@@ -335,7 +335,7 @@ def checkTables(extra_tables_request, reporting_date):
     requested_date = datetime.strptime(reporting_date, '%Y-%m-%d').date()
     extra_table_needed = {}
 
-    for tablename in TABLE_NAMES:
+    for tablename in list(TABLES.keys()):
         # check for each table
         if tablename in extra_tables_request:
             extra_requested_date =  datetime.strptime(extra_tables_request[tablename], '%Y-%m-%d').date()
