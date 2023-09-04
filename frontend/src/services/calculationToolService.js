@@ -26,15 +26,16 @@ export async function uploadFile(data) {
   }
 }
 
-export async function getDashboardLcrNsfrData(date) {
+export async function getDashboardLcrNsfrData(requestData) {
   try {
-    const response = await axiosInstance.post(`/data/getDashboardLcrNsfr`, {date}, {
+    const response = await axiosInstance.post(`/data/getDashboardLcrNsfr`, requestData, {
       withCredentials: true
     });
 
     return response.data
 
   } catch (error) {
+    console.log(error)
     throw new Error('Error fetching dashboard data', error);
   }
 }

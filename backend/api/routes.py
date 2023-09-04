@@ -286,13 +286,30 @@ class GetDashboardBarChartsData(Resource):
 class GetDashboardData(Resource):
     @token_required(required_roles=['viewer'])
     def post(current_user, self):
+        data = request.get_json()
+        reporting_date = data.get("reportingDate")
+        extra_tables_request = data.get("extraTables")
+        if not reporting_date:
+            return {"message": "Reporting date is missing in the request."}, 400
+
+        extra_tables_needed = checkTables(extra_tables_request, reporting_date)
+        if (len(extra_tables_needed) > 0):
+            return jsonify({
+                "success":False,
+                "extraTables":extra_tables_needed,
+                "data":{}
+        })
+
         request_data = request.get_json()
         requested_date = request_data.get('date')  # Extract the date from the request data
 
         data = get_dashboard_lcr_nsfr_data(requested_date)
 
-        return jsonify(data) 
-    
+        return jsonify({
+            "success":True,
+            "extraTables": {},
+            "data": data
+        })    
 
 @rest_api.route('/data/getDashboardBarCharts', methods=['GET'])
 class GetDashboardBarChartsData(Resource):
@@ -317,7 +334,7 @@ class GetLcr(Resource):
                 "success":False,
                 "extraTables":extra_tables_needed,
                 "data":{}
-            })
+        })
     
         # request_data = request.get_json()
         # requested_date = request_data.get('reportingDate')  # Extract the date from the request data

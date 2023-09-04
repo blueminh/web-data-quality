@@ -1,17 +1,15 @@
-import { Table, Row, Col, Button, Form, FormLabel, Stack, Modal } from 'react-bootstrap';
+import { Table, Row, Col, Button, Form, FormLabel, Stack, Modal, Spinner} from 'react-bootstrap';
 import { useEffect, useState, useRef } from "react";
 import '../../../Global.css'
 import './dashboard.css'
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 import { getBarChartData } from '../../../services/calculationToolService';
-
 import * as XLSX from 'xlsx';
 import { saveAs } from 'file-saver';
-
 import { Bar } from 'react-chartjs-2';
-
 import { getDashboardLcrNsfrData } from '../../../services/calculationToolService';
+import ChooseFileDateDialog from '../chooseFileDateDialog/chooseFileDateDialog';
 
 export default function CalulationQuickDashboard() {
     const [errorMessage, setErrorMessage] = useState('');
@@ -29,10 +27,14 @@ export default function CalulationQuickDashboard() {
     const formattedDate = formatDate(currentDate);
     const [reportingDate, setReportingDate] = useState(formattedDate)
 
-    useEffect(() => {
-        handleFetchReportedData()
-    }, []);
+    // useEffect(() => {
+    //     handleFetchReportedData()
+    // }, []);
     
+    const [isLoading, setIsLoading] = useState(false);
+    const [showChooseFileDateDialog, setShowChooseFileDateDialog] = useState(false);
+    const modalChooseFileDateDialogToggle = () => setShowChooseFileDateDialog(!showChooseFileDateDialog)
+    const [extraTables, setExtraTables] = useState({})
 
     const tableRefs = [useRef(null), useRef(null)];
     const handleExportPDF = async () => {
@@ -81,17 +83,26 @@ export default function CalulationQuickDashboard() {
         saveAs(data, 'dashboard.xlsx');
     };
 
-    const handleFetchReportedData = () => {
+    const handleFetchReportedData = (requestData) => {
         const fetchLcrNsfr = async () => {
             try {
-                const lcrNsfrDat = await getDashboardLcrNsfrData(reportingDate)
-                setLcrData(lcrNsfrDat.lcr_data)
-                setNsfrData(lcrNsfrDat.nsfr_data)
-                const barChartData = await getBarChartData()
-                setSetOfDataForFieldStatsBar(barChartData)
+                setIsLoading(true)
+                const response = await getDashboardLcrNsfrData(requestData)
+
+                if (response.success) {
+                    setIsLoading(false)
+                    setLcrData(response.data.lcr_data)
+                    setNsfrData(response.data.nsfr_data)
+                    const barChartData = await getBarChartData()
+                    setSetOfDataForFieldStatsBar(barChartData)
+                } else {
+                    setExtraTables(response.extraTables)
+                    setShowChooseFileDateDialog(true)
+                }
+
             } catch (error) {
-              console.error('Error fetching data:', error);
-              console.log("ahhh ", setOfDataForFieldStatsBar)
+                setIsLoading(false)
+              console.error(error);
               setErrorMessage("Có lỗi đã xảy ra")
             }
         };
@@ -136,6 +147,12 @@ export default function CalulationQuickDashboard() {
                     </Button>
                 </Modal.Footer>
             </Modal>
+            {showChooseFileDateDialog && <ChooseFileDateDialog  
+                onCloseHandle={modalChooseFileDateDialogToggle}
+                reportingDate={reportingDate}
+                extraTables={extraTables}
+                onSubmitHandle={handleFetchReportedData}
+            />}
             <div className="chart-container">
                 {Array.isArray(setOfDataForFieldStatsBar) && setOfDataForFieldStatsBar.map(data => 
                     <div className="chart">
@@ -153,7 +170,11 @@ export default function CalulationQuickDashboard() {
                             setReportingDate(String(event.target.value))
                         }}/>
                     <div className="button-container">
-                        <Button onClick={handleFetchReportedData}>Lấy kết quả tổng quan</Button>    
+                        {isLoading && <Spinner />}
+                        <Button onClick={() => handleFetchReportedData({
+                            "reportingDate":reportingDate,
+                            "extraTables":{}
+                        })}>Lấy kết quả tổng quan</Button>    
                         <Button onClick={handleExportPDF}>Xuất kết quả ra PDF</Button>
                         <Button onClick={exportToExcel}>Xuất kết quả ra Excel</Button>
                     </div>
