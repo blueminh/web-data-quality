@@ -83,7 +83,15 @@ export default function CalulationQuickDashboard() {
         saveAs(data, 'dashboard.xlsx');
     };
 
-    const handleFetchReportedData = (requestData) => {
+    const handleFetchBarChartData = () => {
+        const fetchData = async () => {
+            const barChartData = await getBarChartData()
+            setSetOfDataForFieldStatsBar(barChartData)
+        }
+        fetchData()
+    }
+
+    const handleFetchBoardData = (requestData) => {
         const fetchLcrNsfr = async () => {
             try {
                 setIsLoading(true)
@@ -93,8 +101,6 @@ export default function CalulationQuickDashboard() {
                     setIsLoading(false)
                     setLcrData(response.data.lcr_data)
                     setNsfrData(response.data.nsfr_data)
-                    const barChartData = await getBarChartData()
-                    setSetOfDataForFieldStatsBar(barChartData)
                 } else {
                     setExtraTables(response.extraTables)
                     setShowChooseFileDateDialog(true)
@@ -134,6 +140,10 @@ export default function CalulationQuickDashboard() {
     const [showMessagePopup, setShowMessagePopup] = useState(false);
     const handleCloseMessagePopup = () => setShowMessagePopup(false);
 
+    useEffect(() => {
+        handleFetchBarChartData()
+    }, [])
+
     return (
         <div>
             <Modal show={showMessagePopup} onHide={handleCloseMessagePopup}>
@@ -151,7 +161,7 @@ export default function CalulationQuickDashboard() {
                 onCloseHandle={modalChooseFileDateDialogToggle}
                 reportingDate={reportingDate}
                 extraTables={extraTables}
-                onSubmitHandle={handleFetchReportedData}
+                onSubmitHandle={handleFetchBoardData}
             />}
             <div className="chart-container">
                 {Array.isArray(setOfDataForFieldStatsBar) && setOfDataForFieldStatsBar.map(data => 
@@ -171,7 +181,7 @@ export default function CalulationQuickDashboard() {
                         }}/>
                     <div className="button-container">
                         {isLoading && <Spinner />}
-                        <Button onClick={() => handleFetchReportedData({
+                        <Button onClick={() => handleFetchBoardData({
                             "reportingDate":reportingDate,
                             "extraTables":{}
                         })}>Lấy kết quả tổng quan</Button>    
