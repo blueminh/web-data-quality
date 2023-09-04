@@ -1,9 +1,10 @@
 from .Main_V2_final.Main_V2_final.LCR.main_LCR import main as main_lcr
+from .Main_V2_final.Main_V2_final.main_Home import main as main_home
 import math
 from datetime import datetime
 
 
-def get_dashboard_lcr_nsfr_data(date):
+def get_dashboard_lcr_nsfr_data(request_data):
     lcr_data = {
         "title": "Liquidity Coverage Ratio - Quick Dashboard",
         "numberOfRows": 4,

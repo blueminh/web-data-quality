@@ -299,11 +299,12 @@ class GetDashboardData(Resource):
                 "extraTables":extra_tables_needed,
                 "data":{}
         })
+        converted_date = datetime.strptime(reporting_date, '%Y-%m-%d').strftime('%d-%m-%Y')
+        data['reportingDate'] = converted_date
+        for key, value in extra_tables_request.items():
+            extra_tables_request[key] = datetime.strptime(value, '%Y-%m-%d').strftime('%d-%m-%Y')
 
-        request_data = request.get_json()
-        requested_date = request_data.get('date')  # Extract the date from the request data
-
-        data = get_dashboard_lcr_nsfr_data(requested_date)
+        data = get_dashboard_lcr_nsfr_data(data)
 
         return jsonify({
             "success":True,
