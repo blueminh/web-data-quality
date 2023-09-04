@@ -5,7 +5,7 @@ TABLES = {
     "Deposit":"LCR/Deposit/input",
     "Derivatives":"LCR/Derivatives/input",
     "Facility":"LCR/Facility/input",
-    "Other Items":"LCR/Other_Itmes/input",
+    "Other Items":"LCR/Other_Items/input",
     "Off Balance Sheet":"LCR/Off_Balance_Sheet/input",
     "Loans & Advances": "LCR/Loans_Advances/input",
     "Issued Securities":"LCR/Issued_Securities/input",

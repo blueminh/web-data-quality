@@ -220,13 +220,12 @@ class Row:
             "volatility_data":self.volatility_data
         }
 
-def get_lcr_data(date):
+def get_lcr_data(request_data):
     # all python script use the format day-month-year
-    date_object = datetime.strptime(date, '%Y-%m-%d')
-    # Format the date as '28-08-2023'
-    formatted_date = date_object.strftime('%d-%m-%Y')
-
-    df = main_lcr(formatted_date)
+    # date_object = datetime.strptime(date, '%Y-%m-%d')
+    # # Format the date as '28-08-2023'
+    # formatted_date = date_object.strftime('%d-%m-%Y')
+    df = main_lcr(request_data)
     hqla = Row("hqla", 0, ["", "High-quality liquid assets", "Tài sản thanh khoản có chất lượng cao", "", ""])
     hqla.setChildren(
         [

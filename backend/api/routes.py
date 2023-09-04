@@ -220,7 +220,7 @@ class UploadResource(Resource):
         table_name = request.form.get('tableName')
         uploaded_date = datetime.strptime(request.form.get('uploadDate'), '%Y-%m-%d')
         converted_uploaded_time = uploaded_date.strftime('%d-%m-%Y')
-
+ 
         user = Users.query.filter_by(username=username).first()
         if not user:
             return {"error": "User not found"}, 401
@@ -319,9 +319,13 @@ class GetLcr(Resource):
                 "data":{}
             })
     
-        request_data = request.get_json()
-        requested_date = request_data.get('reportingDate')  # Extract the date from the request data
-        lcr_data = get_lcr_data(requested_date)
+        # request_data = request.get_json()
+        # requested_date = request_data.get('reportingDate')  # Extract the date from the request data
+        converted_date = datetime.strptime(reporting_date, '%Y-%m-%d').strftime('%d-%m-%Y')
+        data['reportingDate'] = converted_date
+        for key, value in extra_tables_request.items():
+            extra_tables_request[key] = datetime.strptime(value, '%Y-%m-%d').strftime('%d-%m-%Y')
+        lcr_data = get_lcr_data(data)
 
         return jsonify({
             "success":True,
