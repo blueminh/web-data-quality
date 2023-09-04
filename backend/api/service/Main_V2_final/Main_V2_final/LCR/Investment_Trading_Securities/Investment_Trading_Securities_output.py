@@ -11,7 +11,7 @@ path = os.path.dirname(os.path.realpath(__file__))
 
 # Reporting date
 
-def lcr_investmentandtradingsecurities(path, input_date_str):
+def lcr_investmentandtradingsecurities(input_date_str):
     input_date = datetime.strptime(input_date_str, "%d-%m-%Y")
 
     df1 = pd.read_csv(os.path.join(path, 'input', f'Investment&Trading Securities_{input_date_str}.csv'))

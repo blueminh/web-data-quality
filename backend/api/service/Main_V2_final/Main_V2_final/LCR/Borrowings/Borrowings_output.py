@@ -10,7 +10,7 @@ from datetime import date, datetime
 # Đường dẫn đến file
 path = os.path.dirname(os.path.realpath(__file__))
 
-def lcr_borrowing(path, input_date_str):
+def lcr_borrowing(input_date_str):
     input_date = datetime.strptime(input_date_str, "%d-%m-%Y")
     borrowings_filename = f"Borrowings_{input_date_str}.csv"
     df1 = pd.read_csv(os.path.join(path, 'input', borrowings_filename))
@@ -113,5 +113,3 @@ def lcr_borrowing(path, input_date_str):
     final_output_df = df1.join(output_df)
 
     return final_output_df
-
-final_output_df = lcr_borrowing(path, "28-08-2023")

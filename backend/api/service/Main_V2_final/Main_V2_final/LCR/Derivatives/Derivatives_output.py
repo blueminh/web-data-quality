@@ -7,7 +7,8 @@ import pandas as pd
 import numpy as np
 from datetime import datetime
 
-def lcr_derivatives(path, input_date_str):
+path = os.path.dirname(os.path.realpath(__file__))
+def lcr_derivatives(input_date_str):
     reporting_date = datetime.strptime(input_date_str, "%d-%m-%Y")
     df1 = pd.read_csv(os.path.join(path, 'input', f'Derivatives_{input_date_str}.csv'))
     

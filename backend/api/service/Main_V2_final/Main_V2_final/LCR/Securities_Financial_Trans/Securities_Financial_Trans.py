@@ -10,7 +10,7 @@ from datetime import date, datetime
 # Đường dẫn đến file
 path = os.path.dirname(os.path.realpath(__file__))
 
-def lcr_securitiesfinancialtrans(path, input_date_str):
+def lcr_securitiesfinancialtrans(input_date_str):
     # Reporting date
     reporting_date = datetime.strptime(input_date_str, "%d-%m-%Y")
 

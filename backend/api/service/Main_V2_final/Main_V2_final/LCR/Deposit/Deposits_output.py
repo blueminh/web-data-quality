@@ -8,7 +8,9 @@ import numpy as np
 from datetime import datetime
 from ..Loans_Advances import Loans_Advances
 
-def Deposits_LCR(path, input_date_str):
+path = os.path.dirname(os.path.realpath(__file__))
+
+def Deposits_LCR(input_date_str):
     df1 = pd.read_csv(os.path.join(path, 'input', f'Deposit_{input_date_str}.csv'))
     df2 = pd.read_csv(os.path.join(path, 'input', 'Currency table regulatry.csv'))
     df3 = pd.read_csv(os.path.join(path, 'input', 'CounterParty Mapping.csv'))

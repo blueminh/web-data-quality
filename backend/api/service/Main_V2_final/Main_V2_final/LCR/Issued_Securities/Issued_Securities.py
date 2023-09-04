@@ -7,7 +7,9 @@ import pandas as pd
 import numpy as np
 from datetime import datetime
 
-def lcr_Issued_Securities(path, input_date_str):
+path = os.path.dirname(os.path.realpath(__file__))
+
+def lcr_Issued_Securities(input_date_str):
 
     df1 = pd.read_csv(os.path.join(path, 'input', f'Issued Securities_{input_date_str}.csv'))
     df2 = pd.read_csv(os.path.join(path, 'input', 'CounterParty Mapping.csv'))

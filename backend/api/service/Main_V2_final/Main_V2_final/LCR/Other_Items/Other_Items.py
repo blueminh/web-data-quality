@@ -6,7 +6,9 @@ import os
 import pandas as pd
 import numpy as np
 
-def lcr_Other_Items(path, input_date_str):
+path = os.path.dirname(os.path.realpath(__file__))
+
+def lcr_Other_Items(input_date_str):
     df1 = pd.read_csv(os.path.join(path, 'input', f'Other Items_{input_date_str}.csv'))
     output_df = pd.DataFrame()
     df1.fillna(0, inplace=True)

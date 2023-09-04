@@ -7,7 +7,8 @@ import pandas as pd
 import numpy as np
 from datetime import datetime
 
-def lcr_deposits(path, input_date_str):
+path = os.path.dirname(os.path.realpath(__file__))
+def lcr_deposits(input_date_str):
     # Reporting date
     reporting_date = datetime.strptime(input_date_str, "%d-%m-%Y")
 
