@@ -11,7 +11,7 @@ def Loans_Advances_NSFR(input_date_str):
     df2 =  Loans_Advances.lcr_Loans_Advances(input_date_str)
     df3 =  Collateral_for_Loans_NSFR.nsfr_collateral(input_date_str)
     df4 =  Collateral_for_Loans_NSFR.get_collateral_for_loans(input_date_str)
-    df5 =  getFiles.getFileByName(input_folder_path, 'LOANS AND ADVANCES MAPPING.csv')
+    df5 =  getFiles.getMappingFileByName('LOANS AND ADVANCES MAPPING.csv')
     output_df = pd.DataFrame()
     df1.fillna(0, inplace=True)
 

@@ -11,8 +11,8 @@ from ...Input_Files import getFiles
 def lcr_Issued_Securities(input_date_str):
     input_folder_path = "Issued_Securities"
     df1 = getFiles.getFileByName(input_folder_path,  f'Issued Securities_{input_date_str}.csv')
-    df2 = getFiles.getFileByName(input_folder_path,  'CounterParty Mapping.csv')
-    df4 = getFiles.getFileByName(input_folder_path,  'Product Mapping.csv')
+    df2 = getFiles.getMappingFileByName('CounterParty Mapping.csv')
+    df4 = getFiles.getMappingFileByName('Product Mapping.csv')
     reporting_date = datetime.strptime(input_date_str, "%d-%m-%Y")
 
     # Tạo output_df để chứa kết quả

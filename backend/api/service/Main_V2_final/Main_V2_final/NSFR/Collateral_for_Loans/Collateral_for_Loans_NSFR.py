@@ -20,12 +20,12 @@ def nsfr_collateral(input_date_str):
 
     input_folder_path = "Collateral_For_Loans"
     df1 =  getFiles.getFileByName(input_folder_path, f'Collateral For Loans_{input_date_str}.csv')
-    df2 =  getFiles.getFileByName(input_folder_path, 'Collateral Product Mapping.csv')
-    df3 =  getFiles.getFileByName(input_folder_path, 'Counterparty Mapping.csv')
-    df4 =  getFiles.getFileByName(input_folder_path, 'Currency table regulatry.csv')
-    df5 =  getFiles.getFileByName(input_folder_path, 'Risk Weight Table.csv')
-    df6 =  getFiles.getFileByName(input_folder_path, 'Rating Table.csv')
-    df7 =  getFiles.getFileByName(input_folder_path, 'HQLA asset table.csv')
+    df2 =  getFiles.getMappingFileByName('Collateral Product Mapping.csv')
+    df3 =  getFiles.getMappingFileByName('Counterparty Mapping.csv')
+    df4 =  getFiles.getRegulatoryFileByName('Currency table regulatry.csv')
+    df5 =  getFiles.getOtherFiles('Risk Weight Table.csv')
+    df6 =  getFiles.getOtherFiles('Rating Table.csv')
+    df7 =  getFiles.getOtherFiles('HQLA asset table.csv')
 
     df1.fillna(0, inplace=True)
     output_df = pd.DataFrame()

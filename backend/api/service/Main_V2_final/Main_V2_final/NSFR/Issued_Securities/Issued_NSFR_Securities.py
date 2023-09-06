@@ -8,7 +8,7 @@ def Issued_Securities_NSFR(input_date_str):
     input_folder_path = "Issued_Securities"
     df1 = getFiles.getFileByName(input_folder_path, f'Issued Securities_{input_date_str}.csv')
     df2 = Issued_Securities.lcr_Issued_Securities(input_date_str)
-    df3 = getFiles.getFileByName(input_folder_path,'ISSUED SECURITIES AND BORROWINGS MAPPING.csv')
+    df3 = getFiles.getMappingFileByName('ISSUED SECURITIES AND BORROWINGS MAPPING.csv')
 
     output_df = pd.DataFrame()
     df1.fillna(0, inplace=True)
