@@ -1,0 +1,52 @@
+#pageTitle {
+    text-align: center;
+    color: var(--secondary-color);
+    font-weight: bold;
+    font-size: xx-large;
+    margin:auto
+}
+
+#generalInfo {
+    text-align: center;
+    margin: auto;
+    max-width: 600px; /* Set the maximum width */
+}
+
+#dataTable {
+    margin: 40px;
+}
+
+.lcr-table-title {
+    background-color: var(--secondary-color) !important;
+    color: white !important;
+    text-align: center;
+    font-weight: bold;
+    padding: 1rem !important;
+}
+
+.depth-0-row {
+    font-weight: bold;
+    color: white !important;
+
+    background-color: #154c79 !important;
+}
+
+.depth-1-row {
+    font-weight: bold;
+    background-color:var(--third-color)  !important;
+}
+
+.depth-2-row {
+    background-color: #abdbe3 !important;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Adjust this value to set the space between buttons */
+}
+
+
+.custom-input-width {
+    max-width: 600px; 
+}

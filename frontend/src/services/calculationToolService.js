@@ -79,3 +79,17 @@ export async function getLcrData(requestData) {
     throw new Error('Error fetching LCR data:', error);
   }
 }
+
+export async function getNsfrData(requestData) {
+  try {
+    const response = await axiosInstance.post(`/data/getNsfr`, requestData, {
+      withCredentials: true,
+    });
+
+    return response.data
+
+  } catch (error) {
+    console.log(error)
+    throw new Error('Error fetching NSFR data:', error);
+  }
+}

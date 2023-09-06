@@ -4,6 +4,7 @@ import '../../Global.css'
 import CalulationQuickDashboard from '../../components/calculationTool/dashboard/dashboard';
 import LCRDashBoard from '../../components/calculationTool/lcrBoard/lcrBoard';
 import InputDashboard from '../../components/calculationTool/inputBoard/inputboard';
+import NSFRDashBoard from '../../components/calculationTool/nsfrBoard/nsfrBoard';
 
 export default function CalculationHomePage() {
     return (
@@ -19,7 +20,7 @@ export default function CalculationHomePage() {
                     <LCRDashBoard></LCRDashBoard>
                 </Tab>
                 <Tab eventKey="nsfr" title="NSFR">
-                    Tab content for NSFR
+                    <NSFRDashBoard></NSFRDashBoard>
                 </Tab>
                 <Tab eventKey="input" title="Nhập dữ liệu">
                     <InputDashboard></InputDashboard>

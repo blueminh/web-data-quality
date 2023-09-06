@@ -26,6 +26,19 @@ def set_output_df():
     @Return: output dataframe
     """
     data = {
+        "No.": [1, 1.1, 1.2, 
+                2, 2.1, 2.2, 
+                3, 3.1, 3.2, 
+                4, 
+                5, 5.1, 5.2, 
+                6, 
+                0, 
+                1, 
+                2, 
+                3, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 
+                4, 
+                5, 5.1, 5.2, 5.3, 5.4, 5.5, 
+                6, 7, 8],
         'Item': [
             '1 Capital:', '1.1 Regulatory capital', '1.2 Other capital instruments',
             '2 Retail deposits and deposits from small business customers:', '2.1 Stable deposits', '2.2 Less stable deposits',
@@ -44,7 +57,10 @@ def set_output_df():
             '3.7 Securities that are not in default and do not qualify as HQLA, including exchange-traded equities Performing residential mortgages, of which:',
             '4 Assets with matching interdependent liabilities',
             '5 Other assets:', '5.1 Physical traded commodities, including gold',
-            '5.2 Assets posted as initial margin for derivative contracts and contributions to default funds of CCPs'
+            '5.2 Assets posted as initial margin for derivative contracts and contributions to default funds of CCPs',
+            '5.3 NSFR derivative assets', '5.4 NSFR derivative liabilities before deduction of variation margin posted',
+            '5.5 All other assets not included in the above categories', '6 Off-balance sheet items',
+            '7 Total RSF', '8 Net Stable Funding Ratio (%)'
         ],
         'Description': [
             'Vốn:', 'Vốn tự có', 'Các công cụ vốn khác',
@@ -64,25 +80,29 @@ def set_output_df():
             'Chứng khoán không vỡ nợ và không đủ điều kiện là tài sản HQLA, bao gồm cả cổ phiếu được giao dịch trên sàn',
             'Các tài sản với các khoản nợ phải trả phụ thuộc',
             'Các tài sản khác:', 'Các hàng hóa được giao dịch trực tiếp, bao gồm vàng.',
-            'Các tài sản được đặt làm ký quỹ ban đầu (initial margin) cho các hợp đồng tài chính phái sinh và đóng góp vào quỹ đảm bảo của tổ chức giao dịch trung gian (CCP).'
-        ]
-    }
-
-    new_rows = {
-        'Item': [
-            '5.3 NSFR derivative assets', '5.4 NSFR derivative liabilities before deduction of variation margin posted',
-            '5.5 All other assets not included in the above categories', '6 Off-balance sheet items',
-            '7 Total RSF', '8 Net Stable Funding Ratio (%)'
-        ],
-        'Description': [
+            'Các tài sản được đặt làm ký quỹ ban đầu (initial margin) cho các hợp đồng tài chính phái sinh và đóng góp vào quỹ đảm bảo của tổ chức giao dịch trung gian (CCP).',
             'Tài sản phái sinh NSFR', 'NPT phái sinh trước khi giảm trừ ký quỹ biến đổi (variation margin) được đặt',
             'Tất cả các tài sản khác không có thuộc các khoản mục trên', 'Các khoản mục ngoại bảng',
             'Tổng lượng vốn ổn định yêu cầu', 'Tỷ lệ Nguồn vốn ổn định ròng (%)'
         ]
     }
+
+    # new_rows = {
+    #     'No.': [5.3, 5.4, 5.5, 6, 7, 8],
+    #     'Item': [
+    #         '5.3 NSFR derivative assets', '5.4 NSFR derivative liabilities before deduction of variation margin posted',
+    #         '5.5 All other assets not included in the above categories', '6 Off-balance sheet items',
+    #         '7 Total RSF', '8 Net Stable Funding Ratio (%)'
+    #     ],
+    #     'Description': [
+    #         'Tài sản phái sinh NSFR', 'NPT phái sinh trước khi giảm trừ ký quỹ biến đổi (variation margin) được đặt',
+    #         'Tất cả các tài sản khác không có thuộc các khoản mục trên', 'Các khoản mục ngoại bảng',
+    #         'Tổng lượng vốn ổn định yêu cầu', 'Tỷ lệ Nguồn vốn ổn định ròng (%)'
+    #     ]
+    # }
     df = pd.DataFrame(data)
-    for i, row in enumerate(zip(new_rows['Item'], new_rows['Description'])):
-        df.loc[len(df)] = row
+    # for i, row in enumerate(zip(new_rows['Item'], new_rows['Description'])):
+    #     df.loc[len(df)] = row
         
     df["Blank 1"] = np.nan
     df["Blank 2"] = np.nan
