@@ -50,11 +50,11 @@ def nsfr_collateral(input_date_str):
     df1["Rating"] = df1["Rating"].astype(str)
     df1["Concat"] = df1["Credit Agency"] + df1["Rating"]
 
-    merged_df = df1.merge(df6[["Concat", "RATING_CD"]], on="Concat", how="outer")
+    merged_df = df1.merge(df6[["Concat", "RATING CD"]], on="Concat", how="outer")
 
-    merged_df["RATING_CD"].fillna("LOW", inplace=True)
+    merged_df["RATING CD"].fillna("LOW", inplace=True)
 
-    output_df["Rating CD"] = merged_df["RATING_CD"]
+    output_df["Rating CD"] = merged_df["RATING CD"]
 
     output_df['Mapped Product Type'] = output_df['Mapped Product Type'].astype(str)
     output_df['Counterparty Category'] = output_df['Counterparty Category'].astype(str)
