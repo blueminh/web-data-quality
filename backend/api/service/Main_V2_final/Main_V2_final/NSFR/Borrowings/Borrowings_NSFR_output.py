@@ -6,8 +6,7 @@
 import os
 import pandas as pd
 import numpy as np
-from .Borrowings import Borrowings_output
-path = os.path.dirname(os.path.realpath(__file__))
+from ..Borrowings import Borrowings_output
 
 from datetime import datetime
 
@@ -26,10 +25,11 @@ def parse_date(date_str):
             return None
 
 
-def nsfr_borrowings(path):
-    df1 =  pd.read_csv(os.path.join(path, 'Borrowings', 'input', 'Borrowings.csv'))
-    df2 =  Borrowings_output.lcr_borrowing(os.path.join(path, 'Borrowings'))
-    df3 =  pd.read_csv(os.path.join(path, 'Borrowings', 'input', 'Borrowings Mapping.csv'))
+def nsfr_borrowings():
+    path = os.path.dirname(os.path.realpath(__file__))
+    df1 =  pd.read_csv(os.path.join(path, 'input', 'Borrowings.csv'))
+    df2 =  Borrowings_output.lcr_borrowing()
+    df3 =  pd.read_csv(os.path.join(path, 'input', 'Borrowings Mapping.csv'))
 
     df1.fillna(0, inplace=True)
     #output dataframe

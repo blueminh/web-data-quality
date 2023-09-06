@@ -2,9 +2,9 @@ import os
 import pandas as pd
 import numpy as np
 from .Securities_Financial_Trans import Securities_Financial_Trans
-path = os.path.dirname(os.path.realpath(__file__))
 
-def nsfr_securitiesfinancialtrans(path):
+def nsfr_securitiesfinancialtrans():
+    path = os.path.dirname(os.path.realpath(__file__))
     df1 =  pd.read_csv(os.path.join(path, 'Securities_Financial_Trans', 'input', 'Securities Financial Trans.csv'))
     df2 = Securities_Financial_Trans.lcr_securitiesfinancialtrans(os.path.join(path, 'Securities_Financial_Trans'))
     df3 =  pd.read_csv(os.path.join(path, 'Securities_Financial_Trans', 'input', 'SFT MAPPING.csv'))

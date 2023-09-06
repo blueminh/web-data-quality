@@ -1,17 +1,15 @@
 import pandas as pd
 import numpy as np
 import os
-from .Investment_Trading_Securities import Investment_Trading_Securities_output
+from ..Investment_Trading_Securities import Investment_Trading_Securities_output
 
-# Đường dẫn đến file
-path = os.path.dirname(os.path.realpath(__file__))
-def nsfr_investmentandtradingsecurities(path):
+def nsfr_investmentandtradingsecurities():
     # Reporting date
-
+    path = os.path.dirname(os.path.realpath(__file__))
     
-    df1 = pd.read_csv(os.path.join(path, 'Investment_Trading_Securities', 'input', 'Investment&Trading Securities.csv'))
-    df2 = pd.read_csv(os.path.join(path, 'Investment_Trading_Securities', 'input', 'INVESTMENT SECURITIES MAPPING (used).csv'))
-    df3 = Investment_Trading_Securities_output.lcr_investmentandtradingsecurities(os.path.join(path, 'Investment_Trading_Securities'))
+    df1 = pd.read_csv(os.path.join(path, 'input', 'Investment&Trading Securities.csv'))
+    df2 = pd.read_csv(os.path.join(path, 'input', 'INVESTMENT SECURITIES MAPPING (used).csv'))
+    df3 = Investment_Trading_Securities_output.lcr_investmentandtradingsecurities()
     
     df1.fillna(0, inplace=True)
     #output dataframe

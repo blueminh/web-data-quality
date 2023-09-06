@@ -8,7 +8,7 @@ import numpy as np
 
 
 from .Borrowings import Borrowings_NSFR_output
-from .Investment_Trading_Securitie import Investment_Trading_Securities_NSFR_output
+from .Investment_Trading_Securities import Investment_Trading_Securities_NSFR_output
 from .Deposits import Deposits_NSFR_output
 from .Facility import Facility_NSFR_output
 from .Other_Items import Other_NSFR_Items
@@ -1724,9 +1724,9 @@ def main():
     path_loan_advances = os.path.join(path, 'Loan_Advance')
     path_deposits_w_otherbanks = os.path.join(path, 'Deposits_with_Other_Bank')
 
-    borrowings = Borrowings_NSFR_output.nsfr_borrowings(path_borrowings)
-    investment = Investment_Trading_Securities_NSFR_output.nsfr_investmentandtradingsecurities(path_investment)
-    securities_financial_trans = Securities_Financial_Trans_NSFR.nsfr_securitiesfinancialtrans(path_securities_fin_trans)
+    borrowings = Borrowings_NSFR_output.nsfr_borrowings()
+    investment = Investment_Trading_Securities_NSFR_output.nsfr_investmentandtradingsecurities()
+    securities_financial_trans = Securities_Financial_Trans_NSFR.nsfr_securitiesfinancialtrans()
     derivatives = Derivatives_NSFR_output.nsfr_derivatives(path_derivatives)
     facility = Facility_NSFR_output.nsfr_facility(path_facility)
     offbalancesheet = Off_Balance_Sheet_NSFR_output.nsfr_offbalancesheet(path_offbalancesheet)
