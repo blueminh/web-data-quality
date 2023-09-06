@@ -8,10 +8,9 @@ import numpy as np
 from datetime import date
 
 # Đường dẫn đến file
-path = os.path.dirname(os.path.realpath(__file__))
 
-def lcr_borrowing(path):
-
+def lcr_borrowing():
+    path = os.path.dirname(os.path.realpath(__file__))
     df1 = pd.read_csv(os.path.join(path, 'input', 'Borrowings.csv'))
     df2 = pd.read_csv(os.path.join(path, 'input', 'Counterparty Mapping.csv'))
     df3 = pd.read_csv(os.path.join(path, 'input', 'Counterparty Unsecured Funding Mapping.csv'))
@@ -112,5 +111,3 @@ def lcr_borrowing(path):
     final_output_df = df1.join(output_df)
 
     return final_output_df
-
-final_output_df = lcr_borrowing(path)

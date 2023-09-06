@@ -1,11 +1,12 @@
 import pandas as pd
 import numpy as np
 import os
-from .Derivatives import Derivatives_output
-path = os.path.dirname(os.path.realpath(__file__))
-def nsfr_derivatives(path):
-    df1 =  pd.read_csv(os.path.join(path, 'Derivatives', 'input', 'Derivatives.csv'))
-    df2 =  Derivatives_output.lcr_derivatives(os.path.join(path, 'Derivatives'))
+from ..Derivatives import Derivatives_output
+def nsfr_derivatives():
+    path = os.path.dirname(os.path.realpath(__file__))
+
+    df1 =  pd.read_csv(os.path.join(path, 'input', 'Derivatives.csv'))
+    df2 =  Derivatives_output.lcr_derivatives()
 
     df1.fillna(0, inplace=True)
     #output dataframe
@@ -30,11 +31,5 @@ def nsfr_derivatives(path):
 
 
     final_output_df = df2.join(output_df)
-
-
-
- 
-
     return final_output_df
-#output file
-final_output_df = nsfr_derivatives(path)
+

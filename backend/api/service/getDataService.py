@@ -1,7 +1,10 @@
 from .Main_V2_final.Main_V2_final.LCR.main_LCR import main as main_lcr
+from .Main_V2_final.Main_V2_final.main_Home import main as main_home
+from .Main_V2_final.Main_V2_final.NSFR.main_NSFR import main as main_nsfr
 import math
 
-def get_dashboard_lcr_nsfr_data(date):
+
+def get_dashboard_lcr_nsfr_data(request_data):
     lcr_data = {
         "title": "Liquidity Coverage Ratio - Quick Dashboard",
         "numberOfRows": 4,
@@ -184,12 +187,16 @@ def get_dashboard_bar_charts_data():
     return data
 
 class Row:
-    def __init__(self, code, depth, data, children=[]):
+    def __init__(self, code, depth, data, children=[], volatility_data = {
+        "x":[2020, 2021,2022],
+        "y":[29, 34, 16]
+    }):
         self.code = code # need code to fetch data
         self.depth = depth # depth for displaying collapesable componenets
         self.data = data # array of data, including the index
         self.children = children # children
         self.hasChildren = len(children) > 0
+        self.volatility_data = volatility_data
 
 
     def setChildren(self, children):
@@ -210,11 +217,16 @@ class Row:
             "depth":self.depth,
             "data":converted_data,
             "children":json_children,
-            "hasChildren":self.hasChildren
+            "hasChildren":self.hasChildren,
+            "volatility_data":self.volatility_data
         }
 
-def get_lcr_data(date):
-    df = main_lcr()
+def get_lcr_data(request_data):
+    # all python script use the format day-month-year
+    # date_object = datetime.strptime(date, '%Y-%m-%d')
+    # # Format the date as '28-08-2023'
+    # formatted_date = date_object.strftime('%d-%m-%Y')
+    df = main_lcr(request_data)
     hqla = Row("hqla", 0, ["", "High-quality liquid assets", "Tài sản thanh khoản có chất lượng cao", "", ""])
     hqla.setChildren(
         [
@@ -267,3 +279,9 @@ def get_lcr_data(date):
 
     lcr_data = [hqla.toJSON(), cash_outflow.toJSON(), cash_inflow.toJSON(), total_hqla.toJSON(), total_net_outflow.toJSON(), liquid_cov_ratio.toJSON()]
     return lcr_data
+
+
+def get_nsfr_data(request_data):
+    df = main_nsfr()
+    print(df)
+    return {}

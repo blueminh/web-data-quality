@@ -1,12 +1,12 @@
 import pandas as pd
 import numpy as np
 import os
-from .Off_Balance_Sheet import Off_Balance_Sheet_output
-path = os.path.dirname(os.path.realpath(__file__))
+from ..Off_Balance_Sheet import Off_Balance_Sheet_output
 
-def nsfr_offbalancesheet(path):
-    df1 =  pd.read_csv(os.path.join(path, 'Off_Balance_Sheet', 'input','Off Balance Sheet.csv'))
-    df2 = Off_Balance_Sheet_output.lcr_offbalancesheet(os.path.join(path, 'Off_Balance_Sheet'))
+def nsfr_offbalancesheet():
+    path = os.path.dirname(os.path.realpath(__file__))
+    df1 =  pd.read_csv(os.path.join(path, 'input','Off Balance Sheet.csv'))
+    df2 = Off_Balance_Sheet_output.lcr_offbalancesheet()
     output_df = pd.DataFrame()
     df1.fillna(0, inplace=True)
     #output dataframe
@@ -19,8 +19,5 @@ def nsfr_offbalancesheet(path):
     final_output_df = df2.join(output_df)
     final_output_df = final_output_df.drop('Unutilised Value', axis=1)
     return final_output_df
-
-#output file
-final_output_df = nsfr_offbalancesheet(path)
 
 

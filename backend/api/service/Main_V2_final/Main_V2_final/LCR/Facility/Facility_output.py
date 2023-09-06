@@ -5,19 +5,17 @@
 import os
 import pandas as pd
 import numpy as np
-from datetime import date
+from ...Input_Files import getFiles
+from datetime import datetime
 
-# Đường dẫn đến file
-path = os.path.dirname(os.path.realpath(__file__))
-
-def lcr_facility(path):
+def lcr_facility(input_date_str):
     # Reporting date
-    reporting_date = date(2022, 9, 30)
-
-    df1 = pd.read_csv(os.path.join(path, 'input', 'Facility.csv'))
-    df2 = pd.read_csv(os.path.join(path, 'input', 'Counterparty Mapping.csv'))
-    df3 = pd.read_csv(os.path.join(path, 'input', 'OBS Product Mapping.csv'))
-    df4 = pd.read_csv(os.path.join(path, 'input', 'Facility Mapping.csv'))
+    reporting_date = datetime.strptime(input_date_str, "%d-%m-%Y")
+    input_folder_path = "Facility"
+    df1 = getFiles.getFileByName(input_folder_path,  f'Facility_{input_date_str}.csv')
+    df2 = getFiles.getFileByName(input_folder_path,  'Counterparty Mapping.csv')
+    df3 = getFiles.getFileByName(input_folder_path,  'OBS Product Mapping.csv')
+    df4 = getFiles.getFileByName(input_folder_path,  'Facility Mapping.csv')
     df1.fillna(0, inplace=True)
 
     #output dataframe
@@ -64,8 +62,4 @@ def lcr_facility(path):
     final_output_df = df1.join(output_df)
 
     return final_output_df
-
-
-final_output_df = lcr_facility(path)
-
 

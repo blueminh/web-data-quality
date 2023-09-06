@@ -5,13 +5,13 @@
 import os
 import pandas as pd
 import numpy as np
-from datetime import date
+from datetime import datetime
+from ...Input_Files import getFiles
+
 path = os.path.dirname(os.path.realpath(__file__))
-
-def lcr_derivatives(path):
-    reporting_date = date(2022, 9, 30)
-
-    df1 = pd.read_csv(os.path.join(path, 'input', 'Derivatives.csv'))
+def lcr_derivatives(input_date_str):
+    reporting_date = datetime.strptime(input_date_str, "%d-%m-%Y")
+    df1 = getFiles.getFileByName("Derivatives", f'Derivatives_{input_date_str}.csv')
     
     output_df = pd.DataFrame()
     
@@ -45,5 +45,3 @@ def lcr_derivatives(path):
     
     final_output_df = df1.join(output_df)
     return final_output_df
-
-final_output_df = lcr_derivatives(path)

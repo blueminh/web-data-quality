@@ -6,9 +6,9 @@ import os
 import pandas as pd
 import numpy as np
 from datetime import date
-path = os.path.dirname(os.path.realpath(__file__))
 
-def lcr_derivatives(path):
+def lcr_derivatives():
+    path = os.path.dirname(os.path.realpath(__file__))
     reporting_date = date.today()
 
     df1 = pd.read_csv(os.path.join(path, 'input', 'Derivatives.csv'))
@@ -45,5 +45,3 @@ def lcr_derivatives(path):
     
     final_output_df = df1.join(output_df)
     return final_output_df
-
-final_output_df = lcr_derivatives(path)

@@ -5,16 +5,18 @@
 import os
 import pandas as pd
 import numpy as np
-from datetime import date
-path = os.path.dirname(os.path.realpath(__file__))
-def lcr_offbalancesheet(path):
-    # Reporting date
-    reporting_date = date(2022, 9, 30)
+from datetime import datetime
+from ...Input_Files import getFiles
 
-    df1 = pd.read_csv(os.path.join(path,'input', 'Off Balance Sheet.csv'))
-    df2 = pd.read_csv(os.path.join(path, 'input', 'Counterparty Mapping.csv'))
-    df3 = pd.read_csv(os.path.join(path, 'input', 'OBS Product Mapping.csv'))
-    df4 = pd.read_csv(os.path.join(path, 'input', 'Facility Mapping.csv'))
+path = os.path.dirname(os.path.realpath(__file__))
+def lcr_offbalancesheet(input_date_str):
+    # Reporting date
+    reporting_date = datetime.strptime(input_date_str, "%d-%m-%Y")
+    input_folder_path = "Off_Balance_Sheet"
+    df1 =  getFiles.getFileByName(input_folder_path,  f'Off Balance Sheet_{input_date_str}.csv')
+    df2 =  getFiles.getFileByName(input_folder_path,  'Counterparty Mapping.csv')
+    df3 =  getFiles.getFileByName(input_folder_path,  'OBS Product Mapping.csv')
+    df4 =  getFiles.getFileByName(input_folder_path,  'Facility Mapping.csv')
     
     output_df = pd.DataFrame()
     df1.fillna(0, inplace=True)
@@ -67,7 +69,3 @@ def lcr_offbalancesheet(path):
     final_output_df = df1.join(output_df)
 
     return final_output_df
-
-
-final_output_df = lcr_offbalancesheet(path)
-

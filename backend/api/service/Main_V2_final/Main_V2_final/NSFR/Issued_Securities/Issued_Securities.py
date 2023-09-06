@@ -6,9 +6,9 @@ import os
 import pandas as pd
 import numpy as np
 from datetime import date
-path = os.path.dirname(os.path.realpath(__file__))
 
-def lcr_Issued_Securities(path):
+def lcr_Issued_Securities():
+    path = os.path.dirname(os.path.realpath(__file__))
     df1 = pd.read_csv(os.path.join(path, 'input', 'Issued Securities.csv'))
     df2 = pd.read_csv(os.path.join(path, 'input', 'CounterParty Mapping.csv'))
     df4 = pd.read_csv(os.path.join(path, 'input', 'Product Mapping.csv'))
@@ -104,6 +104,4 @@ def lcr_Issued_Securities(path):
     final_output_df = df1.join(output_df)
 
     return final_output_df
-
-final_output_df = lcr_Issued_Securities(path)
 

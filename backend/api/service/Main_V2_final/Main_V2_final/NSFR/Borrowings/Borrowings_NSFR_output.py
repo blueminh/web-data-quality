@@ -6,14 +6,31 @@
 import os
 import pandas as pd
 import numpy as np
-from .Borrowings import Borrowings_output
-path = os.path.dirname(os.path.realpath(__file__))
+from ..Borrowings import Borrowings_output
+from ...Input_Files import getFiles
+
+from datetime import datetime
+
+def parse_date(date_str):
+    if not date_str:  # Check for empty strings
+        default_date = datetime(2000, 1, 1)
+        return default_date
+    elif date_str == "0":
+        default_date = datetime(2000, 1, 1)
+        return default_date
+    else:
+        try:
+            parsed_date = datetime.strptime(date_str, "%m/%d/%Y")
+            return parsed_date
+        except ValueError:
+            return None
 
 
-def nsfr_borrowings(path):
-    df1 =  pd.read_csv(os.path.join(path, 'Borrowings', 'input', 'Borrowings.csv'))
-    df2 =  Borrowings_output.lcr_borrowing(os.path.join(path, 'Borrowings'))
-    df3 =  pd.read_csv(os.path.join(path, 'Borrowings', 'input', 'Borrowings Mapping.csv'))
+def nsfr_borrowings():
+    path = os.path.dirname(os.path.realpath(__file__))
+    df1 =  pd.read_csv(os.path.join(path, 'input', 'Borrowings.csv'))
+    df2 =  Borrowings_output.lcr_borrowing()
+    df3 =  pd.read_csv(os.path.join(path, 'input', 'Borrowings Mapping.csv'))
 
     df1.fillna(0, inplace=True)
     #output dataframe
@@ -32,7 +49,7 @@ def nsfr_borrowings(path):
     
     output_df['Total Principal ASF Amount'] = (df1[['Principal Amount Less than 6 months', 'Principal Amount 6 months to 1 year', 'Principal Amount More than 1 year']].values * output_df[['Principal payment Less than 6 months', 'Principal payment 6 months to 1 year', 'Principal payment More than 1 year']].values).sum(axis=1)
 
-    df1['Next interest payment due date'] = pd.to_datetime(df1['Next interest payment due date'])
+    df1['Next interest payment due date'] = df1['Next interest payment due date'].apply(parse_date)
     df2['Reporting Date'] = pd.to_datetime(df2['Reporting Date'])
 
     difference = (df1['Next interest payment due date'] - df2['Reporting Date']).dt.days
@@ -79,6 +96,3 @@ def nsfr_borrowings(path):
     final_output_df['Principal Amount More than 1 year'] = final_output_df['Principal Amount More than 1 year'].str.replace(',', '').replace(' -   ', '0').astype(float)
   
     return final_output_df
-
-
-final_output_df = nsfr_borrowings(path)

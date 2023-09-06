@@ -1,14 +1,14 @@
 import os
 import pandas as pd
 import numpy as np
-from .Securities_Financial_Trans import Securities_Financial_Trans
-path = os.path.dirname(os.path.realpath(__file__))
+from ..Securities_Financial_Tran import Securities_Financial_Trans
 
-def nsfr_securitiesfinancialtrans(path):
-    df1 =  pd.read_csv(os.path.join(path, 'Securities_Financial_Trans', 'input', 'Securities Financial Trans.csv'))
-    df2 = Securities_Financial_Trans.lcr_securitiesfinancialtrans(os.path.join(path, 'Securities_Financial_Trans'))
-    df3 =  pd.read_csv(os.path.join(path, 'Securities_Financial_Trans', 'input', 'SFT MAPPING.csv'))
-    df4 =  pd.read_csv(os.path.join(path, 'Securities_Financial_Trans', 'input', 'Borrowings Mapping.csv'))
+def nsfr_securitiesfinancialtrans():
+    path = os.path.dirname(os.path.realpath(__file__))
+    df1 =  pd.read_csv(os.path.join(path, 'input', 'Securities Financial Trans.csv'))
+    df2 = Securities_Financial_Trans.lcr_securitiesfinancialtrans()
+    df3 =  pd.read_csv(os.path.join(path, 'input', 'SFT MAPPING.csv'))
+    df4 =  pd.read_csv(os.path.join(path, 'input', 'Borrowings Mapping.csv'))
 
     df1.fillna(0, inplace=True)
     #output dataframe
@@ -138,8 +138,4 @@ def nsfr_securitiesfinancialtrans(path):
     final_output_df['Underlying Asset Issuer C41 Risk Weight'] = final_output_df['Underlying Asset Issuer C41 Risk Weight'].str.rstrip('%').astype('float') / 100.0
     final_output_df = final_output_df.iloc[:16]
     return final_output_df
-
-
-#output file
-output_df = nsfr_securitiesfinancialtrans(path)
 

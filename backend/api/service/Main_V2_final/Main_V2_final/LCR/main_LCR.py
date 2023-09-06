@@ -598,36 +598,35 @@ def percent(df, G_row46, G_row47):
 End of Calculations:
 @Return: the result of the cell in Row x, column Blank 1/2
 """
-def main():
-    path = os.path.dirname(os.path.realpath(__file__))
-
-   
+def main(request_data):   
+    date_str = request_data.get("reportingDate")
+    extra_tables_request = request_data.get("extraTables")
    #Change path on your computer
    #------------------------------------------------Paths------------------------------------------------------------
     
-    path_borrowings = os.path.join(path, 'Borrowings')
-    path_investment = os.path.join(path, 'Investment_Trading_Securities')
-    path_otheritems = os.path.join(path, 'Other_Items')
-    path_deposit = os.path.join(path, 'Deposit')
-    path_issuedsecurities =os.path.join(path, 'Issued_Securities')
-    path_securities_fin_trans = os.path.join(path, 'Securities_Financial_Trans')
-    path_derivatives = os.path.join(path, 'Derivatives')
-    path_facility = os.path.join(path, 'Facility')
-    path_offbalancesheet =os.path.join(path, 'Off_Balance_Sheet')
-    path_loan_advances =os.path.join(path, 'Loans_Advances')
-    path_deposits_w_otherbanks = os.path.join(path, 'Deposits_with_other_banks')
+    # path_borrowings = os.path.join(path, 'Borrowings')
+    # path_investment = os.path.join(path, 'Investment_Trading_Securities')
+    # path_otheritems = os.path.join(path, 'Other_Items')
+    # path_deposit = os.path.join(path, 'Deposit')
+    # path_issuedsecurities =os.path.join(path, 'Issued_Securities')
+    # path_securities_fin_trans = os.path.join(path, 'Securities_Financial_Trans')
+    # path_derivatives = os.path.join(path, 'Derivatives')
+    # path_facility = os.path.join(path, 'Facility')
+    # path_offbalancesheet =os.path.join(path, 'Off_Balance_Sheet')
+    # path_loan_advances =os.path.join(path, 'Loans_Advances')
+    # path_deposits_w_otherbanks = os.path.join(path, 'Deposits_with_other_banks')
    #------------------------------------------------Paths------------------------------------------------------------
-    borrowings = Borrowings_output.lcr_borrowing(path_borrowings)
-    investment = Investment_Trading_Securities_output.lcr_investmentandtradingsecurities(path_investment)
-    securities_fin_trans = Securities_Financial_Trans.lcr_securitiesfinancialtrans(path_securities_fin_trans)
-    deposit = Deposits_output.Deposits_LCR(path_deposit)
-    Derivatives = Derivatives_output.lcr_derivatives(path_derivatives)
-    Facility = Facility_output.lcr_facility(path_facility)
-    other_items = Other_Items.lcr_Other_Items(path_otheritems)
-    off_balance_sheet = Off_Balance_Sheet_output.lcr_offbalancesheet(path_offbalancesheet)
-    loans_advances = Loans_Advances.lcr_Loans_Advances(path_loan_advances)
-    issued_securities = Issued_Securities.lcr_Issued_Securities(path_issuedsecurities)
-    dep_w_other_banks = Deposits_with_other_banks_output.lcr_deposits(path_deposits_w_otherbanks)
+    borrowings = Borrowings_output.lcr_borrowing(extra_tables_request.get("Borrowings", date_str))
+    investment = Investment_Trading_Securities_output.lcr_investmentandtradingsecurities(extra_tables_request.get("Investment&Trading Securities", date_str))
+    securities_fin_trans = Securities_Financial_Trans.lcr_securitiesfinancialtrans(extra_tables_request.get("Securities Financial Trans", date_str))
+    deposit = Deposits_output.Deposits_LCR(extra_tables_request.get("Deposit", date_str))
+    Derivatives = Derivatives_output.lcr_derivatives(extra_tables_request.get("Derivatives", date_str))
+    Facility = Facility_output.lcr_facility(extra_tables_request.get("Facility", date_str))
+    other_items = Other_Items.lcr_Other_Items(extra_tables_request.get("Other Items", date_str))
+    off_balance_sheet = Off_Balance_Sheet_output.lcr_offbalancesheet(extra_tables_request.get("Off Balance Sheet", date_str))
+    loans_advances = Loans_Advances.lcr_Loans_Advances(extra_tables_request.get("Loans & Advances", date_str))
+    issued_securities = Issued_Securities.lcr_Issued_Securities(extra_tables_request.get("Issued Securities", date_str))
+    dep_w_other_banks = Deposits_with_other_banks_output.lcr_deposits(extra_tables_request.get("Deposits with Other Banks", date_str))
     output_df = set_output_df()
     
    #------------------------------------------------Insertion-------------------------------------------------------------

@@ -5,8 +5,8 @@
 import os
 import pandas as pd
 import numpy as np
-from LCR import main_LCR
-from NSFR import main_NSFR
+from .LCR import main_LCR
+from .NSFR import main_NSFR
 
 def set_LCR(): 
     data = {
@@ -89,10 +89,10 @@ def nsfr_5(df, n_3, colname):
         
     return result
 
-def main():
+def main(request_data):
     path = os.path.dirname(os.path.realpath(__file__))
 
-    lcr_df = main_LCR.main(os.path.join(path, 'LCR'))
+    lcr_df = main_LCR.main(request_data)
     nsfr_df = main_NSFR.main(os.path.join(path, 'NSFR'))
     left_df = set_LCR()
     right_df = set_NSFR()

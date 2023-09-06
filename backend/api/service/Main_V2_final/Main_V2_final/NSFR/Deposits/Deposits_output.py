@@ -6,17 +6,17 @@ import os
 import pandas as pd
 import numpy as np
 from datetime import date
-from Loans_Advances import Loans_Advances
-path = os.path.dirname(os.path.realpath(__file__))
+from ..Loan_Advances import Loans_Advances
 
 
-def Deposits_LCR(path):
+def Deposits_LCR():
+    path = os.path.dirname(os.path.realpath(__file__))
     df1 = pd.read_csv(os.path.join(path, 'input', 'Deposit.csv'))
     df2 = pd.read_csv(os.path.join(path, 'input', 'Currency table regulatry.csv'))
     df3 = pd.read_csv(os.path.join(path, 'input', 'CounterParty Mapping.csv'))
     df5 = pd.read_csv(os.path.join(path, 'input', 'insurance table.csv'))
-    df6 = Loans_Advances.lcr_Loans_Advances(os.path.join(path, 'Loans_Advances') ) # Assuming Loans_Advances is a module
-    df7 = pd.read_csv(os.path.join(path, 'input', 'Loans & Advances.csv'))
+    df6 = Loans_Advances.lcr_Loans_Advances() # Assuming Loans_Advances is a module
+    df7 = Loans_Advances.get_loan_and_advances_df()
     df8 = pd.read_csv(os.path.join(path, 'input', 'Product Mapping.csv'))
     df9 = pd.read_csv(os.path.join(path, 'input', 'unstable deposit run-off factor table.csv'))
     
@@ -168,6 +168,3 @@ def Deposits_LCR(path):
     
     
     return final_output_df
-
-final_output_df = Deposits_LCR(path)
-

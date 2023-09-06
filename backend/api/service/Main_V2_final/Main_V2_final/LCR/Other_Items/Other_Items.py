@@ -5,13 +5,12 @@
 import os
 import pandas as pd
 import numpy as np
-
+from ...Input_Files import getFiles
 
 path = os.path.dirname(os.path.realpath(__file__))
 
-
-def lcr_Other_Items(path):
-    df1 = pd.read_csv(os.path.join(path, 'input', 'Other Items.csv'))
+def lcr_Other_Items(input_date_str):
+    df1 = getFiles.getFileByName("Other_Items", f'Other Items_{input_date_str}.csv')
     output_df = pd.DataFrame()
     df1.fillna(0, inplace=True)
     
@@ -49,5 +48,3 @@ def lcr_Other_Items(path):
 
     
     return final_output_df
-
-final_output_df = lcr_Other_Items(path)

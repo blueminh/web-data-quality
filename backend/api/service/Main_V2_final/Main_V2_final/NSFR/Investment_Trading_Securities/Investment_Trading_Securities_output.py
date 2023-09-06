@@ -7,11 +7,11 @@ import pandas as pd
 import numpy as np
 from datetime import date
 
-path = os.path.dirname(os.path.realpath(__file__))
 
 # Reporting date
 
-def lcr_investmentandtradingsecurities(path):
+def lcr_investmentandtradingsecurities():
+    path = os.path.dirname(os.path.realpath(__file__))
     df1 = pd.read_csv(os.path.join(path, 'input', 'Investment&Trading Securities.csv'))
     df2 = pd.read_csv(os.path.join(path, 'input', 'Asset Issuers HQLA Mapping.csv'))
     df3 = pd.read_csv(os.path.join(path, 'input', 'Product Mapping.csv'))
@@ -165,8 +165,5 @@ def lcr_investmentandtradingsecurities(path):
     final_output_df = df1.join(output_df)
 
     return final_output_df
-
-final_output_df = lcr_investmentandtradingsecurities(path)
-
 
 
