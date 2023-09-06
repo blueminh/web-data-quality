@@ -139,7 +139,3 @@ def nsfr_securitiesfinancialtrans(path):
     final_output_df = final_output_df.iloc[:16]
     return final_output_df
 
-
-#output file
-output_df = nsfr_securitiesfinancialtrans(path)
-

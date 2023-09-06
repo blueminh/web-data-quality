@@ -30,11 +30,5 @@ def nsfr_derivatives(path):
 
 
     final_output_df = df2.join(output_df)
-
-
-
- 
-
     return final_output_df
-#output file
-final_output_df = nsfr_derivatives(path)
+

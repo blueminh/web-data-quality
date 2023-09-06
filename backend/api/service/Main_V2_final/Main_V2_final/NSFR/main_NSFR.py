@@ -1709,8 +1709,9 @@ def get_value_nsfr(df, J_row27, J_row47):
         return 0
 
     return result
-path = os.path.dirname(os.path.realpath(__file__))
-def main(path):
+
+def main():
+    path = os.path.dirname(os.path.realpath(__file__))
     path_borrowings = os.path.join(path, 'Borrowings')
     path_investment = os.path.join(path, 'Investment_Trading_Securitie')
     path_otheritems = os.path.join(path, 'Other_Items')
@@ -2086,4 +2087,4 @@ def main(path):
 
 
 if __name__ == "__main__":
-    main(path)
+    main()

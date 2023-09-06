@@ -80,6 +80,3 @@ def nsfr_New_Other_Items(path):
     final_output_df = df1.join(output_df)
 
     return final_output_df
-
-
-final_output_df = nsfr_New_Other_Items(path)

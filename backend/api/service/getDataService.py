@@ -1,7 +1,7 @@
 from .Main_V2_final.Main_V2_final.LCR.main_LCR import main as main_lcr
 from .Main_V2_final.Main_V2_final.main_Home import main as main_home
+from .Main_V2_final.Main_V2_final.NSFR.main_NSFR import main as main_nsfr
 import math
-from datetime import datetime
 
 
 def get_dashboard_lcr_nsfr_data(request_data):
@@ -279,3 +279,9 @@ def get_lcr_data(request_data):
 
     lcr_data = [hqla.toJSON(), cash_outflow.toJSON(), cash_inflow.toJSON(), total_hqla.toJSON(), total_net_outflow.toJSON(), liquid_cov_ratio.toJSON()]
     return lcr_data
+
+
+def get_nsfr_data(request_data):
+    df = main_nsfr()
+    print(df)
+    return {}

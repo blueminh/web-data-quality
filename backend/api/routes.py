@@ -16,7 +16,7 @@ import jwt
 from .models import db, Users, Upload, JWTTokenBlocklist
 from .config import BaseConfig
 
-from .service.getDataService import get_dashboard_lcr_nsfr_data, get_dashboard_bar_charts_data, get_lcr_data
+from .service.getDataService import get_dashboard_lcr_nsfr_data, get_dashboard_bar_charts_data, get_lcr_data, get_nsfr_data
 
 from .tableNames import TABLES
 
@@ -349,6 +349,38 @@ class GetLcr(Resource):
             "success":True,
             "extraTables": {},
             "data": lcr_data
+        })
+
+@rest_api.route('/data/getNsfr', methods=['POST'])
+class GetNfsr(Resource):
+    def post(current_user):
+        data = request.get_json()
+        reporting_date = data.get("reportingDate")
+        extra_tables_request = data.get("extraTables")
+        if not reporting_date:
+            return {"message": "Reporting date is missing in the request."}, 400
+
+        extra_tables_needed = checkTables(extra_tables_request, reporting_date)
+        if (len(extra_tables_needed) > 0):
+            return jsonify({
+                "success":False,
+                "extraTables":extra_tables_needed,
+                "data":{}
+        })
+    
+        # request_data = request.get_json()
+        # requested_date = request_data.get('reportingDate')  # Extract the date from the request data
+        converted_date = datetime.strptime(reporting_date, '%Y-%m-%d').strftime('%d-%m-%Y')
+        data['reportingDate'] = converted_date
+        for key, value in extra_tables_request.items():
+            extra_tables_request[key] = datetime.strptime(value, '%Y-%m-%d').strftime('%d-%m-%Y')
+        
+        nsfr_data = get_nsfr_data(data)
+
+        return jsonify({
+            "success":True,
+            "extraTables": {},
+            "data": nsfr_data
         })
 
 def checkTables(extra_tables_request, reporting_date):

@@ -63,7 +63,3 @@ def Issued_Securities_NSFR(path):
     final_output_df['Book Value'] = final_output_df['Book Value'].str.replace(',', '').astype(float)
     final_output_df['Accrued Interest'] = final_output_df['Accrued Interest'].str.replace(',', '').astype(float)
     return final_output_df
-
-#output file
-output_df = Issued_Securities_NSFR(path)
-

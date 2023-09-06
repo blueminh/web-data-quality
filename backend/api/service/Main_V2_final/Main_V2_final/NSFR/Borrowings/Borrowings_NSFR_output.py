@@ -95,6 +95,3 @@ def nsfr_borrowings(path):
     final_output_df['Principal Amount More than 1 year'] = final_output_df['Principal Amount More than 1 year'].str.replace(',', '').replace(' -   ', '0').astype(float)
   
     return final_output_df
-
-
-final_output_df = nsfr_borrowings(path)

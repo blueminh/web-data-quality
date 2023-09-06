@@ -20,7 +20,4 @@ def nsfr_offbalancesheet(path):
     final_output_df = final_output_df.drop('Unutilised Value', axis=1)
     return final_output_df
 
-#output file
-final_output_df = nsfr_offbalancesheet(path)
-
 

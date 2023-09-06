@@ -66,6 +66,3 @@ def NSFR_Deposits_with_Other_Banks(path):
     return final_output_df
 
 
-final_output_df = NSFR_Deposits_with_Other_Banks(path)
-
-
