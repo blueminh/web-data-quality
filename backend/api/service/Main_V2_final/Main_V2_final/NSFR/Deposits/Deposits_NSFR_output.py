@@ -2,16 +2,14 @@ import os
 import numpy as np
 import pandas as pd
 
-from .Deposit import Deposits_output
+from ..Deposits import Deposits_output
 
-
-path = os.path.dirname(os.path.realpath(__file__))
-
-def nsfr_deposits(path):
-    df1 = pd.read_csv(os.path.join(path, 'Deposit', 'input', 'Deposit.csv'))
-    df2 = Deposits_output.Deposits_LCR(os.path.join(path, 'Deposit'))
-    df3 = pd.read_csv(os.path.join(path, 'Deposit', 'input', 'Less Stable Deposit Mapping.csv'))
-    df4 = pd.read_csv(os.path.join(path,  'Deposit','input', 'Stable Deposit Mapping.csv'))
+def nsfr_deposits():
+    path = os.path.dirname(os.path.realpath(__file__))
+    df1 = pd.read_csv(os.path.join(path, 'input', 'Deposit.csv'))
+    df2 = Deposits_output.Deposits_LCR()
+    df3 = pd.read_csv(os.path.join(path, 'input', 'Less Stable Deposit Mapping.csv'))
+    df4 = pd.read_csv(os.path.join(path, 'input', 'Stable Deposit Mapping.csv'))
 
     output_df = pd.DataFrame()
     df1.fillna(0, inplace=True)
