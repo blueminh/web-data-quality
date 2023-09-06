@@ -27,7 +27,7 @@ REGULATORY_TABLES = {
 }
 
 OTHER_TABLES = {
-    "Risk Weight Table":"sec fin",
+    "Risk Weight Table":"sec fin, invest trade",
     "Rating Table": "sec fin",
     "HQLA asset table": "sec fin",
     "sft inflow table": "sec fin",

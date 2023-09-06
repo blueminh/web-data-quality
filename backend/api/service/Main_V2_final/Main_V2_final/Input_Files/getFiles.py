@@ -10,3 +10,6 @@ def getMappingFileByName(fileName):
 
 def getRegulatoryFileByName(fileName):
     return pd.read_csv(os.path.join(path, "Regulatory Tables", fileName))
+
+def getOtherFiles(fileName):
+    return pd.read_csv(os.path.join(path, "Other Tables", fileName))
