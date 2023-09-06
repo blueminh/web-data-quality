@@ -254,7 +254,7 @@ export default function InputDashboard() {
                         {/* Content for the left half */}
                         <Stack gap={3}>
                             <div className="form-input">
-                                <Form.Label>Chọn bảng dữ liệu cần nhập</Form.Label>
+                                {/* <Form.Label>Chọn bảng dữ liệu cần nhập</Form.Label>
                                 <Autosuggest
                                     suggestions={tableSuggestions}
                                     onSuggestionsFetchRequested={({ value }) => {
@@ -273,7 +273,13 @@ export default function InputDashboard() {
                                             setTableName(newValue);
                                         },
                                     }}
-                                />
+                                /> */}
+                                <Form.Label>Chọn bảng dữ liệu cần nhập</Form.Label>
+                                <Form.Select required onChange={(event) => {
+                                    setTableName(String(event.target.value))
+                                }}>
+                                    {tableNameOptions.map(type => <option>{type}</option>)}
+                                </Form.Select>
                             </div>
                             <div className='centered-button-container'>
                                 <Button onClick={() => setShowSampleDataPopup(true)}>Bấm để xem dữ liệu mẫu của bảng đã chọn</Button>

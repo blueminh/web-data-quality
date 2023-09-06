@@ -14,12 +14,12 @@ path = os.path.dirname(os.path.realpath(__file__))
 def Deposits_LCR(input_date_str):
     input_folder_path = "Deposits"
     df1 = getFiles.getFileByName(input_folder_path, f'Deposit_{input_date_str}.csv')
-    df2 = getFiles.getFileByName(input_folder_path, 'Currency table regulatry.csv')
-    df3 = getFiles.getFileByName(input_folder_path, 'CounterParty Mapping.csv')
+    df2 = getFiles.getRegulatoryFileByName('Currency table regulatry.csv')
+    df3 = getFiles.getMappingFileByName('CounterParty Mapping.csv')
     df5 = getFiles.getFileByName(input_folder_path, 'insurance table.csv')
     df6 = Loans_Advances.lcr_Loans_Advances(input_date_str) # Assuming Loans_Advances is a module
     df7 = Loans_Advances.get_loans_advances_df(input_date_str)
-    df8 = getFiles.getFileByName(input_folder_path, 'Product Mapping.csv')
+    df8 = getFiles.getMappingFileByName('Product Mapping.csv')
     df9 = getFiles.getFileByName(input_folder_path, 'unstable deposit run-off factor table.csv')
     
     # Tạo output_df để chứa kết quả
