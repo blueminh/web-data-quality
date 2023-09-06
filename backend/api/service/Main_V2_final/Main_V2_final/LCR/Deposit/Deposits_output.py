@@ -16,7 +16,7 @@ def Deposits_LCR(input_date_str):
     df1 = getFiles.getFileByName(input_folder_path, f'Deposit_{input_date_str}.csv')
     df2 = getFiles.getRegulatoryFileByName('Currency table regulatry.csv')
     df3 = getFiles.getMappingFileByName('CounterParty Mapping.csv')
-    df5 = getFiles.getFileByName(input_folder_path, 'insurance table.csv')
+    df5 = getFiles.getOtherFiles('insurance table.csv')
     df6 = Loans_Advances.lcr_Loans_Advances(input_date_str) # Assuming Loans_Advances is a module
     df7 = Loans_Advances.get_loans_advances_df(input_date_str)
     df8 = getFiles.getMappingFileByName('Product Mapping.csv')
