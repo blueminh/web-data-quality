@@ -2,11 +2,11 @@ import pandas as pd
 import numpy as np
 import os
 from ..Off_Balance_Sheet import Off_Balance_Sheet_output
+from ...Input_Files import getFiles
 
-def nsfr_offbalancesheet():
-    path = os.path.dirname(os.path.realpath(__file__))
-    df1 =  pd.read_csv(os.path.join(path, 'input','Off Balance Sheet.csv'))
-    df2 = Off_Balance_Sheet_output.lcr_offbalancesheet()
+def nsfr_offbalancesheet(input_date_str):
+    df1 = getFiles.getFileByName("Off_Balance_Sheet" ,f'Off Balance Sheet_{input_date_str}.csv')
+    df2 = Off_Balance_Sheet_output.lcr_offbalancesheet(input_date_str)
     output_df = pd.DataFrame()
     df1.fillna(0, inplace=True)
     #output dataframe

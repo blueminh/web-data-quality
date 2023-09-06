@@ -5,11 +5,10 @@
 import pandas as pd
 import numpy as np
 import os
+from ...Input_Files import getFiles
 
-
-def nsfr_facility():
-    path = os.path.dirname(os.path.realpath(__file__))
-    df1 =  pd.read_csv(os.path.join(path, 'input', 'Facility.csv'))
+def nsfr_facility(input_date_str):
+    df1 =  getFiles.getFileByName("Facility", f'Facility_{input_date_str}.csv')
 
     df1.fillna(0, inplace=True)
     #output dataframe

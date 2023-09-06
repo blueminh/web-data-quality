@@ -2,11 +2,12 @@ import pandas as pd
 import numpy as np
 import os
 from ..Derivatives import Derivatives_output
-def nsfr_derivatives():
-    path = os.path.dirname(os.path.realpath(__file__))
+from ...Input_Files import getFiles
 
-    df1 =  pd.read_csv(os.path.join(path, 'input', 'Derivatives.csv'))
-    df2 =  Derivatives_output.lcr_derivatives()
+def nsfr_derivatives(input_date_str):
+
+    df1 =  getFiles.getFileByName("Derivatives", f'Derivatives_{input_date_str}.csv')
+    df2 =  Derivatives_output.lcr_derivatives(input_date_str)
 
     df1.fillna(0, inplace=True)
     #output dataframe
