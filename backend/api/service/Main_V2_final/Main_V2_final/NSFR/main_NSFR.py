@@ -12,7 +12,7 @@ from .Investment_Trading_Securities import Investment_Trading_Securities_NSFR_ou
 from .Deposits import Deposits_NSFR_output
 from .Facility import Facility_NSFR_output
 from .Other_Items import Other_NSFR_Items
-from .Issued_Securitie import Issued_NSFR_Securities
+from .Issued_Securities import Issued_NSFR_Securities
 from .Securities_Financial_Tran import Securities_Financial_Trans_NSFR
 from .Derivatives import Derivatives_NSFR_output
 from .Off_Balance_Sheet import Off_Balance_Sheet_NSFR_output
@@ -1715,8 +1715,6 @@ def main():
     path_otheritems = os.path.join(path, 'Other_Items')
     path_deposit = os.path.join(path, 'Deposits')
     path_issuedsecurities = os.path.join(path, 'Issued_Securitie')
-    path_securities_fin_trans = os.path.join(path, 'Securities_Financial_Tran')
-    path_derivatives = os.path.join(path, 'Derivatives')
     path_facility = os.path.join(path, 'Facility')
     path_offbalancesheet = os.path.join(path, 'Off_Balance_Sheet')
     path_loan_advances = os.path.join(path, 'Loan_Advance')
@@ -1725,11 +1723,11 @@ def main():
     borrowings = Borrowings_NSFR_output.nsfr_borrowings()
     investment = Investment_Trading_Securities_NSFR_output.nsfr_investmentandtradingsecurities()
     securities_financial_trans = Securities_Financial_Trans_NSFR.nsfr_securitiesfinancialtrans()
-    derivatives = Derivatives_NSFR_output.nsfr_derivatives(path_derivatives)
-    facility = Facility_NSFR_output.nsfr_facility(path_facility)
-    offbalancesheet = Off_Balance_Sheet_NSFR_output.nsfr_offbalancesheet(path_offbalancesheet)
-    other_items = Other_NSFR_Items.nsfr_New_Other_Items(path_otheritems)
-    issued_securities = Issued_NSFR_Securities.Issued_Securities_NSFR(path_issuedsecurities)
+    derivatives = Derivatives_NSFR_output.nsfr_derivatives()
+    facility = Facility_NSFR_output.nsfr_facility()
+    offbalancesheet = Off_Balance_Sheet_NSFR_output.nsfr_offbalancesheet()
+    other_items = Other_NSFR_Items.nsfr_New_Other_Items()
+    issued_securities = Issued_NSFR_Securities.Issued_Securities_NSFR()
     deposit = Deposits_NSFR_output.nsfr_deposits(path_deposit)
     dep_w_other_banks_nsfr = Deposits_with_other_banks_NSFR_output.NSFR_Deposits_with_Other_Banks(path_deposits_w_otherbanks)
     loans_and_advances = Loans_Advances_NSFR.Loans_Advances_NSFR(path_loan_advances)

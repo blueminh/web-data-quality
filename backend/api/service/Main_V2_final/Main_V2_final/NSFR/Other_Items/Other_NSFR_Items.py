@@ -6,10 +6,8 @@ import pandas as pd
 import numpy as np
 import os
 
-path = os.path.dirname(os.path.realpath(__file__))
-
-
-def nsfr_New_Other_Items(path):
+def nsfr_New_Other_Items():
+    path = os.path.dirname(os.path.realpath(__file__))
     df1 = pd.read_csv(os.path.join(path, 'input', 'Other_Items.csv'))
     output_df = pd.DataFrame()
     df1.fillna(0, inplace=True)
