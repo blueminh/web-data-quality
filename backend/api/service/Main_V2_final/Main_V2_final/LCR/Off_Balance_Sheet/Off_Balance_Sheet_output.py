@@ -14,9 +14,9 @@ def lcr_offbalancesheet(input_date_str):
     reporting_date = datetime.strptime(input_date_str, "%d-%m-%Y")
     input_folder_path = "Off_Balance_Sheet"
     df1 =  getFiles.getFileByName(input_folder_path,  f'Off Balance Sheet_{input_date_str}.csv')
-    df2 =  getFiles.getFileByName(input_folder_path,  'Counterparty Mapping.csv')
-    df3 =  getFiles.getFileByName(input_folder_path,  'OBS Product Mapping.csv')
-    df4 =  getFiles.getFileByName(input_folder_path,  'Facility Mapping.csv')
+    df2 =  getFiles.getMappingFileByName('Counterparty Mapping.csv')
+    df3 =  getFiles.getMappingFileByName('OBS Product Mapping.csv')
+    df4 =  getFiles.getMappingFileByName('Facility Mapping.csv')
     
     output_df = pd.DataFrame()
     df1.fillna(0, inplace=True)
