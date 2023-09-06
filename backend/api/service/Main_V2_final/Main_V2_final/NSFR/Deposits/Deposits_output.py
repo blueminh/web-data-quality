@@ -16,7 +16,7 @@ def Deposits_LCR():
     df3 = pd.read_csv(os.path.join(path, 'input', 'CounterParty Mapping.csv'))
     df5 = pd.read_csv(os.path.join(path, 'input', 'insurance table.csv'))
     df6 = Loans_Advances.lcr_Loans_Advances() # Assuming Loans_Advances is a module
-    df7 = pd.read_csv(os.path.join(path, 'input', 'Loans & Advances.csv'))
+    df7 = Loans_Advances.get_loan_and_advances_df()
     df8 = pd.read_csv(os.path.join(path, 'input', 'Product Mapping.csv'))
     df9 = pd.read_csv(os.path.join(path, 'input', 'unstable deposit run-off factor table.csv'))
     

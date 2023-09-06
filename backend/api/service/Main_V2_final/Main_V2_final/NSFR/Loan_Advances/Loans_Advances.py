@@ -7,6 +7,11 @@ import pandas as pd
 import numpy as np
 from datetime import date
 
+def get_loan_and_advances_df():
+    path = os.path.dirname(os.path.realpath(__file__))
+    df = pd.read_csv(os.path.join(path, 'input', 'Loans & Advances.csv'))
+    return df
+
 def lcr_Loans_Advances():
     path = os.path.dirname(os.path.realpath(__file__))
     df1 = pd.read_csv(os.path.join(path, 'input', 'Loans & Advances.csv'))
