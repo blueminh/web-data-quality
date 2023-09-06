@@ -1729,7 +1729,7 @@ def main():
     other_items = Other_NSFR_Items.nsfr_New_Other_Items()
     issued_securities = Issued_NSFR_Securities.Issued_Securities_NSFR()
     deposit = Deposits_NSFR_output.nsfr_deposits(path_deposit)
-    dep_w_other_banks_nsfr = Deposits_with_other_banks_NSFR_output.NSFR_Deposits_with_Other_Banks(path_deposits_w_otherbanks)
+    dep_w_other_banks_nsfr = Deposits_with_other_banks_NSFR_output.NSFR_Deposits_with_Other_Banks()
     loans_and_advances = Loans_Advances_NSFR.Loans_Advances_NSFR(path_loan_advances)
     #collecteral = 
     output_df = set_output_df()
