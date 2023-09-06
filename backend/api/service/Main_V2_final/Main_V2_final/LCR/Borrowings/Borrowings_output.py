@@ -5,7 +5,7 @@
 import os
 import pandas as pd
 import numpy as np
-from datetime import date, datetime
+from datetime import datetime
 from ...Input_Files import getFiles
 
 # Đường dẫn đến file

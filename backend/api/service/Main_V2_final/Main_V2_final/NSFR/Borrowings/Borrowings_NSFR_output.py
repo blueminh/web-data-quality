@@ -26,11 +26,11 @@ def parse_date(date_str):
             return None
 
 
-def nsfr_borrowings():
-    path = os.path.dirname(os.path.realpath(__file__))
-    df1 =  pd.read_csv(os.path.join(path, 'input', 'Borrowings.csv'))
-    df2 =  Borrowings_output.lcr_borrowing()
-    df3 =  pd.read_csv(os.path.join(path, 'input', 'Borrowings Mapping.csv'))
+def nsfr_borrowings(input_date_str):
+    input_folder_path = "Borrowings"
+    df1 = getFiles.getFileByName(input_folder_path, f'Borrowings_{input_date_str}.csv')
+    df2 =  Borrowings_output.lcr_borrowing(input_date_str)
+    df3 = getFiles.getFileByName(input_folder_path, 'Borrowings Mapping.csv')
 
     df1.fillna(0, inplace=True)
     #output dataframe

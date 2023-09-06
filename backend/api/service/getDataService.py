@@ -282,6 +282,6 @@ def get_lcr_data(request_data):
 
 
 def get_nsfr_data(request_data):
-    df = main_nsfr()
+    df = main_nsfr(request_data)
     print(df)
     return {}

@@ -1710,8 +1710,10 @@ def get_value_nsfr(df, J_row27, J_row47):
 
     return result
 
-def main():
-    borrowings = Borrowings_NSFR_output.nsfr_borrowings()
+def main(request_data):
+    date_str = request_data.get("reportingDate")
+    extra_tables_request = request_data.get("extraTables")
+    borrowings = Borrowings_NSFR_output.nsfr_borrowings(extra_tables_request.get("Borrowings", date_str))
     investment = Investment_Trading_Securities_NSFR_output.nsfr_investmentandtradingsecurities()
     securities_financial_trans = Securities_Financial_Trans_NSFR.nsfr_securitiesfinancialtrans()
     derivatives = Derivatives_NSFR_output.nsfr_derivatives()

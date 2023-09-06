@@ -5,19 +5,19 @@
 import os
 import pandas as pd
 import numpy as np
-from datetime import date
+from datetime import date, datetime
+from ...Input_Files import getFiles
 
-# Đường dẫn đến file
-
-def lcr_borrowing():
-    path = os.path.dirname(os.path.realpath(__file__))
-    df1 = pd.read_csv(os.path.join(path, 'input', 'Borrowings.csv'))
-    df2 = pd.read_csv(os.path.join(path, 'input', 'Counterparty Mapping.csv'))
-    df3 = pd.read_csv(os.path.join(path, 'input', 'Counterparty Unsecured Funding Mapping.csv'))
+def lcr_borrowing(input_date_str):
+    input_folder_path = "Borrowings"
+    input_date = datetime.strptime(input_date_str, "%d-%m-%Y")
+    df1 = getFiles.getFileByName(input_folder_path, f'Borrowings_{input_date_str}.csv')
+    df2 = getFiles.getFileByName(input_folder_path, 'Counterparty Mapping.csv')
+    df3 = getFiles.getFileByName(input_folder_path, 'Counterparty Unsecured Funding Mapping.csv')
 # Tạo DataFrame mới để chứa kết quả tính toán
     # Tạo DataFrame mới để chứa kết quả tính toán
     output_df = pd.DataFrame()
-    reporting_date = date.today()
+    reporting_date = input_date
     df1.fillna(0, inplace=True)
 
     # Tạo cột "Reporting Date" với số lượng dòng tương ứng với cột "Instrument Id" của df1
