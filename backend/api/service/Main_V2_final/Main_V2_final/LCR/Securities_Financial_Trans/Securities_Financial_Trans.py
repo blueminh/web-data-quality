@@ -6,6 +6,7 @@ import os
 import pandas as pd
 import numpy as np
 from datetime import date, datetime
+from ...Input_Files import getFiles
 
 # Đường dẫn đến file
 path = os.path.dirname(os.path.realpath(__file__))
@@ -13,16 +14,16 @@ path = os.path.dirname(os.path.realpath(__file__))
 def lcr_securitiesfinancialtrans(input_date_str):
     # Reporting date
     reporting_date = datetime.strptime(input_date_str, "%d-%m-%Y")
-
-    df1 = pd.read_csv(os.path.join(path, 'input', f'Securities Financial Trans_{input_date_str}.csv'))
-    df2 = pd.read_csv(os.path.join(path, 'input', 'Product Mapping.csv'))
-    df3 = pd.read_csv(os.path.join(path, 'input', 'Counterparty Mapping.csv'))
-    df4 = pd.read_csv(os.path.join(path, 'input', 'Currency table regulatry.csv'))
-    df5 = pd.read_csv(os.path.join(path, 'input', 'Risk Weight Table.csv'))
-    df6 = pd.read_csv(os.path.join(path, 'input', 'Rating Table.csv'))
-    df7 = pd.read_csv(os.path.join(path, 'input', 'HQLA asset table.csv'))
-    df8 = pd.read_csv(os.path.join(path, 'input', 'sft inflow table.csv'))
-    df9 = pd.read_csv(os.path.join(path, 'input', 'sft outflow table.csv'))
+    input_folder_path = "Securities_Financial_Trans"
+    df1 =  getFiles.getFileByName(input_folder_path,  f'Securities Financial Trans_{input_date_str}.csv')
+    df2 =  getFiles.getFileByName(input_folder_path,  'Product Mapping.csv')
+    df3 =  getFiles.getFileByName(input_folder_path,  'Counterparty Mapping.csv')
+    df4 =  getFiles.getFileByName(input_folder_path,  'Currency table regulatry.csv')
+    df5 =  getFiles.getFileByName(input_folder_path,  'Risk Weight Table.csv')
+    df6 =  getFiles.getFileByName(input_folder_path,  'Rating Table.csv')
+    df7 =  getFiles.getFileByName(input_folder_path,  'HQLA asset table.csv')
+    df8 =  getFiles.getFileByName(input_folder_path,  'sft inflow table.csv')
+    df9 =  getFiles.getFileByName(input_folder_path,  'sft outflow table.csv')
 
     df1.fillna(0, inplace=True)
 

@@ -1,5 +1,5 @@
 TABLES = {
-    "Borrowings":"LCR/Borrowings/input/",
+    "Borrowings":"Input_Files/Borrowings/",
     "Investment&Trading Securities":"LCR/Investment_Trading_Securities/input",
     "Securities Financial Trans":"LCR/Securities_Financial_Trans/input",
     "Deposit":"LCR/Deposit/input",

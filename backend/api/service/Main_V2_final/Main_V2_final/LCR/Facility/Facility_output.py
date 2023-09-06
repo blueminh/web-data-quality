@@ -5,17 +5,17 @@
 import os
 import pandas as pd
 import numpy as np
+from ...Input_Files import getFiles
 from datetime import datetime
 
-path = os.path.dirname(os.path.realpath(__file__))
 def lcr_facility(input_date_str):
     # Reporting date
     reporting_date = datetime.strptime(input_date_str, "%d-%m-%Y")
-
-    df1 = pd.read_csv(os.path.join(path, 'input', f'Facility_{input_date_str}.csv'))
-    df2 = pd.read_csv(os.path.join(path, 'input', 'Counterparty Mapping.csv'))
-    df3 = pd.read_csv(os.path.join(path, 'input', 'OBS Product Mapping.csv'))
-    df4 = pd.read_csv(os.path.join(path, 'input', 'Facility Mapping.csv'))
+    input_folder_path = "Facility"
+    df1 = getFiles.getFileByName(input_folder_path,  f'Facility_{input_date_str}.csv')
+    df2 = getFiles.getFileByName(input_folder_path,  'Counterparty Mapping.csv')
+    df3 = getFiles.getFileByName(input_folder_path,  'OBS Product Mapping.csv')
+    df4 = getFiles.getFileByName(input_folder_path,  'Facility Mapping.csv')
     df1.fillna(0, inplace=True)
 
     #output dataframe

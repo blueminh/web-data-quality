@@ -6,14 +6,16 @@ import os
 import pandas as pd
 import numpy as np
 from datetime import datetime
+from ...Input_Files import getFiles
 
 path = os.path.dirname(os.path.realpath(__file__))
 
 def lcr_Issued_Securities(input_date_str):
+    input_folder_path = "Issued_Securities"
 
-    df1 = pd.read_csv(os.path.join(path, 'input', f'Issued Securities_{input_date_str}.csv'))
-    df2 = pd.read_csv(os.path.join(path, 'input', 'CounterParty Mapping.csv'))
-    df4 = pd.read_csv(os.path.join(path, 'input', 'Product Mapping.csv'))
+    df1 = getFiles.getFileByName(input_folder_path , f'Issued Securities_{input_date_str}.csv')
+    df2 = getFiles.getFileByName(input_folder_path , 'CounterParty Mapping.csv')
+    df4 = getFiles.getFileByName(input_folder_path , 'Product Mapping.csv')
     reporting_date = datetime.strptime(input_date_str, "%d-%m-%Y")
 
     # Tạo output_df để chứa kết quả

@@ -6,13 +6,15 @@ import os
 import pandas as pd
 import numpy as np
 from datetime import datetime
+from ...Input_Files import getFiles
 
 path = os.path.dirname(os.path.realpath(__file__))
 def lcr_deposits(input_date_str):
     # Reporting date
+    input_folder_path = "Deposits_with_other_banks"
     reporting_date = datetime.strptime(input_date_str, "%d-%m-%Y")
 
-    df1 = pd.read_csv(os.path.join(path, 'input', f'Deposits with Other Banks_{input_date_str}.csv'))
+    df1 = getFiles.getFileByName(input_folder_path, f'Deposits with Other Banks_{input_date_str}.csv')
     df1.fillna(0, inplace=True)
     output_df = pd.DataFrame()
     #reporting date

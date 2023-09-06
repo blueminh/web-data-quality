@@ -6,6 +6,7 @@ import os
 import pandas as pd
 import numpy as np
 from datetime import date
+from ...Input_Files import getFiles
 
 # Đường dẫn đến file
 path = os.path.dirname(os.path.realpath(__file__))
@@ -14,7 +15,7 @@ def lcr_sanctionedloans(path):
     # Reporting date
     reporting_date = date(2022, 9, 30)
 
-    df1 = pd.read_csv(os.path.join(path, 'input', 'Sanctioned Loans.csv'))
+    df1 = getFiles.getFileByName("Sanctioned_Loans", 'Sanctioned Loans.csv')
 
     #output dataframe
     output_df = pd.DataFrame()

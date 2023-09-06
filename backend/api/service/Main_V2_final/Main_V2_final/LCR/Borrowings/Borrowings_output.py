@@ -6,16 +6,17 @@ import os
 import pandas as pd
 import numpy as np
 from datetime import date, datetime
+from ...Input_Files import getFiles
 
 # Đường dẫn đến file
 path = os.path.dirname(os.path.realpath(__file__))
 
 def lcr_borrowing(input_date_str):
+    input_folder_path = "Borrowings"
     input_date = datetime.strptime(input_date_str, "%d-%m-%Y")
-    borrowings_filename = f"Borrowings_{input_date_str}.csv"
-    df1 = pd.read_csv(os.path.join(path, 'input', borrowings_filename))
-    df2 = pd.read_csv(os.path.join(path, 'input', 'Counterparty Mapping.csv'))
-    df3 = pd.read_csv(os.path.join(path, 'input', 'Counterparty Unsecured Funding Mapping.csv'))
+    df1 = getFiles.getFileByName(input_folder_path, f'Borrowings_{input_date_str}.csv')
+    df2 = getFiles.getFileByName(input_folder_path, 'Counterparty Mapping.csv')
+    df3 = getFiles.getFileByName(input_folder_path, 'Counterparty Unsecured Funding Mapping.csv')
 # Tạo DataFrame mới để chứa kết quả tính toán
     # Tạo DataFrame mới để chứa kết quả tính toán
     output_df = pd.DataFrame()
