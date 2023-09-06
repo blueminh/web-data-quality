@@ -96,18 +96,21 @@ export default function CalulationQuickDashboard() {
             try {
                 setIsLoading(true)
                 const response = await getDashboardLcrNsfrData(requestData)
-
+                console.log("ahhhh")
+                console.log(response)
+                console.log(typeof(response))
+                console.log(response['success'])
                 if (response.success) {
-                    setIsLoading(false)
                     setLcrData(response.data.lcr_data)
                     setNsfrData(response.data.nsfr_data)
                 } else {
                     setExtraTables(response.extraTables)
                     setShowChooseFileDateDialog(true)
                 }
+                setIsLoading(false)
 
             } catch (error) {
-                setIsLoading(false)
+              setIsLoading(false)
               console.error(error);
               setErrorMessage("Có lỗi đã xảy ra")
             }
@@ -205,9 +208,9 @@ export default function CalulationQuickDashboard() {
                                             <br></br>
                                             <span><em>{row.rowTitle.subTitle}</em></span>
                                         </td>
-                                        {row.data.map(rowData =>
-                                            <td style={{textAlign: "center"}}>{rowData}</td>
-                                        )}
+                                        {
+                                            <td style={{textAlign: "center"}}>{row.data}</td>
+                                        }
                                     </tr>
                                 )}
                             </tbody>
@@ -226,9 +229,9 @@ export default function CalulationQuickDashboard() {
                                                 <br></br>
                                                 <span><em>{row.rowTitle.subTitle}</em></span>
                                             </td>
-                                            {row.data.map(rowData =>
-                                                <td style={{textAlign: "center"}}>{rowData}</td>
-                                            )}
+                                            {
+                                                <td style={{textAlign: "center"}}>{row.data}</td>
+                                            }
                                         </tr>
                                     )}
                                 </tbody>

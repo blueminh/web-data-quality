@@ -90,28 +90,28 @@ def nsfr_5(df, n_3, colname):
     return result
 
 def main(request_data):
-    path = os.path.dirname(os.path.realpath(__file__))
-
     lcr_df = main_LCR.main(request_data)
-    nsfr_df = main_NSFR.main(os.path.join(path, 'NSFR'))
+    nsfr_df = main_NSFR.main(request_data)
     left_df = set_LCR()
     right_df = set_NSFR()
 
-    left_df.at[0, 'Values'] = lcr_1(lcr_df)
-    left_df.at[1, 'Values'] = lcr_2(lcr_df)
-    left_df.at[2, 'Values'] = '100%'
-    left_df.at[3, 'Values'] = lcr_4(left_df, 0, 1, "Values")
-    left_df.at[4, 'Values'] = lcr_5(left_df, 3, "Values")
+    # left_df.at[0, 'Values'] = lcr_1(lcr_df)
+    # left_df.at[1, 'Values'] = lcr_2(lcr_df)
+    # left_df.at[2, 'Values'] = '100%'
+    # left_df.at[3, 'Values'] = lcr_4(left_df, 0, 1, "Values")
+    # left_df.at[4, 'Values'] = lcr_5(left_df, 3, "Values")
 
-    right_df.at[0, 'Values'] = nsfr_1(nsfr_df)
-    right_df.at[1, 'Values'] = nsfr_2(nsfr_df)
-    right_df.at[2, 'Values'] = '100%'
-    right_df.at[3, 'Values'] = nsfr_4(right_df, 0, 1, "Values")
-    right_df.at[4, 'Values'] = nsfr_5(right_df, 3, "Values")
-    final_df = pd.concat([left_df, right_df], axis=1)
-    print(final_df)
-
-    return final_df
+    # right_df.at[0, 'Values'] = nsfr_1(nsfr_df)
+    # right_df.at[1, 'Values'] = nsfr_2(nsfr_df)
+    # right_df.at[2, 'Values'] = '100%'
+    # right_df.at[3, 'Values'] = nsfr_4(right_df, 0, 1, "Values")
+    # right_df.at[4, 'Values'] = nsfr_5(right_df, 3, "Values")
+    # final_df = pd.concat([left_df, right_df], axis=1)
+    
+    return {
+        "lcr":[lcr_1(lcr_df), lcr_2(lcr_df), '100%', lcr_4(left_df, 0, 1, "Values"), lcr_5(left_df, 3, "Values")],
+        "nsfr":[nsfr_1(nsfr_df), nsfr_2(nsfr_df), '100%', nsfr_4(right_df, 0, 1, "Values"), nsfr_5(right_df, 3, "Values")]
+    }
     
 
     

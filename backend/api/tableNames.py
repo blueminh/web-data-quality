@@ -13,23 +13,33 @@ TABLES = {
 }
 
 MAPPING_TABLES = {
-    "Counterparty Mapping":"borrow, deposit, facility, invest trade, issued sec, loan and adv, obs, sec fin",
-    "Counterparty Unsecured Funding Mapping":"borrow",
-    "Product Mapping": "deposit, invest trade, issed_sec, sec fin",
-    "OBS Product Mapping": "facility obs",
-    "Facility Mapping":"Facility, obs",
-    "Asset Issuers HQLA Mapping":"invest trade",
-    "Cash Inflow Counterparty Mapping":"invest trade, loan and adv"
+    "Asset Issuers HQLA Mapping": "Input_Files/Mapping Tables",
+    "Borrowings Mapping":"Input_Files/Mapping Tables",
+    "Cash Inflow Counterparty Mapping":"Input_Files/Mapping Tables",
+    "Collateral Product Mapping":"Input_Files/Mapping Tables",
+    "Counterparty Mapping":"Input_Files/Mapping Tables",
+    "Counterparty Unsecured Funding Mapping":"Input_Files/Mapping Tables",
+    "Facility Mapping":"Input_Files/Mapping Tables",
+    "INVESTMENT SECURITIES MAPPING (used)":"Input_Files/Mapping Tables",
+    "ISSUED SECURITIES AND BORROWINGS MAPPING":"Input_Files/Mapping Tables",
+    "Less Stable Deposit Mapping":"Input_Files/Mapping Tables",
+    "LOANS AND ADVANCES MAPPING":"Input_Files/Mapping Tables",
+    "OBS Product Mapping":"Input_Files/Mapping Tables",
+    "Product Mapping":"Input_Files/Mapping Tables",
+    "SFT MAPPING":"Input_Files/Mapping Tables",
+    "Stable Deposit Mapping":"Input_Files/Mapping Tables"
 }
 
 REGULATORY_TABLES = {
-    "Currency table regulatry": "deposit, invest trade, sec fin"
+    "Currency table regulatry": "Input_Files/Regulatory Tables"
 }
 
 OTHER_TABLES = {
-    "Risk Weight Table":"sec fin, invest trade",
-    "Rating Table": "sec fin",
-    "HQLA asset table": "sec fin",
-    "sft inflow table": "sec fin",
-    "sft outflow table":"sec fin"
+    "HQLA asset table":"Input_Files/Other Tables",
+    "HQLA weight table":"Input_Files/Other Tables",
+    "insurance table":"Input_Files/Other Tables",
+    "Rating Table":"Input_Files/Other Tables",
+    "Risk Weight Table":"Input_Files/Other Tables",
+    "sft inflow table":"Input_Files/Other Tables",
+    "sft outflow table":"Input_Files/Other Tables"
 }

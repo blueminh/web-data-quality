@@ -5,6 +5,11 @@ import math
 
 
 def get_dashboard_lcr_nsfr_data(request_data):
+    # return {"lcr_data": lcr_data, "nsfr_data": nsfr_data}
+    result = main_home(request_data)
+    lcr_result = result['lcr']
+    nsfr_result = result['nsfr']
+
     lcr_data = {
         "title": "Liquidity Coverage Ratio - Quick Dashboard",
         "numberOfRows": 4,
@@ -15,35 +20,35 @@ def get_dashboard_lcr_nsfr_data(request_data):
                     "title": "Total HQLA",
                     "subTitle": "Tổng tài sản thanh khoản có chất lượng cao"
                 },
-                "data": [0]
+                "data": lcr_result[0]
             },
             {
                 "rowTitle": {
                     "title": "Total net cash outflows",
                     "subTitle": "Tổng dòng tiền ra ròng"
                 },
-                "data": [0]
+                "data": lcr_result[1]
             },
             {
                 "rowTitle": {
                     "title": "LCR minimum requirements",
                     "subTitle": "Yêu cầu tỷ lệ LCR tối thiểu"
                 },
-                "data": ["100%"]
+                "data": lcr_result[2]
             },
             {
                 "rowTitle": {
                     "title": "Liquidity Coverage Ratio",
                     "subTitle": "Tỷ lệ bao phủ thanh khoản"
                 },
-                "data": ["0%"]
+                "data": lcr_result[3]
             },
             {
                 "rowTitle": {
                     "title": "Remark",
                     "subTitle": "Nhận xét"
                 },
-                "data": ["Below minimum requirements / Chưa đặt yêu cầu tối thiểu"]
+                "data": lcr_result[4]
             },
         ]
     }
@@ -58,50 +63,43 @@ def get_dashboard_lcr_nsfr_data(request_data):
                     "title": "Available Stable Funding",
                     "subTitle": "Nguồn vốn ổn định sẵn có"
                 },
-                "data": [
-                    "120,062,649,450,300"
-                ]
+                "data": nsfr_result[0]
             },
             {
                 "rowTitle": {
                     "title": "Required Stable Funding",
                     "subTitle": "Nguồn vốn ổn định yêu cầu"
                 },
-                "data": [
-                    "65,664,197,224,010"
-                ]
+                "data": nsfr_result[1]
             },
             {
                 "rowTitle": {
                     "title": "NSFR Minimum requirement",
                     "subTitle": "Yêu cầu tỷ lệ NSFR tối thiểu"
                 },
-                "data": [
-                    "100%"
-                ]
+                "data": nsfr_result[2]
             },
             {
                 "rowTitle": {
                     "title": "Net Stable Funding Ratio",
                     "subTitle": "Tỷ lệ nguồn vốn ổn định ròng"
                 },
-                "data": [
-                    "183%"
-                ]
+                "data": nsfr_result[3]
             },
             {
                 "rowTitle": {
                     "title": "Remark",
                     "subTitle": "Nhận xét"
                 },
-                "data": [
-                    "Meet minimum requirement / Tuân thủ theo yêu cầu tối thiểu"
-                ]
+                "data": nsfr_result[4]
             },
         ]
     }
 
-    return {"lcr_data": lcr_data, "nsfr_data": nsfr_data}
+    return {
+        "lcr_data":lcr_data,
+        "nsfr_data":nsfr_data
+    }
 
 def get_dashboard_bar_charts_data():
     data = [

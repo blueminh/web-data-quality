@@ -18,7 +18,7 @@ from .config import BaseConfig
 
 from .service.getDataService import get_dashboard_lcr_nsfr_data, get_dashboard_bar_charts_data, get_lcr_data, get_nsfr_data
 
-from .tableNames import TABLES
+from .tableNames import TABLES, MAPPING_TABLES, OTHER_TABLES, REGULATORY_TABLES
 
 rest_api = Api(version="1.0", title="Users API")
 
@@ -284,8 +284,7 @@ class GetDashboardBarChartsData(Resource):
 
 @rest_api.route('/data/getDashboardLcrNsfr', methods=['POST'])
 class GetDashboardData(Resource):
-    @token_required(required_roles=['viewer'])
-    def post(current_user, self):
+    def post(self):
         data = request.get_json()
         reporting_date = data.get("reportingDate")
         extra_tables_request = data.get("extraTables")
@@ -305,7 +304,6 @@ class GetDashboardData(Resource):
             extra_tables_request[key] = datetime.strptime(value, '%Y-%m-%d').strftime('%d-%m-%Y')
 
         data = get_dashboard_lcr_nsfr_data(data)
-
         return jsonify({
             "success":True,
             "extraTables": {},
@@ -382,6 +380,15 @@ class GetNfsr(Resource):
             "extraTables": {},
             "data": nsfr_data
         })
+    
+@rest_api.route('/data/getNonDataTableList', methods=['GET'])
+class GetNonDatatableList(Resource):
+    def get(self):
+        return {
+            "mapping_tables": list(MAPPING_TABLES.keys()),
+            "regulatory_tables": list(REGULATORY_TABLES.keys()),
+            "other_tables": list(OTHER_TABLES.keys())
+        }
 
 def checkTables(extra_tables_request, reporting_date):
     # extra_tables_request is a dictionary with name of table and date
