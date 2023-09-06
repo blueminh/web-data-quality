@@ -8,12 +8,11 @@ import numpy as np
 from datetime import date
 
 # Đường dẫn đến file
-path = os.path.dirname(os.path.realpath(__file__))
 
-def lcr_securitiesfinancialtrans(path):
+def lcr_securitiesfinancialtrans():
     # Reporting date
+    path = os.path.dirname(os.path.realpath(__file__))
     reporting_date = date.today()
-
     df1 = pd.read_csv(os.path.join(path, 'input', 'Securities Financial Trans.csv'))
     df2 = pd.read_csv(os.path.join(path, 'input', 'Product Mapping.csv'))
     df3 = pd.read_csv(os.path.join(path, 'input', 'Counterparty Mapping.csv'))
@@ -163,9 +162,5 @@ def lcr_securitiesfinancialtrans(path):
     final_output_df = df1.join(output_df)
 
     return final_output_df
-
-
-final_output_df = lcr_securitiesfinancialtrans(path)
-
 
 

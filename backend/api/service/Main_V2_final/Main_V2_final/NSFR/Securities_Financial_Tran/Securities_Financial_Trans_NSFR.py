@@ -1,14 +1,14 @@
 import os
 import pandas as pd
 import numpy as np
-from .Securities_Financial_Trans import Securities_Financial_Trans
+from ..Securities_Financial_Tran import Securities_Financial_Trans
 
 def nsfr_securitiesfinancialtrans():
     path = os.path.dirname(os.path.realpath(__file__))
-    df1 =  pd.read_csv(os.path.join(path, 'Securities_Financial_Trans', 'input', 'Securities Financial Trans.csv'))
-    df2 = Securities_Financial_Trans.lcr_securitiesfinancialtrans(os.path.join(path, 'Securities_Financial_Trans'))
-    df3 =  pd.read_csv(os.path.join(path, 'Securities_Financial_Trans', 'input', 'SFT MAPPING.csv'))
-    df4 =  pd.read_csv(os.path.join(path, 'Securities_Financial_Trans', 'input', 'Borrowings Mapping.csv'))
+    df1 =  pd.read_csv(os.path.join(path, 'input', 'Securities Financial Trans.csv'))
+    df2 = Securities_Financial_Trans.lcr_securitiesfinancialtrans()
+    df3 =  pd.read_csv(os.path.join(path, 'input', 'SFT MAPPING.csv'))
+    df4 =  pd.read_csv(os.path.join(path, 'input', 'Borrowings Mapping.csv'))
 
     df1.fillna(0, inplace=True)
     #output dataframe
