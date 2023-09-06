@@ -5,24 +5,26 @@
 import os
 import pandas as pd
 import numpy as np
-from datetime import date
+from datetime import datetime
+from ...Input_Files import getFiles
 
 
 # Reporting date
 
-def lcr_investmentandtradingsecurities():
-    path = os.path.dirname(os.path.realpath(__file__))
-    df1 = pd.read_csv(os.path.join(path, 'input', 'Investment&Trading Securities.csv'))
-    df2 = pd.read_csv(os.path.join(path, 'input', 'Asset Issuers HQLA Mapping.csv'))
-    df3 = pd.read_csv(os.path.join(path, 'input', 'Product Mapping.csv'))
-    df4 = pd.read_csv(os.path.join(path, 'input', 'Counterparty Mapping.csv'))
-    df5 = pd.read_csv(os.path.join(path, 'input', 'Currency table regulatry.csv'))
-    df6 = pd.read_csv(os.path.join(path, 'input', 'Risk Weight Table.csv'))
-    df7 = pd.read_csv(os.path.join(path, 'input', 'Rating Table.csv'))
-    df8 = pd.read_csv(os.path.join(path, 'input', 'HQLA asset table.csv'))
-    df9 = pd.read_csv(os.path.join(path, 'input', 'HQLA weight table.csv'))
-    df10 = pd.read_csv(os.path.join(path, 'input', 'Cash Inflow Counterparty Mapping.csv'))
-    reporting_date = date.today()
+def lcr_investmentandtradingsecurities(input_date_str):
+    input_folder_path = "Investment_Trading_Securities"
+
+    df1 = getFiles.getFileByName(input_folder_path,   f'Investment&Trading Securities_{input_date_str}.csv')
+    df2 = getFiles.getFileByName(input_folder_path,   'Asset Issuers HQLA Mapping.csv')
+    df3 = getFiles.getFileByName(input_folder_path,   'Product Mapping.csv')
+    df4 = getFiles.getFileByName(input_folder_path,   'Counterparty Mapping.csv')
+    df5 = getFiles.getFileByName(input_folder_path,   'Currency table regulatry.csv')
+    df6 = getFiles.getFileByName(input_folder_path,   'Risk Weight Table.csv')
+    df7 = getFiles.getFileByName(input_folder_path,   'Rating Table.csv')
+    df8 = getFiles.getFileByName(input_folder_path,   'HQLA asset table.csv')
+    df9 = getFiles.getFileByName(input_folder_path,   'HQLA weight table.csv')
+    df10 = getFiles.getFileByName(input_folder_path,   'Cash Inflow Counterparty Mapping.csv')
+    reporting_date =  datetime.strptime(input_date_str, "%d-%m-%Y")
 
     df1.fillna(0, inplace=True)
     output_df = pd.DataFrame()

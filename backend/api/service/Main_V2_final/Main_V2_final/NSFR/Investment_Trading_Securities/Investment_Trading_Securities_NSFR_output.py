@@ -2,14 +2,15 @@ import pandas as pd
 import numpy as np
 import os
 from ..Investment_Trading_Securities import Investment_Trading_Securities_output
+from ...Input_Files import getFiles
 
-def nsfr_investmentandtradingsecurities():
+def nsfr_investmentandtradingsecurities(input_date_str):
     # Reporting date
-    path = os.path.dirname(os.path.realpath(__file__))
-    
-    df1 = pd.read_csv(os.path.join(path, 'input', 'Investment&Trading Securities.csv'))
-    df2 = pd.read_csv(os.path.join(path, 'input', 'INVESTMENT SECURITIES MAPPING (used).csv'))
-    df3 = Investment_Trading_Securities_output.lcr_investmentandtradingsecurities()
+    input_folder_path = "Investment_Trading_Securities"
+
+    df1 = getFiles.getFileByName(input_folder_path, f'Investment&Trading Securities_{input_date_str}.csv')
+    df2 = getFiles.getFileByName(input_folder_path, f'INVESTMENT SECURITIES MAPPING (used).csv')
+    df3 = Investment_Trading_Securities_output.lcr_investmentandtradingsecurities(input_date_str)
     
     df1.fillna(0, inplace=True)
     #output dataframe

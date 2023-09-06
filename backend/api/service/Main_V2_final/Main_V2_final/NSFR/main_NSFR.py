@@ -1714,7 +1714,7 @@ def main(request_data):
     date_str = request_data.get("reportingDate")
     extra_tables_request = request_data.get("extraTables")
     borrowings = Borrowings_NSFR_output.nsfr_borrowings(extra_tables_request.get("Borrowings", date_str))
-    investment = Investment_Trading_Securities_NSFR_output.nsfr_investmentandtradingsecurities()
+    investment = Investment_Trading_Securities_NSFR_output.nsfr_investmentandtradingsecurities(extra_tables_request.get("Investment&Trading Securities", date_str))
     securities_financial_trans = Securities_Financial_Trans_NSFR.nsfr_securitiesfinancialtrans()
     derivatives = Derivatives_NSFR_output.nsfr_derivatives()
     facility = Facility_NSFR_output.nsfr_facility()
