@@ -283,5 +283,95 @@ def get_lcr_data(request_data):
 
 def get_nsfr_data(request_data):
     df = main_nsfr(request_data)
-    print(df)
-    return {}
+    capital = Row("capital", 2, df.iloc[0].tolist())
+    capital.setChildren(
+        [
+            Row("reg_cap", 3, df.iloc[1].tolist()),
+            Row("other_cap_instru", 3, df.iloc[2].tolist()),
+        ]
+    )
+
+    retail_dep_and_dep_small_business = Row("retail_dep_and_dep_small_business", 2, df.iloc[3].tolist())
+    retail_dep_and_dep_small_business.setChildren(
+        [
+            Row("stable_dep", 3, df.iloc[4].tolist()),
+            Row("less_stable_dep", 3, df.iloc[5].tolist()),
+        ]
+    )
+
+    wholesale_func = Row("wholesale_func", 2, df.iloc[6].tolist())
+    wholesale_func.setChildren(
+        [
+            Row("op_dep", 3, df.iloc[7].tolist()),
+            Row("other_wholesale_func", 3, df.iloc[8].tolist()),
+        ]
+    )
+
+    liability_with_assets  = Row("liability_with_assets", 2, df.iloc[9].tolist())
+
+    other_liability  = Row("other_liability", 2, df.iloc[10].tolist())
+    other_liability.setChildren(
+        [
+            Row("nsfr_derivative", 3, df.iloc[11].tolist()),
+            Row("all_other", 3, df.iloc[12].tolist()),
+        ]
+    )
+
+    total_asf  = Row("total_asf", 2, df.iloc[13].tolist())
+    require_stable_fund = Row("require_stable_fund", 0, ["", "Required Stable Funding (RSF)", "", "", "", "","",""])
+
+    total_nsfr_hqla  = Row("total_nsfr_hqla", 2, df.iloc[15].tolist())
+    dep_at_others  = Row("dep_at_others", 2, df.iloc[16].tolist())
+    perform_loan_and_sec  = Row("perform_loan_and_sec", 2, df.iloc[17].tolist())
+    perform_loan_and_sec.setChildren(
+        [
+            Row("perform_to_fin_ins_1", 3, df.iloc[18].tolist()),
+            Row("pergom_to_fin_ins_2", 3, df.iloc[19].tolist()),
+            Row("pergom_to_non_fin_1", 3, df.iloc[20].tolist()),
+            Row("pergom_to_non_fin_2", 3, df.iloc[21].tolist()),
+            Row("pergom_to_rw>", 3, df.iloc[22].tolist()),
+            Row("pergom_to_rw<", 3, df.iloc[23].tolist()),
+            Row("sec_not_in_def", 3, df.iloc[24].tolist())
+        ]
+    )
+
+
+    assets_with_liabilities  = Row("assets_with_liabilities", 2, df.iloc[25].tolist())
+
+    other_assets  = Row("other_assets", 2, df.iloc[26].tolist())
+    other_assets.setChildren([
+        Row("physical_trade", 3, df.iloc[27].tolist()),
+        Row("initial_margin", 3, df.iloc[28].tolist()),
+        Row("nsfr_derivatives", 3, df.iloc[29].tolist()),
+        Row("nsfr_derivatives_2", 3, df.iloc[30].tolist()),
+        Row("all_other_assets", 3, df.iloc[31].tolist())
+    ])
+
+    obs  = Row("obs", 2, df.iloc[32].tolist())
+
+    total_rsf  = Row("total_rsf", 2, df.iloc[33].tolist())
+
+    nsfr  = Row("nsfr", 0, df.iloc[34].tolist())
+
+    require_stable_fund.setChildren([
+        total_nsfr_hqla,
+        dep_at_others,
+        perform_loan_and_sec, 
+        assets_with_liabilities, 
+        other_assets,
+        obs, 
+        total_rsf
+    ])
+
+    nsfr_data = [
+        capital.toJSON(), 
+        retail_dep_and_dep_small_business.toJSON(),
+        wholesale_func.toJSON(), 
+        liability_with_assets.toJSON(), 
+        other_liability.toJSON(), 
+        total_asf.toJSON(), 
+        require_stable_fund.toJSON(), 
+        nsfr.toJSON()
+    ]
+
+    return nsfr_data
