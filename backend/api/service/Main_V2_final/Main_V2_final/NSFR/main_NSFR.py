@@ -1719,7 +1719,7 @@ def main(request_data):
     derivatives = Derivatives_NSFR_output.nsfr_derivatives(extra_tables_request.get("Derivatives", date_str))
     facility = Facility_NSFR_output.nsfr_facility(extra_tables_request.get("Facility", date_str))
     offbalancesheet = Off_Balance_Sheet_NSFR_output.nsfr_offbalancesheet(extra_tables_request.get("Off Balance Sheet", date_str))
-    other_items = Other_NSFR_Items.nsfr_New_Other_Items()
+    other_items = Other_NSFR_Items.nsfr_New_Other_Items(extra_tables_request.get("Other Items", date_str))
     issued_securities = Issued_NSFR_Securities.Issued_Securities_NSFR()
     deposit = Deposits_NSFR_output.nsfr_deposits()
     dep_w_other_banks_nsfr = Deposits_with_other_banks_NSFR_output.NSFR_Deposits_with_Other_Banks()

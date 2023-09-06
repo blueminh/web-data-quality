@@ -5,10 +5,10 @@
 import pandas as pd
 import numpy as np
 import os
+from ...Input_Files import getFiles
 
-def nsfr_New_Other_Items():
-    path = os.path.dirname(os.path.realpath(__file__))
-    df1 = pd.read_csv(os.path.join(path, 'input', 'Other_Items.csv'))
+def nsfr_New_Other_Items(input_date_str):
+    df1 = getFiles.getFileByName("Other_Items", f'Other Items_{input_date_str}.csv')
     output_df = pd.DataFrame()
     df1.fillna(0, inplace=True)
     #nsfr
