@@ -16,7 +16,7 @@ from .Issued_Securities import Issued_NSFR_Securities
 from .Securities_Financial_Tran import Securities_Financial_Trans_NSFR
 from .Derivatives import Derivatives_NSFR_output
 from .Off_Balance_Sheet import Off_Balance_Sheet_NSFR_output
-from .Loan_Advance import Loans_Advances_NSFR
+from .Loan_Advances import Loans_Advances_NSFR
 from .Deposits_with_Other_Bank import Deposits_with_other_banks_NSFR_output
 
 
@@ -1712,14 +1712,7 @@ def get_value_nsfr(df, J_row27, J_row47):
 
 def main():
     path = os.path.dirname(os.path.realpath(__file__))
-    path_otheritems = os.path.join(path, 'Other_Items')
     path_deposit = os.path.join(path, 'Deposits')
-    path_issuedsecurities = os.path.join(path, 'Issued_Securitie')
-    path_facility = os.path.join(path, 'Facility')
-    path_offbalancesheet = os.path.join(path, 'Off_Balance_Sheet')
-    path_loan_advances = os.path.join(path, 'Loan_Advance')
-    path_deposits_w_otherbanks = os.path.join(path, 'Deposits_with_Other_Bank')
-
     borrowings = Borrowings_NSFR_output.nsfr_borrowings()
     investment = Investment_Trading_Securities_NSFR_output.nsfr_investmentandtradingsecurities()
     securities_financial_trans = Securities_Financial_Trans_NSFR.nsfr_securitiesfinancialtrans()
@@ -1730,7 +1723,7 @@ def main():
     issued_securities = Issued_NSFR_Securities.Issued_Securities_NSFR()
     deposit = Deposits_NSFR_output.nsfr_deposits(path_deposit)
     dep_w_other_banks_nsfr = Deposits_with_other_banks_NSFR_output.NSFR_Deposits_with_Other_Banks()
-    loans_and_advances = Loans_Advances_NSFR.Loans_Advances_NSFR(path_loan_advances)
+    loans_and_advances = Loans_Advances_NSFR.Loans_Advances_NSFR()
     #collecteral = 
     output_df = set_output_df()
 

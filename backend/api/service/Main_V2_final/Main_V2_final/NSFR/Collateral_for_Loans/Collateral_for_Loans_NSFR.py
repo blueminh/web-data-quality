@@ -6,9 +6,15 @@ import os
 import pandas as pd
 import numpy as np
 from datetime import date
-path = os.path.dirname(os.path.realpath(__file__))
 
-def nsfr_collateral(path):
+def get_collateral_for_loans():
+    path = os.path.dirname(os.path.realpath(__file__))
+    df=  pd.read_csv(os.path.join(path, 'input', 'Collateral for Loans.csv'))
+    return df
+
+def nsfr_collateral():
+    path = os.path.dirname(os.path.realpath(__file__))
+
     # Reporting date
     reporting_date = date.today()
 
@@ -69,7 +75,3 @@ def nsfr_collateral(path):
     final_output_df['Collateral Amount'] =   final_output_df['Collateral Amount'].str.replace(',', '').astype(float)
     final_output_df['Loan secured amount'] =   final_output_df['Loan secured amount'].str.replace(',', '').astype(float)
     return final_output_df
-
-
-final_output_df = nsfr_collateral(path)
-

@@ -1,16 +1,16 @@
 import numpy as np
 import pandas as pd
 import os 
-from .Loans_Advances import Loans_Advances
-from .Collateral_for_Loans import Collateral_for_Loans_NSFR
-path = os.path.dirname(os.path.realpath(__file__))
+from ..Loan_Advances import Loans_Advances
+from ..Collateral_for_Loans import Collateral_for_Loans_NSFR
 
-def Loans_Advances_NSFR(path):
-    df1 =  pd.read_csv(os.path.join(path, 'Loans_Advances', 'input', 'Loans & Advances.csv'))
-    df2 =  Loans_Advances.lcr_Loans_Advances(os.path.join(path, 'Loans_Advances'))
-    df3 =  Collateral_for_Loans_NSFR.nsfr_collateral(os.path.join(path, 'Collateral_for_Loans'))
-    df4 =  pd.read_csv(os.path.join(path, 'Collateral_for_Loans', 'input', 'Collateral for Loans.csv'))
-    df5 =  pd.read_csv(os.path.join(path, 'Loans_Advances', 'input', 'LOANS AND ADVANCES MAPPING.csv'))
+def Loans_Advances_NSFR():
+    path = os.path.dirname(os.path.realpath(__file__))
+    df1 =  pd.read_csv(os.path.join(path, 'input', 'Loans & Advances.csv'))
+    df2 =  Loans_Advances.lcr_Loans_Advances()
+    df3 =  Collateral_for_Loans_NSFR.nsfr_collateral()
+    df4 =  Collateral_for_Loans_NSFR.get_collateral_for_loans()
+    df5 =  pd.read_csv(os.path.join(path, 'input', 'LOANS AND ADVANCES MAPPING.csv'))
     output_df = pd.DataFrame()
     df1.fillna(0, inplace=True)
 
