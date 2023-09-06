@@ -3,14 +3,15 @@ import pandas as pd
 import os 
 from ..Loan_Advances import Loans_Advances
 from ..Collateral_for_Loans import Collateral_for_Loans_NSFR
+from ...Input_Files import getFiles
 
-def Loans_Advances_NSFR():
-    path = os.path.dirname(os.path.realpath(__file__))
-    df1 =  pd.read_csv(os.path.join(path, 'input', 'Loans & Advances.csv'))
-    df2 =  Loans_Advances.lcr_Loans_Advances()
-    df3 =  Collateral_for_Loans_NSFR.nsfr_collateral()
-    df4 =  Collateral_for_Loans_NSFR.get_collateral_for_loans()
-    df5 =  pd.read_csv(os.path.join(path, 'input', 'LOANS AND ADVANCES MAPPING.csv'))
+def Loans_Advances_NSFR(input_date_str):
+    input_folder_path = "Loans_Advances"
+    df1 =  getFiles.getFileByName(input_folder_path, f'Loans & Advances_{input_date_str}.csv')
+    df2 =  Loans_Advances.lcr_Loans_Advances(input_date_str)
+    df3 =  Collateral_for_Loans_NSFR.nsfr_collateral(input_date_str)
+    df4 =  Collateral_for_Loans_NSFR.get_collateral_for_loans(input_date_str)
+    df5 =  getFiles.getFileByName(input_folder_path, 'LOANS AND ADVANCES MAPPING.csv')
     output_df = pd.DataFrame()
     df1.fillna(0, inplace=True)
 

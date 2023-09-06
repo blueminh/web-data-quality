@@ -5,19 +5,20 @@
 import os
 import pandas as pd
 import numpy as np
-from datetime import date
+from datetime import datetime
+from ...Input_Files import getFiles
 
-def get_loan_and_advances_df():
-    path = os.path.dirname(os.path.realpath(__file__))
-    df = pd.read_csv(os.path.join(path, 'input', 'Loans & Advances.csv'))
+def get_loan_and_advances_df(input_date_str):
+    input_folder_path = "Loans_Advances"
+    df = getFiles.getFileByName(input_folder_path, f'Loans & Advances_{input_date_str}.csv')
     return df
 
-def lcr_Loans_Advances():
-    path = os.path.dirname(os.path.realpath(__file__))
-    df1 = pd.read_csv(os.path.join(path, 'input', 'Loans & Advances.csv'))
-    df2 = pd.read_csv(os.path.join(path, 'input', 'CounterParty Mapping.csv'))
-    df3 = pd.read_csv(os.path.join(path, 'input', 'Cash Inflow Counterparty Mapping.csv'))
-    reporting_date = date.today()
+def lcr_Loans_Advances(input_date_str):
+    input_folder_path = "Loans_Advances"
+    df1 = getFiles.getFileByName(input_folder_path, f'Loans & Advances_{input_date_str}.csv')
+    df2 = getFiles.getFileByName(input_folder_path, 'CounterParty Mapping.csv')
+    df3 = getFiles.getFileByName(input_folder_path, 'Cash Inflow Counterparty Mapping.csv')
+    reporting_date = datetime.strptime(input_date_str, "%d-%m-%Y")
 
     # Tạo output_df để chứa kết quả
     output_df = pd.DataFrame()

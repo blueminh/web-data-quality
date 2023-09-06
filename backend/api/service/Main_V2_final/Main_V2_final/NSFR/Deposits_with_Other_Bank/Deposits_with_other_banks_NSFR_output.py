@@ -4,12 +4,11 @@ import warnings
 import os
 from ..Deposits_with_Other_Bank import Deposits_with_other_banks_output
 warnings.filterwarnings('ignore')
+from ...Input_Files import getFiles
 
-
-def NSFR_Deposits_with_Other_Banks():
-    path = os.path.dirname(os.path.realpath(__file__))
-    df1 = pd.read_csv(os.path.join(path, 'input', 'Deposits with Other Banks.csv'))
-    df2 = Deposits_with_other_banks_output.lcr_deposits()
+def NSFR_Deposits_with_Other_Banks(input_date_str):
+    df1 = getFiles.getFileByName("Deposits_with_other_banks", f'Deposits with Other Banks_{input_date_str}.csv')
+    df2 = Deposits_with_other_banks_output.lcr_deposits(input_date_str)
     output_df = pd.DataFrame()
     #df1.fillna(0, inplace=True)
     df1['Maturity Date'] = pd.to_datetime(df1['Maturity Date'], errors='coerce')

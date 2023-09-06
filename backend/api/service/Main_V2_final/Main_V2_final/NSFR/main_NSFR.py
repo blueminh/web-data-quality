@@ -1720,10 +1720,10 @@ def main(request_data):
     facility = Facility_NSFR_output.nsfr_facility(extra_tables_request.get("Facility", date_str))
     offbalancesheet = Off_Balance_Sheet_NSFR_output.nsfr_offbalancesheet(extra_tables_request.get("Off Balance Sheet", date_str))
     other_items = Other_NSFR_Items.nsfr_New_Other_Items(extra_tables_request.get("Other Items", date_str))
-    issued_securities = Issued_NSFR_Securities.Issued_Securities_NSFR()
-    deposit = Deposits_NSFR_output.nsfr_deposits()
-    dep_w_other_banks_nsfr = Deposits_with_other_banks_NSFR_output.NSFR_Deposits_with_Other_Banks()
-    loans_and_advances = Loans_Advances_NSFR.Loans_Advances_NSFR()
+    issued_securities = Issued_NSFR_Securities.Issued_Securities_NSFR(extra_tables_request.get("Issued Securities", date_str))
+    deposit = Deposits_NSFR_output.nsfr_deposits(extra_tables_request.get("Deposit", date_str))
+    dep_w_other_banks_nsfr = Deposits_with_other_banks_NSFR_output.NSFR_Deposits_with_Other_Banks(extra_tables_request.get("Deposits with Other Banks", date_str))
+    loans_and_advances = Loans_Advances_NSFR.Loans_Advances_NSFR(extra_tables_request.get("Loans & Advances", date_str))
     #collecteral = 
     output_df = set_output_df()
 

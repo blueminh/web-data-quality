@@ -3,13 +3,14 @@ import numpy as np
 import pandas as pd
 
 from ..Deposits import Deposits_output
+from ...Input_Files import getFiles
 
-def nsfr_deposits():
-    path = os.path.dirname(os.path.realpath(__file__))
-    df1 = pd.read_csv(os.path.join(path, 'input', 'Deposit.csv'))
-    df2 = Deposits_output.Deposits_LCR()
-    df3 = pd.read_csv(os.path.join(path, 'input', 'Less Stable Deposit Mapping.csv'))
-    df4 = pd.read_csv(os.path.join(path, 'input', 'Stable Deposit Mapping.csv'))
+def nsfr_deposits(input_date_str):
+    input_folder_path = "Deposits"
+    df1 = getFiles.getFileByName(input_folder_path,  f'Deposit_{input_date_str}.csv')
+    df2 = Deposits_output.Deposits_LCR(input_date_str)
+    df3 = getFiles.getFileByName(input_folder_path,  'Less Stable Deposit Mapping.csv')
+    df4 = getFiles.getFileByName(input_folder_path,  'Stable Deposit Mapping.csv')
 
     output_df = pd.DataFrame()
     df1.fillna(0, inplace=True)

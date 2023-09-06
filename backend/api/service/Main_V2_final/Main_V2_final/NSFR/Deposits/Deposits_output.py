@@ -7,18 +7,18 @@ import pandas as pd
 import numpy as np
 from datetime import date
 from ..Loan_Advances import Loans_Advances
+from ...Input_Files import getFiles
 
-
-def Deposits_LCR():
-    path = os.path.dirname(os.path.realpath(__file__))
-    df1 = pd.read_csv(os.path.join(path, 'input', 'Deposit.csv'))
-    df2 = pd.read_csv(os.path.join(path, 'input', 'Currency table regulatry.csv'))
-    df3 = pd.read_csv(os.path.join(path, 'input', 'CounterParty Mapping.csv'))
-    df5 = pd.read_csv(os.path.join(path, 'input', 'insurance table.csv'))
-    df6 = Loans_Advances.lcr_Loans_Advances() # Assuming Loans_Advances is a module
-    df7 = Loans_Advances.get_loan_and_advances_df()
-    df8 = pd.read_csv(os.path.join(path, 'input', 'Product Mapping.csv'))
-    df9 = pd.read_csv(os.path.join(path, 'input', 'unstable deposit run-off factor table.csv'))
+def Deposits_LCR(input_date_str):
+    input_folder_path = "Deposits"
+    df1 = getFiles.getFileByName(input_folder_path, f'Deposit_{input_date_str}.csv')
+    df2 = getFiles.getFileByName(input_folder_path, 'Currency table regulatry.csv')
+    df3 = getFiles.getFileByName(input_folder_path, 'CounterParty Mapping.csv')
+    df5 = getFiles.getFileByName(input_folder_path, 'insurance table.csv')
+    df6 = Loans_Advances.lcr_Loans_Advances(input_date_str) # Assuming Loans_Advances is a mzdule
+    df7 = Loans_Advances.get_loan_and_advances_df(input_date_str)
+    df8 = getFiles.getFileByName(input_folder_path, 'Product Mapping.csv')
+    df9 = getFiles.getFileByName(input_folder_path, 'unstable deposit run-off factor table.csv')
     
     # Tạo output_df để chứa kết quả
     output_df = pd.DataFrame()

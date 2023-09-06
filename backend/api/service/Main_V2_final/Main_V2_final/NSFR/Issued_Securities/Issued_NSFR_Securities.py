@@ -2,11 +2,13 @@ import numpy as np
 import pandas as pd
 import os
 from ..Issued_Securities import Issued_Securities
-def Issued_Securities_NSFR():
-    path = os.path.dirname(os.path.realpath(__file__))
-    df1 = pd.read_csv(os.path.join(path, 'input', 'Issued Securities.csv'))
-    df2 = Issued_Securities.lcr_Issued_Securities()
-    df3 = pd.read_csv(os.path.join(path, 'input', 'ISSUED SECURITIES AND BORROWINGS MAPPING.csv'))
+from ...Input_Files import getFiles
+
+def Issued_Securities_NSFR(input_date_str):
+    input_folder_path = "Issued_Securities"
+    df1 = getFiles.getFileByName(input_folder_path, f'Issued Securities_{input_date_str}.csv')
+    df2 = Issued_Securities.lcr_Issued_Securities(input_date_str)
+    df3 = getFiles.getFileByName(input_folder_path,'ISSUED SECURITIES AND BORROWINGS MAPPING.csv')
 
     output_df = pd.DataFrame()
     df1.fillna(0, inplace=True)
