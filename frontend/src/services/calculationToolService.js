@@ -66,6 +66,19 @@ export async function getTableList() {
   }
 }
 
+export async function getNonDataTableList() {
+  try {
+    const response = await axiosInstance.get(`/data/getNonDataTableList`, {
+      withCredentials: true
+    });
+
+    return response.data
+
+  } catch (error) {
+    throw new Error('Error fetching table list', error);
+  }
+}
+
 export async function getLcrData(requestData) {
   try {
     const response = await axiosInstance.post(`/data/getLcr`, requestData, {
@@ -90,6 +103,6 @@ export async function getNsfrData(requestData) {
 
   } catch (error) {
     console.log(error)
-    throw new Error('Error fetching NSFR data:', error);
+    throw new Error('Error fetching data:', error);
   }
 }

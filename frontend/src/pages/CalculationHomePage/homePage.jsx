@@ -5,6 +5,7 @@ import CalulationQuickDashboard from '../../components/calculationTool/dashboard
 import LCRDashBoard from '../../components/calculationTool/lcrBoard/lcrBoard';
 import InputDashboard from '../../components/calculationTool/inputBoard/inputboard';
 import NSFRDashBoard from '../../components/calculationTool/nsfrBoard/nsfrBoard';
+import ViewMappingAndRegulatory from '../../components/calculationTool/viewMappingAndRegulatory/viewMappingAndRegulatory';
 
 export default function CalculationHomePage() {
     return (
@@ -24,6 +25,9 @@ export default function CalculationHomePage() {
                 </Tab>
                 <Tab eventKey="input" title="Nhập dữ liệu">
                     <InputDashboard></InputDashboard>
+                </Tab>
+                <Tab eventKey="viewMappingAndRegulatory" title="Xem bảng Mapping và Regulatory">
+                    <ViewMappingAndRegulatory></ViewMappingAndRegulatory>
                 </Tab>
             </Tabs>
         </div>

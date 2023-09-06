@@ -1,0 +1,19 @@
+.form-input {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.form-input label {
+    margin-right: 10px;
+}
+
+.forms-container {
+    text-align: center;
+    margin: 75px auto; /* Center the div horizontally */
+    max-width: 600px; /* Set the maximum width */
+}
+
+#dataTable {
+    margin: 40px;
+}
