@@ -5,6 +5,7 @@ Copyright (c) 2019 - present AppSeed.us
 
 from datetime import datetime, timezone, timedelta
 import os
+import pandas as pd
 
 from functools import wraps
 
@@ -389,6 +390,35 @@ class GetNonDatatableList(Resource):
             "regulatory_tables": list(REGULATORY_TABLES.keys()),
             "other_tables": list(OTHER_TABLES.keys())
         }
+    
+@rest_api.route('/data/getNonDataTable', methods=['GET'])
+class GetNonDatatableList(Resource):
+    def get(self):
+        table_name = request.args.get('table_name')
+        if not table_name:
+            return jsonify({"error": "Table name is missing in the request."}), 400
+
+        # Define a dictionary that combines all tables and their paths
+        all_tables = {**MAPPING_TABLES, **REGULATORY_TABLES, **OTHER_TABLES}
+
+        # Check if the requested table exists in the dictionary
+        if table_name in all_tables:
+            # table_path = os.path.join(all_tables[table_name])
+            table_path = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'service', 'Main_V2_final', 'Main_V2_final', all_tables[table_name], f'{table_name}.csv')
+            # Check if the file exists
+            if os.path.exists(table_path):
+                # Read the CSV file using pandas
+                df = pd.read_csv(table_path)
+                
+                # Convert the DataFrame to a JSON object
+                table_data = df.to_json(orient='split')
+                
+                # Return the JSON response
+                return jsonify(table_data)
+            else:
+                return jsonify({"error": "Table not found."}), 401
+        else:
+            return jsonify({"error": "Table not found."}), 401
 
 def checkTables(extra_tables_request, reporting_date):
     # extra_tables_request is a dictionary with name of table and date

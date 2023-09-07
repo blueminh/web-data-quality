@@ -81,6 +81,21 @@ export async function getNonDataTableList() {
   }
 }
 
+export async function getNonDataTable(tableName) {
+  try {
+    const response = await axiosInstance.get(`/data/getNonDataTable?table_name=${tableName}`, {
+      withCredentials: true,
+    });
+    if (typeof response.data === 'string') {
+      return JSON.parse(response.data)
+    }
+    return response.data
+
+  } catch (error) {
+    throw new Error('Error fetching table', error);
+  }
+}
+
 export async function getLcrData(requestData) {
   try {
     const response = await axiosInstance.post(`/data/getLcr`, requestData, {
