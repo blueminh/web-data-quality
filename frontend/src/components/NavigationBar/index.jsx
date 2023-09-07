@@ -36,7 +36,7 @@ export default function NavigationBar() {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
                         <Nav.Link href="/calculation">Calculation Tool</Nav.Link>
-                        <Nav.Link href="/validation">Validation Tool</Nav.Link>
+                        {/* <Nav.Link href="/validation">Validation Tool</Nav.Link> */}
                     </Nav>
                     <Nav>
                     {getAuth().isLoggedIn ? 

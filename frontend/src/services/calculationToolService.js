@@ -31,7 +31,9 @@ export async function getDashboardLcrNsfrData(requestData) {
     const response = await axiosInstance.post(`/data/getDashboardLcrNsfr`, requestData, {
       withCredentials: true
     });
-
+    if (typeof response.data === 'string') {
+      return JSON.parse(response.data)
+    }
     return response.data
 
   } catch (error) {

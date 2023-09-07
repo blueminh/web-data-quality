@@ -96,10 +96,6 @@ export default function CalulationQuickDashboard() {
             try {
                 setIsLoading(true)
                 const response = await getDashboardLcrNsfrData(requestData)
-                console.log("ahhhh")
-                console.log(response)
-                console.log(typeof(response))
-                console.log(response['success'])
                 if (response.success) {
                     setLcrData(response.data.lcr_data)
                     setNsfrData(response.data.nsfr_data)

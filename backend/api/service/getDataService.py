@@ -2,7 +2,15 @@ from .Main_V2_final.Main_V2_final.LCR.main_LCR import main as main_lcr
 from .Main_V2_final.Main_V2_final.main_Home import main as main_home
 from .Main_V2_final.Main_V2_final.NSFR.main_NSFR import main as main_nsfr
 import math
+import pandas as pd
 
+def replace_nan_with_empty_string(data):
+    for row in data['rows']:
+        if pd.isna(row['data']):
+            row['data'] = ''
+        # for value in row['data']:
+        #     if pd.isna(value):
+        #         row['data'] = ''
 
 def get_dashboard_lcr_nsfr_data(request_data):
     # return {"lcr_data": lcr_data, "nsfr_data": nsfr_data}
@@ -95,6 +103,9 @@ def get_dashboard_lcr_nsfr_data(request_data):
             },
         ]
     }
+
+    replace_nan_with_empty_string(lcr_data)
+    replace_nan_with_empty_string(nsfr_data)
 
     return {
         "lcr_data":lcr_data,
