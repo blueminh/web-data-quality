@@ -1,0 +1,21 @@
+NO,ITEM,TYPE,AMOUNT ALL MATURITY,AMOUNT UNDER 6M,AMOUNT 6M TO 1Y,AMOUNT ABOVE 1Y,CURRENCY,WEIGHTS,WEIGHTED AMOUNT FOR HQLA,RSF FACTOR ALL MATURITY,WEIGHTED RSF AMOUNT,ASF FACTOR UNDER 6M,ASF FACTOR 6M TO 1Y,ASF FACTOR ABOVE 1Y,WEIGHTED ASF AMOUNT
+1,"Cash at Bank
+Tiền mặt tại Ngân hàng",ASSET,"960,222,848,915",,,,VND,100%,,0%,,,,,
+2,"Cash at SBV - Investment in Central bank reserves
+Tiền gửi tại NHNN",ASSET,"4,068,195,399,636",,,,VND,100%,,0%,,,,,
+3,"Physical Traded commodities including gold
+Vàng bạc, đá quý",ASSET,"1,552,950,000",,,,VND,0%,,85%,,,,,
+4,"Fixed Assets
+Tài sản cố định",ASSET,"1,008,038,119,795",,,,VND,,,100%,,,,,
+5,"Investing real estates
+Bất động sản đầu tư",ASSET,"15,971,453,328",,,,VND,,,100%,,,,,
+6,"Items deducted from regulatory capital
+Các khoản giảm trừ khỏi vốn tự có",ASSET,"725,074,899,656",,,,VND,,,100%,,,,,
+7,"Debt purchasing activities
+Hoạt động mua nợ",ASSET, -   ,,,,VND,,,100%,,,,,
+8,"Receivables
+Các khoản phải thu",ASSET,"1,885,184,799,455",,,,VND,,,100%,,,,,
+9,"Investment in subsidaries
+Đầu tư vào công ty con",ASSET, -   ,,,,VND,,,100%,,,,,
+10,"Contribution in joint ventures
+Vốn góp liên doanh",ASSET, -   ,,,,VND,,,100%,,,,,
