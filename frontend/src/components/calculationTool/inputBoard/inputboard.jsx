@@ -2,7 +2,7 @@ import { Container, Row, Col, Form, Table, Button, Stack, Modal} from 'react-boo
 import '../../../Global.css'
 import './inputboard.css'
 import { useState, useEffect } from 'react';
-import { fetchUploadHistory, uploadFile } from '../../../services/calculationToolService';
+import { fetchUploadHistory, getPreviewDataTable, uploadFile } from '../../../services/calculationToolService';
 import Autosuggest from 'react-autosuggest';
 import * as XLSX from 'xlsx'; // Import xlsx library
 import useLocalStorageAuth from '../../../hooks/useLocalStorageAuth'
@@ -92,13 +92,7 @@ export default function InputDashboard() {
         return filteredSuggestions;
     };
 
-    const [sampleData, setSampleData] = useState([
-        ["Jack","McGinnis","220 hobo Av.","Phila"," PA",9119  ],
-        ["John \"Da Man\"","Repici","120 Jefferson St.","Riverside"," NJ",8075  ],
-        ["Stephen","Tyler","7452 Terrace \"At the Plaza\" road","SomeTown","SD",91234  ],
-        ["","Blankman","","SomeTown"," SD",298  ],
-        ["Joan \"the bone\", Anne","Jet","9th, at Terrace plc","Desert City","CO",123  ]
-    ])
+    const [sampleData, setSampleData] = useState()
 
     const [showSampleDataPopup, setShowSampleDataPopup] = useState(false);
     const handleCloseSampleDataPopup = () => setShowSampleDataPopup(false);
@@ -208,6 +202,19 @@ export default function InputDashboard() {
 
     const [showMessagePopup, setShowMessagePopup] = useState(false);
     const handleCloseMessagePopup = () => setShowMessagePopup(false);
+
+    const handleFetchSampleData = () => {
+        const fetchData = async () => {
+            try {
+              const sample = await getPreviewDataTable(tableName)
+              setSampleData(sample)
+              setShowSampleDataPopup(true)
+            } catch (error) {
+              console.error('Error fetching sample data', error);
+            }
+        };
+        fetchData()
+    }
     
     return (
         <>
@@ -227,21 +234,36 @@ export default function InputDashboard() {
                     <Modal.Title>Dữ liệu mẫu của bảng đã chọn</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    {tableName === ""
-                        ? "Vui lòng chọn bảng"
-                        : <Table striped bordered>
+                    {tableName === "" ? (
+                        "Vui lòng chọn bảng"
+                    ) : (
+                        <div className="table-responsive"> {/* Add a class for responsive behavior */}
+                        <Table striped bordered>
+                            <thead>
+                            <tr>
+                                {sampleData &&
+                                sampleData.columns.map((col, colIndex) => (
+                                    <th key={colIndex} className="table-title">
+                                    {col}
+                                    </th>
+                                ))}
+                            </tr>
+                            </thead>
                             <tbody>
-                                {sampleData.map((row, rowIndex) => (
-                                    <tr key={rowIndex}>
+                            {sampleData &&
+                                sampleData.data.map((row, rowIndex) => (
+                                <tr key={rowIndex}>
                                     {row.map((cell, cellIndex) => (
-                                        <td key={cellIndex}>{cell}</td>
+                                    <td key={cellIndex}>{cell}</td>
                                     ))}
-                                    </tr>
+                                </tr>
                                 ))}
                             </tbody>
-                        </Table>      
-                    }
-                </Modal.Body>
+                        </Table>
+                        </div>
+                    )}
+                    </Modal.Body>
+
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleCloseSampleDataPopup}>
                         Đóng
@@ -278,11 +300,12 @@ export default function InputDashboard() {
                                 <Form.Select required onChange={(event) => {
                                     setTableName(String(event.target.value))
                                 }}>
+                                    <option>Chọn bảng</option>
                                     {tableNameOptions.map(type => <option>{type}</option>)}
                                 </Form.Select>
                             </div>
                             <div className='centered-button-container'>
-                                <Button onClick={() => setShowSampleDataPopup(true)}>Bấm để xem dữ liệu mẫu của bảng đã chọn</Button>
+                                <Button onClick={handleFetchSampleData}>Xem dữ liệu mẫu của bảng đã chọn</Button>
                             </div>
                             {/* <div className="form-input">
                                 <Form.Label>Chọn bảng mapping cần nhập</Form.Label>

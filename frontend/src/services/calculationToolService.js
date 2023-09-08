@@ -2,8 +2,11 @@ import axiosInstance from '../config/axiosConfig'
 
 export async function fetchUploadHistory(username) {
   try {
-    const response = await axiosInstance.get(`/upload/history?username=${username}`, {
-      withCredentials: true
+    const response = await axiosInstance.get(`/upload/history`, {
+      withCredentials: true,
+      params: {
+        username: username
+      }
     });
     return response.data.upload_history;
   } catch (error) {
@@ -83,8 +86,11 @@ export async function getNonDataTableList() {
 
 export async function getNonDataTable(tableName) {
   try {
-    const response = await axiosInstance.get(`/data/getNonDataTable?table_name=${tableName}`, {
+    const response = await axiosInstance.get(`/data/getNonDataTable}`, {
       withCredentials: true,
+      params: {
+        table_name: tableName
+      }
     });
     if (typeof response.data === 'string') {
       return JSON.parse(response.data)

@@ -136,7 +136,7 @@ export default function NSFRDashBoard() {
                     </div>
                 </Stack>
             </div>
-            <div id="dataTable">
+            <div id="dataTable" className="table-responsive">
                 <Table bordered>
                     <tbody>
                         <tr>
