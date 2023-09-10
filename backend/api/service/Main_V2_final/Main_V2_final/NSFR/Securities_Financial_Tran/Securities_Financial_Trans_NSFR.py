@@ -6,10 +6,10 @@ from ...Input_Files import getFiles
 
 def nsfr_securitiesfinancialtrans(input_date_str):
     input_folder_path = "Securities_Financial_Trans"
-    df1 =  getFiles.getFileByName(input_folder_path, f'Securities Financial Trans_{input_date_str}.csv')
+    df1 =  getFiles.getFileByName(input_folder_path, f'Securities_Financial_Trans_{input_date_str}.csv')
     df2 = Securities_Financial_Trans.lcr_securitiesfinancialtrans(input_date_str)
-    df3 =  getFiles.getMappingFileByName('SFT MAPPING.csv')
-    df4 =  getFiles.getMappingFileByName('Borrowings Mapping.csv')
+    df3 = getFiles.getMappingFileByName('SFT_MAPPING.csv')
+    df4 = getFiles.getMappingFileByName('Borrowings_Mapping.csv')
 
     df1.fillna(0, inplace=True)
     #output dataframe

@@ -1,16 +1,16 @@
 version: '3' 
 services:
   frontend:
-    image: web-data-quality-frontend:1.2
+    image: web-data-quality-frontend:2.6
     build: ./frontend
     platform: linux/amd64
     container_name: web-data-quality-frontend
     ports:
       - 3000:3000
-  back-end:
-    image: web-data-quality-backend:1.2
-    build: ./backend
-    platform: linux/amd64
-    container_name: web-data-quality-backend
-    ports:
-      - 8085:8085
+  # back-end:
+  #   image: web-data-quality-backend:2.1
+  #   build: ./backend
+  #   platform: linux/amd64
+  #   container_name: web-data-quality-backend
+  #   ports:
+  #     - 8085:8085

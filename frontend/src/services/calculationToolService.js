@@ -86,11 +86,8 @@ export async function getNonDataTableList() {
 
 export async function getNonDataTable(tableName) {
   try {
-    const response = await axiosInstance.get(`/data/getNonDataTable}`, {
+    const response = await axiosInstance.get(`/data/getNonDataTable?table_name=${tableName}`, {
       withCredentials: true,
-      params: {
-        table_name: tableName
-      }
     });
     if (typeof response.data === 'string') {
       return JSON.parse(response.data)

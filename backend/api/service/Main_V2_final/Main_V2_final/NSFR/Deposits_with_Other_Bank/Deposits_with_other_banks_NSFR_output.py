@@ -7,7 +7,7 @@ warnings.filterwarnings('ignore')
 from ...Input_Files import getFiles
 
 def NSFR_Deposits_with_Other_Banks(input_date_str):
-    df1 = getFiles.getFileByName("Deposits_with_other_banks", f'Deposits with Other Banks_{input_date_str}.csv')
+    df1 = getFiles.getFileByName("Deposits_with_other_banks", f'Deposits_with_Other_Banks_{input_date_str}.csv')
     df2 = Deposits_with_other_banks_output.lcr_deposits(input_date_str)
     output_df = pd.DataFrame()
     #df1.fillna(0, inplace=True)

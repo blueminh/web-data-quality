@@ -10,7 +10,7 @@ from ...Input_Files import getFiles
 
 def get_collateral_for_loans(input_date_str):
     input_folder_path = "Collateral_For_Loans"
-    df=  getFiles.getFileByName(input_folder_path, f'Collateral For Loans_{input_date_str}.csv')
+    df=  getFiles.getFileByName(input_folder_path, f'Collateral_For_Loans_{input_date_str}.csv')
     return df
 
 def nsfr_collateral(input_date_str):
@@ -19,13 +19,13 @@ def nsfr_collateral(input_date_str):
     reporting_date = datetime.strptime(input_date_str, "%d-%m-%Y")
 
     input_folder_path = "Collateral_For_Loans"
-    df1 =  getFiles.getFileByName(input_folder_path, f'Collateral For Loans_{input_date_str}.csv')
-    df2 =  getFiles.getMappingFileByName('Collateral Product Mapping.csv')
-    df3 =  getFiles.getMappingFileByName('Counterparty Mapping.csv')
-    df4 =  getFiles.getRegulatoryFileByName('Currency table regulatry.csv')
-    df5 =  getFiles.getOtherFiles('Risk Weight Table.csv')
-    df6 =  getFiles.getOtherFiles('Rating Table.csv')
-    df7 =  getFiles.getOtherFiles('HQLA asset table.csv')
+    df1 =  getFiles.getFileByName(input_folder_path, f'Collateral_For_Loans_{input_date_str}.csv')
+    df2 = getFiles.getMappingFileByName('Collateral_Product_Mapping.csv')
+    df3 = getFiles.getMappingFileByName('Counterparty_Mapping.csv')
+    df4 = getFiles.getRegulatoryFileByName('Currency_table_regulatry.csv')
+    df5 = getFiles.getOtherFiles('Risk_Weight_Table.csv')
+    df6 = getFiles.getOtherFiles('Rating_Table.csv')
+    df7 = getFiles.getOtherFiles('HQLA_asset_table.csv')
 
     df1.fillna(0, inplace=True)
     output_df = pd.DataFrame()

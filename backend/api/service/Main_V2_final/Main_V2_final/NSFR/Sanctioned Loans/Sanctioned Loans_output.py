@@ -14,7 +14,7 @@ def lcr_sanctionedloans(path):
     # Reporting date
     reporting_date = date.today()
 
-    df1 = pd.read_csv(os.path.join(path, 'input', 'Sanctioned Loans.csv'))
+    df1 = pd.read_csv(os.path.join(path, 'input', 'Sanctioned_Loans.csv'))
 
     #output dataframe
     output_df = pd.DataFrame()

@@ -9,8 +9,8 @@ def nsfr_deposits(input_date_str):
     input_folder_path = "Deposits"
     df1 = getFiles.getFileByName(input_folder_path,  f'Deposit_{input_date_str}.csv')
     df2 = Deposits_output.Deposits_LCR(input_date_str)
-    df3 = getFiles.getMappingFileByName('Less Stable Deposit Mapping.csv')
-    df4 = getFiles.getMappingFileByName('Stable Deposit Mapping.csv')
+    df3 = getFiles.getMappingFileByName('Less_Stable_Deposit_Mapping.csv')
+    df4 = getFiles.getMappingFileByName('Stable_Deposit_Mapping.csv')
 
     output_df = pd.DataFrame()
     df1.fillna(0, inplace=True)

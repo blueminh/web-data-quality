@@ -10,14 +10,14 @@ from ...Input_Files import getFiles
 
 def get_loan_and_advances_df(input_date_str):
     input_folder_path = "Loans_Advances"
-    df = getFiles.getFileByName(input_folder_path, f'Loans & Advances_{input_date_str}.csv')
+    df = getFiles.getFileByName(input_folder_path, f'Loans_&_Advances_{input_date_str}.csv')
     return df
 
 def lcr_Loans_Advances(input_date_str):
     input_folder_path = "Loans_Advances"
-    df1 = getFiles.getFileByName(input_folder_path, f'Loans & Advances_{input_date_str}.csv')
-    df2 = getFiles.getMappingFileByName('CounterParty Mapping.csv')
-    df3 = getFiles.getMappingFileByName('Cash Inflow Counterparty Mapping.csv')
+    df1 = getFiles.getFileByName(input_folder_path, f'Loans_&_Advances_{input_date_str}.csv')
+    df2 = getFiles.getMappingFileByName('CounterParty_Mapping.csv')
+    df3 = getFiles.getMappingFileByName('Cash_Inflow_Counterparty_Mapping.csv')
     reporting_date = datetime.strptime(input_date_str, "%d-%m-%Y")
 
     # Tạo output_df để chứa kết quả

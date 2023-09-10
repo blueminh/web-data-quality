@@ -8,8 +8,8 @@ def nsfr_investmentandtradingsecurities(input_date_str):
     # Reporting date
     input_folder_path = "Investment_Trading_Securities"
 
-    df1 = getFiles.getFileByName(input_folder_path, f'Investment&Trading Securities_{input_date_str}.csv')
-    df2 = getFiles.getMappingFileByName('INVESTMENT SECURITIES MAPPING (used).csv')
+    df1 = getFiles.getFileByName(input_folder_path, f'Investment&Trading_Securities_{input_date_str}.csv')
+    df2 = getFiles.getMappingFileByName('INVESTMENT_SECURITIES_MAPPING_(used).csv')
     df3 = Investment_Trading_Securities_output.lcr_investmentandtradingsecurities(input_date_str)
     
     df1.fillna(0, inplace=True)

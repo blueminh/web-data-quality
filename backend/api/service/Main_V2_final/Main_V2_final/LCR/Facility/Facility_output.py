@@ -13,9 +13,9 @@ def lcr_facility(input_date_str):
     reporting_date = datetime.strptime(input_date_str, "%d-%m-%Y")
     input_folder_path = "Facility"
     df1 = getFiles.getFileByName(input_folder_path,  f'Facility_{input_date_str}.csv')
-    df2 = getFiles.getMappingFileByName('Counterparty Mapping.csv')
-    df3 = getFiles.getMappingFileByName('OBS Product Mapping.csv')
-    df4 = getFiles.getMappingFileByName('Facility Mapping.csv')
+    df2 = getFiles.getMappingFileByName('Counterparty_Mapping.csv')
+    df3 = getFiles.getMappingFileByName('OBS_Product_Mapping.csv')
+    df4 = getFiles.getMappingFileByName('Facility_Mapping.csv')
     df1.fillna(0, inplace=True)
 
     #output dataframe

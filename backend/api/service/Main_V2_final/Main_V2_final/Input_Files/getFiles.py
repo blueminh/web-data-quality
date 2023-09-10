@@ -6,10 +6,10 @@ def getFileByName(folder, fileName):
     return pd.read_csv(os.path.join(path, folder, fileName))
 
 def getMappingFileByName(fileName):
-    return pd.read_csv(os.path.join(path, "Mapping Tables", fileName))
+    return pd.read_csv(os.path.join(path, "Mapping_Tables", fileName))
 
 def getRegulatoryFileByName(fileName):
-    return pd.read_csv(os.path.join(path, "Regulatory Tables", fileName))
+    return pd.read_csv(os.path.join(path, "Regulatory_Tables", fileName))
 
 def getOtherFiles(fileName):
-    return pd.read_csv(os.path.join(path, "Other Tables", fileName))
+    return pd.read_csv(os.path.join(path, "Other_Tables", fileName))

@@ -14,7 +14,7 @@ def lcr_deposits(input_date_str):
     input_folder_path = "Deposits_with_other_banks"
     reporting_date = datetime.strptime(input_date_str, "%d-%m-%Y")
 
-    df1 = getFiles.getFileByName(input_folder_path, f'Deposits with Other Banks_{input_date_str}.csv')
+    df1 = getFiles.getFileByName(input_folder_path, f'Deposits_with_Other_Banks_{input_date_str}.csv')
     df1.fillna(0, inplace=True)
     output_df = pd.DataFrame()
     #reporting date

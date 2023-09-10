@@ -13,7 +13,7 @@ def lcr_deposits(input_date_str):
     # Reporting date
     reporting_date = datetime.strptime(input_date_str, "%d-%m-%Y")
 
-    df1 = getFiles.getFileByName("Deposits_with_other_banks", f'Deposits with Other Banks_{input_date_str}.csv')
+    df1 = getFiles.getFileByName("Deposits_with_other_banks", f'Deposits_with_Other_Banks_{input_date_str}.csv')
     df1.fillna(0, inplace=True)
     output_df = pd.DataFrame()
     #reporting date

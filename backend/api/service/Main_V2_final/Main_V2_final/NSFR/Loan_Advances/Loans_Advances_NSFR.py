@@ -7,11 +7,11 @@ from ...Input_Files import getFiles
 
 def Loans_Advances_NSFR(input_date_str):
     input_folder_path = "Loans_Advances"
-    df1 =  getFiles.getFileByName(input_folder_path, f'Loans & Advances_{input_date_str}.csv')
+    df1 =  getFiles.getFileByName(input_folder_path, f'Loans_&_Advances_{input_date_str}.csv')
     df2 =  Loans_Advances.lcr_Loans_Advances(input_date_str)
     df3 =  Collateral_for_Loans_NSFR.nsfr_collateral(input_date_str)
     df4 =  Collateral_for_Loans_NSFR.get_collateral_for_loans(input_date_str)
-    df5 =  getFiles.getMappingFileByName('LOANS AND ADVANCES MAPPING.csv')
+    df5 =  getFiles.getMappingFileByName('LOANS_AND_ADVANCES_MAPPING.csv')
     output_df = pd.DataFrame()
     df1.fillna(0, inplace=True)
 

@@ -15,15 +15,15 @@ def lcr_securitiesfinancialtrans(input_date_str):
 
     # Reporting date
     reporting_date =  datetime.strptime(input_date_str, "%d-%m-%Y")
-    df1 =  getFiles.getFileByName(input_folder_path,  f'Securities Financial Trans_{input_date_str}.csv')
-    df2 =  getFiles.getMappingFileByName('Product Mapping.csv')
-    df3 =  getFiles.getMappingFileByName('Counterparty Mapping.csv')
-    df4 =  getFiles.getRegulatoryFileByName('Currency table regulatry.csv')
-    df5 =  getFiles.getOtherFiles('Risk Weight Table.csv')
-    df6 =  getFiles.getOtherFiles('Rating Table.csv')
-    df7 =  getFiles.getOtherFiles('HQLA asset table.csv')
-    df8 =  getFiles.getOtherFiles('sft inflow table.csv')
-    df9 =  getFiles.getOtherFiles('sft outflow table.csv')
+    df1 =  getFiles.getFileByName(input_folder_path,  f'Securities_Financial_Trans_{input_date_str}.csv')
+    df2 = getFiles.getMappingFileByName('Product_Mapping.csv')
+    df3 = getFiles.getMappingFileByName('Counterparty_Mapping.csv')
+    df4 = getFiles.getRegulatoryFileByName('Currency_table_regulatry.csv')
+    df5 = getFiles.getOtherFiles('Risk_Weight_Table.csv')
+    df6 = getFiles.getOtherFiles('Rating_Table.csv')
+    df7 = getFiles.getOtherFiles('HQLA_asset_table.csv')
+    df8 = getFiles.getOtherFiles('sft_inflow_table.csv')
+    df9 = getFiles.getOtherFiles('sft_outflow_table.csv')
 
     df1.fillna(0, inplace=True)
 

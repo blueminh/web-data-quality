@@ -15,8 +15,8 @@ def lcr_borrowing(input_date_str):
     input_folder_path = "Borrowings"
     input_date = datetime.strptime(input_date_str, "%d-%m-%Y")
     df1 = getFiles.getFileByName(input_folder_path, f'Borrowings_{input_date_str}.csv')
-    df2 = getFiles.getMappingFileByName('Counterparty Mapping.csv')
-    df3 = getFiles.getMappingFileByName('Counterparty Unsecured Funding Mapping.csv')
+    df2 = getFiles.getMappingFileByName('Counterparty_Mapping.csv')
+    df3 = getFiles.getMappingFileByName('Counterparty_Unsecured_Funding_Mapping.csv')
 # Tạo DataFrame mới để chứa kết quả tính toán
     # Tạo DataFrame mới để chứa kết quả tính toán
     output_df = pd.DataFrame()

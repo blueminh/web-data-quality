@@ -15,7 +15,7 @@ def lcr_sanctionedloans(path):
     # Reporting date
     reporting_date = date(2022, 9, 30)
 
-    df1 = getFiles.getFileByName("Sanctioned_Loans", 'Sanctioned Loans.csv')
+    df1 = getFiles.getFileByName("Sanctioned_Loans", 'Sanctioned_Loans.csv')
 
     #output dataframe
     output_df = pd.DataFrame()

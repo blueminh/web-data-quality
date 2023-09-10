@@ -1,7 +1,9 @@
 const useLocalStorageAuth = () => {
     const getAuth = () => {
       const storedAuthData = localStorage.getItem('authData');
-      return storedAuthData ? JSON.parse(storedAuthData) : null;
+      return storedAuthData ? JSON.parse(storedAuthData) : {
+        isLoggedIn: false,
+      };
     };
   
     const setAuth = (newAuthData) => {

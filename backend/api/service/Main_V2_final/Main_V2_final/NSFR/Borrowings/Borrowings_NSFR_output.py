@@ -30,7 +30,7 @@ def nsfr_borrowings(input_date_str):
     input_folder_path = "Borrowings"
     df1 = getFiles.getFileByName(input_folder_path, f'Borrowings_{input_date_str}.csv')
     df2 =  Borrowings_output.lcr_borrowing(input_date_str)
-    df3 = getFiles.getMappingFileByName('Borrowings Mapping.csv')
+    df3 = getFiles.getMappingFileByName('Borrowings_Mapping.csv')
 
     df1.fillna(0, inplace=True)
     #output dataframe

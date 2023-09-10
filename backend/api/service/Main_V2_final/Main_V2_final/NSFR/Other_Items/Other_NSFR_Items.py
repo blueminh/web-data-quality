@@ -8,7 +8,7 @@ import os
 from ...Input_Files import getFiles
 
 def nsfr_New_Other_Items(input_date_str):
-    df1 = getFiles.getFileByName("Other_Items", f'Other Items_{input_date_str}.csv')
+    df1 = getFiles.getFileByName("Other_Items", f'Other_Items_{input_date_str}.csv')
     output_df = pd.DataFrame()
     df1.fillna(0, inplace=True)
     #nsfr

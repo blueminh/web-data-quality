@@ -1,45 +1,45 @@
 TABLES = {
     "Borrowings":"Input_Files/Borrowings/",
-    "Investment&Trading Securities":"Input_Files/Investment_Trading_Securities/",
-    "Securities Financial Trans":"Input_Files/Securities_Financial_Trans/",
+    "Investment&Trading_Securities":"Input_Files/Investment_Trading_Securities/",
+    "Securities_Financial Trans":"Input_Files/Securities_Financial_Trans/",
     "Deposit":"Input_Files/Deposits/",
     "Derivatives":"Input_Files/Derivatives/",
     "Facility":"Input_Files/Facility/",
-    "Other Items":"Input_Files/Other_Items/",
-    "Off Balance Sheet":"Input_Files/Off_Balance_Sheet/",
-    "Loans & Advances": "Input_Files/Loans_Advances/",
-    "Issued Securities":"Input_Files/Issued_Securities/",
-    "Deposits with Other Banks":"Input_Files/Deposits_with_other_banks/" 
+    "Other_Items":"Input_Files/Other_Items/",
+    "Off_Balance_Sheet":"Input_Files/Off_Balance_Sheet/",
+    "Loans_&_Advances": "Input_Files/Loans_Advances/",
+    "Issued_Securities":"Input_Files/Issued_Securities/",
+    "Deposits_with_Other_Banks":"Input_Files/Deposits_with_other_banks/" 
 }
 
 MAPPING_TABLES = {
-    "Asset Issuers HQLA Mapping": "Input_Files/Mapping Tables",
-    "Borrowings Mapping":"Input_Files/Mapping Tables",
-    "Cash Inflow Counterparty Mapping":"Input_Files/Mapping Tables",
-    "Collateral Product Mapping":"Input_Files/Mapping Tables",
-    "Counterparty Mapping":"Input_Files/Mapping Tables",
-    "Counterparty Unsecured Funding Mapping":"Input_Files/Mapping Tables",
-    "Facility Mapping":"Input_Files/Mapping Tables",
-    "INVESTMENT SECURITIES MAPPING (used)":"Input_Files/Mapping Tables",
-    "ISSUED SECURITIES AND BORROWINGS MAPPING":"Input_Files/Mapping Tables",
-    "Less Stable Deposit Mapping":"Input_Files/Mapping Tables",
-    "LOANS AND ADVANCES MAPPING":"Input_Files/Mapping Tables",
-    "OBS Product Mapping":"Input_Files/Mapping Tables",
-    "Product Mapping":"Input_Files/Mapping Tables",
-    "SFT MAPPING":"Input_Files/Mapping Tables",
-    "Stable Deposit Mapping":"Input_Files/Mapping Tables"
+    "Asset_Issuers_HQLA_Mapping": "Input_Files/Mapping_Tables",
+    "Borrowings_Mapping":"Input_Files/Mapping_Tables",
+    "Cash_Inflow_Counterparty_Mapping":"Input_Files/Mapping_Tables",
+    "Collateral_Product_Mapping":"Input_Files/Mapping_Tables",
+    "Counterparty_Mapping":"Input_Files/Mapping_Tables",
+    "Counterparty_Unsecured_Funding_Mapping":"Input_Files/Mapping_Tables",
+    "Facility_Mapping":"Input_Files/Mapping_Tables",
+    "INVESTMENT_SECURITIES_MAPPING_(used)":"Input_Files/Mapping_Tables",
+    "ISSUED_SECURITIES_AND_BORROWINGS_MAPPING":"Input_Files/Mapping_Tables",
+    "Less_Stable_Deposit_Mapping":"Input_Files/Mapping_Tables",
+    "LOANS_AND_ADVANCES_MAPPING":"Input_Files/Mapping_Tables",
+    "OBS_Product_Mapping":"Input_Files/Mapping_Tables",
+    "Product_Mapping":"Input_Files/Mapping_Tables",
+    "SFT_MAPPING":"Input_Files/Mapping_Tables",
+    "Stable_Deposit_Mapping":"Input_Files/Mapping_Tables"
 }
 
 REGULATORY_TABLES = {
-    "Currency table regulatry": "Input_Files/Regulatory Tables"
+    "Currency_table_regulatry": "Input_Files/Regulatory_Tables"
 }
 
 OTHER_TABLES = {
-    "HQLA asset table":"Input_Files/Other Tables",
-    "HQLA weight table":"Input_Files/Other Tables",
-    "insurance table":"Input_Files/Other Tables",
-    "Rating Table":"Input_Files/Other Tables",
-    "Risk Weight Table":"Input_Files/Other Tables",
-    "sft inflow table":"Input_Files/Other Tables",
-    "sft outflow table":"Input_Files/Other Tables"
+    "HQLA_asset_table":"Input_Files/Other_Tables",
+    "HQLA_weight_table":"Input_Files/Other_Tables",
+    "insurance_table":"Input_Files/Other_Tables",
+    "Rating_Table":"Input_Files/Other_Tables",
+    "Risk_Weight_Table":"Input_Files/Other_Tables",
+    "sft_inflow_table":"Input_Files/Other_Tables",
+    "sft_outflow_table":"Input_Files/Other_Tables"
 }

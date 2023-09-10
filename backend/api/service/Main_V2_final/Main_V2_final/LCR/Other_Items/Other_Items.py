@@ -10,7 +10,7 @@ from ...Input_Files import getFiles
 path = os.path.dirname(os.path.realpath(__file__))
 
 def lcr_Other_Items(input_date_str):
-    df1 = getFiles.getFileByName("Other_Items", f'Other Items_{input_date_str}.csv')
+    df1 = getFiles.getFileByName("Other_Items", f'Other_Items_{input_date_str}.csv')
     output_df = pd.DataFrame()
     df1.fillna(0, inplace=True)
     
