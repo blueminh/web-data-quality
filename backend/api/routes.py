@@ -303,11 +303,11 @@ class GetDashboardData(Resource):
         for key, value in extra_tables_request.items():
             extra_tables_request[key] = datetime.strptime(value, '%Y-%m-%d').strftime('%d-%m-%Y')
 
-        data = get_dashboard_lcr_nsfr_data(data)
+        result = get_dashboard_lcr_nsfr_data(data)
         return jsonify({
             "success":True,
             "extraTables": {},
-            "data": data
+            "data": result
         })    
 
 @rest_api.route('/data/getDashboardBarCharts', methods=['GET'])

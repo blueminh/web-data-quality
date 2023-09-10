@@ -6,7 +6,7 @@ services:
     ports:
       - 80:3000
   backend:
-    image: minhkau/web-data-quality-backend:2.1
+    image: minhkau/web-data-quality-backend:2.7
     container_name: backend
     ports:
       - 8085:8085

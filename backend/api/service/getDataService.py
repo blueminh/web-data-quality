@@ -13,6 +13,7 @@ def replace_nan_with_empty_string(data):
         #         row['data'] = ''
 
 def get_dashboard_lcr_nsfr_data(request_data):
+    print(request_data)
     # return {"lcr_data": lcr_data, "nsfr_data": nsfr_data}
     result = main_home(request_data)
     lcr_result = result['lcr']

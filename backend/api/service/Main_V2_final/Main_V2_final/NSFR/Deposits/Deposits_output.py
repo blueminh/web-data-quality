@@ -13,7 +13,7 @@ def Deposits_LCR(input_date_str):
     input_folder_path = "Deposits"
     df1 = getFiles.getFileByName(input_folder_path, f'Deposit_{input_date_str}.csv')
     df2 = getFiles.getRegulatoryFileByName('Currency_table_regulatry.csv')
-    df3 = getFiles.getMappingFileByName('CounterParty_Mapping.csv')
+    df3 = getFiles.getMappingFileByName('Counterparty_Mapping.csv')
     df5 = getFiles.getOtherFiles('insurance_table.csv')
     df6 = Loans_Advances.lcr_Loans_Advances(input_date_str) # Assuming Loans_Advances is a mzdule
     df7 = Loans_Advances.get_loan_and_advances_df(input_date_str)

@@ -17,7 +17,7 @@ def lcr_Loans_Advances(input_date_str):
     input_folder_path = "Loans_Advances"
 
     df1 =  getFiles.getFileByName(input_folder_path,  f'Loans_&_Advances_{input_date_str}.csv')
-    df2 =  getFiles.getMappingFileByName('CounterParty_Mapping.csv')
+    df2 =  getFiles.getMappingFileByName('Counterparty_Mapping.csv')
     df3 =  getFiles.getMappingFileByName('Cash_Inflow_Counterparty_Mapping.csv')
     reporting_date = datetime.strptime(input_date_str, "%d-%m-%Y")
 
