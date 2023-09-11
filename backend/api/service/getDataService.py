@@ -5,6 +5,9 @@ import math
 import pandas as pd
 from datetime import datetime, timedelta
 from dateutil.relativedelta import relativedelta
+import json
+
+from ..models import CalculatedData
 
 def replace_nan_with_empty_string(data):
     for row in data['rows']:
@@ -109,10 +112,15 @@ def get_dashboard_lcr_nsfr_data(request_data):
     replace_nan_with_empty_string(lcr_data)
     replace_nan_with_empty_string(nsfr_data)
 
-    return {
+    result = {
         "lcr_data":lcr_data,
         "nsfr_data":nsfr_data
     }
+    result_string = json.dumps(result)
+    new_calculated_data = CalculatedData(field_name="dashboard_lcr_nsfr", date=request_data.get("reportingDate"), value=result_string)
+    new_calculated_data.save()
+
+    return result
 
 def get_dashboard_bar_charts_data():
     data = [
@@ -232,11 +240,14 @@ class Row:
             "volatility_data":self.volatility_data
         }
 
-def get_lcr_data(request_data):
-    # all python script use the format day-month-year
-    # date_object = datetime.strptime(date, '%Y-%m-%d')
-    # # Format the date as '28-08-2023'
-    # formatted_date = date_object.strftime('%d-%m-%Y')
+def save_data(row, date):
+    result_string = json.dumps(row.get("data"))
+    new_calculated_data = CalculatedData(field_name=row.get("code"), date=date, value=result_string)
+    new_calculated_data.save()
+    for child in row.get("children"):
+        save_data(child, date)
+
+def calculate_lcr(request_data):
     df = main_lcr(request_data)
     hqla = Row("hqla", 0, ["", "High-quality liquid assets", "Tài sản thanh khoản có chất lượng cao", "", ""])
     hqla.setChildren(
@@ -289,10 +300,18 @@ def get_lcr_data(request_data):
     liquid_cov_ratio = Row('liquid_cov_ratio', 1, df.iloc[30].tolist())
 
     lcr_data = [hqla.toJSON(), cash_outflow.toJSON(), cash_inflow.toJSON(), total_hqla.toJSON(), total_net_outflow.toJSON(), liquid_cov_ratio.toJSON()]
+    
+    lcr_data_string = json.dumps(lcr_data)
+    new_calculated_data = CalculatedData(field_name="lcr", date=request_data.get("reportingDate"), value=lcr_data_string)
+    new_calculated_data.save()
+
+    for item in lcr_data:
+        save_data(item, date=request_data.get("reportingDate"))
+    
     return lcr_data
 
 
-def get_nsfr_data(request_data):
+def calculate_nsfr(request_data):
     df = main_nsfr(request_data)
     capital = Row("capital", 2, df.iloc[0].tolist())
     capital.setChildren(
@@ -384,6 +403,13 @@ def get_nsfr_data(request_data):
         require_stable_fund.toJSON(), 
         nsfr.toJSON()
     ]
+
+    nsfr_data_string = json.dumps(nsfr_data)
+    new_calculated_data = CalculatedData(field_name="nsfr", date=request_data.get("reportingDate"), value=nsfr_data_string)
+    new_calculated_data.save()
+
+    for item in nsfr_data:
+        save_data(item, date=request_data.get("reportingDate"))
 
     return nsfr_data
 

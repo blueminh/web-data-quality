@@ -17,7 +17,7 @@ import jwt
 from .models import db, Users, Upload, JWTTokenBlocklist, CalculatedData
 from .config import BaseConfig
 
-from .service.getDataService import get_dashboard_lcr_nsfr_data, get_dashboard_bar_charts_data, get_lcr_data, get_nsfr_data
+from .service.getDataService import get_dashboard_lcr_nsfr_data, get_dashboard_bar_charts_data, calculate_lcr, calculate_nsfr
 from .service import getDataService
 
 from .tableNames import TABLES, MAPPING_TABLES, OTHER_TABLES, REGULATORY_TABLES
@@ -312,10 +312,6 @@ class CalculateDashboardData(Resource):
 
         result = get_dashboard_lcr_nsfr_data(data)
 
-        result_string = json.dumps(result)
-        new_calculated_data = CalculatedData(field_name="dashboard_lcr_nsfr", date=converted_date, value=result_string)
-        new_calculated_data.save()
-
         return jsonify({
             "success":True,
             "extraTables": {},
@@ -351,11 +347,8 @@ class CalculateLcr(Resource):
         data['reportingDate'] = converted_date
         for key, value in extra_tables_request.items():
             extra_tables_request[key] = datetime.strptime(value, '%Y-%m-%d').strftime('%d-%m-%Y')
-        lcr_data = get_lcr_data(data)
 
-        lcr_data_string = json.dumps(lcr_data)
-        new_calculated_data = CalculatedData(field_name="lcr", date=converted_date, value=lcr_data_string)
-        new_calculated_data.save()
+        lcr_data = calculate_lcr(data)
 
         return jsonify({
             "success":True,
@@ -387,10 +380,7 @@ class CalculateNfsr(Resource):
         for key, value in extra_tables_request.items():
             extra_tables_request[key] = datetime.strptime(value, '%Y-%m-%d').strftime('%d-%m-%Y')
         
-        nsfr_data = get_nsfr_data(data)
-        nsfr_data_string = json.dumps(nsfr_data)
-        new_calculated_data = CalculatedData(field_name="nsfr", date=converted_date, value=nsfr_data_string)
-        new_calculated_data.save()
+        nsfr_data = calculate_nsfr(data)
 
         return jsonify({
             "success":True,
