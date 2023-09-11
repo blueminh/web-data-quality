@@ -14,7 +14,9 @@ instance.interceptors.response.use(
   error => {
     if (error.response && error.response.status === 401) {
       // Redirect to the login page
-      console.log("ei yoo it works")
+      localStorage.setItem('authData', JSON.stringify({
+        isLoggedIn: false,
+      }))
       window.location.href = '/login'; // Replace with your login page URL
     }
 

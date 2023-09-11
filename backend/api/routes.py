@@ -17,7 +17,7 @@ import jwt
 from .models import db, Users, Upload, JWTTokenBlocklist, CalculatedData
 from .config import BaseConfig
 
-from .service.getDataService import get_dashboard_lcr_nsfr_data, get_dashboard_bar_charts_data, calculate_lcr, calculate_nsfr
+from .service.getDataService import get_dashboard_lcr_nsfr_data, calculate_lcr, calculate_nsfr
 from .service import getDataService
 
 from .tableNames import TABLES, MAPPING_TABLES, OTHER_TABLES, REGULATORY_TABLES
@@ -318,13 +318,6 @@ class CalculateDashboardData(Resource):
             "data": result
         })    
 
-@rest_api.route('/data/getDashboardBarCharts', methods=['GET'])
-class GetDashboardBarChartsData(Resource):
-    @token_required(required_roles=['viewer'])
-    def get(current_user, self):
-        data = get_dashboard_bar_charts_data()
-        return jsonify(data)  
-    
 
 @rest_api.route('/data/calculateLcr', methods=['POST'])
 class CalculateLcr(Resource):
@@ -414,7 +407,7 @@ class GetCalculatedData(Resource):
 @rest_api.route('/data/getCalculatedDataByRange', methods=['POST'])
 class GetCalculatedDataByRange(Resource):
     def post(self):
-        try:
+        
             data = request.get_json()
 
             field_name = data['fieldName']
@@ -441,14 +434,19 @@ class GetCalculatedDataByRange(Resource):
 
                 # If no data found, append 0; otherwise, append the value
                 if query_result:
-                    result.append(json.loads(query_result.value))
+                    if (query_result.value == ""):
+                        result.append(0)
+                    else:
+                        result.append(json.loads(query_result.value))
                 else:
                     result.append(0)
 
-            return jsonify({"success": True, "values": result})
+            return jsonify({"success": True, 
+                            "data": result,
+                            "dateList": date_list
+                            })
 
-        except Exception as e:
-            return jsonify({"success": False, "error": str(e)})
+
 
 @rest_api.route('/data/getNonDataTableList', methods=['GET'])
 class GetNonDatatableList(Resource):

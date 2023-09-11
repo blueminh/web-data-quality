@@ -8,7 +8,7 @@ import { getBarChartData } from '../../../services/calculationToolService';
 import * as XLSX from 'xlsx';
 import { saveAs } from 'file-saver';
 import { Bar } from 'react-chartjs-2';
-import { calculateDashboardLcrNsfrData, getCalculatedData } from '../../../services/calculationToolService';
+import { calculateDashboardLcrNsfrData, getCalculatedData, getCalculatedDataByRange } from '../../../services/calculationToolService';
 import ChooseFileDateDialog from '../chooseFileDateDialog/chooseFileDateDialog';
 
 export default function CalulationQuickDashboard() {
@@ -83,13 +83,65 @@ export default function CalulationQuickDashboard() {
         saveAs(data, 'dashboard.xlsx');
     };
 
+    const setOfFieldsToDisplay = [
+        {
+            "title":"Biểu đồ biến động các cấu phần của LCR",
+            "codes":["total_hqla", "total_inflows", "total_outflows"],
+            "labels":["HQLA", "Cash inflows", "Cash outflows"]
+        },
+        {
+            "title":"Biểu đồ biến động cấu phần Cash outflow",
+            "codes":["retail_dep", "unsec_wholesale_fund", "sec_wholesale_fund", "add_req", "other_contrac", "other_contingent"],
+            "labels":["Rental & small business deposit", 'Unsecured wholesale funding', 'Secured wholesale funding', 'Additional requirement', 'Other contractual funding', 'Other contingen funding']
+        },
+        {
+            "title":"Biển đồ biến động cấu phần Cash inflow",
+            "codes":["sec_lend", "inflows_from_fully", "other_inflows"],
+            "labels":['Secured landing', 'Inflows from fully performing exposures', 'Other cash inflows']   
+        }
+    ]
+
     const handleFetchBarChartData = () => {
+        const colors = [
+            'rgba(237,125,48,255)',
+            'rgba(67,114,196,255)',
+            'rgba(165,165,165,255)',
+            'rgba(219, 68, 55, 255)',
+            'rgba(48, 105, 139, 255)',
+            'rgba(128, 82, 166, 255)',
+            'rgba(199, 83, 147, 255)',
+            'rgba(0, 123, 255, 255)',
+            'rgba(40, 167, 69, 255)',
+            'rgba(255, 193, 7, 255)'
+        ];
         const fetchData = async () => {
-            const barChartData = await getBarChartData()
-            setSetOfDataForFieldStatsBar(barChartData)
+            const setOfDataForBarCharts = []
+            for (const barChartMetaData of setOfFieldsToDisplay) {
+                const subFields = []
+                let dateList = []
+                for (let index = 0; index < setOfFieldsToDisplay.length; index++) {
+                    const response = await getCalculatedDataByRange(barChartMetaData.codes[index], 7, "days")
+                    console.log(response)
+                    const colorIndex = index % colors.length;
+                    subFields.push({
+                        label: barChartMetaData.labels[index],
+                        data: response.data,
+                        backgroundColor: colors[colorIndex],
+                    })
+                    dateList = response.dateList
+                }
+                setOfDataForBarCharts.push({
+                    "title": barChartMetaData.title,
+                    "labels": dateList,
+                    "datasets":subFields
+                })
+            }
+            setSetOfDataForFieldStatsBar(setOfDataForBarCharts)
         }
         fetchData()
     }
+
+
 
     const handleCalculateBoardData = (requestData) => {
         const fetchLcrNsfr = async () => {
@@ -161,6 +213,7 @@ export default function CalulationQuickDashboard() {
     useEffect(() => {
         handleFetchBarChartData()
     }, [])
+
 
     return (
         <div>

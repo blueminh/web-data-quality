@@ -45,19 +45,6 @@ export async function calculateDashboardLcrNsfrData(requestData) {
   }
 }
 
-export async function getBarChartData() {
-  try {
-    const response = await axiosInstance.get(`/data/getDashboardBarCharts`, {
-      withCredentials: true
-    });
-
-    return response.data
-
-  } catch (error) {
-    throw new Error('Error fetching data:', error);
-  }
-}
-
 export async function getTableList() {
   try {
     const response = await axiosInstance.get(`/upload/getTableList`, {
@@ -153,6 +140,26 @@ export async function getCalculatedData(reportingDate, fieldName) {
       "fieldName": fieldName
     }
     const response = await axiosInstance.post(`/data/getCalculatedData`, requestData, {
+      withCredentials: true,
+    });
+
+    return response.data
+
+  } catch (error) {
+    console.log(error)
+    throw new Error('Error fetching data:', error);
+  }
+}
+
+export async function getCalculatedDataByRange(fieldName, numberOfDataPoint, duration) {
+  try {
+    const requestData = {
+      "fieldName": fieldName,
+      "numberOfDataPoint": numberOfDataPoint,
+      "duration": duration,
+    }
+
+    const response = await axiosInstance.post(`/data/getCalculatedDataByRange`, requestData, {
       withCredentials: true,
     });
 
