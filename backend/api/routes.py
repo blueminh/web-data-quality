@@ -14,7 +14,7 @@ from flask_restx import Api, Resource, fields
 
 import jwt
 
-from .models import db, Users, Upload, JWTTokenBlocklist
+from .models import db, Users, Upload, JWTTokenBlocklist, CalculatedData
 from .config import BaseConfig
 
 from .service.getDataService import get_dashboard_lcr_nsfr_data, get_dashboard_bar_charts_data, get_lcr_data, get_nsfr_data
@@ -263,27 +263,17 @@ class UploadHistoryResource(Resource):
             if latest_upload:
                 files_latest_upload_dates.append({'filename':latest_upload.filename, 'upload_time': latest_upload.upload_time.strftime("%Y-%m-%d")})
         return {"upload_history": files_latest_upload_dates}
-    
+
+
 @rest_api.route('/upload/getTableList', methods=['GET'])
 class GetDashboardBarChartsData(Resource):
     @token_required(required_roles=['viewer'])
     def get(current_user, self):
         return jsonify(list(TABLES.keys()))
     
-
-# @rest_api.route('/data/getDashboardLcrNsfr')
-# class GetDashboardData(Resource):
-#     @token_required(required_roles=['viewer'])
-#     def get(current_user, self):
-#         date = request.args.get('date')
-#         print(date)
-#         data = get_dashboard_lcr_nsfr_data(date)
-
-#         return jsonify(data)
-        
-
-@rest_api.route('/data/getDashboardLcrNsfr', methods=['POST'])
-class GetDashboardData(Resource):
+    
+@rest_api.route('/data/calculateDashboardLcrNsfr', methods=['POST'])
+class CalculateDashboardData(Resource):
     def post(self):
         data = request.get_json()
         reporting_date = data.get("reportingDate")
@@ -318,11 +308,12 @@ class GetDashboardBarChartsData(Resource):
         return jsonify(data)  
     
 
-@rest_api.route('/data/getLcr', methods=['POST'])
-class GetLcr(Resource):
+@rest_api.route('/data/calculateLcr', methods=['POST'])
+class CalculateLcr(Resource):
     def post(current_user):
         data = request.get_json()
         reporting_date = data.get("reportingDate")
+        converted_date = datetime.strptime(reporting_date, '%Y-%m-%d').strftime('%d-%m-%Y')
         extra_tables_request = data.get("extraTables")
         if not reporting_date:
             return {"message": "Reporting date is missing in the request."}, 400
@@ -334,10 +325,7 @@ class GetLcr(Resource):
                 "extraTables":extra_tables_needed,
                 "data":{}
         })
-    
-        # request_data = request.get_json()
-        # requested_date = request_data.get('reportingDate')  # Extract the date from the request data
-        converted_date = datetime.strptime(reporting_date, '%Y-%m-%d').strftime('%d-%m-%Y')
+
         data['reportingDate'] = converted_date
         for key, value in extra_tables_request.items():
             extra_tables_request[key] = datetime.strptime(value, '%Y-%m-%d').strftime('%d-%m-%Y')
@@ -348,9 +336,34 @@ class GetLcr(Resource):
             "extraTables": {},
             "data": lcr_data
         })
+    
+@rest_api.route('/data/getCalculatedData', methods=['POST'])
+class GetCalculatedData(Resource):
+    def post(current_user):
+        data = request.get_json()
+        reporting_date = data.get("reportingDate")
+        converted_date = datetime.strptime(reporting_date, '%Y-%m-%d').strftime('%d-%m-%Y')
+        field_name = data.get("fieldName")
 
-@rest_api.route('/data/getNsfr', methods=['POST'])
-class GetNfsr(Resource):
+        calculated_data = CalculatedData.query.filter_by(date=converted_date, field_name=field_name).first()
+
+        if calculated_data:
+            # Data exists in the database, return it
+            return jsonify({
+                "success": True,
+                "data": {
+                    "date": calculated_data.date.strftime('%Y-%m-%d'),
+                    "value": calculated_data.value
+                }
+            })
+        else:
+            return jsonify({
+                "success": False,
+                "data": {}
+            })
+
+@rest_api.route('/data/calculateNsfr', methods=['POST'])
+class CalculateNfsr(Resource):
     def post(current_user):
         data = request.get_json()
         reporting_date = data.get("reportingDate")

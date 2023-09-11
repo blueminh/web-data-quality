@@ -8,7 +8,7 @@ import { getBarChartData } from '../../../services/calculationToolService';
 import * as XLSX from 'xlsx';
 import { saveAs } from 'file-saver';
 import { Bar } from 'react-chartjs-2';
-import { getDashboardLcrNsfrData } from '../../../services/calculationToolService';
+import { calculateDashboardLcrNsfrData } from '../../../services/calculationToolService';
 import ChooseFileDateDialog from '../chooseFileDateDialog/chooseFileDateDialog';
 
 export default function CalulationQuickDashboard() {
@@ -91,11 +91,11 @@ export default function CalulationQuickDashboard() {
         fetchData()
     }
 
-    const handleFetchBoardData = (requestData) => {
+    const handleCalculateBoardData = (requestData) => {
         const fetchLcrNsfr = async () => {
             try {
                 setIsLoading(true)
-                const response = await getDashboardLcrNsfrData(requestData)
+                const response = await calculateDashboardLcrNsfrData(requestData)
                 if (response.success) {
                     setLcrData(response.data.lcr_data)
                     setNsfrData(response.data.nsfr_data)
@@ -160,7 +160,7 @@ export default function CalulationQuickDashboard() {
                 onCloseHandle={modalChooseFileDateDialogToggle}
                 reportingDate={reportingDate}
                 extraTables={extraTables}
-                onSubmitHandle={handleFetchBoardData}
+                onSubmitHandle={handleCalculateBoardData}
             />}
             <div className="chart-container">
                 {Array.isArray(setOfDataForFieldStatsBar) && setOfDataForFieldStatsBar.map(data => 
@@ -180,7 +180,7 @@ export default function CalulationQuickDashboard() {
                         }}/>
                     <div className="button-container">
                         {isLoading && <Spinner />}
-                        <Button onClick={() => handleFetchBoardData({
+                        <Button onClick={() => handleCalculateBoardData({
                             "reportingDate":reportingDate,
                             "extraTables":{}
                         })}>Lấy kết quả tổng quan</Button>    

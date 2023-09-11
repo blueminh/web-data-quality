@@ -6,7 +6,7 @@ import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 import * as XLSX from 'xlsx';
 import { saveAs } from 'file-saver';
-import { getLcrData } from '../../../services/calculationToolService';
+import { calculateLcr } from '../../../services/calculationToolService';
 import ExpandableRow from '../../expandableRow/expandableRow';
 import { lcrBoardDataDefault } from './defaultValues';
 import ChooseFileDateDialog from '../chooseFileDateDialog/chooseFileDateDialog';
@@ -33,11 +33,11 @@ export default function LCRDashBoard() {
     const [showChooseFileDateDialog, setShowChooseFileDateDialog] = useState(false);
     const modalChooseFileDateDialogToggle = () => setShowChooseFileDateDialog(!showChooseFileDateDialog)
 
-    const handleFetchLcrData = (requestData) => {
+    const handleCalculateLcr = (requestData) => {
         const fetchLcr = async () => {
             try {
                 setIsLoading(true)
-                const response = await getLcrData(requestData)
+                const response = await calculateLcr(requestData)
                 setIsLoading(false)
 
                 if (response.success) {
@@ -111,7 +111,7 @@ export default function LCRDashBoard() {
             onCloseHandle={modalChooseFileDateDialogToggle}
             reportingDate={reportingDate}
             extraTables={extraTables}
-            onSubmitHandle={handleFetchLcrData}
+            onSubmitHandle={handleCalculateLcr}
         />}
         <div>
             <div id = "pageTitle">NAB - Basel III Tỷ lệ bao phủ thanh khoản (LCR) - Công bố thông tin (Public Discloure)</div>
@@ -126,7 +126,7 @@ export default function LCRDashBoard() {
                         }}/>
                     <div className="button-container">
                         {isLoading && <Spinner />}
-                        <Button onClick={() => handleFetchLcrData({
+                        <Button onClick={() => handleCalculateLcr({
                                 "reportingDate":reportingDate,
                                 "extraTables":{}
                             })}>Lấy kết quả LCR

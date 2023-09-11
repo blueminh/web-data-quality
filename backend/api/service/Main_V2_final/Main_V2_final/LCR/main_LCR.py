@@ -617,16 +617,16 @@ def main(request_data):
     # path_deposits_w_otherbanks = os.path.join(path, 'Deposits_with_other_banks')
    #------------------------------------------------Paths------------------------------------------------------------
     borrowings = Borrowings_output.lcr_borrowing(extra_tables_request.get("Borrowings", date_str))
-    investment = Investment_Trading_Securities_output.lcr_investmentandtradingsecurities(extra_tables_request.get("Investment&Trading Securities", date_str))
-    securities_fin_trans = Securities_Financial_Trans.lcr_securitiesfinancialtrans(extra_tables_request.get("Securities Financial Trans", date_str))
+    investment = Investment_Trading_Securities_output.lcr_investmentandtradingsecurities(extra_tables_request.get("Investment&Trading_Securities", date_str))
+    securities_fin_trans = Securities_Financial_Trans.lcr_securitiesfinancialtrans(extra_tables_request.get("Securities_Financial_Trans", date_str))
     deposit = Deposits_output.Deposits_LCR(extra_tables_request.get("Deposit", date_str))
     Derivatives = Derivatives_output.lcr_derivatives(extra_tables_request.get("Derivatives", date_str))
     Facility = Facility_output.lcr_facility(extra_tables_request.get("Facility", date_str))
-    other_items = Other_Items.lcr_Other_Items(extra_tables_request.get("Other Items", date_str))
-    off_balance_sheet = Off_Balance_Sheet_output.lcr_offbalancesheet(extra_tables_request.get("Off Balance Sheet", date_str))
-    loans_advances = Loans_Advances.lcr_Loans_Advances(extra_tables_request.get("Loans & Advances", date_str))
-    issued_securities = Issued_Securities.lcr_Issued_Securities(extra_tables_request.get("Issued Securities", date_str))
-    dep_w_other_banks = Deposits_with_other_banks_output.lcr_deposits(extra_tables_request.get("Deposits with Other Banks", date_str))
+    other_items = Other_Items.lcr_Other_Items(extra_tables_request.get("Other_Items", date_str))
+    off_balance_sheet = Off_Balance_Sheet_output.lcr_offbalancesheet(extra_tables_request.get("Off_Balance_Sheet", date_str))
+    loans_advances = Loans_Advances.lcr_Loans_Advances(extra_tables_request.get("Loans_&_Advances", date_str))
+    issued_securities = Issued_Securities.lcr_Issued_Securities(extra_tables_request.get("Issued_Securities", date_str))
+    dep_w_other_banks = Deposits_with_other_banks_output.lcr_deposits(extra_tables_request.get("Deposits_with_Other_Banks", date_str))
     output_df = set_output_df()
     
    #------------------------------------------------Insertion-------------------------------------------------------------

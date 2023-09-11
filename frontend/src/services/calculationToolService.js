@@ -29,9 +29,9 @@ export async function uploadFile(data) {
   }
 }
 
-export async function getDashboardLcrNsfrData(requestData) {
+export async function calculateDashboardLcrNsfrData(requestData) {
   try {
-    const response = await axiosInstance.post(`/data/getDashboardLcrNsfr`, requestData, {
+    const response = await axiosInstance.post(`/data/calculateDashboardLcrNsfr`, requestData, {
       withCredentials: true
     });
     if (typeof response.data === 'string') {
@@ -118,9 +118,9 @@ export async function getPreviewDataTable(tableName) {
   }
 }
 
-export async function getLcrData(requestData) {
+export async function calculateLcr(requestData) {
   try {
-    const response = await axiosInstance.post(`/data/getLcr`, requestData, {
+    const response = await axiosInstance.post(`/data/calculateLcr`, requestData, {
       withCredentials: true,
     });
 
@@ -132,9 +132,27 @@ export async function getLcrData(requestData) {
   }
 }
 
-export async function getNsfrData(requestData) {
+export async function calculateNsfr(requestData) {
   try {
-    const response = await axiosInstance.post(`/data/getNsfr`, requestData, {
+    const response = await axiosInstance.post(`/data/calculateNsfr`, requestData, {
+      withCredentials: true,
+    });
+
+    return response.data
+
+  } catch (error) {
+    console.log(error)
+    throw new Error('Error fetching data:', error);
+  }
+}
+
+export async function getCalculatedData(reportingDate, fieldName) {
+  try {
+    const requestData = {
+      "reportingDate": reportingDate,
+      "fieldName": fieldName
+    }
+    const response = await axiosInstance.post(`/data/r`, requestData, {
       withCredentials: true,
     });
 

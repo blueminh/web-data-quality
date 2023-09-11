@@ -112,3 +112,12 @@ class Upload(db.Model):
     filename = db.Column(db.String(255), nullable=False)
     upload_time = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
 
+class CalculatedData(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    field_name = db.Column(db.String(255), nullable=False)
+    date = db.Column(db.String(255), nullable=False)
+    value = db.Column(db.String(255), nullable=False)
+
+    def save(self):
+        db.session.add(self)
+        db.session.commit()

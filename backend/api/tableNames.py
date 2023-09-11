@@ -1,7 +1,7 @@
 TABLES = {
     "Borrowings":"Input_Files/Borrowings/",
     "Investment&Trading_Securities":"Input_Files/Investment_Trading_Securities/",
-    "Securities_Financial Trans":"Input_Files/Securities_Financial_Trans/",
+    "Securities_Financial_Trans":"Input_Files/Securities_Financial_Trans/",
     "Deposit":"Input_Files/Deposits/",
     "Derivatives":"Input_Files/Derivatives/",
     "Facility":"Input_Files/Facility/",

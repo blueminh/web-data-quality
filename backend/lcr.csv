@@ -1,0 +1,32 @@
+,No.,Items,Khoản mục,Blank 1,Blank 2
+0,1,Total Level 1 Assets,Tổng tài sản thanh khoản Cấp 1,5028418248551.0,5028418248551.0
+1,2,Total Level 2A Assets,Tổng tài sản thanh khoản Cấp 2A,0.0,0.0
+2,3,Total Level 2B Assets,Tổng tài sản thanh khoản Cấp 2B,0.0,0.0
+3,4,Adjustment for 40% cap of Level 2A Assets,Giá trị điều chỉnh theo ngưỡng trần 40% đối với tài sản thanh khoản cấp 2A,,0.0
+4,5,Adjustment for 15% cap of Level 2B Assets,Giá trị điều chỉnh theo ngưỡng trần 15% đối với tài sản thanh khoản cấp 2B,,0.0
+5,6,Total HQLA,Tổng tài sản thanh khoản có chất lượng cao,,5028418248551.0
+6,,Cash outflows,Các dòng tiền ra,,
+7,1,"Retail deposits and deposits from small business customers, of which:",Tiền gửi của khách hàng bán lẻ và khách hàng kinh doanh nhỏ,98565057940443.67,9362728795396.615
+8,1.1,Stable deposits,Tiền gửi ổn định,9875539972955.016,493776998647.75073
+9,1.2,Less stable deposits,Tiền gửi kém ổn định,88689517967488.66,8868951796748.865
+10,2,"Unsecured wholesale funding, of which:","Nguồn vốn huy động từ bán buôn không bảo đảm, trong đó:",54190670716015.33,39531486196910.25
+11,2.1,Operational deposits (all counterparties) and deposits in networks of cooperative banks,Tiền gửi hoạt động (tất cả các đối tác) và tiền gửi trong mạng lưới các ngân hàng hợp tác,361444240561.0,73301630442.26122
+12,2.2,Non-operational deposits (all counterparties),Tiền gửi không nhằm mục đích hoạt động (tất cả các đối tác),47693281475454.33,33322239566467.99
+13,2.3,Unsecured debt,Chứng khoán nợ không bảo đảm,6135945000000.0,6135945000000.0
+14,3,Secured wholesale funding,Nguồn vốn huy động từ bán buôn được bảo đảm,,0.0
+15,4,"Additional requirements, of which:","Các yêu cầu bổ sung, trong đó:",8641656547701.0,487368327553.9001
+16,4.1,Outflows related to derivative exposures and other collateral requirements,Các dòng tiền ra từ các trạng thái phái sinh và các yêu cầu về TSBĐ khác,56385900000.0,56385900000.0
+17,4.2,Outflows related to loss of funding on debt products,Dòng tiền ra từ mất nguồn vốn huy động từ các công cụ nợ,0.0,0.0
+18,4.3,Credit and liquidity facilities,Các cam kết tín dụng và cam kết thanh khoản,8585270647701.0,430982427553.9001
+19,5,Other contractual funding obligations,Các nghĩa vụ theo hợp đồng khác,0.0,0.0
+20,6,Other contingent funding obligations,Các nghĩa vụ tài trợ tiềm ẩn khác,5150816797197.0,257540839859.84998
+21,7,TOTAL CASH OUTFLOWS,TỔNG DÒNG TIỀN RA,,49639124159720.62
+22,,Cash inflows,Các dòng tiền vào,,
+23,1,Secured lending (reverse repos and securities borrowing),Các giao dịch cho vay được bảo đảm (bao gồm các giao dịch reverse repo và cho vay chứng khoán),0.0,0.0
+24,2,Inflows from fully performing exposures,Dòng tiền vào từ các khoản cho vay tốt (fully performing),1.0604293036646881e+18,5.235333834124818e+17
+25,3,Other cash inflows,Các dòng tiền vào khác,35107229328403.0,29616125552137.0
+26,4,TOTAL CASH INFLOWS,TỔNG DÒNG TIỀN VÀO,1.0604644108940165e+18,5.235629995380339e+17
+27,,,,,Total adjusted value Giá trị sau điều chỉnh
+28,A,Total HQLA,Tổng tài sản thanh khoản chất lượng cao,,5028418248551.0
+29,B-C,Total net cash outflows,Tổng dòng tiền ra ròng,,12409781039930.156
+30,,Liquidity Coverage Ratio (>=100%),Tỷ lệ đảm bảo khả năng thanh khoản LCR (giới hạn ≥100%),,0.4051979831369612

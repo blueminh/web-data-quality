@@ -237,6 +237,8 @@ def get_lcr_data(request_data):
     # # Format the date as '28-08-2023'
     # formatted_date = date_object.strftime('%d-%m-%Y')
     df = main_lcr(request_data)
+    df.to_csv("lcr.csv")
+    print(df)
     hqla = Row("hqla", 0, ["", "High-quality liquid assets", "Tài sản thanh khoản có chất lượng cao", "", ""])
     hqla.setChildren(
         [
@@ -304,7 +306,7 @@ def get_nsfr_data(request_data):
     retail_dep_and_dep_small_business = Row("retail_dep_and_dep_small_business", 2, df.iloc[3].tolist())
     retail_dep_and_dep_small_business.setChildren(
         [
-            Row("stable_dep", 3, df.iloc[4].tolist()),
+            Row("stable_dep", 3, df.iloc[4].tolist()), 
             Row("less_stable_dep", 3, df.iloc[5].tolist()),
         ]
     )

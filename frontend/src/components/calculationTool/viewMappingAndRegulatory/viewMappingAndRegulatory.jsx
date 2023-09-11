@@ -72,6 +72,7 @@ export default function ViewMappingAndRegulatory() {
                 <Form.Select required onChange={(event) => {
                     setTableName(String(event.target.value))
                 }}>
+                    <option >Chọn tên bảng</option>
                     {tableNameOptions.map((x, index) => (
                         <option key={index} value={x}>{x}</option>
                     ))}

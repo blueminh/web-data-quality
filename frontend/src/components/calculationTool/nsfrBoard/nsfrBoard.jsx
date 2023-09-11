@@ -6,7 +6,7 @@ import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 import * as XLSX from 'xlsx';
 import { saveAs } from 'file-saver';
-import { getNsfrData } from '../../../services/calculationToolService';
+import { calculateNsfr } from '../../../services/calculationToolService';
 import ExpandableRow from '../../expandableRow/expandableRow';
 import { nsfrBoardDataDefault } from './defaultValues';
 import ChooseFileDateDialog from '../chooseFileDateDialog/chooseFileDateDialog';
@@ -33,11 +33,11 @@ export default function NSFRDashBoard() {
     const [showChooseFileDateDialog, setShowChooseFileDateDialog] = useState(false);
     const modalChooseFileDateDialogToggle = () => setShowChooseFileDateDialog(!showChooseFileDateDialog)
 
-    const handleFetchNsfrData = (requestData) => {
+    const handleCalculateNsfr = (requestData) => {
         const fetchNsfr = async () => {
             try {
                 setIsLoading(true)
-                const response = await getNsfrData(requestData)
+                const response = await calculateNsfr(requestData)
                 setIsLoading(false)
 
                 if (response.success) {
@@ -111,7 +111,7 @@ export default function NSFRDashBoard() {
             onCloseHandle={modalChooseFileDateDialogToggle}
             reportingDate={reportingDate}
             extraTables={extraTables}
-            onSubmitHandle={handleFetchNsfrData}
+            onSubmitHandle={handleCalculateNsfr}
         />}
         <div>
             <div id = "pageTitle">NSFR</div>
@@ -126,7 +126,7 @@ export default function NSFRDashBoard() {
                         }}/>
                     <div className="button-container">
                         {isLoading && <Spinner />}
-                        <Button onClick={() => handleFetchNsfrData({
+                        <Button onClick={() => handleCalculateNsfr({
                                 "reportingDate":reportingDate,
                                 "extraTables":{}
                             })}>Lấy kết quả NSFR
