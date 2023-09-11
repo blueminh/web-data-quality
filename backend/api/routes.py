@@ -121,15 +121,20 @@ class Register(Resource):
         user_exists = Users.get_by_email(_email)
         if user_exists:
             return {"success": False,
-                    "msg": "Email already taken"}, 400
+                    "msg": "Email đã được sử dụng"}, 400
 
         new_user = Users(username=_username, email=_email, password=_password, roles=["admin"])
+        token = jwt.encode({'email': _email, 'exp': datetime.utcnow() + timedelta(minutes=30)}, BaseConfig.SECRET_KEY)
+
+        new_user.set_jwt_auth_active(True)
         new_user.save()
 
-        return {"success": True,
-                "userID": new_user.id,
-                "msg": "The user was successfully registered"}, 200
-
+        response = make_response(jsonify({"success": True,
+                "token": token,
+                "user": new_user.toJSON(),
+                }))
+        response.set_cookie('jwtToken', token, httponly=True)
+        return response
 
 @rest_api.route('/api/users/login')
 class Login(Resource):

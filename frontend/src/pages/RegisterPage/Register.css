@@ -1,0 +1,117 @@
+/*Interesting rule*/
+/*body {*/
+/*    background: #393953;*/
+/*    color: #393953;*/
+/*}*/
+
+.LoginBackgroundColor {
+    color: var(--primary-color);
+    background-color: var(--primary-color);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+.LoginBack {
+    color: var(--primary-color);
+    background: var(--primary-color);
+    padding: 0% 20%;
+    background-size: cover;
+    height: 50%;
+    margin: 0;
+}
+
+.LoginBackground {
+    background-color: var(--primary-color);
+    height: 75%;
+    min-height: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-text);
+}
+
+.LoginLabel {
+    width: 40%;
+    font-size: calc(2vmin);
+    text-align: left;
+    float: left;
+    color: var(--primary-text);
+}
+
+.LoginInputField {
+    width: 100%;
+    float: left;
+}
+
+.LoginLabelBox {
+    width: 100%;
+    height: 75px;
+}
+
+.LoginLabelBoxError {
+    width: 50%;
+    color: red;
+    margin: auto;
+    text-align: center;
+}
+
+.LoginLabelBoxSuccess {
+    width: 50%;
+    color: green;
+    margin: auto;
+    text-align: center;
+}
+
+.LoginHeader {
+    padding: 10%;
+    text-align: center;
+    color: var(--primary-text);
+}
+
+.Subheader {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    /*color: white;*/
+}
+
+.LoginButton {
+    text-align: center;
+    margin: auto;
+    padding: 0% 0%;
+    position: absolute;
+    right: 50%;
+    background: rgb(84,84,141);
+    background: linear-gradient(0deg, rgba(84,84,141,1) 0%, rgba(105,102,255,1) 100%);
+    transform: translate(50%, -50%);
+}
+
+.LoginContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.LoginBlock {
+    padding: 1% 30%;
+}
+
+.LoginButtonBlockCenter {
+    margin: auto;
+    align-items: center;
+    display: block;
+    width: 250px;
+}
+
+.LoginButtonBlock {
+    background: rgb(84,84,141);
+    background: linear-gradient(0deg, rgba(84,84,141,1) 0%, rgba(105,102,255,1) 100%);
+}

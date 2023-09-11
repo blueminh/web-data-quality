@@ -30,6 +30,21 @@ class AuthService {
             withCredentials: true,
         }).post("/api/users/logout");
     }
+
+    submitRegsiter(username, email, password) {
+        const request_data = {
+            "username": username,
+            "email": email,
+            "password": password
+        }
+        return axios.create({
+            baseURL: serverUrl,
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            withCredentials: true,
+        }).post("/api/users/register", request_data);
+    }
 }
 
 const authService = new AuthService();

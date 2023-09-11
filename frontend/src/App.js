@@ -4,6 +4,7 @@ import Nagivationbar from './components/NavigationBar'
 import CalculationHomePage from "./pages/CalculationHomePage/homePage";
 import ValidationHomePage from "./pages/ValidationHomePage/homePage";
 import LoginPage from "./pages/LogInpage/logInPage"
+import RegisterPage from "./pages/RegisterPage/registerPage";
 import './App.css'
 import './Global.css'
 import './styleguide.css'
@@ -17,6 +18,7 @@ const App = () => {
             <Nagivationbar />
             <Routes>
                 <Route path='/login' element={<LoginPage />}></Route>
+                <Route path='/register' element={<RegisterPage />}></Route>
                 <Route path="/unauthorized" element={<Unauthorized />} />
 
                 <Route element={<RequireAuth allowedRoles={["admin", "viewer"]}/>}>
