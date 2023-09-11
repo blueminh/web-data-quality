@@ -234,11 +234,20 @@ class UploadResource(Resource):
         if (expected_file_type == 'csv' and file_extension == 'csv') or \
            (expected_file_type == 'xlsx' and file_extension == 'xlsx') or \
            (expected_file_type == 'xls' and file_extension == 'xls'):
-            # Handle CSV, Excel (xlsx), and Excel (xls) files
-            file_name = f"{table_name}_{converted_uploaded_time}.{file_extension}"
             # save file to resource
             # resource_folder = os.path.join(os.path.abspath(os.path.dirname(__file__)), '..', 'data_files')
-            path_to_file = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'service', 'Main_V2_final', 'Main_V2_final', TABLES[table_name], file_name)
+            if table_name in TABLES:
+                file_name = f"{table_name}_{converted_uploaded_time}.{file_extension}"
+                path_to_file = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'service', 'Main_V2_final', 'Main_V2_final', TABLES[table_name], file_name)
+            elif table_name in MAPPING_TABLES:
+                file_name = f"{table_name}.{file_extension}"
+                path_to_file = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'service', 'Main_V2_final', 'Main_V2_final', MAPPING_TABLES[table_name], file_name)
+            elif table_name in REGULATORY_TABLES:
+                file_name = f"{table_name}.{file_extension}"
+                path_to_file = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'service', 'Main_V2_final', 'Main_V2_final', REGULATORY_TABLES[table_name], file_name)
+            else:
+                return {"error": f"Cannot find table with this name {table_name}"}, 400 
+
             uploaded_file.stream.seek(0)  # Reset the stream position
             uploaded_file.save(path_to_file)
             

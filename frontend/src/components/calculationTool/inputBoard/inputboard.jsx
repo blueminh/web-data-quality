@@ -21,7 +21,7 @@ export default function InputDashboard() {
 
         
     const fileTypes = ['csv', 'json', "xlsx", "xls"];
-    const [fileTyle, setFileType] = useState("csv")
+    const [fileType, setFileType] = useState("csv")
     const separationSymbols = [',', ';', '|'];
     const [separationSymbol, setSeparationSymbol] = useState(',')
     const [selectedFile, setSelectedFile] = useState(null);
@@ -182,7 +182,7 @@ export default function InputDashboard() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         const data = {
-            fileType: fileTyle,
+            fileType: fileType,
             separationSymbol: separationSymbol,
             username: auth.username,
             file: selectedFile, 
@@ -204,16 +204,22 @@ export default function InputDashboard() {
     const handleCloseMessagePopup = () => setShowMessagePopup(false);
 
     const handleFetchSampleData = () => {
-        const fetchData = async () => {
-            try {
-              const sample = await getPreviewDataTable(tableName)
-              setSampleData(sample)
-              setShowSampleDataPopup(true)
-            } catch (error) {
-              console.error('Error fetching sample data', error);
-            }
-        };
-        fetchData()
+        if (tableName === '') {
+            setMessage("Vui lòng chọn bảng")
+            setShowMessagePopup(true)
+        } else {
+            const fetchData = async () => {
+                try {
+                  const sample = await getPreviewDataTable(tableName)
+                  setSampleData(sample)
+                  setShowSampleDataPopup(true)
+                } catch (error) {
+                  console.error('Error fetching sample data', error);
+                }
+            };
+            fetchData()
+            
+        }
     }
     
     return (
@@ -351,7 +357,7 @@ export default function InputDashboard() {
                                     }}
                                 />
                             </div>*/}
-                            <div className="form-input">
+                            {/* <div className="form-input">
                                 <Form.Label>Chọn định dạng file</Form.Label>
                                 <Form.Select required onChange={(event) => {
                                     setFileType(String(event.target.value))
@@ -367,7 +373,7 @@ export default function InputDashboard() {
                                 }}>
                                     {separationSymbols.map(type => <option>{type}</option>)}
                                 </Form.Select>
-                            </div>}
+                            </div>} */}
                             <div className="form-input">
                                 <Form.Label>Chọn file dữ liệu</Form.Label>
                                 <Form.Control type="file" required  onChange={handleFileInputChange} />

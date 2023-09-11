@@ -26,7 +26,7 @@ export default function CalculationHomePage() {
                 <Tab eventKey="input" title="Nhập dữ liệu">
                     <InputDashboard></InputDashboard>
                 </Tab>
-                <Tab eventKey="viewMappingAndRegulatory" title="Xem bảng Mapping và Regulatory">
+                <Tab eventKey="viewMappingAndRegulatory" title="Bảng Mapping và Regulatory">
                     <ViewMappingAndRegulatory></ViewMappingAndRegulatory>
                 </Tab>
             </Tabs>
