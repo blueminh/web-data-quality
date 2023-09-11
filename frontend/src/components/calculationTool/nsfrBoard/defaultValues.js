@@ -8,11 +8,11 @@ export const nsfrBoardDataDefault = [
                     1.1,
                     "1.1 Regulatory capital",
                     "Vốn tự có",
-                    12399584753715.0,
                     0.0,
                     0.0,
-                    5540313000000.0,
-                    5540313000000.0
+                    0.0,
+                    0.0,
+                    0.0
                 ],
                 "depth": 3,
                 "hasChildren": false,
@@ -37,10 +37,10 @@ export const nsfrBoardDataDefault = [
                     "1.2 Other capital instruments",
                     "Các công cụ vốn khác",
                     0.0,
-                    553010000000.0,
-                    1147221000000.0,
-                    500200000000.0,
-                    849020500000.0
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
                 ],
                 "depth": 3,
                 "hasChildren": false,
@@ -63,11 +63,11 @@ export const nsfrBoardDataDefault = [
             1.0,
             "1 Capital:",
             "Vốn:",
-            12399584753715.0,
-            553010000000.0,
-            1147221000000.0,
-            6040513000000.0,
-            6389333500000.0
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
         ],
         "depth": 2,
         "hasChildren": true,
@@ -93,11 +93,11 @@ export const nsfrBoardDataDefault = [
                     2.1,
                     "2.1 Stable deposits",
                     "Tiền gửi ổn định",
-                    1512321289265.768,
-                    8483677391701.231,
+                    0,
+                    0,
                     0.0,
                     0.0,
-                    9494361515295.168
+                    0
                 ],
                 "depth": 3,
                 "hasChildren": false,
@@ -292,7 +292,7 @@ export const nsfrBoardDataDefault = [
                     "5.1 NSFR derivative liabilities",
                     "Nợ phái sinh NSFR",
                     0.0,
-                    97001800000.0,
+                    0.0,
                     0.0,
                     0.0,
                     0.0
@@ -320,10 +320,10 @@ export const nsfrBoardDataDefault = [
                     "5.2 All other liabilities and equity not included in the above categories",
                     "Tất cả các khoản nợ và vốn chủ sở hữu khác không bao gồm trong các loại trên",
                     0.0,
-                    3316622524586.67,
-                    490437879444.0,
-                    484526417579.0,
-                    729745357301.0
+                    0.67,
+                    0.0,
+                    0.0,
+                    0.0
                 ],
                 "depth": 3,
                 "hasChildren": false,
@@ -347,10 +347,10 @@ export const nsfrBoardDataDefault = [
             "5 Other liabilities:",
             "Các khoản nợ phải trả khác",
             0.0,
-            4388588621609.67,
+            0.67,
             "Nan",
             "Nan",
-            729745357301.0
+            0.0
         ],
         "depth": 2,
         "hasChildren": true,
@@ -378,7 +378,7 @@ export const nsfrBoardDataDefault = [
             "Nan",
             "Nan",
             "Nan",
-            105010418352728.0
+            0.0
         ],
         "depth": 2,
         "hasChildren": false,
@@ -408,7 +408,7 @@ export const nsfrBoardDataDefault = [
                     0.0,
                     0.0,
                     0.0,
-                    8734288276275.549
+                    0.0
                 ],
                 "depth": 2,
                 "hasChildren": false,
@@ -463,9 +463,9 @@ export const nsfrBoardDataDefault = [
                             "3.1 Performing loans to financial institutions secured by Level 1 HQLA",
                             "Các khoản cho vay không phải nợ xấu (performing loans) đối với các TCTC được bảo đảm bằng tài sản HQLA cấp 1",
                             0.0,
-                            3412504000000.0,
                             0.0,
-                            200000000000.0,
+                            0.0,
+                            0.0,
                             0.0
                         ],
                         "depth": 3,

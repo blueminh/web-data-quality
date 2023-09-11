@@ -402,7 +402,8 @@ class GetCalculatedData(Resource):
         else:
             return jsonify({
                 "success": False,
-                "data": "No data found on this date"
+                "data": {},
+                "error": f"No data found on this date: {converted_date}. Please calculate first"
             })
     
 @rest_api.route('/data/getNonDataTableList', methods=['GET'])

@@ -13,7 +13,6 @@ def replace_nan_with_empty_string(data):
         #         row['data'] = ''
 
 def get_dashboard_lcr_nsfr_data(request_data):
-    print(request_data)
     # return {"lcr_data": lcr_data, "nsfr_data": nsfr_data}
     result = main_home(request_data)
     lcr_result = result['lcr']
@@ -237,8 +236,6 @@ def get_lcr_data(request_data):
     # # Format the date as '28-08-2023'
     # formatted_date = date_object.strftime('%d-%m-%Y')
     df = main_lcr(request_data)
-    df.to_csv("lcr.csv")
-    print(df)
     hqla = Row("hqla", 0, ["", "High-quality liquid assets", "Tài sản thanh khoản có chất lượng cao", "", ""])
     hqla.setChildren(
         [

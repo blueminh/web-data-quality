@@ -152,7 +152,7 @@ export async function getCalculatedData(reportingDate, fieldName) {
       "reportingDate": reportingDate,
       "fieldName": fieldName
     }
-    const response = await axiosInstance.post(`/data/r`, requestData, {
+    const response = await axiosInstance.post(`/data/getCalculatedData`, requestData, {
       withCredentials: true,
     });
 

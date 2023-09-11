@@ -6,7 +6,7 @@ import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 import * as XLSX from 'xlsx';
 import { saveAs } from 'file-saver';
-import { calculateNsfr } from '../../../services/calculationToolService';
+import { calculateNsfr, getCalculatedData } from '../../../services/calculationToolService';
 import ExpandableRow from '../../expandableRow/expandableRow';
 import { nsfrBoardDataDefault } from './defaultValues';
 import ChooseFileDateDialog from '../chooseFileDateDialog/chooseFileDateDialog';
@@ -33,6 +33,10 @@ export default function NSFRDashBoard() {
     const [showChooseFileDateDialog, setShowChooseFileDateDialog] = useState(false);
     const modalChooseFileDateDialogToggle = () => setShowChooseFileDateDialog(!showChooseFileDateDialog)
 
+    const [showMessagePopup, setShowMessagePopup] = useState(false);
+    const handleCloseMessagePopup = () => setShowMessagePopup(false);
+    const [errorMessage, setErrorMessage] = useState("")
+
     const handleCalculateNsfr = (requestData) => {
         const fetchNsfr = async () => {
             try {
@@ -57,6 +61,23 @@ export default function NSFRDashBoard() {
         fetchNsfr()
     }
 
+    const handleFetchCalculatedNsfr = () => {
+        const fetchNsfr = async () => {
+            try {
+                const response = await getCalculatedData(reportingDate, "nsfr")
+                if (response.success) {
+                    setNsfrBoardData(response.data)
+                } else {
+                    setErrorMessage(response.error)
+                    setShowMessagePopup(true)
+                }
+            } catch (error) {
+                setErrorMessage("Có lỗi đã xảy ra")
+                setShowMessagePopup(true)
+            }
+        };
+        fetchNsfr()
+    }
 
     const tableRefs = [useRef(null)];
     const handleExportPDF = async () => {
@@ -113,6 +134,17 @@ export default function NSFRDashBoard() {
             extraTables={extraTables}
             onSubmitHandle={handleCalculateNsfr}
         />}
+        <Modal show={showMessagePopup} onHide={handleCloseMessagePopup}>
+            <Modal.Header closeButton>
+                <Modal.Title>Lỗi</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>{errorMessage}</Modal.Body>
+            <Modal.Footer>
+                <Button variant="secondary" onClick={handleCloseMessagePopup}>
+                    Đóng
+                </Button>
+            </Modal.Footer>
+        </Modal>
         <div>
             <div id = "pageTitle">NSFR</div>
             <div id = "generalInfo">
@@ -131,6 +163,7 @@ export default function NSFRDashBoard() {
                                 "extraTables":{}
                             })}>Tính toán
                         </Button>    
+                        <Button onClick={handleFetchCalculatedNsfr}>Lấy kết quả</Button>
                         <Button onClick={handleExportPDF}>Export to PDF</Button>
                         <Button onClick={exportToExcel}>Export to Excel</Button>
                     </div>

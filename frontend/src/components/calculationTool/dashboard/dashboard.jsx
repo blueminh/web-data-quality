@@ -8,7 +8,7 @@ import { getBarChartData } from '../../../services/calculationToolService';
 import * as XLSX from 'xlsx';
 import { saveAs } from 'file-saver';
 import { Bar } from 'react-chartjs-2';
-import { calculateDashboardLcrNsfrData } from '../../../services/calculationToolService';
+import { calculateDashboardLcrNsfrData, getCalculatedData } from '../../../services/calculationToolService';
 import ChooseFileDateDialog from '../chooseFileDateDialog/chooseFileDateDialog';
 
 export default function CalulationQuickDashboard() {
@@ -114,6 +114,25 @@ export default function CalulationQuickDashboard() {
         fetchLcrNsfr()
     }
 
+    const handleFetchCalculatedBoardData = () => {
+        const fetchData = async () => {
+            try {
+                const response = await getCalculatedData(reportingDate, "dashboard_lcr_nsfr")
+                if (response.success) {
+                    setLcrData(response.data.lcr_data)
+                    setNsfrData(response.data.nsfr_data)
+                } else {
+                    setErrorMessage(response.error)
+                    setShowMessagePopup(true)
+                }
+            } catch (error) {
+                setErrorMessage("Có lỗi đã xảy ra")
+                setShowMessagePopup(true)
+            }
+        };
+        fetchData()
+    }
+
     // Bar charts
     const [setOfDataForFieldStatsBar, setSetOfDataForFieldStatsBar] = useState([])
 
@@ -183,7 +202,8 @@ export default function CalulationQuickDashboard() {
                         <Button onClick={() => handleCalculateBoardData({
                             "reportingDate":reportingDate,
                             "extraTables":{}
-                        })}>Tính toán</Button>    
+                        })}>Tính toán</Button>
+                        <Button onClick={handleFetchCalculatedBoardData}>Lấy kết quả</Button>    
                         <Button onClick={handleExportPDF}>Xuất kết quả ra PDF</Button>
                         <Button onClick={exportToExcel}>Xuất kết quả ra Excel</Button>
                     </div>
