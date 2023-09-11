@@ -183,7 +183,7 @@ export default function CalulationQuickDashboard() {
                         <Button onClick={() => handleCalculateBoardData({
                             "reportingDate":reportingDate,
                             "extraTables":{}
-                        })}>Lấy kết quả tổng quan</Button>    
+                        })}>Tính toán</Button>    
                         <Button onClick={handleExportPDF}>Xuất kết quả ra PDF</Button>
                         <Button onClick={exportToExcel}>Xuất kết quả ra Excel</Button>
                     </div>

@@ -21,6 +21,8 @@ from .service.getDataService import get_dashboard_lcr_nsfr_data, get_dashboard_b
 
 from .tableNames import TABLES, MAPPING_TABLES, OTHER_TABLES, REGULATORY_TABLES
 
+import json
+
 rest_api = Api(version="1.0", title="Users API")
 
 
@@ -294,6 +296,11 @@ class CalculateDashboardData(Resource):
             extra_tables_request[key] = datetime.strptime(value, '%Y-%m-%d').strftime('%d-%m-%Y')
 
         result = get_dashboard_lcr_nsfr_data(data)
+
+        result_string = json.dumps(result)
+        new_calculated_data = CalculatedData(field_name="dashboard_lcr_nsfr", date=converted_date, value=result_string)
+        new_calculated_data.save()
+
         return jsonify({
             "success":True,
             "extraTables": {},
@@ -331,36 +338,15 @@ class CalculateLcr(Resource):
             extra_tables_request[key] = datetime.strptime(value, '%Y-%m-%d').strftime('%d-%m-%Y')
         lcr_data = get_lcr_data(data)
 
+        lcr_data_string = json.dumps(lcr_data)
+        new_calculated_data = CalculatedData(field_name="lcr", date=converted_date, value=lcr_data_string)
+        new_calculated_data.save()
+
         return jsonify({
             "success":True,
             "extraTables": {},
             "data": lcr_data
         })
-    
-@rest_api.route('/data/getCalculatedData', methods=['POST'])
-class GetCalculatedData(Resource):
-    def post(current_user):
-        data = request.get_json()
-        reporting_date = data.get("reportingDate")
-        converted_date = datetime.strptime(reporting_date, '%Y-%m-%d').strftime('%d-%m-%Y')
-        field_name = data.get("fieldName")
-
-        calculated_data = CalculatedData.query.filter_by(date=converted_date, field_name=field_name).first()
-
-        if calculated_data:
-            # Data exists in the database, return it
-            return jsonify({
-                "success": True,
-                "data": {
-                    "date": calculated_data.date.strftime('%Y-%m-%d'),
-                    "value": calculated_data.value
-                }
-            })
-        else:
-            return jsonify({
-                "success": False,
-                "data": {}
-            })
 
 @rest_api.route('/data/calculateNsfr', methods=['POST'])
 class CalculateNfsr(Resource):
@@ -387,12 +373,37 @@ class CalculateNfsr(Resource):
             extra_tables_request[key] = datetime.strptime(value, '%Y-%m-%d').strftime('%d-%m-%Y')
         
         nsfr_data = get_nsfr_data(data)
+        nsfr_data_string = json.dumps(nsfr_data)
+        new_calculated_data = CalculatedData(field_name="nsfr", date=converted_date, value=nsfr_data_string)
+        new_calculated_data.save()
 
         return jsonify({
             "success":True,
             "extraTables": {},
             "data": nsfr_data
         })
+    
+@rest_api.route('/data/getCalculatedData', methods=['POST'])
+class GetCalculatedData(Resource):
+    def post(current_user):
+        data = request.get_json()
+        reporting_date = data.get("reportingDate")
+        converted_date = datetime.strptime(reporting_date, '%Y-%m-%d').strftime('%d-%m-%Y')
+        field_name = data.get("fieldName")
+
+        calculated_data = CalculatedData.query.filter_by(date=converted_date, field_name=field_name).first()
+
+        if calculated_data:
+            # Data exists in the database, return it
+            return jsonify({
+                "success": True,
+                "data": json.loads(calculated_data.value)
+            })
+        else:
+            return jsonify({
+                "success": False,
+                "data": "No data found on this date"
+            })
     
 @rest_api.route('/data/getNonDataTableList', methods=['GET'])
 class GetNonDatatableList(Resource):

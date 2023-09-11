@@ -129,7 +129,7 @@ export default function NSFRDashBoard() {
                         <Button onClick={() => handleCalculateNsfr({
                                 "reportingDate":reportingDate,
                                 "extraTables":{}
-                            })}>Lấy kết quả NSFR
+                            })}>Tính toán
                         </Button>    
                         <Button onClick={handleExportPDF}>Export to PDF</Button>
                         <Button onClick={exportToExcel}>Export to Excel</Button>

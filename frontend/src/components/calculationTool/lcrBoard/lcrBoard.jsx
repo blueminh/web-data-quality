@@ -129,7 +129,7 @@ export default function LCRDashBoard() {
                         <Button onClick={() => handleCalculateLcr({
                                 "reportingDate":reportingDate,
                                 "extraTables":{}
-                            })}>Lấy kết quả LCR
+                            })}>Tính toán
                         </Button>    
                         <Button onClick={handleExportPDF}>Export to PDF</Button>
                         <Button onClick={exportToExcel}>Export to Excel</Button>
