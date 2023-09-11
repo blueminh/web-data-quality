@@ -9,7 +9,8 @@ TABLES = {
     "Off_Balance_Sheet":"Input_Files/Off_Balance_Sheet/",
     "Loans_&_Advances": "Input_Files/Loans_Advances/",
     "Issued_Securities":"Input_Files/Issued_Securities/",
-    "Deposits_with_Other_Banks":"Input_Files/Deposits_with_other_banks/" 
+    "Deposits_with_Other_Banks":"Input_Files/Deposits_with_other_banks/", 
+    "Collateral_For_Loans":"Input_Files/Collateral_For_Loans/"
 }
 
 MAPPING_TABLES = {

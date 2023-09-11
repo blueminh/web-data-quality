@@ -169,7 +169,7 @@ export default function LCRDashBoard() {
                     </div>
                 </Stack>
             </div>
-            <div id="dataTable">
+            <div id="dataTable" className="table-responsive">
                 <Table bordered>
                     <tbody>
                         <tr>

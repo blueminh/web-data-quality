@@ -278,7 +278,7 @@ export default function InputDashboard() {
             </Modal>
             <Container fluid>
                 <Row>
-                    <Col>
+                    <Col xs={8}>
                         {/* Content for the left half */}
                         <Stack gap={3}>
                             <div className="form-input">
@@ -390,20 +390,23 @@ export default function InputDashboard() {
                             <div className='centered-button-container'>
                                 <Button onClick={handleSubmit}>Tải file lên</Button>
                             </div>
-                            <Table striped bordered>
-                                    <tr>
-                                        <td className='table-title' colSpan={numColumns}>Bản xem thử file đã chọn</td>
-                                    </tr>
-                                    <tbody>
-                                        {previewData.map((row, rowIndex) => (
-                                            <tr key={rowIndex}>
-                                            {row.map((cell, cellIndex) => (
-                                                <td key={cellIndex}>{cell}</td>
+                            <div  className="table-responsive">
+                                <p className = "pageTitle">Bản xem thử file đã chọn</p>
+                                <Table striped bordered clas>
+                                        {/* <tr>
+                                            <td className='table-title' >Bản xem thử file đã chọn</td>
+                                        </tr> */}
+                                        <tbody>
+                                            {previewData.map((row, rowIndex) => (
+                                                <tr key={rowIndex}>
+                                                    {row.map((cell, cellIndex) => (
+                                                        <td key={cellIndex}>{cell}</td>
+                                                    ))}
+                                                </tr>
                                             ))}
-                                            </tr>
-                                        ))}
-                                    </tbody>
-                            </Table>      
+                                        </tbody>
+                                </Table>   
+                            </div>
                         </Stack>
                     </Col>
                     <Col>

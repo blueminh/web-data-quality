@@ -1,0 +1,2 @@
+﻿Loan Id,Customer Id,Customer Type,Collateral / Product Type,Currency,Start Date,Maturity Date,Collateral Amount,Loan secured amount,Risk Weight As Per C41,Rating,Credit Agency,Diễn giải (Bổ sung thêm 1 cột)
+000ZPOS1734502NV,0391407,Khách hàng doanh nghiệp,RE_050_20,VND,12/11/2017,12/11/2022," 695,670,000,000 "," 371,000,000,000 ",60%,N/A,Nội bộ,Quyền sử dụng đất và quyền sở hữu nhà
