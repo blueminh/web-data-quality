@@ -18,6 +18,7 @@ from .models import db, Users, Upload, JWTTokenBlocklist, CalculatedData
 from .config import BaseConfig
 
 from .service.getDataService import get_dashboard_lcr_nsfr_data, get_dashboard_bar_charts_data, get_lcr_data, get_nsfr_data
+from .service import getDataService
 
 from .tableNames import TABLES, MAPPING_TABLES, OTHER_TABLES, REGULATORY_TABLES
 
@@ -419,7 +420,46 @@ class GetCalculatedData(Resource):
                 "data": {},
                 "error": f"No data found on this date: {converted_date}. Please calculate first"
             })
-    
+        
+@rest_api.route('/data/getCalculatedDataByRange', methods=['POST'])
+class GetCalculatedDataByRange(Resource):
+    def post(self):
+        try:
+            data = request.get_json()
+
+            field_name = data['fieldName']
+            number_of_data_point = data['numberOfDataPoint']
+            duration = data['duration']
+
+            converted_date = datetime.now().date().strftime('%d-%m-%Y')
+
+            date_list = []
+            if duration == "days":
+                date_list = getDataService.get_last_days(converted_date, number_of_data_point)
+            elif duration == "weeks":
+                date_list = getDataService.get_last_weeks(converted_date, number_of_data_point)
+            elif duration == "months":
+                date_list = getDataService.get_first_date_of_last_months(converted_date, number_of_data_point)
+
+            # Initialize the result list
+            result = []
+
+            # Loop through the date list and fetch values for each date
+            for date in date_list:
+                # Query the database for the value on the given date and fieldName
+                query_result = CalculatedData.query.filter_by(date=date, field_name=field_name).first()
+
+                # If no data found, append 0; otherwise, append the value
+                if query_result:
+                    result.append(json.loads(query_result.value))
+                else:
+                    result.append(0)
+
+            return jsonify({"success": True, "values": result})
+
+        except Exception as e:
+            return jsonify({"success": False, "error": str(e)})
+
 @rest_api.route('/data/getNonDataTableList', methods=['GET'])
 class GetNonDatatableList(Resource):
     def get(self):

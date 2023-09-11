@@ -3,6 +3,8 @@ from .Main_V2_final.Main_V2_final.main_Home import main as main_home
 from .Main_V2_final.Main_V2_final.NSFR.main_NSFR import main as main_nsfr
 import math
 import pandas as pd
+from datetime import datetime, timedelta
+from dateutil.relativedelta import relativedelta
 
 def replace_nan_with_empty_string(data):
     for row in data['rows']:
@@ -384,3 +386,49 @@ def get_nsfr_data(request_data):
     ]
 
     return nsfr_data
+
+def get_last_days(start_date_str, number_of_days):
+    try:
+        # Convert the input date string to a datetime object
+        start_date = datetime.strptime(start_date_str, "%d-%m-%Y")
+        
+        # Create a list to store the result
+        date_list = []
+
+        # Generate dates for the last 7 days, including the start date
+        for i in range(number_of_days - 1, -1, -1):
+            date_list.append((start_date - timedelta(days=i)).strftime("%d-%m-%Y"))
+
+        return date_list
+    except ValueError:
+            # Handle invalid date format gracefully
+            return []
+
+def get_last_weeks(start_date_str, number_of_weeks):
+    try:
+        # Convert the input date string to a datetime object
+        start_date = datetime.strptime(start_date_str, "%d-%m-%Y")
+        
+        # Create a list to store the result
+        date_list = []
+
+        # Generate dates for the last 7 days, including the start date
+        for i in range(number_of_weeks - 1, -1, -1):
+            date_list.append((start_date - timedelta(weeks=i)).strftime("%d-%m-%Y"))
+
+        return date_list
+    except ValueError:
+            # Handle invalid date format gracefully
+            return []
+
+def get_first_date_of_last_months(start_date_str, number_of_months):
+    try:
+        start_date = datetime.strptime(start_date_str, "%d-%m-%Y")
+        date_list = []
+        for i in range(number_of_months - 1, -1, -1):
+            date_list.append((start_date - relativedelta(months=i)).replace(day=1).strftime("%d-%m-%Y"))
+        
+        return date_list
+    except ValueError:
+            # Handle invalid date format gracefully
+            return []
