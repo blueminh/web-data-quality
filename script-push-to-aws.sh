@@ -1,6 +1,6 @@
 #!/bin/bash
-frontendversion="2.6"
-backendversion="2.7"
+frontendversion="3.0.1"
+backendversion="3.0.1"
 
 docker tag web-data-quality-backend:$backendversion minhkau/web-data-quality-backend:$backendversion
 docker push minhkau/web-data-quality-backend:$backendversion

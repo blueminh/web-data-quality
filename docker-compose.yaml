@@ -1,12 +1,12 @@
 version: "1"
 services:
   frontend:
-    image: minhkau/web-data-quality-frontend:2.6
+    image: minhkau/web-data-quality-frontend:test
     container_name: frontend
     ports:
       - 80:3000
   backend:
-    image: minhkau/web-data-quality-backend:2.7
+    image: minhkau/web-data-quality-backend:test
     container_name: backend
     ports:
       - 8085:8085

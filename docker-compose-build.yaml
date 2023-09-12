@@ -1,14 +1,14 @@
 version: '3' 
 services:
-  # frontend:
-  #   image: web-data-quality-frontend:2.6
-  #   build: ./frontend
-  #   platform: linux/amd64
-  #   container_name: web-data-quality-frontend
-  #   ports:
-  #     - 3000:3000
+  frontend:
+    image: web-data-quality-frontend:3.0.2
+    build: ./frontend
+    platform: linux/amd64
+    container_name: web-data-quality-frontend
+    ports:
+      - 3000:3000
   back-end:
-    image: web-data-quality-backend:2.7
+    image: web-data-quality-backend:3.0.2
     build: ./backend
     platform: linux/amd64
     container_name: web-data-quality-backend
