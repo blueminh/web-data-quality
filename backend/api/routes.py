@@ -218,6 +218,17 @@ class LogoutUser(Resource):
         response.delete_cookie('jwtToken')
         return response    
 
+"""
+    Tải 1 file dữ liệu lên hệ thống. Đối với các file không phải Mapping hoặc Regulatory, tên 
+    của file bao gồm thêm ngày update để sử dụng cho code tính toán
+    Database ghi lại lịch sử upload 
+
+    - username: dùng để lưu vào lịch sử upload
+    - uploaded_file: file dữ liệu 
+    - fileTyle: phần lớn là csv
+    - tableName: file dữ liệu tương ứng với bảng nào
+    - uploaded_date: file dữ liệu này là của ngày nào 
+"""
 @rest_api.route('/upload')
 class UploadResource(Resource):
     @token_required(required_roles=["editor"])
@@ -269,6 +280,9 @@ class UploadResource(Resource):
             return {"error": "Invalid file format or mismatched fileType"}, 400
         
 
+"""
+    Lấy lần gần nhất upload của tất cả các file dữ liệu 
+"""
 @rest_api.route('/upload/history')
 class UploadHistoryResource(Resource):
     @token_required(required_roles=['viewer'])
@@ -282,6 +296,9 @@ class UploadHistoryResource(Resource):
         return {"upload_history": files_latest_upload_dates}
 
 
+"""
+    Lấy danh sách các bảng dữ liệu 
+"""
 @rest_api.route('/upload/getTableList', methods=['GET'])
 class GetDashboardBarChartsData(Resource):
     @token_required(required_roles=['viewer'])
@@ -289,6 +306,18 @@ class GetDashboardBarChartsData(Resource):
         return jsonify(list(TABLES.keys()))
     
     
+"""
+    Tính toán cho Bảng chung. Người dùng cần cung cấp 1 ngày cụ thể. Nếu trong ngày này không có đủ file dữ liệu
+    cần thiêt cho tính toán, thông báo lại cho người dùng còn thiếu những file nào
+
+    Người dùng có thể chọn ngày cụ thể cho từng file trong trường hợp ngày đã chọn không có đủ file. Các thông tin 
+    này được lưu trong extraTables. Đối với các bảng còn lại, sử dụng reportingDate để tìm file tính toán
+
+    Sau khi tính toán thành công, lưu lại kết quả vào database. Kết quả được lưu lấy thời gian theo reportingDate
+
+    - reportingDate: chọn ngày tính toán để tìm các file tương ứng
+    - extraTables: cho phép người dùng chọn file tính toán khác ngày với reportingDate 
+"""
 @rest_api.route('/data/calculateDashboardLcrNsfr', methods=['POST'])
 class CalculateDashboardData(Resource):
     def post(self):
@@ -319,6 +348,18 @@ class CalculateDashboardData(Resource):
         })    
 
 
+"""
+    Tính toán cho Bảng LCR. Người dùng cần cung cấp 1 ngày cụ thể. Nếu trong ngày này không có đủ file dữ liệu
+    cần thiêt cho tính toán, thông báo lại cho người dùng còn thiếu những file nào
+
+    Người dùng có thể chọn ngày cụ thể cho từng file trong trường hợp ngày đã chọn không có đủ file. Các thông tin 
+    này được lưu trong extraTables. Đối với các bảng còn lại, sử dụng reportingDate để tìm file tính toán
+
+    Sau khi tính toán thành công, lưu lại kết quả vào database. Kết quả được lưu lấy thời gian theo reportingDate
+
+    - reportingDate: chọn ngày tính toán để tìm các file tương ứng
+    - extraTables: cho phép người dùng chọn file tính toán khác ngày với reportingDate 
+"""
 @rest_api.route('/data/calculateLcr', methods=['POST'])
 class CalculateLcr(Resource):
     def post(current_user):
@@ -349,6 +390,19 @@ class CalculateLcr(Resource):
             "data": lcr_data
         })
 
+
+"""
+    Tính toán cho Bảng NSFR. Người dùng cần cung cấp 1 ngày cụ thể. Nếu trong ngày này không có đủ file dữ liệu
+    cần thiêt cho tính toán, thông báo lại cho người dùng còn thiếu những file nào
+
+    Người dùng có thể chọn ngày cụ thể cho từng file trong trường hợp ngày đã chọn không có đủ file. Các thông tin 
+    này được lưu trong extraTables. Đối với các bảng còn lại, sử dụng reportingDate để tìm file tính toán
+
+    Sau khi tính toán thành công, lưu lại kết quả vào database. Kết quả được lưu lấy thời gian theo reportingDate
+
+    - reportingDate: chọn ngày tính toán để tìm các file tương ứng
+    - extraTables: cho phép người dùng chọn file tính toán khác ngày với reportingDate 
+"""
 @rest_api.route('/data/calculateNsfr', methods=['POST'])
 class CalculateNfsr(Resource):
     def post(current_user):
@@ -381,6 +435,13 @@ class CalculateNfsr(Resource):
             "data": nsfr_data
         })
     
+
+"""
+    Lấy dữ liệu được lưu trữ của 1 chỉ số cho 1 ngày cụ thể
+
+    - fieldName: tên chỉ số
+    - reportingDate: ngày được chọn
+"""
 @rest_api.route('/data/getCalculatedData', methods=['POST'])
 class GetCalculatedData(Resource):
     def post(current_user):
@@ -404,6 +465,19 @@ class GetCalculatedData(Resource):
                 "error": f"No data found on this date: {converted_date}. Please calculate first"
             })
         
+"""
+    Lấy dữ liệu được lưu trữ của 1 chỉ số cho trong 1 thời gian cụ thể. Các khoảng thời gian được hỗ trợ
+    bao gồm:
+        + n ngày trước: representing values của n ngày gần nhất
+        + n tuần trước: Ví dụ với ngày 30/08/2023, đặt number_of_data_point = 4
+        sẽ trả về dữ liệu của 4 ngày sau: 30/08, 23/08. 16/08, 09/08
+        + n tháng trước: trả về dữ liệu của ngày đầu tiên trong tháng của n tháng trước. Ví dụ với ngày 30/08/2023, 
+        đặt number_of_data_point = 4 sẽ trả về dữ liệu của 4 ngày sau: 01/08, 01/07. 01/06, 01/05
+
+    - fieldName: tên chỉ số
+    - number_of_data_point: số lượng điểm dữ liệu
+    - duration: tính theo ngày/tuần/tháng
+    """
 @rest_api.route('/data/getCalculatedDataByRange', methods=['POST'])
 class GetCalculatedDataByRange(Resource):
     def post(self):
@@ -447,7 +521,9 @@ class GetCalculatedDataByRange(Resource):
                             })
 
 
-
+"""
+    Lấy danh sách các bảng Mapping và Regulatory
+"""
 @rest_api.route('/data/getNonDataTableList', methods=['GET'])
 class GetNonDatatableList(Resource):
     def get(self):
@@ -457,6 +533,10 @@ class GetNonDatatableList(Resource):
             "other_tables": list(OTHER_TABLES.keys())
         }
     
+
+"""
+    Lấy dữ liệu hiện có của 1 bảng Mapping hoặc Regulatory 
+"""    
 @rest_api.route('/data/getNonDataTable', methods=['GET'])
 class GetNonDatatableList(Resource):
     def get(self):
@@ -486,6 +566,10 @@ class GetNonDatatableList(Resource):
         else:
             return jsonify({"error": "Table not found."}), 401
         
+
+"""
+    Xem bản mẫu dữ liệu của 1 bảng. 
+"""        
 @rest_api.route('/data/getPreviewDataTable', methods=['GET'])
 class GetPreviewDataTable(Resource):
     def get(self):
