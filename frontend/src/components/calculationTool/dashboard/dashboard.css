@@ -14,9 +14,9 @@
     font-weight: bold;
 }
 
-#dashboard-general-info {
+.dashboard-general-info {
     text-align: center;
-    margin: 75px auto; /* Center the div horizontally */
+    margin: 20px auto; /* Center the div horizontally */
     max-width: 600px; /* Set the maximum width */
 }
 

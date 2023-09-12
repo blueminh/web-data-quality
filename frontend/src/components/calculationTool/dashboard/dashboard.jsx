@@ -1,4 +1,4 @@
-import { Table, Row, Col, Button, Form, FormLabel, Stack, Modal, Spinner} from 'react-bootstrap';
+import { Table, Row, Col, Button, Form, FormLabel, Stack, Modal, Spinner, Dropdown} from 'react-bootstrap';
 import { useEffect, useState, useRef } from "react";
 import '../../../Global.css'
 import './dashboard.css'
@@ -36,6 +36,11 @@ export default function CalulationQuickDashboard() {
     const modalChooseFileDateDialogToggle = () => setShowChooseFileDateDialog(!showChooseFileDateDialog)
     const [extraTables, setExtraTables] = useState({})
 
+    const [timeFrameOption, setTimeFrameOption] = useState({
+        numberOfDataPoint: 7,
+        duration: "days"
+    })
+    
     const tableRefs = [useRef(null), useRef(null)];
     const handleExportPDF = async () => {
         const pdf = new jsPDF('p', 'mm', 'a4');
@@ -120,8 +125,7 @@ export default function CalulationQuickDashboard() {
                 const subFields = []
                 let dateList = []
                 for (let index = 0; index < setOfFieldsToDisplay.length; index++) {
-                    const response = await getCalculatedDataByRange(barChartMetaData.codes[index], 7, "days")
-                    console.log(response)
+                    const response = await getCalculatedDataByRange(barChartMetaData.codes[index], timeFrameOption.numberOfDataPoint, timeFrameOption.duration)
                     const colorIndex = index % colors.length;
                     subFields.push({
                         label: barChartMetaData.labels[index],
@@ -210,10 +214,52 @@ export default function CalulationQuickDashboard() {
     const [showMessagePopup, setShowMessagePopup] = useState(false);
     const handleCloseMessagePopup = () => setShowMessagePopup(false);
 
+    // load bar charts on opening 
     useEffect(() => {
         handleFetchBarChartData()
     }, [])
 
+    const handleChangeBarChartOptions = (event) => {
+        switch (String(event.target.value)) {
+            case "7d":
+                setTimeFrameOption({
+                    numberOfDataPoint: 7,
+                    duration: "days"
+                })
+                
+                break;
+            case "4w":
+                setTimeFrameOption({
+                    numberOfDataPoint: 4,
+                    duration: "weeks"
+                })
+                break;
+            case "3m":
+                setTimeFrameOption({
+                    numberOfDataPoint: 3,
+                    duration: "months"
+                })
+                break;
+            case "6m":
+                setTimeFrameOption({
+                    numberOfDataPoint: 6,
+                    duration: "months"
+                })
+                break;
+            default:
+                setTimeFrameOption({
+                    numberOfDataPoint: 7,
+                    duration: "days"
+                })
+                break;
+        }
+    }
+
+    // whenever user changes time frame option for the bar charts, update the bar charts
+    useEffect(() => {
+        // This effect runs whenever timeFrameOption changes
+        handleFetchBarChartData();
+      }, [timeFrameOption]);
 
     return (
         <div>
@@ -234,6 +280,17 @@ export default function CalulationQuickDashboard() {
                 extraTables={extraTables}
                 onSubmitHandle={handleCalculateBoardData}
             />}
+            <div className="dashboard-general-info">
+                <Form.Label>Chọn thời gian hiển thị dữ liệu</Form.Label>
+                <Form.Select required onChange={(event) => {
+                    handleChangeBarChartOptions(event)   
+                }}>
+                    <option value={"7d"}>7 ngày gần nhất</option>
+                    <option value={"4w"}>4 tuần gần nhất</option>
+                    <option value={"3m"}>3 tháng gần nhất</option>
+                    <option value={"6m"}>6 tháng gần nhất</option>
+                </Form.Select>
+            </div>
             <div className="chart-container">
                 {Array.isArray(setOfDataForFieldStatsBar) && setOfDataForFieldStatsBar.map(data => 
                     <div className="chart">
@@ -241,7 +298,7 @@ export default function CalulationQuickDashboard() {
                     </div>
                 )}
             </div>
-            <div id="dashboard-general-info">
+            <div className="dashboard-general-info">
                 <Stack gap={2}>
                     <FormLabel style={{fontWeight:'bold', fontSize:'larger'}}>Chọn ngày báo cáo</FormLabel>
                     <Form.Control
