@@ -598,6 +598,20 @@ def percent(df, G_row46, G_row47):
 End of Calculations:
 @Return: the result of the cell in Row x, column Blank 1/2
 """
+
+"""
+    Calculates the LCR board, returned as a df
+
+    :param request_data: is an json object that contains these information:
+        - reportingDate: the chosen reporting date by the users. This is used for finding the
+        corresponding tables (note that data tables' names are in the format "tablename_date")
+        - extraTables: any tables that are NOT on reportingDate are specified here with the 
+        actual date to be used. For example: 
+            extraTables: {
+                "Borrowings": 28-08-2023,
+                "Derivatives": 30-08-2023
+            }
+"""
 def main(request_data):   
     date_str = request_data.get("reportingDate")
     extra_tables_request = request_data.get("extraTables")

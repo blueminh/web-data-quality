@@ -9,14 +9,6 @@ import json
 
 from ..models import CalculatedData
 
-def replace_nan_with_empty_string(data):
-    for row in data['rows']:
-        if pd.isna(row['data']):
-            row['data'] = ''
-        # for value in row['data']:
-        #     if pd.isna(value):
-        #         row['data'] = ''
-
 class Row:
     def __init__(self, code, depth, data, children=[], volatility_data = {
         "x":[2020, 2021,2022],
@@ -51,7 +43,26 @@ class Row:
             "hasChildren":self.hasChildren,
             "volatility_data":self.volatility_data
         }
+    
+"""
+    Helper function to replace all NaN values with the empty string
+"""
+def replace_nan_with_empty_string(data):
+    for row in data['rows']:
+        if pd.isna(row['data']):
+            row['data'] = ''
+        # for value in row['data']:
+        #     if pd.isna(value):
+        #         row['data'] = ''
 
+
+"""
+    Helper function to persist data in the database
+    :params
+        row: a Row object 
+        date: the date to save the data
+        index_of_important_stat: a row typically consists of multiple data points. Only 1 point is persisted
+"""
 def save_data(row, date, index_of_important_stat):
     result_string = row.get("data")[index_of_important_stat]
     new_calculated_data = CalculatedData(field_name=row.get("code"), date=date, value=result_string)
@@ -60,6 +71,12 @@ def save_data(row, date, index_of_important_stat):
         save_data(child, date, index_of_important_stat)
 
 
+"""
+    Convert the LCR df into a json object that contains Row objects.
+    Each row has the code for the index
+
+    :return: an array containing multiple Row objects. Note that Row is a recursive structure
+"""
 def convert_lcr_df_to_json(df):
     hqla = Row("hqla", 0, ["", "High-quality liquid assets", "Tài sản thanh khoản có chất lượng cao", "", ""])
     hqla.setChildren(
@@ -115,6 +132,13 @@ def convert_lcr_df_to_json(df):
     return lcr_data
 
 
+"""
+    Persist the data into the database
+
+    :params:
+        lcr_json_data: an array containing multiple Row objects
+        reporting_date: the date of the data
+"""
 def save_lcr_data(lcr_json_data, reporting_date):
     lcr_data_string = json.dumps(lcr_json_data)
     new_calculated_data = CalculatedData(field_name="lcr", date=reporting_date, value=lcr_data_string)
@@ -124,6 +148,22 @@ def save_lcr_data(lcr_json_data, reporting_date):
         save_data(item, date=reporting_date, index_of_important_stat=4)
 
 
+"""
+    Calculate the LCR board and persist LCR data into the database
+    
+    :params:
+        request_data: is an json object that contains these information:
+            - reportingDate: the chosen reporting date by the users. This is used for finding the
+            corresponding tables (note that data tables' names are in the format "tablename_date")
+            - extraTables: any tables that are NOT on reportingDate are specified here with the 
+            actual date to be used. For example: 
+                extraTables: {
+                    "Borrowings": 28-08-2023,
+                    "Derivatives": 30-08-2023
+                }
+    
+    :return: an array containing multiple Row objects containing LCR data
+"""
 def calculate_lcr(request_data):
     df = main_lcr(request_data)
     lcr_json_data = convert_lcr_df_to_json(df)
@@ -131,6 +171,12 @@ def calculate_lcr(request_data):
     return lcr_json_data
 
 
+"""
+    Convert the NSFR df into a json object that contains Row objects.
+    Each row has the code for the index
+
+    :return: an array containing multiple Row objects. Note that Row is a recursive structure
+"""
 def convert_nsfr_df_to_json(df):
     capital = Row("capital", 2, df.iloc[0].tolist())
     capital.setChildren(
@@ -224,6 +270,14 @@ def convert_nsfr_df_to_json(df):
     ]
     return nsfr_data
 
+
+"""
+    Helper function to persist data in the database
+    :params
+        row: a Row object 
+        date: the date to save the data
+        index_of_important_stat: a row typically consists of multiple data points. Only 1 point is persisted
+"""
 def save_nsfr_data(nsfr_json_data, reporting_date):
     nsfr_data_string = json.dumps(nsfr_json_data)
     new_calculated_data = CalculatedData(field_name="nsfr", date=reporting_date, value=nsfr_data_string)
@@ -233,6 +287,22 @@ def save_nsfr_data(nsfr_json_data, reporting_date):
         save_data(item, date=reporting_date, index_of_important_stat=7)
 
 
+"""
+    Calculate the NSFR board and persist NSFR data into the database
+    
+    :params:
+        request_data: is an json object that contains these information:
+            - reportingDate: the chosen reporting date by the users. This is used for finding the
+            corresponding tables (note that data tables' names are in the format "tablename_date")
+            - extraTables: any tables that are NOT on reportingDate are specified here with the 
+            actual date to be used. For example: 
+                extraTables: {
+                    "Borrowings": 28-08-2023,
+                    "Derivatives": 30-08-2023
+                }
+    
+    :return: an array containing multiple Row objects containing NSFR data
+"""
 def calculate_nsfr(request_data):
     df = main_nsfr(request_data)
     nsfr_json_data = convert_nsfr_df_to_json(df)
@@ -240,7 +310,20 @@ def calculate_nsfr(request_data):
     return nsfr_json_data
 
 
-
+"""
+    Calculate the both NSFR and LCR boards and persist them into the database
+    
+    :params:
+        request_data: is an json object that contains these information:
+            - reportingDate: the chosen reporting date by the users. This is used for finding the
+            corresponding tables (note that data tables' names are in the format "tablename_date")
+            - extraTables: any tables that are NOT on reportingDate are specified here with the 
+            actual date to be used. For example: 
+                extraTables: {
+                    "Borrowings": 28-08-2023,
+                    "Derivatives": 30-08-2023
+                }
+"""
 def get_dashboard_lcr_nsfr_data(request_data):
     lcr_df = main_lcr(request_data)
     lcr_json_data = convert_lcr_df_to_json(lcr_df)
@@ -349,6 +432,14 @@ def get_dashboard_lcr_nsfr_data(request_data):
     return result
 
 
+"""
+    Helper function to find the dates of the last n days
+    :params: 
+        start_date_str: the date to start counting from
+        number_of_days
+    
+    :return: an array containing the dates of the last n days counting from start_date_str
+"""
 def get_last_days(start_date_str, number_of_days):
     try:
         # Convert the input date string to a datetime object
@@ -367,6 +458,15 @@ def get_last_days(start_date_str, number_of_days):
             return []
     
 
+"""
+    Helper function to find the dates of the last n days, 7 days from each other
+    :params: 
+        start_date_str: the date to start counting from
+        number_of_days
+    
+    :return: an array containing the dates of the last n days (7 days from each other) counting from start_date_str
+    For example call (30-08-2023, 3) would return [16-08-2023, 23-08-2023, 30-08-2023]
+"""
 def get_last_weeks(start_date_str, number_of_weeks):
     try:
         # Convert the input date string to a datetime object
@@ -384,7 +484,15 @@ def get_last_weeks(start_date_str, number_of_weeks):
             # Handle invalid date format gracefully
             return []
     
-
+"""
+    Helper function to find the first dates of the last n months
+    :params: 
+        start_date_str: the date to start counting from
+        number_of_days
+    
+    :return: an array containing first dates of the last n months counting from start_date_str
+    For example call (30-08-2023, 3) would return [01-06-2023, 01-07-2023, 01-08-2023]
+"""
 def get_first_date_of_last_months(start_date_str, number_of_months):
     try:
         start_date = datetime.strptime(start_date_str, "%d-%m-%Y")

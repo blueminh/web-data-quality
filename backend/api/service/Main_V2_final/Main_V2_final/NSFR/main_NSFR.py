@@ -1731,6 +1731,19 @@ def get_value_nsfr(df, J_row27, J_row47):
     return result
 
 def main(request_data):
+    """
+        Calculates the NSFR board, returned as a df
+
+        :param request_data: is an json object that contains these information:
+            - reportingDate: the chosen reporting date by the users. This is used for finding the
+            corresponding tables (note that data tables' names are in the format "tablename_date")
+            - extraTables: any tables that are NOT on reportingDate are specified here with the 
+            actual date to be used. For example: 
+                extraTables: {
+                    "Borrowings": 28-08-2023,
+                    "Derivatives": 30-08-2023
+                }
+    """
     date_str = request_data.get("reportingDate")
     extra_tables_request = request_data.get("extraTables")
     borrowings = Borrowings_NSFR_output.nsfr_borrowings(extra_tables_request.get("Borrowings", date_str))
