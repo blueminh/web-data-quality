@@ -95,7 +95,7 @@ export default function LCRDashBoard() {
             try {
                 const response = await getCalculatedData(reportingDate, "lcr")
                 if (response.success) {
-                    setLcrBoardData(response.data)
+                    setLcrBoardData(processLcrBoardData(response.data))
                 } else {
                     setErrorMessage(response.error)
                     setShowMessagePopup(true)

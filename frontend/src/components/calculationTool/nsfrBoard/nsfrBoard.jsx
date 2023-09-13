@@ -32,7 +32,10 @@ export default function NSFRDashBoard() {
         // console.log(row.data.filter((_, index) => index !== 1))
         const newRow = {
             ...row,
-            data: row.data.filter((_, index) => index !== 1).map((item) => {
+            data: row.data.filter((_, index) => index !== 1).map((item, index) => {
+                if (index == 0) {
+                    return item
+                }
                 if (typeof item !== 'number') {
                     return item; // Return non-numeric items as-is
                 }
@@ -94,7 +97,7 @@ export default function NSFRDashBoard() {
             try {
                 const response = await getCalculatedData(reportingDate, "nsfr")
                 if (response.success) {
-                    setNsfrBoardData(response.data)
+                    setNsfrBoardData(processBoardData(response.data))
                 } else {
                     setErrorMessage(response.error)
                     setShowMessagePopup(true)

@@ -17,111 +17,6 @@ def replace_nan_with_empty_string(data):
         #     if pd.isna(value):
         #         row['data'] = ''
 
-def get_dashboard_lcr_nsfr_data(request_data):
-    # return {"lcr_data": lcr_data, "nsfr_data": nsfr_data}
-    result = main_home(request_data)
-    lcr_result = result['lcr']
-    nsfr_result = result['nsfr']
-
-    lcr_data = {
-        "title": "Liquidity Coverage Ratio - Quick Dashboard",
-        "numberOfRows": 4,
-        "numberOfCols": 2,
-        "rows": [
-            {
-                "rowTitle": {
-                    "title": "Total HQLA",
-                    "subTitle": "Tổng tài sản thanh khoản có chất lượng cao"
-                },
-                "data": lcr_result[0]
-            },
-            {
-                "rowTitle": {
-                    "title": "Total net cash outflows",
-                    "subTitle": "Tổng dòng tiền ra ròng"
-                },
-                "data": lcr_result[1]
-            },
-            {
-                "rowTitle": {
-                    "title": "LCR minimum requirements",
-                    "subTitle": "Yêu cầu tỷ lệ LCR tối thiểu"
-                },
-                "data": lcr_result[2]
-            },
-            {
-                "rowTitle": {
-                    "title": "Liquidity Coverage Ratio",
-                    "subTitle": "Tỷ lệ bao phủ thanh khoản"
-                },
-                "data": lcr_result[3]
-            },
-            {
-                "rowTitle": {
-                    "title": "Remark",
-                    "subTitle": "Nhận xét"
-                },
-                "data": lcr_result[4]
-            },
-        ]
-    }
-
-    nsfr_data = {
-        "title": "Net Stable Funding Ratio Ratio - Quick Dashboard",
-        "numberOfRows": 4,
-        "numberOfCols": 2,
-        "rows": [
-            {
-                "rowTitle": {
-                    "title": "Available Stable Funding",
-                    "subTitle": "Nguồn vốn ổn định sẵn có"
-                },
-                "data": nsfr_result[0]
-            },
-            {
-                "rowTitle": {
-                    "title": "Required Stable Funding",
-                    "subTitle": "Nguồn vốn ổn định yêu cầu"
-                },
-                "data": nsfr_result[1]
-            },
-            {
-                "rowTitle": {
-                    "title": "NSFR Minimum requirement",
-                    "subTitle": "Yêu cầu tỷ lệ NSFR tối thiểu"
-                },
-                "data": nsfr_result[2]
-            },
-            {
-                "rowTitle": {
-                    "title": "Net Stable Funding Ratio",
-                    "subTitle": "Tỷ lệ nguồn vốn ổn định ròng"
-                },
-                "data": nsfr_result[3]
-            },
-            {
-                "rowTitle": {
-                    "title": "Remark",
-                    "subTitle": "Nhận xét"
-                },
-                "data": nsfr_result[4]
-            },
-        ]
-    }
-
-    replace_nan_with_empty_string(lcr_data)
-    replace_nan_with_empty_string(nsfr_data)
-
-    result = {
-        "lcr_data":lcr_data,
-        "nsfr_data":nsfr_data
-    }
-    result_string = json.dumps(result)
-    new_calculated_data = CalculatedData(field_name="dashboard_lcr_nsfr", date=request_data.get("reportingDate"), value=result_string)
-    new_calculated_data.save()
-
-    return result
-
 class Row:
     def __init__(self, code, depth, data, children=[], volatility_data = {
         "x":[2020, 2021,2022],
@@ -164,8 +59,8 @@ def save_data(row, date, index_of_important_stat):
     for child in row.get("children"):
         save_data(child, date, index_of_important_stat)
 
-def calculate_lcr(request_data):
-    df = main_lcr(request_data)
+
+def convert_lcr_df_to_json(df):
     hqla = Row("hqla", 0, ["", "High-quality liquid assets", "Tài sản thanh khoản có chất lượng cao", "", ""])
     hqla.setChildren(
         [
@@ -217,19 +112,26 @@ def calculate_lcr(request_data):
     liquid_cov_ratio = Row('liquid_cov_ratio', 1, df.iloc[30].tolist())
 
     lcr_data = [hqla.toJSON(), cash_outflow.toJSON(), cash_inflow.toJSON(), total_hqla.toJSON(), total_net_outflow.toJSON(), liquid_cov_ratio.toJSON()]
-    
-    lcr_data_string = json.dumps(lcr_data)
-    new_calculated_data = CalculatedData(field_name="lcr", date=request_data.get("reportingDate"), value=lcr_data_string)
-    new_calculated_data.save()
-
-    for item in lcr_data:
-        save_data(item, date=request_data.get("reportingDate"), index_of_important_stat=4)
-    
     return lcr_data
 
 
-def calculate_nsfr(request_data):
-    df = main_nsfr(request_data)
+def save_lcr_data(lcr_json_data, reporting_date):
+    lcr_data_string = json.dumps(lcr_json_data)
+    new_calculated_data = CalculatedData(field_name="lcr", date=reporting_date, value=lcr_data_string)
+    new_calculated_data.save()
+
+    for item in lcr_json_data:
+        save_data(item, date=reporting_date, index_of_important_stat=4)
+
+
+def calculate_lcr(request_data):
+    df = main_lcr(request_data)
+    lcr_json_data = convert_lcr_df_to_json(df)
+    save_lcr_data(lcr_json_data, request_data.get("reportingDate"))
+    return lcr_json_data
+
+
+def convert_nsfr_df_to_json(df):
     capital = Row("capital", 2, df.iloc[0].tolist())
     capital.setChildren(
         [
@@ -320,15 +222,132 @@ def calculate_nsfr(request_data):
         require_stable_fund.toJSON(), 
         nsfr.toJSON()
     ]
+    return nsfr_data
 
-    nsfr_data_string = json.dumps(nsfr_data)
-    new_calculated_data = CalculatedData(field_name="nsfr", date=request_data.get("reportingDate"), value=nsfr_data_string)
+def save_nsfr_data(nsfr_json_data, reporting_date):
+    nsfr_data_string = json.dumps(nsfr_json_data)
+    new_calculated_data = CalculatedData(field_name="nsfr", date=reporting_date, value=nsfr_data_string)
     new_calculated_data.save()
 
-    for item in nsfr_data:
-        save_data(item, date=request_data.get("reportingDate"), index_of_important_stat=7)
+    for item in nsfr_json_data:
+        save_data(item, date=reporting_date, index_of_important_stat=7)
 
-    return nsfr_data
+
+def calculate_nsfr(request_data):
+    df = main_nsfr(request_data)
+    nsfr_json_data = convert_nsfr_df_to_json(df)
+    save_nsfr_data(nsfr_json_data, request_data.get("reportingDate"))
+    return nsfr_json_data
+
+
+
+def get_dashboard_lcr_nsfr_data(request_data):
+    lcr_df = main_lcr(request_data)
+    lcr_json_data = convert_lcr_df_to_json(lcr_df)
+    save_lcr_data(lcr_json_data, request_data.get("reportingDate"))
+    nsfr_df = main_nsfr(request_data)
+    nsfr_json_data = convert_nsfr_df_to_json(nsfr_df)
+    save_nsfr_data(nsfr_json_data, request_data.get("reportingDate"))
+    
+    lcr_data = {
+        "title": "Liquidity Coverage Ratio - Quick Dashboard",
+        "numberOfRows": 4,
+        "numberOfCols": 2,
+        "rows": [
+            {
+                "rowTitle": {
+                    "title": "Total HQLA",
+                    "subTitle": "Tổng tài sản thanh khoản có chất lượng cao"
+                },
+                "data": lcr_df.loc[28, 'Blank 2'] if lcr_df.loc[28, 'Blank 2'] is not None else 0
+            },
+            {
+                "rowTitle": {
+                    "title": "Total net cash outflows",
+                    "subTitle": "Tổng dòng tiền ra ròng"
+                },
+                "data": lcr_df.loc[29, 'Blank 2'] if lcr_df.loc[29, 'Blank 2'] is not None else 0
+            },
+            {
+                "rowTitle": {
+                    "title": "LCR minimum requirements",
+                    "subTitle": "Yêu cầu tỷ lệ LCR tối thiểu"
+                },
+                "data": 1.0
+            },
+            {
+                "rowTitle": {
+                    "title": "Liquidity Coverage Ratio",
+                    "subTitle": "Tỷ lệ bao phủ thanh khoản"
+                },
+                "data":lcr_df.loc[30, 'Blank 2'] if lcr_df.loc[29, 'Blank 2'] is not None else 0
+            },
+            {
+                "rowTitle": {
+                    "title": "Remark",
+                    "subTitle": "Nhận xét"
+                },
+                "data": "Meet minimum requirement/Tuân thủ yêu cầu tối thiểu" if lcr_df.loc[30, 'Blank 2'] >= 1 else "Below minimum requirement/Chưa đạt yêu cầu tối thiểu"
+            },
+        ]
+    }
+
+    nsfr_data = {
+        "title": "Net Stable Funding Ratio Ratio - Quick Dashboard",
+        "numberOfRows": 4,
+        "numberOfCols": 2,
+        "rows": [
+            {
+                "rowTitle": {
+                    "title": "Available Stable Funding",
+                    "subTitle": "Nguồn vốn ổn định sẵn có"
+                },
+                "data": nsfr_df.loc[13, 'Blank 5'] if 'Blank 5' in nsfr_df.columns and nsfr_df.loc[13, 'Blank 5'] is not None else 0
+            },
+            {
+                "rowTitle": {
+                    "title": "Required Stable Funding",
+                    "subTitle": "Nguồn vốn ổn định yêu cầu"
+                },
+                "data": nsfr_df.loc[33, 'Blank 5'] if 'Blank 5' in nsfr_df.columns and nsfr_df.loc[33, 'Blank 5'] is not None else 0
+            },
+            {
+                "rowTitle": {
+                    "title": "NSFR Minimum requirement",
+                    "subTitle": "Yêu cầu tỷ lệ NSFR tối thiểu"
+                },
+                "data": 1.0
+            },
+            {
+                "rowTitle": {
+                    "title": "Net Stable Funding Ratio",
+                    "subTitle": "Tỷ lệ nguồn vốn ổn định ròng"
+                },
+                "data": nsfr_df.loc[34, 'Blank 5'] if 'Blank 5' in nsfr_df.columns and nsfr_df.loc[33, 'Blank 5'] is not None else 0
+            },
+            {
+                "rowTitle": {
+                    "title": "Remark",
+                    "subTitle": "Nhận xét"
+                },
+                "data":  "Meet minimum requirement/Tuân thủ yêu cầu tối thiểu" if nsfr_df.loc[34, 'Blank 5'] >= 1 else "Below minimum requirement/Chưa đạt yêu cầu tối thiểu"
+            },
+        ]
+    }
+
+    replace_nan_with_empty_string(lcr_data)
+    replace_nan_with_empty_string(nsfr_data)
+
+    result = {
+        "lcr_data":lcr_data,
+        "nsfr_data":nsfr_data
+    }
+    result_string = json.dumps(result)
+    new_calculated_data = CalculatedData(field_name="dashboard_lcr_nsfr", date=request_data.get("reportingDate"), value=result_string)
+    new_calculated_data.save()
+
+    return result
+
 
 def get_last_days(start_date_str, number_of_days):
     try:
@@ -346,6 +365,7 @@ def get_last_days(start_date_str, number_of_days):
     except ValueError:
             # Handle invalid date format gracefully
             return []
+    
 
 def get_last_weeks(start_date_str, number_of_weeks):
     try:
@@ -363,6 +383,7 @@ def get_last_weeks(start_date_str, number_of_weeks):
     except ValueError:
             # Handle invalid date format gracefully
             return []
+    
 
 def get_first_date_of_last_months(start_date_str, number_of_months):
     try:
