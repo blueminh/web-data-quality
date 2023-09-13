@@ -28,7 +28,35 @@ export default function NSFRDashBoard() {
     const [isLoading, setIsLoading] = useState(false);
 
      // eslint-disable-next-line
-    const [nsfrBoardData, setNsfrBoardData] = useState(nsfrBoardDataDefault)
+     const processBoardRow = (row) => {
+        // console.log(row.data.filter((_, index) => index !== 1))
+        const newRow = {
+            ...row,
+            data: row.data.filter((_, index) => index !== 1).map((item) => {
+                if (typeof item !== 'number') {
+                    return item; // Return non-numeric items as-is
+                }
+                if (item == 0 ) {
+                    return 0
+                } else if (item > 1000) {
+                  // Convert large numbers to integers with commas
+                  return item.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+                } else if (item < 3) {
+                  // Round small numbers to 2 decimal points
+                  return item.toFixed(2);
+                } else {
+                  return item;
+                }
+            }),
+            children: row.children.map((child) => processBoardRow(child))
+        }
+        return newRow
+    }
+
+    const processBoardData = (data) => { 
+        return data.map((row) => processBoardRow(row))
+    }  
+    const [nsfrBoardData, setNsfrBoardData] = useState(processBoardData(nsfrBoardDataDefault))
 
     const [showChooseFileDateDialog, setShowChooseFileDateDialog] = useState(false);
     const modalChooseFileDateDialogToggle = () => setShowChooseFileDateDialog(!showChooseFileDateDialog)
@@ -45,7 +73,7 @@ export default function NSFRDashBoard() {
                 setIsLoading(false)
 
                 if (response.success) {
-                    setNsfrBoardData(response.data)
+                    setNsfrBoardData(processBoardData(response.data))
                     setIsLoading(false)
                     setShowChooseFileDateDialog(false)
                 } else {
@@ -53,7 +81,7 @@ export default function NSFRDashBoard() {
                     setShowChooseFileDateDialog(true)
                 }
             } catch (error) {
-                setNsfrBoardData(nsfrBoardDataDefault)
+                setNsfrBoardData(processBoardData(nsfrBoardDataDefault))
                 setIsLoading(false)
                 console.error('Error fetching data:', error);
             }
@@ -173,7 +201,7 @@ export default function NSFRDashBoard() {
                 <Table bordered>
                     <tbody>
                         <tr>
-                            {["No.", "Item", "Khoản mục", "","","","",""].map(col => <td className='table-title'>{col}</td>)}
+                            {["No.", "Khoản mục", "","","","",""].map(col => <td className='table-title'>{col}</td>)}
                         </tr>
                         {nsfrBoardData.map(row => <ExpandableRow row={row}></ExpandableRow>)}
                     </tbody>

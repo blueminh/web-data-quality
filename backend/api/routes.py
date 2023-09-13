@@ -155,11 +155,11 @@ class Login(Resource):
 
         if not user_exists:
             return {"success": False,
-                    "msg": "This email does not exist."}, 400
+                    "msg": "Email không tồn tại"}, 400
 
         if not user_exists.check_password(_password):
             return {"success": False,
-                    "msg": "Wrong credentials."}, 400
+                    "msg": "Sai tên đăng nhập hoặc mật khẩu"}, 400
 
         # create access token uwing JWT
         token = jwt.encode({'email': _email, 'exp': datetime.utcnow() + timedelta(minutes=30)}, BaseConfig.SECRET_KEY)
@@ -263,7 +263,7 @@ class UploadResource(Resource):
                 file_name = f"{table_name}.{file_extension}"
                 path_to_file = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'service', 'Main_V2_final', 'Main_V2_final', REGULATORY_TABLES[table_name], file_name)
             else:
-                return {"error": f"Cannot find table with this name {table_name}"}, 400 
+                return {"error": f"Không tìm được bảng nào với tên {table_name}"}, 400 
 
             uploaded_file.stream.seek(0)  # Reset the stream position
             uploaded_file.save(path_to_file)
@@ -462,7 +462,7 @@ class GetCalculatedData(Resource):
             return jsonify({
                 "success": False,
                 "data": {},
-                "error": f"No data found on this date: {converted_date}. Please calculate first"
+                "error": f"Không có dữ liệu nào được lưu cho ngày {converted_date}. Vui lòng chạy tính toán"
             })
         
 """
@@ -562,9 +562,9 @@ class GetNonDatatableList(Resource):
                 # Return the JSON response
                 return jsonify(table_data)
             else:
-                return jsonify({"error": "Table not found."}), 401
+                return jsonify({"error": "Không tìm thấy bảng."}), 401
         else:
-            return jsonify({"error": "Table not found."}), 401
+            return jsonify({"error": "Không tìm thấy bảng."}), 401
         
 
 """

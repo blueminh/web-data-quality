@@ -40,6 +40,36 @@ export default function CalulationQuickDashboard() {
         numberOfDataPoint: 7,
         duration: "days"
     })
+
+    const processBoardRow = (row) => {
+        console.log(row)
+        let newData;
+
+        if (row.data == 0 || typeof row.data !== 'number') {
+            newData = row.data; // Return non-numeric items as-is
+        } else if (row.data > 1000) {
+            // Convert large numbers to integers with commas
+            newData = row.data.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        } else if (row.data < 3) {
+            // Round small numbers to 2 decimal points
+            newData = row.data.toFixed(2);
+        } else {
+            newData = row.data;
+        }
+
+        const newRow = {
+            ...row,
+            data: newData,
+        };
+        return newRow
+    }
+
+    const processBoardData = (data) => {         
+        return {
+            ...data, 
+            rows: data.rows.map((row) => processBoardRow(row))
+        }
+    }   
     
     const tableRefs = [useRef(null), useRef(null)];
     const handleExportPDF = async () => {
@@ -153,8 +183,8 @@ export default function CalulationQuickDashboard() {
                 setIsLoading(true)
                 const response = await calculateDashboardLcrNsfrData(requestData)
                 if (response.success) {
-                    setLcrData(response.data.lcr_data)
-                    setNsfrData(response.data.nsfr_data)
+                    setLcrData(processBoardData(response.data.lcr_data))
+                    setNsfrData(processBoardData(response.data.nsfr_data))
                 } else {
                     setExtraTables(response.extraTables)
                     setShowChooseFileDateDialog(true)
@@ -175,14 +205,15 @@ export default function CalulationQuickDashboard() {
             try {
                 const response = await getCalculatedData(reportingDate, "dashboard_lcr_nsfr")
                 if (response.success) {
-                    setLcrData(response.data.lcr_data)
-                    setNsfrData(response.data.nsfr_data)
+                    setLcrData(processBoardData(response.data.lcr_data))
+                    setNsfrData(processBoardData(response.data.nsfr_data))
                 } else {
                     setErrorMessage(response.error)
                     setShowMessagePopup(true)
                 }
             } catch (error) {
                 setErrorMessage("Có lỗi đã xảy ra")
+                console.log(error)
                 setShowMessagePopup(true)
             }
         };

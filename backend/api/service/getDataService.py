@@ -142,7 +142,7 @@ class Row:
     def toJSON(self):
         def convert_nan(value):
             if isinstance(value, float) and math.isnan(value):
-                return "Nan"
+                return "0"
             return value
         
         json_children = [child.toJSON() for child in self.children]
