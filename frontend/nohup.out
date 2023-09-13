@@ -1,0 +1,99 @@
+
+> web-data-quality@0.1.0 start
+> PORT=3000 react-scripts start
+
+(node:14194) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(node:14194) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+Starting the development server...
+
+Compiled successfully!
+
+You can now view web-data-quality in the browser.
+
+  Local:            http://localhost:3000
+  On Your Network:  http://172.31.32.245:3000
+
+Note that the development build is not optimized.
+To create a production build, use npm run build.
+
+assets by path static/js/*.js 6.63 MiB
+  asset static/js/bundle.js 6.34 MiB [emitted] (name: main) 1 related asset
+  asset static/js/vendors-node_modules_canvg_lib_index_es_js.chunk.js 236 KiB [emitted] (id hint: vendors) 1 related asset
+  asset static/js/vendors-node_modules_dompurify_dist_purify_js.chunk.js 64.6 KiB [emitted] (id hint: vendors) 1 related asset
+asset index.html 1.69 KiB [emitted]
+asset asset-manifest.json 738 bytes [emitted]
+cached modules 6.12 MiB (javascript) 32.8 KiB (runtime) [cached] 577 modules
+webpack 5.88.2 compiled successfully in 2663 ms
+npm ERR! path /home/ubuntu/code/frontend
+npm ERR! command failed
+npm ERR! signal SIGHUP
+npm ERR! command sh -c PORT=3000 react-scripts start
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/ubuntu/.npm/_logs/2023-09-12T10_26_10_339Z-debug-0.log
+
+> web-data-quality@0.1.0 start
+> PORT=3000 react-scripts start
+
+(node:14674) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(node:14674) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+Starting the development server...
+
+Compiled successfully!
+
+You can now view web-data-quality in the browser.
+
+  Local:            http://localhost:3000
+  On Your Network:  http://172.31.32.245:3000
+
+Note that the development build is not optimized.
+To create a production build, use npm run build.
+
+assets by path static/js/*.js 6.63 MiB
+  asset static/js/bundle.js 6.34 MiB [emitted] (name: main) 1 related asset
+  asset static/js/vendors-node_modules_canvg_lib_index_es_js.chunk.js 236 KiB [emitted] (id hint: vendors) 1 related asset
+  asset static/js/vendors-node_modules_dompurify_dist_purify_js.chunk.js 64.6 KiB [emitted] (id hint: vendors) 1 related asset
+asset index.html 1.69 KiB [emitted]
+asset asset-manifest.json 738 bytes [emitted]
+cached modules 6.12 MiB (javascript) 32.8 KiB (runtime) [cached] 577 modules
+webpack 5.88.2 compiled successfully in 2696 ms
+npm ERR! path /home/ubuntu/code/frontend
+npm ERR! command failed
+npm ERR! signal SIGHUP
+npm ERR! command sh -c PORT=3000 react-scripts start
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/ubuntu/.npm/_logs/2023-09-12T10_36_05_470Z-debug-0.log
+
+> web-data-quality@0.1.0 start
+> PORT=3000 react-scripts start
+
+(node:14856) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(node:14856) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+Starting the development server...
+
+Compiled successfully!
+
+You can now view web-data-quality in the browser.
+
+  Local:            http://localhost:3000
+  On Your Network:  http://172.31.32.245:3000
+
+Note that the development build is not optimized.
+To create a production build, use npm run build.
+
+assets by path static/js/*.js 6.63 MiB
+  asset static/js/bundle.js 6.34 MiB [emitted] (name: main) 1 related asset
+  asset static/js/vendors-node_modules_canvg_lib_index_es_js.chunk.js 236 KiB [emitted] (id hint: vendors) 1 related asset
+  asset static/js/vendors-node_modules_dompurify_dist_purify_js.chunk.js 64.6 KiB [emitted] (id hint: vendors) 1 related asset
+asset index.html 1.69 KiB [emitted]
+asset asset-manifest.json 738 bytes [emitted]
+cached modules 6.12 MiB (javascript) 32.8 KiB (runtime) [cached] 577 modules
+webpack 5.88.2 compiled successfully in 2486 ms
+npm ERR! path /home/ubuntu/code/frontend
+npm ERR! command failed
+npm ERR! signal SIGHUP
+npm ERR! command sh -c PORT=3000 react-scripts start
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/ubuntu/.npm/_logs/2023-09-12T10_38_03_302Z-debug-0.log

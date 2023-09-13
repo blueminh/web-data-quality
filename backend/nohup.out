@@ -1,0 +1,1049 @@
+ * Serving Flask app 'api' (lazy loading)
+ * Environment: development
+ * Debug mode: on
+ * Running on all addresses (0.0.0.0)
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on http://127.0.0.1:8085
+ * Running on http://172.31.32.245:8085 (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 841-770-510
+80.114.91.56 - - [12/Sep/2023 10:29:06] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:29:06] "[31m[1mGET /upload/history?username=df HTTP/1.1[0m" 401 -
+80.114.91.56 - - [12/Sep/2023 10:29:06] "[31m[1mGET /upload/getTableList HTTP/1.1[0m" 401 -
+80.114.91.56 - - [12/Sep/2023 10:29:06] "GET /data/getNonDataTableList HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:29:06] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:29:10] "OPTIONS /api/users/login HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:29:11] "[31m[1mPOST /api/users/login HTTP/1.1[0m" 400 -
+80.114.91.56 - - [12/Sep/2023 10:29:13] "POST /api/users/login HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:29:13] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:29:13] "GET /data/getNonDataTableList HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:29:13] "GET /upload/getTableList HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:29:13] "GET /upload/history?username=df HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:29:13] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:29:13] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:29:13] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:29:13] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:29:14] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:29:14] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:29:14] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:29:14] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:29:14] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:32:28] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:32:28] "GET /data/getNonDataTableList HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:32:28] "GET /upload/getTableList HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:32:28] "GET /upload/history?username=df HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:32:28] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:32:28] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:32:29] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:32:29] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:32:29] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:32:29] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:32:29] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:32:29] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:32:29] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:33:49] "[35m[1mGET /data/getNonDataTable?table_name=undefined HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask/app.py", line 2095, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask/app.py", line 2080, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_restx/api.py", line 671, in error_router
+    return original_handler(f)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_restx/api.py", line 669, in error_router
+    return self.handle_error(e)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_restx/api.py", line 671, in error_router
+    return original_handler(f)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_restx/api.py", line 669, in error_router
+    return self.handle_error(e)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_restx/api.py", line 407, in wrapper
+    return self.make_response(data, code, headers=headers)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_restx/api.py", line 430, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_restx/representations.py", line 25, in output_json
+    dumped = dumps(data, **settings) + "\n"
+  File "/usr/lib/python3.10/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "/usr/lib/python3.10/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/usr/lib/python3.10/json/encoder.py", line 438, in _iterencode
+    o = _default(o)
+  File "/usr/lib/python3.10/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Response is not JSON serializable
+80.114.91.56 - - [12/Sep/2023 10:33:51] "GET /data/getNonDataTable?table_name=Asset_Issuers_HQLA_Mapping HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:36:38] "GET /data/getNonDataTableList HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:36:38] "GET /upload/getTableList HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:36:38] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:36:38] "GET /upload/history?username=df HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:36:38] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:36:38] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:36:38] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:36:38] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:36:38] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:36:38] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:36:38] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:36:39] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:36:39] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:36:40] "POST /api/users/logout HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:36:45] "OPTIONS /api/users/login HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:36:45] "POST /api/users/login HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:36:45] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:36:45] "GET /data/getNonDataTableList HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:36:45] "GET /upload/getTableList HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:36:45] "GET /upload/history?username=df HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:36:45] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:36:45] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:36:45] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:36:45] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:36:46] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:36:46] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:36:46] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:36:46] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:36:46] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:37:35] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:37:35] "GET /data/getNonDataTableList HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:37:35] "GET /upload/getTableList HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:37:35] "GET /upload/history?username=df HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:37:35] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:37:35] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:37:35] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:37:36] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:37:36] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:37:36] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:37:36] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:37:36] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:39:43] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:39:43] "GET /data/getNonDataTableList HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:39:43] "GET /upload/getTableList HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:39:43] "GET /upload/history?username=df HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:39:43] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:39:43] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:39:44] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:39:44] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:39:44] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:39:44] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:39:44] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:39:44] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:39:44] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:39:51] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:39:51] "GET /data/getNonDataTableList HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:39:51] "GET /upload/getTableList HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:39:51] "GET /upload/history?username=df HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:39:51] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:39:51] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:39:51] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:39:51] "GET /data/getNonDataTableList HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:39:51] "GET /upload/getTableList HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:39:51] "GET /upload/history?username=df HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:39:52] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:39:52] "GET /upload/getTableList HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:39:52] "GET /data/getNonDataTableList HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:39:52] "GET /upload/history?username=df HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:39:52] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:39:52] "GET /data/getNonDataTableList HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:39:52] "GET /upload/getTableList HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:39:52] "GET /upload/history?username=df HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:39:52] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:39:52] "GET /data/getNonDataTableList HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:39:52] "GET /upload/getTableList HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:39:52] "GET /upload/history?username=df HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:39:52] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:39:52] "GET /data/getNonDataTableList HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:39:52] "GET /upload/getTableList HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:39:52] "GET /upload/history?username=df HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:39:52] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:39:53] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:39:53] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:39:53] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:39:53] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:39:53] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:39:53] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:39:53] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:40:02] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:40:02] "GET /data/getNonDataTableList HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:40:02] "GET /upload/getTableList HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:40:02] "GET /upload/history?username=df HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:40:02] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:40:02] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:40:02] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:40:02] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:40:02] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:40:02] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:40:02] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:40:03] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:40:03] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:40:11] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:40:11] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:40:11] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:40:11] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:40:11] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:40:11] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:40:11] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:40:11] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:40:20] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:40:20] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:40:20] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:40:20] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:40:20] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:40:20] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:40:20] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:40:20] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:41:36] "POST /api/users/logout HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:41:46] "OPTIONS /api/users/login HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:41:46] "POST /api/users/login HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:41:46] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:41:46] "GET /data/getNonDataTableList HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:41:46] "GET /upload/getTableList HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:41:46] "GET /upload/history?username=df HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:41:46] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:41:46] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:41:46] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:41:46] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:41:46] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:41:47] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:41:47] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:41:47] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 10:41:47] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:34:38] "[31m[1mGET /upload/getTableList HTTP/1.1[0m" 401 -
+80.114.91.56 - - [12/Sep/2023 11:34:38] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:34:38] "[31m[1mGET /upload/history?username=df HTTP/1.1[0m" 401 -
+80.114.91.56 - - [12/Sep/2023 11:34:38] "GET /data/getNonDataTableList HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:34:38] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:35:35] "OPTIONS /api/users/login HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:35:36] "POST /api/users/login HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:35:36] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:35:36] "GET /data/getNonDataTableList HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:35:36] "GET /upload/getTableList HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:35:36] "GET /upload/history?username=df HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:35:36] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:35:36] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:35:36] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:35:36] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:35:37] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:35:37] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:35:37] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:35:37] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:35:37] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:35:54] "GET /data/getNonDataTableList HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:35:54] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:35:54] "GET /upload/getTableList HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:35:54] "GET /upload/history?username=df HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:35:54] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:35:54] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:35:54] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:35:54] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:35:54] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:35:55] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:35:55] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:35:55] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:35:55] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:35:56] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:35:56] "GET /data/getNonDataTableList HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:35:56] "GET /upload/getTableList HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:35:56] "GET /upload/history?username=df HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:35:56] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:35:56] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:35:56] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:35:56] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:35:56] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:35:56] "GET /data/getNonDataTableList HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:35:56] "GET /upload/getTableList HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:35:56] "GET /upload/history?username=df HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:35:56] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:35:56] "GET /upload/getTableList HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:35:56] "GET /data/getNonDataTableList HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:35:56] "GET /upload/history?username=df HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:35:57] "GET /data/getNonDataTableList HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:35:57] "GET /upload/getTableList HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:35:57] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:35:57] "GET /upload/history?username=df HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:35:57] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:35:57] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:35:57] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:35:57] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:35:57] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:35:57] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:35:57] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:35:57] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:37:08] "OPTIONS /api/users/login HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:37:08] "POST /api/users/login HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:37:08] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:37:08] "GET /data/getNonDataTableList HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:37:08] "GET /upload/getTableList HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:37:08] "GET /upload/history?username=df HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:37:08] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:37:08] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:37:09] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:37:09] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:37:09] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:37:09] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:37:09] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:37:09] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 11:37:09] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+145.94.233.133 - - [12/Sep/2023 13:00:44] "[31m[1mGET /upload/history?username=df HTTP/1.1[0m" 401 -
+145.94.233.133 - - [12/Sep/2023 13:00:44] "[31m[1mGET /upload/getTableList HTTP/1.1[0m" 401 -
+145.94.233.133 - - [12/Sep/2023 13:00:44] "GET /data/getNonDataTableList HTTP/1.1" 200 -
+145.94.233.133 - - [12/Sep/2023 13:00:44] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+145.94.233.133 - - [12/Sep/2023 13:00:44] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+145.94.233.133 - - [12/Sep/2023 13:00:51] "OPTIONS /api/users/login HTTP/1.1" 200 -
+145.94.233.133 - - [12/Sep/2023 13:00:51] "POST /api/users/login HTTP/1.1" 200 -
+145.94.233.133 - - [12/Sep/2023 13:00:51] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+145.94.233.133 - - [12/Sep/2023 13:00:51] "GET /data/getNonDataTableList HTTP/1.1" 200 -
+145.94.233.133 - - [12/Sep/2023 13:00:51] "GET /upload/getTableList HTTP/1.1" 200 -
+145.94.233.133 - - [12/Sep/2023 13:00:51] "GET /upload/history?username=df HTTP/1.1" 200 -
+145.94.233.133 - - [12/Sep/2023 13:00:51] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+145.94.233.133 - - [12/Sep/2023 13:00:51] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+145.94.233.133 - - [12/Sep/2023 13:00:52] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+145.94.233.133 - - [12/Sep/2023 13:00:52] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+145.94.233.133 - - [12/Sep/2023 13:00:52] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+145.94.233.133 - - [12/Sep/2023 13:00:52] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+145.94.233.133 - - [12/Sep/2023 13:00:52] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+145.94.233.133 - - [12/Sep/2023 13:00:52] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+145.94.233.133 - - [12/Sep/2023 13:00:52] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+66.240.219.146 - - [12/Sep/2023 16:52:41] code 400, message Bad request version ('\x00\x00rÀ0À,À(À$À\x14À')
+66.240.219.146 - - [12/Sep/2023 16:52:41] "[35m[1m ô  ð\í:£ÿ¤Ii¯\ÔâÕ=eN}ß\öF	üX:  rÀ0À,À(À$ÀÀ[0m" HTTPStatus.BAD_REQUEST -
+66.240.219.146 - - [12/Sep/2023 16:52:44] "GET / HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:34:54] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:34:54] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:34:54] "[31m[1mGET /upload/getTableList HTTP/1.1[0m" 401 -
+80.114.91.56 - - [12/Sep/2023 18:34:54] "[31m[1mGET /upload/history?username=df HTTP/1.1[0m" 401 -
+80.114.91.56 - - [12/Sep/2023 18:34:54] "GET /data/getNonDataTableList HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:39:15] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:39:15] "[31m[1mGET /upload/history?username=df HTTP/1.1[0m" 401 -
+80.114.91.56 - - [12/Sep/2023 18:39:15] "[31m[1mGET /upload/getTableList HTTP/1.1[0m" 401 -
+80.114.91.56 - - [12/Sep/2023 18:39:15] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:39:16] "GET /data/getNonDataTableList HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:39:16] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:39:16] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:40:05] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:40:05] "[31m[1mGET /upload/history?username=df HTTP/1.1[0m" 401 -
+80.114.91.56 - - [12/Sep/2023 18:40:05] "GET /data/getNonDataTableList HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:40:05] "[31m[1mGET /upload/getTableList HTTP/1.1[0m" 401 -
+80.114.91.56 - - [12/Sep/2023 18:40:05] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:40:14] "OPTIONS /api/users/login HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:40:14] "POST /api/users/login HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:40:14] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:40:14] "GET /data/getNonDataTableList HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:40:14] "GET /upload/getTableList HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:40:14] "GET /upload/history?username=df HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:40:14] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:40:14] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:40:15] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:40:15] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:40:15] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:40:15] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:40:15] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:40:15] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:40:15] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:40:17] "OPTIONS /data/getCalculatedData HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:40:17] "POST /data/getCalculatedData HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:44:46] "GET /upload/getTableList HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:44:46] "GET /upload/history?username=df HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:44:46] "GET /data/getNonDataTableList HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:44:46] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:44:46] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:44:46] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:44:46] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:44:46] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:44:46] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:44:46] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:44:46] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:44:46] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:44:46] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:44:46] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:44:46] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:44:46] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:44:46] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:44:46] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:44:46] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:44:47] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:44:47] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:44:47] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:44:47] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:44:50] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:44:50] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:44:50] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:44:50] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:44:50] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:44:51] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:44:51] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:44:51] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:44:51] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:44:51] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:44:53] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:44:53] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:44:53] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:44:53] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:44:53] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:44:54] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:44:54] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:44:54] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:44:54] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:44:56] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:44:56] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:44:56] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:44:56] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:44:56] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:44:56] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:44:57] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:44:57] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:44:57] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:44:57] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:44:59] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:44:59] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:44:59] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:45:00] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:45:00] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:45:00] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:45:00] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:45:00] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:45:00] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:45:04] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:45:04] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:45:04] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:45:04] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:45:04] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:45:04] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:45:05] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:45:05] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:45:05] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 18:45:05] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+198.235.24.71 - - [12/Sep/2023 19:34:08] "GET / HTTP/1.1" 200 -
+185.36.81.33 - - [12/Sep/2023 20:30:17] "GET / HTTP/1.1" 200 -
+106.75.79.16 - - [12/Sep/2023 20:52:00] "GET / HTTP/1.1" 200 -
+106.75.153.86 - - [12/Sep/2023 20:52:46] "GET / HTTP/1.1" 200 -
+106.75.153.86 - - [12/Sep/2023 20:52:47] "GET /swaggerui/favicon-16x16.png HTTP/1.1" 200 -
+106.75.153.86 - - [12/Sep/2023 20:52:47] "GET /swaggerui/swagger-ui-bundle.js HTTP/1.1" 200 -
+171.67.71.80 - - [12/Sep/2023 21:15:12] "GET / HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 21:24:47] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 21:24:47] "[31m[1mGET /upload/history?username=df HTTP/1.1[0m" 401 -
+80.114.91.56 - - [12/Sep/2023 21:24:47] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 21:24:47] "[31m[1mGET /upload/getTableList HTTP/1.1[0m" 401 -
+80.114.91.56 - - [12/Sep/2023 21:24:47] "GET /data/getNonDataTableList HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 21:24:53] "OPTIONS /api/users/login HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 21:24:54] "POST /api/users/login HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 21:24:54] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 21:24:54] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 21:24:54] "GET /data/getNonDataTableList HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 21:24:54] "GET /upload/getTableList HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 21:24:54] "GET /upload/history?username=df HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 21:24:54] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 21:24:54] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 21:24:54] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 21:24:54] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 21:24:54] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 21:24:54] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 21:24:54] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 21:24:54] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 21:24:54] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 21:24:54] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 21:24:54] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 21:24:54] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 21:24:55] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 21:24:55] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 21:24:55] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 21:24:55] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 21:24:55] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [12/Sep/2023 21:24:55] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+141.98.11.60 - - [12/Sep/2023 21:54:51] "GET / HTTP/1.1" 200 -
+183.136.225.5 - - [13/Sep/2023 00:06:47] "GET / HTTP/1.1" 200 -
+118.70.128.172 - - [13/Sep/2023 02:43:19] "OPTIONS /api/users/login HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 02:43:20] "POST /api/users/login HTTP/1.1" 200 -
+118.70.128.172 - - [13/Sep/2023 02:43:21] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 02:43:21] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 02:43:21] "GET /data/getNonDataTableList HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 02:43:21] "GET /upload/getTableList HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 02:43:21] "GET /upload/history?username=df HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 02:43:21] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 02:43:21] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 02:43:21] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 02:43:22] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+118.70.128.172 - - [13/Sep/2023 02:43:22] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 02:43:22] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+118.70.128.172 - - [13/Sep/2023 02:43:22] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 02:43:22] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+118.70.128.172 - - [13/Sep/2023 02:43:23] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 02:43:23] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 02:43:23] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 02:43:23] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+118.70.128.172 - - [13/Sep/2023 02:43:24] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+118.70.128.172 - - [13/Sep/2023 02:43:24] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 02:43:24] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 02:43:24] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 02:43:25] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 02:43:25] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 02:43:39] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 02:43:40] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 02:43:40] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 02:43:41] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+118.70.128.172 - - [13/Sep/2023 02:43:41] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+118.70.128.172 - - [13/Sep/2023 02:43:41] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 02:43:42] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 02:43:42] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 02:43:42] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 02:43:43] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+118.70.128.172 - - [13/Sep/2023 02:43:43] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 02:43:43] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 02:43:43] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 02:43:44] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 02:43:44] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 02:43:45] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 02:43:45] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 02:43:46] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 02:43:46] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 02:43:46] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 02:43:47] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 02:43:47] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+118.70.128.172 - - [13/Sep/2023 02:43:47] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 02:43:47] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+118.70.128.172 - - [13/Sep/2023 02:43:48] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 02:43:48] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 02:43:49] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+118.70.128.172 - - [13/Sep/2023 02:43:49] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 02:43:50] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 02:44:14] "GET /data/getPreviewDataTable?table_name=Borrowings HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 02:44:27] "GET /data/getPreviewDataTable?table_name=Borrowings HTTP/1.1" 200 -
+118.70.128.172 - - [13/Sep/2023 02:44:57] "[35m[1mGET /data/getNonDataTable?table_name=undefined HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask/app.py", line 2095, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask/app.py", line 2080, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_restx/api.py", line 671, in error_router
+    return original_handler(f)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_restx/api.py", line 669, in error_router
+    return self.handle_error(e)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_restx/api.py", line 671, in error_router
+    return original_handler(f)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_restx/api.py", line 669, in error_router
+    return self.handle_error(e)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_restx/api.py", line 407, in wrapper
+    return self.make_response(data, code, headers=headers)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_restx/api.py", line 430, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_restx/representations.py", line 25, in output_json
+    dumped = dumps(data, **settings) + "\n"
+  File "/usr/lib/python3.10/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "/usr/lib/python3.10/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/usr/lib/python3.10/json/encoder.py", line 438, in _iterencode
+    o = _default(o)
+  File "/usr/lib/python3.10/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Response is not JSON serializable
+14.160.25.135 - - [13/Sep/2023 02:44:57] "[35m[1mGET /data/getNonDataTable?table_name=undefined HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask/app.py", line 2095, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask/app.py", line 2080, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_restx/api.py", line 671, in error_router
+    return original_handler(f)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_restx/api.py", line 669, in error_router
+    return self.handle_error(e)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_restx/api.py", line 671, in error_router
+    return original_handler(f)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_restx/api.py", line 669, in error_router
+    return self.handle_error(e)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_restx/api.py", line 407, in wrapper
+    return self.make_response(data, code, headers=headers)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_restx/api.py", line 430, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_restx/representations.py", line 25, in output_json
+    dumped = dumps(data, **settings) + "\n"
+  File "/usr/lib/python3.10/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "/usr/lib/python3.10/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/usr/lib/python3.10/json/encoder.py", line 438, in _iterencode
+    o = _default(o)
+  File "/usr/lib/python3.10/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Response is not JSON serializable
+14.160.25.135 - - [13/Sep/2023 02:45:00] "[35m[1mGET /data/getNonDataTable?table_name=undefined HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask/app.py", line 2095, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask/app.py", line 2080, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_restx/api.py", line 671, in error_router
+    return original_handler(f)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_restx/api.py", line 669, in error_router
+    return self.handle_error(e)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_restx/api.py", line 671, in error_router
+    return original_handler(f)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_restx/api.py", line 669, in error_router
+    return self.handle_error(e)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_restx/api.py", line 407, in wrapper
+    return self.make_response(data, code, headers=headers)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_restx/api.py", line 430, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_restx/representations.py", line 25, in output_json
+    dumped = dumps(data, **settings) + "\n"
+  File "/usr/lib/python3.10/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "/usr/lib/python3.10/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/usr/lib/python3.10/json/encoder.py", line 438, in _iterencode
+    o = _default(o)
+  File "/usr/lib/python3.10/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Response is not JSON serializable
+14.160.25.135 - - [13/Sep/2023 02:45:02] "[35m[1mGET /data/getNonDataTable?table_name=undefined HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask/app.py", line 2095, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask/app.py", line 2080, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_restx/api.py", line 671, in error_router
+    return original_handler(f)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_restx/api.py", line 669, in error_router
+    return self.handle_error(e)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_restx/api.py", line 671, in error_router
+    return original_handler(f)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_restx/api.py", line 669, in error_router
+    return self.handle_error(e)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_restx/api.py", line 407, in wrapper
+    return self.make_response(data, code, headers=headers)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_restx/api.py", line 430, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_restx/representations.py", line 25, in output_json
+    dumped = dumps(data, **settings) + "\n"
+  File "/usr/lib/python3.10/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "/usr/lib/python3.10/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/usr/lib/python3.10/json/encoder.py", line 438, in _iterencode
+    o = _default(o)
+  File "/usr/lib/python3.10/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Response is not JSON serializable
+14.160.25.127 - - [13/Sep/2023 02:45:04] "[35m[1mGET /data/getNonDataTable?table_name=undefined HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask/app.py", line 2095, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask/app.py", line 2080, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_restx/api.py", line 671, in error_router
+    return original_handler(f)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_restx/api.py", line 669, in error_router
+    return self.handle_error(e)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_restx/api.py", line 671, in error_router
+    return original_handler(f)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_restx/api.py", line 669, in error_router
+    return self.handle_error(e)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_restx/api.py", line 407, in wrapper
+    return self.make_response(data, code, headers=headers)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_restx/api.py", line 430, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_restx/representations.py", line 25, in output_json
+    dumped = dumps(data, **settings) + "\n"
+  File "/usr/lib/python3.10/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "/usr/lib/python3.10/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/usr/lib/python3.10/json/encoder.py", line 438, in _iterencode
+    o = _default(o)
+  File "/usr/lib/python3.10/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Response is not JSON serializable
+113.160.94.222 - - [13/Sep/2023 02:45:31] "OPTIONS /data/calculateDashboardLcrNsfr HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 02:45:31] "POST /data/calculateDashboardLcrNsfr HTTP/1.1" 200 -
+118.70.128.172 - - [13/Sep/2023 02:45:36] "OPTIONS /data/calculateDashboardLcrNsfr HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 02:46:23] "OPTIONS /data/calculateDashboardLcrNsfr HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 02:46:26] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 02:46:26] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 02:46:26] "GET /upload/getTableList HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 02:46:26] "GET /data/getNonDataTableList HTTP/1.1" 200 -
+118.70.128.172 - - [13/Sep/2023 02:46:26] "GET /upload/history?username=df HTTP/1.1" 200 -
+118.70.128.172 - - [13/Sep/2023 02:46:27] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 02:46:27] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+118.70.128.172 - - [13/Sep/2023 02:46:27] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 02:46:27] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 02:46:28] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 02:46:28] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+118.70.128.172 - - [13/Sep/2023 02:46:28] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 02:46:28] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+118.70.128.172 - - [13/Sep/2023 02:46:29] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 02:46:29] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 02:46:29] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 02:46:29] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 02:46:30] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 02:46:30] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 02:46:31] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 02:46:31] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+118.70.128.172 - - [13/Sep/2023 02:46:31] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 02:46:31] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 02:46:34] "POST /data/calculateDashboardLcrNsfr HTTP/1.1" 200 -
+118.70.128.172 - - [13/Sep/2023 02:47:29] "POST /data/calculateDashboardLcrNsfr HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 02:48:05] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 02:48:06] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 02:48:14] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 02:48:14] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+118.70.128.172 - - [13/Sep/2023 02:48:14] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 02:48:19] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 02:48:21] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 02:48:21] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 02:48:23] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 02:48:23] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 02:50:08] "GET /data/getNonDataTable?table_name=Currency_table_regulatry HTTP/1.1" 200 -
+118.70.128.172 - - [13/Sep/2023 02:51:22] "OPTIONS /data/calculateDashboardLcrNsfr HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 02:51:22] "POST /data/calculateDashboardLcrNsfr HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 02:52:20] "POST /data/calculateDashboardLcrNsfr HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 02:55:48] "OPTIONS /data/getCalculatedData HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 02:55:48] "POST /data/getCalculatedData HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 02:55:55] "OPTIONS /data/getCalculatedData HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 02:55:56] "POST /data/getCalculatedData HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 02:59:48] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 02:59:48] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+118.70.128.172 - - [13/Sep/2023 03:04:09] "GET /upload/history?username=df HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 03:04:09] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 03:04:09] "GET /data/getNonDataTableList HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 03:04:09] "GET /upload/getTableList HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 03:04:09] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 03:04:10] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 03:04:10] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+118.70.128.172 - - [13/Sep/2023 03:04:10] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 03:04:10] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 03:04:11] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 03:04:11] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 03:04:11] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 03:04:11] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+118.70.128.172 - - [13/Sep/2023 03:04:11] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 03:04:12] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 03:04:12] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 03:04:12] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 03:04:12] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 03:04:13] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 03:04:13] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 03:04:13] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 03:04:13] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 03:04:14] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 03:04:26] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 03:04:27] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+118.70.128.172 - - [13/Sep/2023 03:04:59] "OPTIONS /data/getCalculatedData HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 03:05:00] "POST /data/getCalculatedData HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 03:05:12] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 03:05:12] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 03:05:13] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+118.70.128.172 - - [13/Sep/2023 03:05:13] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 03:05:14] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 03:05:14] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 03:05:15] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+118.70.128.172 - - [13/Sep/2023 03:05:15] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 03:05:16] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 03:05:16] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+118.70.128.172 - - [13/Sep/2023 03:05:18] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 03:05:18] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+118.70.128.172 - - [13/Sep/2023 03:05:19] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 03:05:19] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 03:05:20] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 03:05:20] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 03:05:21] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 03:05:21] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+118.70.128.172 - - [13/Sep/2023 03:05:22] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 03:05:22] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 03:05:49] "OPTIONS /data/calculateDashboardLcrNsfr HTTP/1.1" 200 -
+118.70.128.172 - - [13/Sep/2023 03:05:50] "POST /data/calculateDashboardLcrNsfr HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 03:06:47] "POST /data/calculateDashboardLcrNsfr HTTP/1.1" 200 -
+152.32.199.20 - - [13/Sep/2023 04:07:47] code 400, message Bad request version ('âá\x82q\x95þz\x03')
+152.32.199.20 - - [13/Sep/2023 04:07:47] "[35m[1m	 âáqþz[0m" HTTPStatus.BAD_REQUEST -
+152.32.199.20 - - [13/Sep/2023 04:08:00] "GET / HTTP/1.1" 200 -
+152.32.199.20 - - [13/Sep/2023 04:08:03] "GET /swaggerui/favicon-16x16.png HTTP/1.1" 200 -
+152.32.199.20 - - [13/Sep/2023 04:08:06] "[35m[1mGET /robots.txt HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask/app.py", line 2095, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask/app.py", line 2080, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_restx/api.py", line 672, in error_router
+    return original_handler(e)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask/app.py", line 1526, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask/app.py", line 1547, in finalize_request
+    response = self.process_response(response)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask/app.py", line 1889, in process_response
+    response = self.ensure_sync(func)(response)
+  File "/home/ubuntu/code/backend/api/__init__.py", line 49, in after_request
+    response_data = json.loads(response.get_data())
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+152.32.199.20 - - [13/Sep/2023 04:08:10] "[35m[1mGET /sitemap.xml HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask/app.py", line 2095, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask/app.py", line 2080, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask_restx/api.py", line 672, in error_router
+    return original_handler(e)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask/app.py", line 1526, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask/app.py", line 1547, in finalize_request
+    response = self.process_response(response)
+  File "/home/ubuntu/code/backend/venv/lib/python3.10/site-packages/flask/app.py", line 1889, in process_response
+    response = self.ensure_sync(func)(response)
+  File "/home/ubuntu/code/backend/api/__init__.py", line 49, in after_request
+    response_data = json.loads(response.get_data())
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+152.32.199.20 - - [13/Sep/2023 04:08:13] "GET /swaggerui/swagger-ui-bundle.js HTTP/1.1" 200 -
+152.32.199.20 - - [13/Sep/2023 04:08:13] "GET /swaggerui/swagger-ui-standalone-preset.js HTTP/1.1" 200 -
+205.210.31.28 - - [13/Sep/2023 04:17:36] "GET / HTTP/1.1" 200 -
+80.114.91.56 - - [13/Sep/2023 06:45:56] "[31m[1mGET /upload/getTableList HTTP/1.1[0m" 401 -
+80.114.91.56 - - [13/Sep/2023 06:45:56] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [13/Sep/2023 06:45:56] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [13/Sep/2023 06:45:56] "[31m[1mGET /upload/history?username=df HTTP/1.1[0m" 401 -
+80.114.91.56 - - [13/Sep/2023 06:45:56] "GET /data/getNonDataTableList HTTP/1.1" 200 -
+80.114.91.56 - - [13/Sep/2023 06:46:04] "OPTIONS /api/users/login HTTP/1.1" 200 -
+80.114.91.56 - - [13/Sep/2023 06:46:04] "POST /api/users/login HTTP/1.1" 200 -
+80.114.91.56 - - [13/Sep/2023 06:46:05] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [13/Sep/2023 06:46:05] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [13/Sep/2023 06:46:05] "GET /data/getNonDataTableList HTTP/1.1" 200 -
+80.114.91.56 - - [13/Sep/2023 06:46:05] "GET /upload/getTableList HTTP/1.1" 200 -
+80.114.91.56 - - [13/Sep/2023 06:46:05] "GET /upload/history?username=df HTTP/1.1" 200 -
+80.114.91.56 - - [13/Sep/2023 06:46:05] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [13/Sep/2023 06:46:05] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [13/Sep/2023 06:46:05] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [13/Sep/2023 06:46:05] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [13/Sep/2023 06:46:05] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [13/Sep/2023 06:46:05] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [13/Sep/2023 06:46:05] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [13/Sep/2023 06:46:05] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [13/Sep/2023 06:46:05] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [13/Sep/2023 06:46:05] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [13/Sep/2023 06:46:05] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [13/Sep/2023 06:46:05] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [13/Sep/2023 06:46:05] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [13/Sep/2023 06:46:05] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [13/Sep/2023 06:46:06] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [13/Sep/2023 06:46:06] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [13/Sep/2023 06:46:06] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [13/Sep/2023 06:46:06] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [13/Sep/2023 06:46:08] "OPTIONS /data/getCalculatedData HTTP/1.1" 200 -
+80.114.91.56 - - [13/Sep/2023 06:46:08] "POST /data/getCalculatedData HTTP/1.1" 200 -
+80.114.91.56 - - [13/Sep/2023 06:46:13] "OPTIONS /data/getCalculatedData HTTP/1.1" 200 -
+80.114.91.56 - - [13/Sep/2023 06:46:13] "POST /data/getCalculatedData HTTP/1.1" 200 -
+80.114.91.56 - - [13/Sep/2023 06:46:52] "OPTIONS /data/getCalculatedData HTTP/1.1" 200 -
+80.114.91.56 - - [13/Sep/2023 06:46:52] "POST /data/getCalculatedData HTTP/1.1" 200 -
+118.70.128.172 - - [13/Sep/2023 06:55:39] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+118.70.128.172 - - [13/Sep/2023 06:55:39] "[31m[1mGET /upload/history?username=df HTTP/1.1[0m" 401 -
+14.160.25.127 - - [13/Sep/2023 06:55:39] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 06:55:39] "GET /data/getNonDataTableList HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 06:55:39] "[31m[1mGET /upload/getTableList HTTP/1.1[0m" 401 -
+118.70.128.172 - - [13/Sep/2023 06:55:39] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 06:55:39] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 06:55:40] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 06:55:40] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 06:55:58] "OPTIONS /api/users/login HTTP/1.1" 200 -
+118.70.128.172 - - [13/Sep/2023 06:55:58] "POST /api/users/login HTTP/1.1" 200 -
+118.70.128.172 - - [13/Sep/2023 06:55:58] "GET /data/getNonDataTableList HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 06:55:58] "GET /upload/getTableList HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 06:55:58] "GET /upload/history?username=df HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 06:55:59] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 06:55:59] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 06:55:59] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 06:55:59] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+118.70.128.172 - - [13/Sep/2023 06:56:00] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 06:56:00] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+118.70.128.172 - - [13/Sep/2023 06:56:00] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 06:56:00] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 06:56:01] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 06:56:01] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 06:56:01] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 06:56:01] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 06:56:02] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 06:56:02] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+118.70.128.172 - - [13/Sep/2023 06:56:02] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+118.70.128.172 - - [13/Sep/2023 06:56:02] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 06:56:02] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 06:56:03] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 06:56:03] "OPTIONS /data/calculateDashboardLcrNsfr HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 06:56:03] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+118.70.128.172 - - [13/Sep/2023 06:56:03] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 06:56:03] "POST /data/calculateDashboardLcrNsfr HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 06:56:47] "OPTIONS /data/getCalculatedData HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 06:56:48] "POST /data/getCalculatedData HTTP/1.1" 200 -
+118.70.128.172 - - [13/Sep/2023 06:57:01] "POST /data/calculateDashboardLcrNsfr HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 06:59:15] "OPTIONS /data/getCalculatedData HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 06:59:15] "POST /data/getCalculatedData HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 07:00:04] "OPTIONS /data/getCalculatedData HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 07:00:05] "POST /data/getCalculatedData HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 07:00:15] "OPTIONS /data/getCalculatedData HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 07:00:15] "POST /data/getCalculatedData HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 07:00:19] "POST /data/getCalculatedData HTTP/1.1" 200 -
+80.114.91.56 - - [13/Sep/2023 07:05:04] "OPTIONS /data/getCalculatedData HTTP/1.1" 200 -
+80.114.91.56 - - [13/Sep/2023 07:05:04] "POST /data/getCalculatedData HTTP/1.1" 200 -
+80.114.91.56 - - [13/Sep/2023 07:05:07] "POST /data/getCalculatedData HTTP/1.1" 200 -
+80.114.91.56 - - [13/Sep/2023 07:05:09] "OPTIONS /data/calculateLcr HTTP/1.1" 200 -
+80.114.91.56 - - [13/Sep/2023 07:05:09] "POST /data/calculateLcr HTTP/1.1" 200 -
+80.114.91.56 - - [13/Sep/2023 07:05:42] "POST /data/calculateLcr HTTP/1.1" 200 -
+118.70.128.172 - - [13/Sep/2023 08:10:39] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 08:10:39] "[31m[1mGET /upload/history?username=df HTTP/1.1[0m" 401 -
+14.160.25.127 - - [13/Sep/2023 08:10:39] "[31m[1mGET /upload/getTableList HTTP/1.1[0m" 401 -
+113.160.94.222 - - [13/Sep/2023 08:10:39] "GET /data/getNonDataTableList HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 08:10:39] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+118.70.128.172 - - [13/Sep/2023 08:10:40] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+118.70.128.172 - - [13/Sep/2023 08:10:40] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 08:10:57] "OPTIONS /api/users/login HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 08:10:58] "POST /api/users/login HTTP/1.1" 200 -
+118.70.128.172 - - [13/Sep/2023 08:10:58] "GET /upload/history?username=df HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 08:10:58] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 08:10:58] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 08:10:58] "GET /data/getNonDataTableList HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 08:10:58] "GET /upload/getTableList HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 08:10:59] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 08:10:59] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 08:10:59] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 08:10:59] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 08:11:00] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 08:11:00] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 08:11:00] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 08:11:00] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 08:11:01] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+118.70.128.172 - - [13/Sep/2023 08:11:01] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 08:11:01] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 08:11:01] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 08:11:02] "OPTIONS /data/getCalculatedData HTTP/1.1" 200 -
+118.70.128.172 - - [13/Sep/2023 08:11:02] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 08:11:02] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 08:11:02] "POST /data/getCalculatedData HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 08:11:02] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 08:11:02] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 08:11:03] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 08:11:03] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+118.70.128.172 - - [13/Sep/2023 08:22:22] "GET /upload/history?username=df HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 08:22:22] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 08:22:22] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 08:22:22] "GET /data/getNonDataTableList HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 08:22:22] "GET /upload/getTableList HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 08:22:22] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 08:22:22] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 08:22:23] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 08:22:23] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 08:22:23] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 08:22:23] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+118.70.128.172 - - [13/Sep/2023 08:22:24] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 08:22:24] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 08:22:24] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 08:22:24] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 08:22:25] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.127 - - [13/Sep/2023 08:22:25] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 08:22:25] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+14.160.25.135 - - [13/Sep/2023 08:22:25] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 08:22:26] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 08:22:26] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+118.70.128.172 - - [13/Sep/2023 08:22:26] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 08:22:26] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+125.235.212.246 - - [13/Sep/2023 08:23:51] "OPTIONS /api/users/login HTTP/1.1" 200 -
+125.235.212.246 - - [13/Sep/2023 08:23:52] "[31m[1mPOST /api/users/login HTTP/1.1[0m" 400 -
+118.70.128.172 - - [13/Sep/2023 08:34:39] "OPTIONS /data/getCalculatedData HTTP/1.1" 200 -
+113.160.94.222 - - [13/Sep/2023 08:34:39] "POST /data/getCalculatedData HTTP/1.1" 200 -
+80.114.91.56 - - [13/Sep/2023 08:45:41] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [13/Sep/2023 08:45:41] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [13/Sep/2023 08:45:41] "[31m[1mGET /upload/history?username=df HTTP/1.1[0m" 401 -
+80.114.91.56 - - [13/Sep/2023 08:45:41] "GET /data/getNonDataTableList HTTP/1.1" 200 -
+80.114.91.56 - - [13/Sep/2023 08:45:41] "[31m[1mGET /upload/getTableList HTTP/1.1[0m" 401 -
+80.114.91.56 - - [13/Sep/2023 08:45:42] "POST /data/getCalculatedDataByRange HTTP/1.1" 200 -
+45.79.181.179 - - [13/Sep/2023 09:07:01] code 400, message Bad request version ('À\x14À')
+45.79.181.179 - - [13/Sep/2023 09:07:01] "[35m[1m   ´yq§.m÷NêÖÝª·4Év9>AkÓ&   À/À0À+À,Ì¨Ì©ÀÀ	ÀÀ[0m" HTTPStatus.BAD_REQUEST -
+69.164.217.74 - - [13/Sep/2023 09:17:32] "GET / HTTP/1.1" 200 -
+171.67.70.84 - - [13/Sep/2023 09:37:13] "GET / HTTP/1.1" 200 -
+172.105.128.12 - - [13/Sep/2023 10:37:00] "GET / HTTP/1.1" 200 -
+185.36.81.33 - - [13/Sep/2023 11:05:33] "GET / HTTP/1.1" 200 -
+80.114.91.56 - - [13/Sep/2023 11:39:38] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [13/Sep/2023 11:39:38] "[31m[1mGET /upload/history?username=df HTTP/1.1[0m" 401 -
+80.114.91.56 - - [13/Sep/2023 11:39:38] "OPTIONS /data/getCalculatedDataByRange HTTP/1.1" 200 -
+80.114.91.56 - - [13/Sep/2023 11:39:38] "[31m[1mGET /upload/getTableList HTTP/1.1[0m" 401 -
+80.114.91.56 - - [13/Sep/2023 11:39:38] "GET /data/getNonDataTableList HTTP/1.1" 200 -
