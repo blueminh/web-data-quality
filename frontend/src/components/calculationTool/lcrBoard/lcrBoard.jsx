@@ -27,9 +27,38 @@ export default function LCRDashBoard() {
  
     const [isLoading, setIsLoading] = useState(false);
 
-     // eslint-disable-next-line
-    const [lcrBoardData, setLcrBoardData] = useState(lcrBoardDataDefault)
+    // eslint-disable-next-line
+    // remove the english column and format numbers
+    const processBoardRow = (row) => {
+        // console.log(row.data.filter((_, index) => index !== 1))
+        const newRow = {
+            ...row,
+            data: row.data.filter((_, index) => index !== 1).map((item, index) => {
+                if (index == 0 || typeof item !== 'number') {
+                    return item; // Return non-numeric items as-is
+                }
+                if (item == 0 ) {
+                    return 0
+                } else if (item > 1000) {
+                  // Convert large numbers to integers with commas
+                  return item.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+                } else if (item < 3) {
+                  // Round small numbers to 2 decimal points
+                  return item.toFixed(2);
+                } else {
+                  return item;
+                }
+            }),
+            children: row.children.map((child) => processBoardRow(child))
+        }
+        return newRow
+    }
 
+    const processLcrBoardData = (data) => { 
+        return data.map((row) => processBoardRow(row))
+    }   
+
+    const [lcrBoardData, setLcrBoardData] = useState(processLcrBoardData(lcrBoardDataDefault))
     const [showChooseFileDateDialog, setShowChooseFileDateDialog] = useState(false);
     const modalChooseFileDateDialogToggle = () => setShowChooseFileDateDialog(!showChooseFileDateDialog)
 
@@ -45,7 +74,7 @@ export default function LCRDashBoard() {
                 setIsLoading(false)
 
                 if (response.success) {
-                    setLcrBoardData(response.data)
+                    setLcrBoardData(processLcrBoardData(response.data))
                     setIsLoading(false)
                     setShowChooseFileDateDialog(false)
                 } else {
@@ -53,7 +82,7 @@ export default function LCRDashBoard() {
                     setShowChooseFileDateDialog(true)
                 }
             } catch (error) {
-                setLcrBoardData(lcrBoardDataDefault)
+                setLcrBoardData(processLcrBoardData(lcrBoardDataDefault))
                 setIsLoading(false)
                 console.error('Error fetching data:', error);
             }
@@ -66,7 +95,7 @@ export default function LCRDashBoard() {
             try {
                 const response = await getCalculatedData(reportingDate, "lcr")
                 if (response.success) {
-                    setLcrBoardData(response.data)
+                    setLcrBoardData(processLcrBoardData(response.data))
                 } else {
                     setErrorMessage(response.error)
                     setShowMessagePopup(true)
@@ -173,7 +202,7 @@ export default function LCRDashBoard() {
                 <Table bordered>
                     <tbody>
                         <tr>
-                            {["No.", "Item", "Khoản mục", "Total unweighted value", "Total weighted value"].map(col => <td className='table-title'>{col}</td>)}
+                            {["No.", "Khoản mục", "Total unweighted value", "Total weighted value"].map(col => <td className='table-title'>{col}</td>)}
                         </tr>
                         {lcrBoardData.map(row => <ExpandableRow row={row}></ExpandableRow>)}
                     </tbody>

@@ -53,10 +53,10 @@ def lcr_2(df):
     value = df.loc[29, 'Blank 2'] if df.loc[29, 'Blank 2'] is not None else 0
     return value
 
-def lcr_4(df, v_1, v_2, colname):
-
-    result = df.loc[v_1, colname] /  df.loc[v_2, colname] if df.loc[v_2, colname] != 0 else 0
-    return result
+def lcr_4(df):
+    value = df.loc[30, 'Blank 2'] if df.loc[29, 'Blank 2'] is not None else 0
+    # result = df.loc[v_1, colname] /  df.loc[v_2, colname] if df.loc[v_2, colname] != 0 else 0
+    return value
 
 def lcr_5(df, v_3, colname):
     
@@ -75,10 +75,10 @@ def nsfr_2(nsfr_df):
     value = nsfr_df.loc[33, 'Blank 5'] if 'Blank 5' in nsfr_df.columns and nsfr_df.loc[33, 'Blank 5'] is not None else 0
     return value
 
-def nsfr_4(df, n_1, n_2, colname):
-    
-    result = df.loc[n_1, colname] /  df.loc[n_2, colname] if df.loc[n_2, colname] != 0 else 0
-    return result
+def nsfr_4(nsfr_df):
+    value = nsfr_df.loc[34, 'Blank 5'] if 'Blank 5' in nsfr_df.columns and nsfr_df.loc[33, 'Blank 5'] is not None else 0
+    # result = df.loc[n_1, colname] /  df.loc[n_2, colname] if df.loc[n_2, colname] != 0 else 0
+    return value
 
 def nsfr_5(df, n_3, colname):
     
@@ -94,23 +94,22 @@ def main(request_data):
     nsfr_df = main_NSFR.main(request_data)
     left_df = set_LCR()
     right_df = set_NSFR()
-
-    # left_df.at[0, 'Values'] = lcr_1(lcr_df)
-    # left_df.at[1, 'Values'] = lcr_2(lcr_df)
-    # left_df.at[2, 'Values'] = '100%'
-    # left_df.at[3, 'Values'] = lcr_4(left_df, 0, 1, "Values")
-    # left_df.at[4, 'Values'] = lcr_5(left_df, 3, "Values")
-
-    # right_df.at[0, 'Values'] = nsfr_1(nsfr_df)
-    # right_df.at[1, 'Values'] = nsfr_2(nsfr_df)
-    # right_df.at[2, 'Values'] = '100%'
-    # right_df.at[3, 'Values'] = nsfr_4(right_df, 0, 1, "Values")
-    # right_df.at[4, 'Values'] = nsfr_5(right_df, 3, "Values")
-    # final_df = pd.concat([left_df, right_df], axis=1)
     
     return {
-        "lcr":[lcr_1(lcr_df), lcr_2(lcr_df), '100%', lcr_4(left_df, 0, 1, "Values"), lcr_5(left_df, 3, "Values")],
-        "nsfr":[nsfr_1(nsfr_df), nsfr_2(nsfr_df), '100%', nsfr_4(right_df, 0, 1, "Values"), nsfr_5(right_df, 3, "Values")]
+        "lcr":[
+            lcr_1(lcr_df), 
+            lcr_2(lcr_df), 
+            1.0, 
+            lcr_4(lcr_df), 
+            lcr_5(left_df, 3, "Values")
+        ],
+        "nsfr":[
+            nsfr_1(nsfr_df), 
+            nsfr_2(nsfr_df), 
+            1.0, 
+            nsfr_4(nsfr_df), 
+            nsfr_5(right_df, 3, "Values")
+        ]
     }
     
 
